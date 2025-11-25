@@ -1,0 +1,33 @@
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.ps
+
+# PDF files (optional - remove this line if you want to track PDFs)
+*.pdf
+
+# Build directories
+build/
+output/
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+.DS_Store

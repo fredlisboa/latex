@@ -1,0 +1,332 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4cm, bottom=2.5cm, headsep=1cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}  % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}   % Vermelho Tijolo (Para destacar Dívidas)
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize STUDIO DENTAL COMÉRCIO DE HIGIENE ORAL LTDA}} & \scriptsize \textit{Plano de Dissolução e Partilha} \\
+        \textcolor{secondaryText}{\scriptsize CNPJ: 46.125.234/0001-66} & {\scriptsize \textbf{Data Base: 25/11/2025}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ (NEW) ---
+\renewcommand{\footrulewidth}{1.5pt} % Define thickness (same as header)
+\renewcommand{\footrule}{%
+    \color{primaryColor}% Set color to match theme
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}% Draw the line
+    \vspace{0.2cm} % Space between the line and the text (Page X of Y)
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{RELATÓRIO TÉCNICO}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{PROPOSTA DE DISSOLUÇÃO SOCIETÁRIA E PARTILHA DE BENS}} \\
+    \vspace{2cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{STUDIO DENTAL COMÉRCIO DE HIGIENE ORAL LTDA}} \\
+            \vspace{0.3cm}
+            {\large CNPJ: 46.125.234/0001-66} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{3cm}
+
+    \begin{flushleft}
+    \textbf{QUADRO SOCIETÁRIO ATUAL:} \\
+    \vspace{0.2cm}
+    Frederique Augusto Lisboa (40\%) \\
+    Kroner Machado Costa (40\%) \\
+    Eduardo Borges Nunes (10\%) \\
+    Alessandra Silva Alves (5\%) \\
+    Simone Helena dos Santos (5\%)
+    \end{flushleft}
+
+    
+    \vfill
+    {\small Contemplando reconhecimento de passivo de locação retroativo, rateio de dívida bancária e compensação de haveres.} \\
+    \vspace{1cm}
+    \textbf{Data Base:} 25 de Novembro de 2025
+\end{titlepage}
+
+% --- CONTEÚDO ---
+\section{Premissas e Definições do Acordo}
+
+Para viabilizar a dissolução justa, reconhecendo o histórico de uso do imóvel e a inviabilidade de venda dos ativos a terceiros, estabelecem-se as seguintes premissas:
+
+\begin{enumerate}
+    \item \textbf{Reconhecimento de Passivo de Locação:} A sociedade reconhece a dívida acumulada referente ao uso do imóvel (propriedade do sócio Kroner) desde o início das atividades (Jan/2014) sem a devida contrapartida financeira. O valor base acordado é de \textbf{\reais{10.000,00} mensais}.
+    
+    \item \textbf{Compensação de Ativos (Dação em Pagamento):} O sócio Kroner aceitará receber os Ativos Fixos, Infraestrutura e o Ponto Comercial (Goodwill) como forma de \textbf{abatimento parcial} da dívida de aluguel que a empresa tem com ele.
+    
+    \item \textbf{Rateio da Dívida Bancária:} A dívida bancária externa (parcelas de \reais{7.300,00}) continuará sendo paga por todos os sócios, proporcionalmente às suas cotas, até a liquidação final.
+    
+    \item \textbf{Liberação dos Bens Móveis:} Mediante o "perdão" do saldo remanescente da dívida de aluguel por parte de Kroner, os demais sócios (Frederique, Eduardo, Alessandra e Simone) ficam livres para retirar seus equipamentos móveis (Laboratório, Kits Clínicos e TI) sem ônus adicionais.
+\end{enumerate}
+
+\section{Análise dos Passivos (Dívidas da Sociedade)}
+
+\subsection{Dívida 1: Passivo de Locação (Empresa x Sócio Kroner)}
+Cálculo dos aluguéis não pagos desde o investimento na reforma (Marco Zero: 01/01/2014) até a data presente (Nov/2025).
+
+\begin{table}[h!]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{X c r}
+        \toprule
+        \textbf{Descrição} & \textbf{Período} & \textbf{Valor Total} \\
+        \midrule
+        Período de Ocupação (Meses) & 142 meses & - \\
+        Valor Mensal Acordado & - & \reais{10.000,00} \\
+        \midrule
+        \rowcolor{accentColor!10} \textbf{TOTAL DÍVIDA DE ALUGUEL RETROATIVO} & & \textbf{\reais{1.420.000,00}} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+\newpage
+
+\subsection{Dívida 2: Passivo Bancário (Empresa x Banco)}
+Responsabilidade mensal de pagamento da parcela de \textbf{\reais{7.300,00}} até 2031.
+
+\begin{table}[h!]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{X c r}
+        \toprule
+        \textbf{Sócio Responsável} & \textbf{Quota (\%)} & \textbf{Aporte Mensal (R\$)} \\
+        \midrule
+        Frederique Augusto Lisboa & 40\% & 2.920,00 \\
+        Kroner Machado Costa & 40\% & 2.920,00 \\
+        Eduardo Borges Nunes & 10\% & 730,00 \\
+        Alessandra Silva Alves & 5\% & 365,00 \\
+        Simone Helena dos Santos & 5\% & 365,00 \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL MENSAL} & \textbf{100\%} & \textbf{\reais{7.300,00}} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Memorial de Cálculo: Ativos e Depreciação}
+
+\begin{table}[h!]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{X r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Grupo de Bens} & \textbf{Valor Aquisição} & \textbf{Valor Depreciado} \\
+        \midrule
+        Laboratório de Prótese & 590.500,00 & 325.000,00 \\
+        Equipamentos Clínicos (Cadeiras/Rx) & 480.000,00 & 310.000,00 \\
+        Tecnologia (Scanners/PC/Soft) & 355.000,00 & 177.500,00 \\
+        Itens Fixos (Ar/Móveis Planej.) & 162.154,39 & 81.000,00 \\
+        Mobiliário Solto e Decoração & 80.000,00 & 48.000,00 \\
+        Eletrodomésticos / Diversos & 60.000,00 & 36.000,00 \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL GERAL} & \textbf{1.727.654,39} & \textbf{977.500,00} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Encontro de Contas (Justificativa da Partilha)}
+
+Abaixo, demonstra-se como a retenção dos bens fixos e do Ponto Comercial por Kroner é, na verdade, insuficiente para cobrir a dívida de aluguel, configurando um acordo favorável aos demais sócios.
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{X r}
+        \toprule
+        \textbf{Créditos e Débitos de Kroner Machado Costa} & \textbf{Valores (R\$)} \\
+        \midrule
+        1. Crédito (Dívida de Aluguéis a receber da Empresa) & 1.420.000,00 \\
+        2. Débito (Bens e Goodwill que ficarão com ele - Grupo D) & (640.830,00) \\
+        \midrule
+        \textbf{SALDO DEVEDOR DA EMPRESA PARA KRONER} & \textbf{779.170,00} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Conclusão:} Kroner renuncia ao recebimento do saldo de R\$ 779.170,00 para viabilizar a saída dos sócios levando seus equipamentos de trabalho (Grupos A, B e C) livres deste passivo.}
+\end{table}
+
+\newpage
+\section{Listagem Detalhada dos Bens por Sócio}
+
+% --- GRUPO A ---
+\subsection*{GRUPO A: Frederique e Eduardo}
+\textit{Laboratório de Prótese Completo + Tecnologia.}
+\begin{longtable}{>{\raggedright\arraybackslash}p{8cm} c r r}
+    \toprule
+    \rowcolor{tableHeader} \textbf{Item / Descrição} & \textbf{Qtd} & \textbf{Valor Novo} & \textbf{Valor Real} \\
+    \midrule
+    \endhead
+    Ceramill Motion 2 + Tanque Coolant & 1 & 153.777,34 & 76.888,00 \\
+    Ceramill Motion 2 (Unidade II) & 1 & 70.000,00 & 35.000,00 \\
+    Ceramill Therm III & 1 & 36.000,00 & 18.000,00 \\
+    Scanner 3Shape (Unidade 1) & 1 & 99.900,00 & 50.000,00 \\
+    Software CAD/CAM (Licenças) & 2 & 36.000,00 & 18.000,00 \\
+    Impressoras 3D Phrozen (Sonic/Mini/Mighty) & 3 & 34.298,80 & 17.200,00 \\
+    Jateador Basic Master Renfert & 1 & 7.757,00 & 4.000,00 \\
+    Forno Programat P310 & 1 & 24.611,00 & 12.300,00 \\
+    Outros Equip. Lab (Bomba/Motor/Vibrador) & Lote & 15.000,00 & 7.500,00 \\
+    Computadores e Mobiliário Lab & Lote & 30.000,00 & 15.000,00 \\
+    Itens menores Laboratório (Lote) & 1 & 15.000,00 & 7.500,00 \\
+    \midrule
+    \rowcolor{lightGray} \textbf{TOTAL GRUPO A} & & \textbf{522.344,14} & \textbf{281.250,00} \\
+    \bottomrule
+\end{longtable}
+
+% --- GRUPO B ---
+\subsection*{GRUPO B: Alessandra Silva Alves}
+\textit{Equipamentos clínicos portáteis.}
+\begin{longtable}{>{\raggedright\arraybackslash}p{8cm} c r r}
+    \toprule
+    \rowcolor{tableHeader} \textbf{Item / Descrição} & \textbf{Qtd} & \textbf{Valor Novo} & \textbf{Valor Real} \\
+    \midrule
+    \endhead
+    Kit Kavo (Motor, Contra Ângulo, Caneta) & 1 & 8.257,30 & 5.780,00 \\
+    Notebook Samsung Expert & 1 & 2.900,00 & 1.450,00 \\
+    Televisão Samsung & 1 & 2.599,01 & 1.500,00 \\
+    Mocho e Cadeira Escritório & 2 & 1.267,56 & 680,00 \\
+    Lote Instrumental Clínico Diverso & 1 & 25.000,00 & 18.600,00 \\
+    \midrule
+    \rowcolor{lightGray} \textbf{TOTAL GRUPO B} & & \textbf{40.023,87} & \textbf{28.010,00} \\
+    \bottomrule
+\end{longtable}
+\newpage
+
+% --- GRUPO C ---
+\subsection*{GRUPO C: Simone Helena dos Santos}
+\textit{Documentação e Kits Clínicos.}
+\begin{longtable}{>{\raggedright\arraybackslash}p{8cm} c r r}
+    \toprule
+    \rowcolor{tableHeader} \textbf{Item / Descrição} & \textbf{Qtd} & \textbf{Valor Novo} & \textbf{Valor Real} \\
+    \midrule
+    \endhead
+    iPad Pro 10.5 + Câmera Nikon & 2 & 7.302,41 & 3.650,00 \\
+    Kit Kavo (Motor, Contra Ângulo, Caneta) & 1 & 9.612,87 & 6.700,00 \\
+    Computador Lenovo & 1 & 2.526,05 & 1.260,00 \\
+    Lote Instrumental Clínico Diverso & 1 & 22.000,00 & 15.400,00 \\
+    Cadeira Executiva + Mocho & 2 & 698,99 & 400,00 \\
+    \midrule
+    \rowcolor{lightGray} \textbf{TOTAL GRUPO C} & & \textbf{42.140,32} & \textbf{27.410,00} \\
+    \bottomrule
+\end{longtable}
+
+% --- GRUPO D ---
+\subsection*{GRUPO D: Kroner Machado Costa}
+\textit{Bens recebidos como Abatimento de Aluguel (Infra + Goodwill).}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{8cm} c r r}
+    \toprule
+    \rowcolor{tableHeader} \textbf{Item / Descrição} & \textbf{Qtd} & \textbf{Valor Novo} & \textbf{Valor Real} \\
+    \midrule
+    \endhead
+    \textbf{A) INFRAESTRUTURA (FIXOS)} & & & \\
+    Lote Ar-Condicionados (10 unidades) & 10 & 28.000,00 & 14.000,00 \\
+    Móveis Planejados e Paisagismo & 1 & 83.000,00 & 41.500,00 \\
+    Persianas e Acabamentos & 1 & 3.594,00 & 1.800,00 \\
+    
+    \textbf{B) EQUIPAMENTOS E TECNOLOGIA} & & & \\
+    Cadeiras Odontológicas (Croma/Gnatus/Unik) & 3 & 64.709,00 & 45.200,00 \\
+    Aparelho Profilaxia Airflow & 1 & 59.000,00 & 41.300,00 \\
+    Scanner 3Shape (Unidade 2) & 1 & 99.900,00 & 50.000,00 \\
+    Imac Apple + PCs Recepção & 3 & 18.599,00 & 9.300,00 \\
+    Laser Elite Duo + Motor Implante & 2 & 31.653,00 & 22.150,00 \\
+    Autoclaves e Esterilização (Lote) & 1 & 21.949,00 & 15.300,00 \\
+    Mobiliário Geral/Recepção/Eletros & Lote & 60.000,00 & 36.000,00 \\
+    
+    \textbf{C) ATIVO INTANGÍVEL} & & & \\
+    Goodwill / Instalações & 1 & 652.742,00 & 364.280,00 \\
+    \midrule
+    \rowcolor{lightGray} \textbf{TOTAL GRUPO D} & & \textbf{1.123.146,00} & \textbf{640.830,00} \\
+    \bottomrule
+\end{longtable}
+
+% --- NOTA EXPLICATIVA ---
+\vspace{-0.3cm}
+\begin{quote}
+    \footnotesize \textbf{* NOTA TÉCNICA:} O valor total do Grupo D (\reais{640.830,00}) é inferior à dívida de aluguel acumulada (\reais{1.420.000,00}). Portanto, a transferência destes bens para Kroner quita apenas 45\% do passivo de locação. O saldo restante é perdoado pelo credor (Kroner) no ato da assinatura deste acordo.
+\end{quote}
+\newpage
+
+\vspace{1.5cm}
+\begin{center}
+    \textbf{ASSINATURA E ACEITE DOS SÓCIOS} \\
+    \vspace{2.5cm}
+    Local e Data: \rule{6cm}{0.5pt}, \today.
+\end{center}
+
+\vspace{4cm}
+
+% Assinaturas
+\begin{center}
+    \rule{10cm}{0.5pt} \\ \textbf{Frederique Augusto Lisboa} (40\%) \\ \vspace{2cm}
+    \rule{10cm}{0.5pt} \\ \textbf{Kroner Machado Costa} (40\%) \\ \vspace{2cm}
+    \rule{10cm}{0.5pt} \\ \textbf{Eduardo Borges Nunes} (10\%) \\ \vspace{2cm}
+    \rule{10cm}{0.5pt} \\ \textbf{Alessandra Silva Alves} (5\%) \\ \vspace{2cm}
+    \rule{10cm}{0.5pt} \\ \textbf{Simone Helena dos Santos} (5\%)
+\end{center}
+
+\end{document}
