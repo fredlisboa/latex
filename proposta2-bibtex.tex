@@ -1,0 +1,233 @@
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[10pt, aspectratio=169]{beamer}
+
+% --- Tema e Cores ---
+\usetheme{metropolis} % Tema moderno e limpo
+\metroset{block=fill} % Blocos com preenchimento de cor para destaque
+
+% --- Pacotes ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{tikz}
+
+% --- Definição de Cores Personalizadas ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}    % Azul Marinho (Base)
+\definecolor{accentColor}{RGB}{178, 34, 34}    % Vermelho (Dívidas)
+\definecolor{successColor}{RGB}{34, 139, 34}   % Verde (Acordo)
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{secondaryText}{RGB}{100, 100, 100} % Cinza para textos secundários
+
+% --- Configuração do Tema ---
+\setbeamercolor{palette primary}{bg=primaryColor, fg=white}
+\setbeamercolor{alerted text}{fg=accentColor}
+\setbeamercolor{example text}{fg=successColor}
+\setbeamercolor{block title}{bg=primaryColor, fg=white}
+\setbeamercolor{block title alerted}{bg=accentColor, fg=white}
+
+% --- Metadados ---
+\title{Plano de Dissolução e Partilha}
+\subtitle{Relatório Técnico e Proposta Financeira}
+\author{\textbf{Studio Dental Comércio de Higiene Oral Ltda}}
+\date{Data Base: 25 de Novembro de 2025}
+\titlegraphic{\hfill\scriptsize CNPJ: 46.125.234/0001-66}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+\begin{document}
+
+% --- Slide de Capa ---
+\maketitle
+
+% --- Slide 1: Visão Geral ---
+\begin{frame}{Quadro Societário Atual}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \textbf{Objetivo:} Dissolução societária com partilha de bens e reconhecimento de passivos.
+            \vspace{1cm}
+            
+            \begin{alertblock}{Cenário Base}
+                Reconhecimento de passivo de locação retroativo e inviabilidade de venda externa dos ativos.
+            \end{alertblock}
+
+        \column{0.5\textwidth}
+            \centering
+            \textbf{Distribuição de Cotas}
+            \vspace{0.5cm}
+            \begin{table}
+                \rowcolors{1}{lightGray}{white}
+                \begin{tabular}{l c}
+                    \toprule
+                    \textbf{Sócio} & \textbf{\%} \\
+                    \midrule
+                    Frederique A. Lisboa & 40\% \\
+                    Kroner M. Costa & 40\% \\
+                    Eduardo B. Nunes & 10\% \\
+                    Alessandra S. Alves & 5\% \\
+                    Simone H. dos Santos & 5\% \\
+                    \bottomrule
+                \end{tabular}
+            \end{table}
+    \end{columns}
+\end{frame}
+
+% --- Slide 2: Premissas ---
+\begin{frame}{Premissas Fundamentais do Acordo}
+    Para viabilizar uma saída justa, estabelecem-se os seguintes pilares:
+    \vspace{0.5cm}
+    \begin{enumerate}
+        \item \textbf{Passivo de Locação:} Reconhecimento da dívida pelo uso do imóvel (propriedade do sócio Kroner) desde Jan/2014.
+        \item \textbf{Dação em Pagamento:} Kroner aceita ativos fixos e infraestrutura como abatimento parcial da dívida.
+        \item \textbf{Liberação de Ativos Móveis:} Os demais sócios retiram seus equipamentos de trabalho sem ônus.
+        \item \textbf{Passivo Bancário:} Continua sendo rateado proporcionalmente até a liquidação (2031).
+    \end{enumerate}
+\end{frame}
+
+% --- Slide 3: As Dívidas (O Problema) ---
+\begin{frame}{Análise dos Passivos (Dívidas)}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+            \begin{alertblock}{1. Passivo de Locação (Retroativo)}
+                Dívida com o sócio \textbf{Kroner Machado}.
+                \begin{itemize}
+                    \item Período: 142 meses (11 anos).
+                    \item Valor Mensal Base: \reais{10.000,00}.
+                \end{itemize}
+                \vspace{0.2cm}
+                \centering \textbf{Total: \reais{1.420.000,00}}
+            \end{alertblock}
+
+        \column{0.48\textwidth}
+            \begin{block}{2. Passivo Bancário (Mensal)}
+                Dívida Externa (Banco).
+                \begin{itemize}
+                    \item Parcela Mensal: \reais{7.300,00}.
+                    \item Rateio: Proporcional às cotas.
+                \end{itemize}
+                \vspace{0.2cm}
+                \centering \small (Frederique/Kroner: \reais{2.920} cada)
+            \end{block}
+    \end{columns}
+\end{frame}
+
+% --- Slide 4: Partilha - Grupo A ---
+\begin{frame}{Partilha: Grupo A (Frederique e Eduardo)}
+    \textit{Laboratório de Prótese Completo + Tecnologia CAD/CAM.}
+    
+    \begin{table}
+        \centering
+        \small
+        \begin{tabularx}{\textwidth}{X r}
+            \toprule
+            \textbf{Principais Itens} & \textbf{Valor Real (Depreciado)} \\
+            \midrule
+            Ceramill Motion 2 (x2 Unidades) & 111.888,00 \\
+            Scanner 3Shape (Unid. 1) & 50.000,00 \\
+            Fornos, Impressoras 3D e Softwares & 47.500,00 \\
+            Outros Equipamentos e Mobiliário & 71.862,00 \\
+            \midrule
+            \rowcolor{primaryColor!10} \textbf{TOTAL GRUPO A} & \textbf{\reais{281.250,00}} \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+\end{frame}
+
+% --- Slide 5: Partilha - Grupos B e C ---
+\begin{frame}{Partilha: Clínico (Alessandra e Simone)}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \textbf{GRUPO B (Alessandra)} \\
+            \textit{Equipamentos Portáteis e TV}
+            \vspace{0.2cm}
+            \begin{itemize}
+                \item Kit Kavo, TV Samsung.
+                \item Instrumental Diverso.
+            \end{itemize}
+            \vspace{0.2cm}
+            \colorbox{lightGray}{\textbf{Total: \reais{28.010,00}}}
+
+        \column{0.5\textwidth}
+            \textbf{GRUPO C (Simone)} \\
+            \textit{Kits Clínicos e TI}
+            \vspace{0.2cm}
+            \begin{itemize}
+                \item iPad Pro, Câmera Nikon.
+                \item Kit Kavo, PC Lenovo.
+            \end{itemize}
+            \vspace{0.2cm}
+            \colorbox{lightGray}{\textbf{Total: \reais{27.410,00}}}
+    \end{columns}
+\end{frame}
+
+% --- Slide 6: Partilha - Grupo D (Kroner) ---
+\begin{frame}{Partilha: Grupo D (Kroner Machado)}
+    \textit{Itens recebidos como \textbf{abatimento da dívida de aluguel}.}
+    
+    \begin{table}
+        \centering
+        \small
+        \begin{tabularx}{\textwidth}{X r}
+            \toprule
+            \textbf{Categoria} & \textbf{Valor Real} \\
+            \midrule
+            \textbf{Infraestrutura:} Ar-condicionados, Móveis Planejados & 57.300,00 \\
+            \textbf{Equipamentos:} 3 Cadeiras, Raio-X, Laser, Scanner & 219.250,00 \\
+            \textbf{Intangível:} Goodwill e Ponto Comercial & 364.280,00 \\
+            \midrule
+            \rowcolor{primaryColor!10} \textbf{TOTAL GRUPO D} & \textbf{\reais{640.830,00}} \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+\end{frame}
+
+% --- Slide 7: Encontro de Contas (GRANDE FINAL) ---
+\begin{frame}{Encontro de Contas e Conclusão}
+    A matemática da dissolução demonstra que o acordo favorece a liberação dos sócios minoritários.
+
+    \vspace{0.5cm}
+    \begin{center}
+    \begin{tikzpicture}
+        % Caixa Dívida
+        \node[draw=accentColor, fill=accentColor!10, line width=1pt, rounded corners, align=center, minimum width=4cm, minimum height=1.5cm] (divida) at (0,0) {\textbf{Dívida Aluguel} \\ \reais{1.420.000}};
+        
+        % Sinal de Menos
+        \node[font=\Huge, text=secondaryText] at (2.5,0) {$-$};
+        
+        % Caixa Bens
+        \node[draw=primaryColor, fill=primaryColor!10, line width=1pt, rounded corners, align=center, minimum width=4cm, minimum height=1.5cm] (bens) at (5,0) {\textbf{Bens Entregues} \\ \reais{640.830}};
+        
+        % Sinal de Igual
+        \node[font=\Huge, text=secondaryText] at (7.5,0) {$=$};
+        
+        % Saldo Restante
+        \node[draw=black, fill=lightGray, dashed, align=center, minimum width=4cm, minimum height=1.5cm] (saldo) at (10,0) {\textbf{Saldo Restante} \\ \reais{779.170}};
+        
+        % Setas e Explicação
+        \node[text=successColor, font=\bfseries, align=center] at (10, -1.5) {Valor Perdoado \\ por Kroner};
+        \draw[->, thick, successColor] (10, -0.8) -- (10, -1.2);
+    \end{tikzpicture}
+    \end{center}
+
+    \vspace{0.5cm}
+    \textbf{Conclusão:} Kroner renuncia a \textbf{55\% da dívida} para permitir que os sócios levem seus laboratórios e kits de trabalho.
+\end{frame}
+
+% --- Slide 8: Assinaturas ---
+\begin{frame}{Formalização}
+    \centering
+    \Large
+    \textbf{Próximos Passos}
+    \vspace{0.5cm}
+    
+    \normalsize
+    Assinatura do distrato e efetivação da retirada dos bens móveis.
+    
+    \vspace{1cm}
+    \textit{Goiânia, 25 de Novembro de 2025.}
+\end{frame}
+
+\end{document}
