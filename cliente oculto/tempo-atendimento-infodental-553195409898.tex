@@ -1,0 +1,213 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+% Ajuste de geometria para acomodar o cabeçalho grande
+\usepackage[left=2cm, right=2cm, top=3.5cm, bottom=2.5cm, headheight=50pt]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{helvet}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+% --- CONFIGURAÇÕES DE LAYOUT E BIBLIOTECAS ---
+\tcbuselibrary{skins, raster, breakable}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+% --- PALETA DE CORES INFODENTAL (REBRANDING) ---
+\definecolor{infoDentalTeal}{RGB}{26, 62, 71}     % Fundo Escuro (Dark Teal)
+\definecolor{infoDentalGreen}{RGB}{79, 208, 104}  % Acento Verde (Bright Green)
+\definecolor{infoDentalRed}{RGB}{231, 76, 60}     % Vermelho Alerta
+\definecolor{infoDentalOrange}{RGB}{243, 156, 18} % Laranja (Atenção/Suave)
+\definecolor{infoDentalGray}{RGB}{240, 242, 245}  % Fundo Suave das Tabelas
+\definecolor{textDark}{RGB}{44, 62, 80}           % Texto Leitura
+
+% --- CABEÇALHO E RODAPÉ PERSONALIZADOS ---
+\pagestyle{fancy}
+\fancyhf{} % Limpa tudo
+\renewcommand{\headrulewidth}{0pt}
+
+% Desenho do Cabeçalho (Barra Teal no Topo)
+\fancyhead[C]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[infoDentalTeal] (current page.north west) rectangle ([yshift=-3cm]current page.north east);
+        \node[anchor=west, text=white, font=\bfseries\Huge] at ([xshift=2cm, yshift=-1.5cm]current page.north west) {InfoDental \textcolor{infoDentalGreen}{Intelligence}};
+        \node[anchor=east, text=white, align=right, font=\small] at ([xshift=-2cm, yshift=-1.5cm]current page.north east) {
+            \textbf{RELATÓRIO DE AUDITORIA FORENSE}\\
+            PROTOCOLO: SHOPPER-MG-TX \\
+            DATA: \today
+        };
+        % Linha de destaque verde
+        \fill[infoDentalGreen] (current page.north west) ++(0,-2.9cm) rectangle ++(\paperwidth, 0.1cm);
+    \end{tikzpicture}
+}
+
+% Desenho do Rodapé
+\fancyfoot[C]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[infoDentalGray] (current page.south west) rectangle ([yshift=1.5cm]current page.south east);
+        \node[text=infoDentalTeal, font=\footnotesize] at ([yshift=0.75cm]current page.south) {Confidencial - Gerado por InfoDental AI Engine - Página \thepage};
+    \end{tikzpicture}
+}
+
+% --- ÍCONES MANUAIS ---
+\newcommand{\iconAlert}{%
+\begin{tikzpicture}[baseline=-3pt]
+    \fill[infoDentalOrange] (0,0) circle (0.25);
+    \node[white, font=\bfseries\small] at (0,0) {!};
+\end{tikzpicture}%
+}
+
+\newcommand{\iconCheck}{%
+\begin{tikzpicture}[baseline=-3pt]
+    \fill[infoDentalGreen] (0,0) circle (0.25);
+    \draw[infoDentalTeal, very thick] (-0.1,-0.05) -- (0,0.1) -- (0.15,-0.15);
+\end{tikzpicture}%
+}
+
+\begin{document}
+
+% --- BADGE DE STATUS ---
+\begin{flushright}
+    \begin{tikzpicture}
+        \node[fill=infoDentalOrange!10, draw=infoDentalOrange, rounded corners, inner sep=5pt, line width=1pt] {
+            \textbf{\textcolor{infoDentalOrange}{STATUS: LATÊNCIA E FRICÇÃO DE PROCESSO}}
+        };
+    \end{tikzpicture}
+\end{flushright}
+
+% --- SEÇÃO 1: O CENÁRIO ---
+\begin{tcolorbox}[
+    enhanced,
+    title=\textbf{1. O CENÁRIO DO TESTE (A ISCA)},
+    colframe=infoDentalTeal, colback=white, coltitle=white,
+    boxrule=0.5pt, drop shadow
+]
+    \textbf{Script Aplicado:} ``O Viajante com Pressa'';
+
+    \textbf{Perfil do Avatar:} Visitante de Goiás (DDD 62) a trabalho em Teixeiras/MG;
+
+    \textbf{Contexto:} Quebra de faceta/dente frontal (Estética = Urgência Emocional);
+
+    \textbf{Gatilhos de Urgência:} ``Reuniões importantes'' + ``Pago particular'' + ``Só fico até terça'';
+
+    \textbf{Telefone Contactado} +55 31 9 9540-9898
+
+
+\end{tcolorbox}
+
+% --- SEÇÃO 2: A LINHA DO TEMPO ---
+\vspace{0.5cm}
+\section*{\textcolor{infoDentalTeal}{2. ANÁLISE MINUTO A MINUTO}}
+
+% Tabela customizada com tcolorbox
+\begin{tcolorbox}[enhanced, frame hidden, colback=white]
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{ | p{0.12\textwidth} | p{0.20\textwidth} | p{0.58\textwidth} | }
+        \hline
+        \rowcolor{infoDentalTeal}
+        \textbf{\textcolor{white}{HORA}} & \textbf{\textcolor{white}{AGENTE}} & \textbf{\textcolor{white}{ANÁLISE DE FLUXO E TEMPO}} \\
+        \hline
+        \textbf{09:55} & Paciente (Lead) &
+        \small Disparo inicial relatando dor aguda, quebra estética e urgência de tempo. \\
+        \hline
+        \textbf{10:18} & Clínica (Humano) &
+        \textbf{Tempo de Resposta: 23 Minutos.} \newline
+        \textit{``Tudo bem ?? Desculpa a demora. O celular está cheio de mensagens. Poderia me mandar uma foto por gentileza??''} \\
+        \hline
+    \end{tabular}
+\end{tcolorbox}
+
+% PONTO DE ATENÇÃO 1: GAP DE TEMPO
+\begin{tcolorbox}[colback=infoDentalOrange!5, colframe=infoDentalOrange, boxrule=0.5pt, arc=0mm, left=2mm, right=2mm]
+    \textbf{\textcolor{infoDentalOrange}{PONTO DE ATENÇÃO \#1: ``GAP DE RECEITA''}}
+    \footnotesize
+    O tempo de espera de \textbf{23 minutos} para uma emergência estética é crítico. Estatisticamente, após 5 minutos, a chance de o paciente contatar um concorrente sobe 400\%. A própria atendente valida o erro pedindo ``Desculpa a demora''.
+\end{tcolorbox}
+
+% PONTO DE REFLEXÃO ESTRATÉGICA (FOTO) - NOVO!
+\begin{tcolorbox}[colback=infoDentalTeal!5, colframe=infoDentalTeal, boxrule=0.5pt, arc=0mm, left=2mm, right=2mm]
+    \textbf{\textcolor{infoDentalTeal}{REFLEXÃO ESTRATÉGICA: A BARREIRA DA FOTO}}
+    \footnotesize
+    A solicitação de foto para triagem é tecnicamente válida, mas comercialmente perigosa para este perfil.
+    O paciente estava \textbf{no trabalho} (ambiente corporativo). Pedir uma ``selfie intraoral'' nesse contexto gera constrangimento e fricção.
+    \textit{Observe que o paciente resistiu: ``Cara, tá difícil tirar foto aqui''.}
+    \textbf{O Risco:} Quantos leads tímidos ou ocupados desistem de responder quando a foto é solicitada antes do acolhimento?
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced, frame hidden, colback=white]
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{ | p{0.12\textwidth} | p{0.20\textwidth} | p{0.58\textwidth} | }
+        \hline
+        \textbf{10:21} & Clínica (Humano) &
+        \textit{``Se eu conseguir um horário para você agora você tem disponibilidade de vim ,agora ?''} \\
+        \hline
+    \end{tabular}
+\end{tcolorbox}
+
+% PONTO DE ATENÇÃO 2: GRAMÁTICA
+\begin{tcolorbox}[colback=infoDentalOrange!5, colframe=infoDentalOrange, boxrule=0.5pt, arc=0mm, left=2mm, right=2mm]
+    \textbf{\textcolor{infoDentalOrange}{PONTO DE ATENÇÃO \#2: GRAMÁTICA E PONTUAÇÃO}}
+    \footnotesize
+    1. \textbf{Gramática:} Uso incorreto do verbo (``disponibilidade de \textbf{vim}'' em vez de ``vir'').
+    2. \textbf{Pontuação:} Vírgula deslocada (``vim ,agora ?'') e duplicidade de interrogação (``Tudo bem ??'').
+    Para um paciente High-Ticket, a comunicação escrita deve refletir a mesma excelência técnica do tratamento.
+\end{tcolorbox}
+
+% --- SEÇÃO 3: DIAGNÓSTICO VISUAL ---
+\vspace{0.2cm}
+\begin{tcolorbox}[
+    enhanced,
+    colback=infoDentalGray,
+    colframe=white,
+    title=\textcolor{infoDentalTeal}{\textbf{3. DIAGNÓSTICO OPERACIONAL}},
+    coltitle=infoDentalTeal,
+    fonttitle=\large\bfseries,
+    frame hidden
+]
+    \begin{itemize}
+        \item[\iconAlert] \textbf{O ``Speed to Lead'':} Embora a equipe tenha conseguido agendar, o delay inicial de 23 minutos colocou a venda em risco.
+        \item[\iconAlert] \textbf{Sobrecarga Visível:} A frase ``O celular está cheio de mensagens'' revela que sua recepção está competindo entre atendimento presencial e digital.
+    \end{itemize}
+\end{tcolorbox}
+
+% --- SEÇÃO 4: A SOLUÇÃO INFODENTAL ---
+\vspace{0.5cm}
+
+\begin{tcolorbox}[
+    skin=enhanced,
+    colback=infoDentalTeal,
+    colframe=infoDentalGreen,
+    boxrule=1pt,
+    arc=4mm,
+    shadow={2mm}{-2mm}{0mm}{black!30},
+    title=\textbf{\large INFODENTAL: INTELIGÊNCIA CLÍNICA VERTICAL},
+    coltitle=infoDentalGreen,
+    fonttitle=\bfseries
+]
+    \color{white}
+    Diferente de ``Chatbots'' que apenas respondem, o InfoDental é um \textbf{Sistema Vertical} que atua em todas as camadas do processo clínico:
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item[\iconCheck] \textbf{Camada de Infraestrutura (Velocidade):} Resposta instantânea (< 30 segundos) 24/7. Elimina o ``vácuo'' de 23 minutos.
+        \item[\iconCheck] \textbf{Camada de Comunicação (Qualidade):} Português impecável. O sistema entende o contexto (paciente no trabalho) e foca no agendamento, deixando a foto como opcional para não perder a venda.
+        \item[\iconCheck] \textbf{Camada de Processo (Alívio):} Remove a sobrecarga da equipe (``celular cheio''), permitindo foco no presencial.
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \centering
+    \begin{tcolorbox}[colback=infoDentalGreen, colframe=infoDentalGreen, width=12cm, halign=center, arc=4mm, boxsep=15pt, top=8pt, bottom=8pt]
+        \href{https://infodental.dental}{\textbf{\Large\textcolor{infoDentalTeal}{PROFISSIONALIZAR MEU SISTEMA}}}
+    \end{tcolorbox}
+    \vspace{0.3cm}
+\end{tcolorbox}
+
+\end{document}
