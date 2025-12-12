@@ -1,0 +1,199 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+% Ajuste de geometria para acomodar o cabeçalho grande
+\usepackage[left=2cm, right=2cm, top=3.5cm, bottom=2.5cm, headheight=50pt]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{helvet}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{hyperref}
+
+% --- CONFIGURAÇÕES DE LAYOUT E BIBLIOTECAS ---
+\tcbuselibrary{skins, raster, breakable}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+% --- PALETA DE CORES KROOA (ALTO CONTRASTE) ---
+\definecolor{krooaNavy}{RGB}{12, 45, 60}      % Fundo Escuro
+\definecolor{krooaLime}{RGB}{205, 239, 94}    % Acento Neon (Verde Lima)
+\definecolor{krooaRed}{RGB}{231, 76, 60}      % Vermelho Alerta
+\definecolor{krooaOrange}{RGB}{243, 156, 18}  % Laranja (Atenção/Suave)
+\definecolor{krooaGray}{RGB}{240, 242, 245}   % Fundo Suave das Tabelas
+\definecolor{textDark}{RGB}{44, 62, 80}       % Texto Leitura
+
+% --- CABEÇALHO E RODAPÉ PERSONALIZADOS ---
+\pagestyle{fancy}
+\fancyhf{} % Limpa tudo
+\renewcommand{\headrulewidth}{0pt}
+
+% Desenho do Cabeçalho (Barra Azul no Topo)
+\fancyhead[C]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[krooaNavy] (current page.north west) rectangle ([yshift=-3cm]current page.north east);
+        \node[anchor=west, text=white, font=\bfseries\Huge] at ([xshift=2cm, yshift=-1.5cm]current page.north west) {KROOA \textcolor{krooaLime}{INTELLIGENCE}};
+        \node[anchor=east, text=white, align=right, font=\small] at ([xshift=-2cm, yshift=-1.5cm]current page.north east) {
+            \textbf{RELATÓRIO DE AUDITORIA FORENSE}\\
+            PROTOCOLO: SHOPPER-GO-01 \\
+            DATA: \today
+        };
+        % Linha de destaque verde
+        \fill[krooaLime] (current page.north west) ++(0,-2.9cm) rectangle ++(\paperwidth, 0.1cm);
+    \end{tikzpicture}
+}
+
+% Desenho do Rodapé
+\fancyfoot[C]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[krooaGray] (current page.south west) rectangle ([yshift=1.5cm]current page.south east);
+        \node[text=krooaNavy, font=\footnotesize] at ([yshift=0.75cm]current page.south) {Confidencial - Gerado por Krooa AI Engine - Página \thepage};
+    \end{tikzpicture}
+}
+
+% --- ÍCONES MANUAIS ---
+\newcommand{\iconAlert}{%
+\begin{tikzpicture}[baseline=-3pt]
+    \fill[krooaOrange] (0,0) circle (0.25);
+    \node[white, font=\bfseries\small] at (0,0) {!};
+\end{tikzpicture}%
+}
+
+\newcommand{\iconCheck}{%
+\begin{tikzpicture}[baseline=-3pt]
+    \fill[krooaLime] (0,0) circle (0.25);
+    \draw[krooaNavy, very thick] (-0.1,-0.05) -- (0,0.1) -- (0.15,-0.15);
+\end{tikzpicture}%
+}
+
+\begin{document}
+
+% --- BADGE DE STATUS ---
+\begin{flushright}
+    \begin{tikzpicture}
+        \node[fill=krooaOrange!10, draw=krooaOrange, rounded corners, inner sep=5pt, line width=1pt] {
+            \textbf{\textcolor{krooaOrange}{STATUS: OPORTUNIDADE DE MELHORIA DETECTADA}}
+        };
+    \end{tikzpicture}
+\end{flushright}
+
+% --- SEÇÃO 1: O CENÁRIO ---
+\begin{tcolorbox}[
+    enhanced,
+    title=\textbf{1. O CENÁRIO DO TESTE (A ISCA)},
+    colframe=krooaNavy, colback=white, coltitle=white,
+    boxrule=0.5pt, drop shadow
+]
+    \textbf{Script Aplicado:} "O Viajante com Pressa" \\
+    \textbf{Perfil do Avatar:} Executivo(a) de Goiás (DDD 62) em viagem rápida de negócios ou visita familiar. \\
+    \textbf{Cenário:} O "High Ticket" de Emergência Estética (Horário de Pico) \\
+    \textbf{Contexto:} Quebrou uma faceta/dente ou caiu um provisório - situação estética que gera desespero. \\
+    \textbf{Gatilhos de Urgência:} "Lascou pedacinho do dente da frente" + "Reuniões importantes" + "Fico só até depois de amanhã". \\
+    \textbf{Potencial Financeiro:} "Pago particular se precisar" + Disponibilidade para resolver urgente.
+\end{tcolorbox}
+
+% --- SEÇÃO 2: A LINHA DO TEMPO ---
+\vspace{0.5cm}
+\section*{\textcolor{krooaNavy}{2. ANÁLISE MINUTO A MINUTO}}
+
+% Tabela customizada com tcolorbox
+\begin{tcolorbox}[enhanced, frame hidden, colback=white]
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{ | p{0.12\textwidth} | p{0.20\textwidth} | p{0.58\textwidth} | }
+        \hline
+        \rowcolor{krooaNavy} 
+        \textbf{\textcolor{white}{HORA}} & \textbf{\textcolor{white}{AGENTE}} & \textbf{\textcolor{white}{ANÁLISE DE FLUXO}} \\
+        \hline
+        
+        \textbf{17:49} & Paciente (Lead) & 
+        \small Disparo inicial relatando dor e urgência de tempo. \\
+        \hline
+        
+        \textbf{17:49} & Clínica (Humano) & 
+        \textbf{Tempo de Resposta: < 1 Min.} (Excelente velocidade inicial). \newline
+        \textit{"Kibom!!! Temos sim!!! qual seu nome completo e cpf?"} \\
+        \hline
+        
+        \multicolumn{3}{c}{
+            \begin{tcolorbox}[colback=krooaOrange!5, colframe=krooaOrange, boxrule=0.5pt, arc=0mm, left=2mm, right=2mm]
+                \textbf{\textcolor{krooaOrange}{PONTO DE OTIMIZAÇÃO \#1: ALINHAMENTO DE TOM}} \\
+                \footnotesize
+                1. \textbf{Comunicação:} A equipe demonstrou muita proatividade. Porém, o uso de "Kibom!!!" para uma dor física pode soar informal. Sugerimos um tom mais consultivo.\\
+                2. \textbf{Momento do Cadastro:} Pedir o CPF antes de acolher a dor cria uma fricção desnecessária. O ideal é confirmar o horário primeiro.
+            \end{tcolorbox}
+        } \\
+        
+        \textbf{17:50} & Paciente & 
+        \small Nega passar dados e insiste na confirmação. \\
+        \hline
+        
+        \textbf{17:51} & Clínica (Humano) & 
+        \textit{"kl pena, tenho um encaixe amanhã..."} \\
+        \hline
+        
+        \multicolumn{3}{c}{
+            \begin{tcolorbox}[colback=krooaOrange!5, colframe=krooaOrange, boxrule=0.5pt, arc=0mm, left=2mm, right=2mm]
+                \textbf{\textcolor{krooaOrange}{PONTO DE OTIMIZAÇÃO \#2: PRECISÃO NA DIGITAÇÃO}} \\
+                \footnotesize
+                O erro \textbf{"kl pena"} é um sintoma clássico de \textit{multitarefa}. Sua equipe provavelmente estava atendendo alguém presencialmente enquanto digitava. Isso comprova sobrecarga operacional, não má vontade.
+            \end{tcolorbox}
+        } \\
+    \end{tabular}
+\end{tcolorbox}
+
+% --- SEÇÃO 3: DIAGNÓSTICO VISUAL ---
+\vspace{0.2cm}
+\begin{tcolorbox}[
+    enhanced, 
+    colback=krooaGray, 
+    colframe=white, 
+    title=\textcolor{krooaNavy}{\textbf{3. DIAGNÓSTICO OPERACIONAL}},
+    coltitle=krooaNavy,
+    fonttitle=\large\bfseries,
+    frame hidden
+]
+    \begin{itemize}
+        \item[\iconAlert] \textbf{Dependência Humana:} A resposta rápida (17:49) mostra que sua equipe é atenta, mas depende da disponibilidade momentânea. Se estivessem ao telefone, o lead esperaria.
+        \item[\iconAlert] \textbf{Refinamento Premium:} Para tratamentos de alto valor, a precisão da escrita e o acolhimento inicial são vitais para transmitir a mesma qualidade técnica do Doutor.
+    \end{itemize}
+\end{tcolorbox}
+
+% --- SEÇÃO 4: A SOLUÇÃO KROOA (ATUALIZADA) ---
+\vspace{0.5cm}
+
+\begin{tcolorbox}[
+    skin=enhanced,
+    colback=krooaNavy,
+    colframe=krooaLime,
+    boxrule=1pt,
+    arc=4mm,
+    shadow={2mm}{-2mm}{0mm}{black!30},
+    title=\textbf{\large KROOA: INTELIGÊNCIA CLÍNICA VERTICAL},
+    coltitle=krooaLime,
+    fonttitle=\bfseries
+]
+    \color{white}
+    Diferente de "Chatbots" que apenas respondem, o Krooa é um \textbf{Sistema Vertical} que atua em todas as camadas do processo clínico:
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item[\iconCheck] \textbf{Camada de Comunicação:} Elimina erros humanos ("kl pena"), garantindo um padrão de escrita "Concierge" e negociação persuasiva.
+        \item[\iconCheck] \textbf{Camada de Processo:} Inverte a lógica da burocracia. O sistema fecha a agenda emocionalmente antes de pedir dados cadastrais, aumentando a conversão.
+        \item[\iconCheck] \textbf{Camada de Infraestrutura:} Atua 24/7 de forma sistêmica, escalando o atendimento sem depender da disponibilidade física da recepção.
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \centering
+    \begin{tcolorbox}[colback=krooaLime, colframe=krooaLime, width=12cm, halign=center, arc=4mm, boxsep=15pt, top=8pt, bottom=8pt]
+        \href{https://krooa.com}{\textbf{\Large\textcolor{krooaNavy}{PROFISSIONALIZAR MEU SISTEMA}}}
+    \end{tcolorbox}
+    \vspace{0.3cm}
+\end{tcolorbox}
+
+\end{document}
