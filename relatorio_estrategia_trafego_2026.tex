@@ -20,10 +20,21 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{amssymb}
+\usepackage{needspace}
+\usepackage{hyperref}
 \pgfplotsset{compat=1.18}
 
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Framework de Escala - Tráfego Pago Low Ticket 2026},
+    pdfauthor={Heitor Nogueira}
+}
+
 % --- Configurações de Layout ---
-\geometry{left=2.5cm, right=2.5cm, top=4cm, bottom=2.5cm, headsep=1cm, headheight=60pt}
+\geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2.5cm, headsep=1cm, headheight=60pt}
 
 % --- Definição de Cores ---
 \definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
@@ -47,6 +58,7 @@
 }
 
 % Rodapé
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Mentoria: \textbf{Heitor Nogueira} | @heitornogueirama}}
 \fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
 
 % --- Linha separadora do CABEÇALHO ---
@@ -113,7 +125,22 @@
 
     \vfill
     {\small Framework prático para produtos digitais de baixo ticket, contemplando as novas regras fiscais do Facebook (Imposto de 12,5\% sobre investimento em tráfego) e estruturas validadas em campanhas reais rodando em dezembro/2025 e janeiro/2026.} \\
-    \vspace{1cm}
+    \vspace{1.5cm}
+
+    % Box de Créditos do Mentor
+    \colorbox{accentColor}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \textcolor{white}{\vspace{0.5cm}}
+            \textcolor{white}{\Large \textbf{MENTOR: HEITOR NOGUEIRA}} \\
+            \textcolor{white}{\vspace{0.2cm}}
+            \textcolor{white}{\normalsize YouTube: \textbf{@heitornogueirama} | 8.4K inscritos} \\
+            \textcolor{white}{\normalsize Instagram: \textbf{instagram.com/heitornogueirama}} \\
+            \textcolor{white}{\vspace{0.5cm}}
+        }%
+    }
+
+    \vspace{0.2cm}
     \textbf{Data Base:} 07 de Janeiro de 2026
 \end{titlepage}
 
@@ -153,7 +180,7 @@ Esta nova realidade elimina do mercado dois perfis de operadores:
 
 \textcolor{accentColor}{\textbf{A solução:}} Dominar frameworks de validação progressiva, compreendendo as \textbf{6 Fases da Jornada Low Ticket} e aplicando estruturas de campanha com critérios objetivos de decisão.
 
-\newpage
+\needspace{8cm}
 
 \section{As 6 Fases da Jornada Low Ticket}
 
@@ -190,7 +217,7 @@ O erro crítico de gestores inexperientes é aumentar orçamento baseado em volu
 
 \textcolor{accentColor}{\textbf{Regra de Ouro:}} Somente criativos com ROAS mínimo de 1.8 na fase de teste justificam progressão para escala. Criativos com ROAS entre 1.3 e 1.5 permanecem em observação. Abaixo de 1.3, desativação imediata.
 
-\newpage
+\needspace{8cm}
 
 \section{Protocolo de Teste de Criativo (Fase de Validação)}
 
@@ -240,7 +267,7 @@ Para um produto com ticket médio de \reais{37,00}:
 
 \textcolor{warningOrange}{\textbf{Estrutura Simplificada:}} Para orçamentos mais restritos, é aceitável usar \textbf{2 conjuntos por criativo} com orçamento mínimo de 35\% do ticket.
 
-\newpage
+\needspace{10cm}
 
 \subsection{KPIs de Sucesso no Teste de Criativo}
 
@@ -278,7 +305,7 @@ Enquanto o ROAS é o indicador primário de viabilidade econômica, as métricas
 
 \textcolor{accentColor}{\textbf{Atenção:}} Criativos com ROAS alto mas métricas secundárias ruins tendem a ter \textbf{baixa durabilidade na escala}. Priorize criativos que atendam todos os critérios.
 
-\newpage
+\needspace{8cm}
 
 \section{Metodologia de Escala: De \reais{50,00} para \reais{500,00}+}
 
@@ -323,6 +350,7 @@ Quando um criativo performa bem no teste (ROAS $\geq$ 1.8 por 2-3 dias consecuti
 
 \textcolor{warningOrange}{\textbf{Preferência Atual:}} Menos conjuntos com mais verba (concentração) ao invés de pulverização em múltiplas campanhas.
 
+\needspace{6cm}
 \subsection{Escala em ABO: Modelo 02 (Multi-Criativo)}
 
 Agrupe 3 a 4 criativos validados em uma única campanha:
@@ -333,8 +361,6 @@ Agrupe 3 a 4 criativos validados em uma única campanha:
     \item Orçamento: 3x a 4x o ticket médio
     \item O Facebook distribuirá orçamento entre os criativos conforme performance
 \end{enumerate}
-
-\newpage
 
 \subsection{Escala em CBO: Modelo 1-3-1}
 
@@ -378,7 +404,7 @@ Para criativos com \textbf{constância validada} (ROAS estável por 5-7 dias):
 
 \textbf{Regra de Paciência:} Mantenha estruturas de escala ativas por no mínimo 3 dias completos antes de desativar, \textbf{desde que o ROAS acumulado não caia abaixo de 0.7x}. Muitas campanhas que iniciam ruins tornam-se lucrativas no 4º ou 5º dia.
 
-\newpage
+\needspace{8cm}
 
 \section{Metodologia MVT: Modelagem, Vantagem e Tráfego}
 
@@ -514,8 +540,6 @@ Quando você tem 3 ou mais criativos com ROAS $\geq$ 1.8, você pode:
 
 \textcolor{primaryColor}{\textbf{Filosofia do Cardápio:}} Não existe ``estrutura perfeita''. Ofertas diferentes respondem melhor a estruturas diferentes. Teste ABO e CBO em paralelo para identificar qual funciona melhor \textbf{para aquela oferta específica}.
 
-\newpage
-
 \section{Estudo de Caso Real: Dezembro/2025 - Janeiro/2026}
 
 Esta seção documenta uma operação real executada com produto low ticket de \reais{37,00} (ticket médio), demonstrando a aplicação prática do framework.
@@ -572,8 +596,6 @@ Esta seção documenta uma operação real executada com produto low ticket de \
     \item Escala em CBO (Criativo 31, \reais{200,00}) performou ROAS 2.0+
     \item Escala em ABO Top 4 (Criativos 14, 31, 42, 44) performou ROAS 1.8+
 \end{itemize}
-
-\newpage
 
 \subsection{Lições do Caso Real}
 
@@ -758,8 +780,6 @@ Pause imediatamente um conjunto/campanha quando:
 
 \textcolor{accentColor}{\textbf{Exceção:}} Se um criativo teve ROAS excepcional (2.5+) por vários dias e de repente cai para 0.8x em um único dia, aguarde mais 24h antes de pausar (pode ser anomalia temporária do algoritmo).
 
-\newpage
-
 \section{Erros Fatais a Evitar}
 
 \subsection{1. Escalar Baseado em Número de Vendas}
@@ -841,7 +861,7 @@ Para aprofundar a metodologia MVT (Modelagem, Vantagem, Tráfego), incluindo:
 
 Entre em contato via WhatsApp ou Instagram para conhecer a \textbf{Mentoria Ou Processo}.
 
-\vspace{2cm}
+\vspace{0.5cm}
 
 \begin{center}
 \colorbox{lightGray}{%
@@ -854,6 +874,74 @@ Entre em contato via WhatsApp ou Instagram para conhecer a \textbf{Mentoria Ou P
         \vspace{0.3cm}
     }%
 }
+\end{center}
+\pagebreak
+
+% --- PÁGINA FINAL DE CRÉDITOS ---
+\thispagestyle{empty}
+\vspace*{0.5cm}
+
+\begin{center}
+    {\Huge \textcolor{primaryColor}{\textbf{SOBRE O MENTOR}}} \\
+    \vspace{1cm}
+    \rule{12cm}{1.5pt}
+    \vspace{1cm}
+
+    \colorbox{accentColor}{%
+        \parbox{0.92\textwidth}{%
+            \centering
+            \textcolor{white}{\vspace{0.6cm}}
+            \textcolor{white}{\Huge \textbf{HEITOR NOGUEIRA}} \\
+            \textcolor{white}{\vspace{0.3cm}}
+            \textcolor{white}{\Large Especialista em Growth Marketing \& Tráfego Pago} \\
+            \textcolor{white}{\vspace{0.6cm}}
+        }%
+    }
+
+    \vspace{1cm}
+
+    \begin{flushleft}
+    \large
+    \textbf{YouTube:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{@heitornogueirama}} \\
+    \hspace{1cm} \textcolor{secondaryText}{8.4K inscritos | 244 vídeos} \\
+    \hspace{1cm} \textcolor{secondaryText}{Conteúdo sobre Tráfego Pago, Low Ticket e Marketing Digital} \\
+
+    \vspace{1cm}
+
+    \textbf{Instagram:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{@heitornogueirama}} \\
+    \hspace{1cm} \textcolor{secondaryText}{\url{https://instagram.com/heitornogueirama}} \\
+
+    \vspace{1cm}
+
+    \textbf{Mentoria Ou Processo:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{secondaryText}{Metodologia MVT completa para produtos digitais Low Ticket} \\
+    \hspace{1cm} \textcolor{secondaryText}{Acompanhamento ao vivo 2x por semana} \\
+    \hspace{1cm} \textcolor{secondaryText}{Frameworks, templates e suporte via Discord/WhatsApp} \\
+    \end{flushleft}
+
+    \vspace{2cm}
+
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.4cm}
+            \textcolor{primaryColor}{\large \textbf{``Cristão, Casado, Pai da Laura''}} \\
+            \vspace{0.2cm}
+            \textcolor{secondaryText}{\normalsize Construindo negócios digitais escaláveis e sustentáveis} \\
+            \vspace{0.4cm}
+        }%
+    }
+
+    \vfill
+
+    \textcolor{secondaryText}{\footnotesize Framework compilado em 07 de Janeiro de 2026} \\
+    \textcolor{secondaryText}{\footnotesize Baseado em transcrição de conteúdo original do canal @heitornogueirama}
+
 \end{center}
 
 \end{document}
