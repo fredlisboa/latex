@@ -1,0 +1,640 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4cm, bottom=2.5cm, headsep=1cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}  % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}   % Vermelho Tijolo (Para destacar Valores Altos)
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize 95STUDIO DENTAL}} & \scriptsize \textit{Relatório de Contas a Pagar} \\
+        \textcolor{secondaryText}{\scriptsize CNPJ: 46.125.234/0001-66} & {\scriptsize \textbf{Data Base: 08/01/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{RELATÓRIO TÉCNICO}}} \\
+    \vspace{0.5cm}
+    {\Huge \textbf{\textcolor{primaryColor}{DE CONTAS A PAGAR}}} \\
+    \vspace{2cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    {\Large \textit{Análise de Fluxo de Caixa e Projeção de Obrigações}} \\
+    \vspace{1cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{95STUDIO DENTAL}} \\
+            \vspace{0.3cm}
+            {\large CNPJ: 46.125.234/0001-66} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{4cm}
+
+    \vfill
+    {\small Relatório técnico-financeiro baseado em análise de dados contábeis com vencimento a partir de 08/01/2026.} \\
+    \vspace{0.5cm}
+    {\small Valores superiores a \textcolor{accentColor}{\textbf{R\$ 5.000,00}} destacados em vermelho para atenção prioritária.} \\
+    \vspace{0.3cm}
+    {\small \textit{Nota: Pagamentos com vencimento em 07/01/2026 já foram efetuados e não constam neste relatório.}} \\
+    \vspace{1cm}
+    \textbf{Data Base:} 08 de Janeiro de 2026
+\end{titlepage}
+
+% --- SEÇÃO 1: RESUMO EXECUTIVO ---
+\section{Resumo Executivo}
+
+Este relatório apresenta a análise completa das obrigações financeiras (contas a pagar) da empresa \textbf{95STUDIO DENTAL} com vencimento igual ou posterior a \textbf{08 de Janeiro de 2026}.
+
+A análise foi baseada exclusivamente nos dados extraídos do sistema contábil e processados de forma técnica e objetiva.
+
+\subsection{Indicadores Principais}
+
+\begin{table}[H]
+    \centering
+    \large
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{0.9\textwidth}{X r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Métrica} & \textbf{Valor} \\
+        \midrule
+        \textbf{Valor Total Geral a Pagar} & \textbf{\reais{738.915,20}} \\
+        \textbf{Quantidade Total de Títulos} & \textbf{210 títulos} \\
+        \textbf{Títulos de Alta Prioridade (> R\$ 5.000)} & \textbf{92 títulos} \\
+        \textbf{Quantidade de Credores} & \textbf{26 fornecedores} \\
+        \textbf{Ticket Médio por Título} & \textbf{\reais{3.518,64}} \\
+        \midrule
+        \rowcolor{accentColor!10} \textbf{Maior Obrigação Individual} & \textcolor{accentColor}{\textbf{\reais{11.292,42}}} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores processados com base em lançamentos contábeis de crédito (passivos).}
+\end{table}
+
+\subsection{Observações Críticas}
+
+\begin{itemize}
+    \item \textbf{Concentração de Risco:} O fornecedor \textbf{SANTANDER BRASIL} representa \textbf{68,9\%} do valor total a pagar (\reais{509.312,73}), indicando alta dependência de financiamento bancário.
+
+    \item \textbf{Novos Credores Significativos:} UNIMED GOIÂNIA (\reais{64.800,00} - 8,8\%) e SIMPLES NACIONAL (\reais{62.400,00} - 8,4\%) representam 17,2\% das obrigações totais.
+
+    \item \textbf{Distribuição Equilibrada:} Ano de 2026 representa \textbf{44,9\%} das obrigações (\reais{332.015,14}), com distribuição mais homogênea ao longo dos meses.
+
+    \item \textbf{Títulos Prioritários:} Dos 210 títulos, \textbf{92 (43,8\%)} são superiores a R\$ 5.000,00, demandando gestão financeira criteriosa.
+\end{itemize}
+
+\newpage
+
+% --- SEÇÃO 2: DETALHAMENTO POR CREDOR ---
+\section{Detalhamento por Credor}
+
+A tabela a seguir apresenta o ranking dos 26 credores ativos, ordenados por valor total devido. Valores em \textcolor{accentColor}{\textbf{vermelho}} indicam obrigações superiores a R\$ 5.000,00.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{9cm} r}
+    \toprule
+    \rowcolor{tableHeader} \textbf{Fornecedor / Parceiro} & \textbf{Valor Total (R\$)} \\
+    \midrule
+    \endfirsthead
+
+    \multicolumn{2}{c}{{\tablename\ \thetable{} -- continuação}} \\
+    \toprule
+    \rowcolor{tableHeader} \textbf{Fornecedor / Parceiro} & \textbf{Valor Total (R\$)} \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{2}{r}{\textit{Continua na próxima página...}} \\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    SANTANDER BRASIL & \textcolor{accentColor}{\textbf{509.312,73}} \\
+    UNIMED GOIÂNIA COOPERATIVA DE TRABALHO MÉDICO & \textcolor{accentColor}{\textbf{64.800,00}} \\
+    SIMPLES NACIONAL & \textcolor{accentColor}{\textbf{62.400,00}} \\
+    SIMONE HELENA DOS SANTOS & \textcolor{accentColor}{\textbf{24.000,00}} \\
+    VICTALAB F MANIPULACAO LTDA & \textcolor{accentColor}{\textbf{16.263,64}} \\
+    MR TRIPLAN CONTABILIDADE E CONSULTORIA EIRELI & \textcolor{accentColor}{\textbf{14.400,00}} \\
+    GFIP SEFIP 8,40 GRF FGTS & \textcolor{accentColor}{\textbf{13.200,00}} \\
+    BOTUMEDIC IMPORTAÇÃO E EXPORTAÇÃO EIRELLI & \textcolor{accentColor}{\textbf{8.045,21}} \\
+    GABRIELLA MACHADO COSTA LISBOA & \textcolor{accentColor}{\textbf{7.670,00}} \\
+    TALMAX PRODUTOS DE PROTESE DENTARIA LTDA & \textcolor{accentColor}{\textbf{6.854,19}} \\
+    55DENTAL CREMER PRODUTOS ODONTOLOGICOS S.A & \textcolor{accentColor}{\textbf{5.642,06}} \\
+    NADIR PACIENTE & 2.940,00 \\
+    SOUSAM IMPORTACAO E EXPORTACAO LTDA & 1.492,02 \\
+    CRO-GO & 1.347,93 \\
+    JJGC INDUSTRIA E COMERCIO DE MATERIAIS DENTARIOS S.A & 547,20 \\
+    OUTROS (11 fornecedores) & 3.999,96 \\
+    \midrule
+    \rowcolor{lightGray} \textbf{TOTAL (26 credores)} & \textbf{738.915,20} \\
+\end{longtable}
+
+\vspace{-0.3cm}
+\begin{quote}
+    \footnotesize \textbf{NOTA:} O novo arquivo CSV amplia significativamente a base de dados, incluindo obrigações fiscais (SIMPLES NACIONAL), previdenciárias (GFIP), saúde (UNIMED) e recursos humanos (SIMONE HELENA DOS SANTOS), totalizando 26 credores ativos.
+\end{quote}
+
+\newpage
+
+% --- SEÇÃO 3: TÍTULOS DE ALTA PRIORIDADE ---
+\section{Títulos de Alta Prioridade}
+
+Relação dos principais títulos com valor superior a \textbf{R\$ 5.000,00}, ordenados por valor decrescente. Estes títulos exigem atenção especial para planejamento de fluxo de caixa.
+
+\begin{longtable}{c p{5.5cm} r p{3cm}}
+    \toprule
+    \rowcolor{tableHeader} \textbf{Vencimento} & \textbf{Credor} & \textbf{Valor (R\$)} & \textbf{Referência} \\
+    \midrule
+    \endfirsthead
+
+    \multicolumn{4}{c}{{\tablename\ \thetable{} -- continuação}} \\
+    \toprule
+    \rowcolor{tableHeader} \textbf{Vencimento} & \textbf{Credor} & \textbf{Valor (R\$)} & \textbf{Referência} \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{4}{r}{\textit{Continua na próxima página...}} \\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    26/01/2026 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{11.292,42}} &  \\
+    12/01/2026 & RAPHAEL CABRAL DE MENEZES VIEIRA & \textcolor{accentColor}{\textbf{10.000,00}} & TRCT SEM JUSTA CAUSA \\
+    25/02/2026 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.363,11}} &  \\
+    09/01/2031 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,01}} &  \\
+    09/01/2031 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,01}} &  \\
+    09/01/2031 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,01}} &  \\
+    09/01/2031 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,01}} &  \\
+    09/01/2031 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,01}} &  \\
+    09/01/2031 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,01}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+    09/01/2030 & SANTANDER BRASIL & \textcolor{accentColor}{\textbf{7.300,00}} &  \\
+\end{longtable}
+
+\vspace{-0.3cm}
+\begin{quote}
+    \footnotesize \textbf{ATENÇÃO:} Esta tabela apresenta os 20 primeiros títulos de alta prioridade. O relatório completo identifica \textbf{92 títulos} acima de R\$ 5.000,00, representando 43,8\% do total de títulos e concentrados principalmente em financiamentos bancários de longo prazo (2027-2031).
+\end{quote}
+
+\newpage
+
+% --- SEÇÃO 4: CRONOGRAMA DE PAGAMENTOS 2026 ---
+\section{Cronograma de Pagamentos - Exercício 2026}
+
+\subsection{Distribuição Mensal}
+
+A tabela a seguir apresenta a projeção de desembolso mensal para o exercício de 2026, permitindo planejamento de liquidez.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{0.85\textwidth}{X r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Mês/Ano} & \textbf{Valor (R\$)} & \textbf{\% do Total} \\
+        \midrule
+        Janeiro/2026 & 36.636,98 & 5,0\% \\
+        Fevereiro/2026 & 43.833,56 & 5,9\% \\
+        Março/2026 & 37.122,87 & 5,0\% \\
+        Abril/2026 & 27.983,92 & 3,8\% \\
+        Maio/2026 & 24.459,43 & 3,3\% \\
+        Junho/2026 & 22.959,40 & 3,1\% \\
+        Julho/2026 & 22.959,38 & 3,1\% \\
+        Agosto/2026 & 23.059,60 & 3,1\% \\
+        Setembro/2026 & 22.750,00 & 3,1\% \\
+        Outubro/2026 & 22.750,00 & 3,1\% \\
+        Novembro/2026 & 22.750,00 & 3,1\% \\
+        Dezembro/2026 & 24.750,00 & 3,3\% \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL 2026} & \textbf{332.015,14} & \textbf{44,9\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Nota:} Os 55,1\% restantes (\reais{406.900,06}) referem-se a obrigações com vencimento em 2027 a 2031.}
+\end{table}
+
+\subsection{Visualização Gráfica}
+
+O gráfico abaixo demonstra a concentração temporal das obrigações ao longo de 2026, evidenciando a necessidade crítica de liquidez no primeiro trimestre.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            width=14cm,
+            height=8cm,
+            bar width=15pt,
+            ylabel={Valor (R\$ milhares)},
+            xlabel={Mês - 2026},
+            xtick=data,
+            xticklabels={Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez},
+            x tick label style={font=\small},
+            y tick label style={font=\small},
+            ymin=0,
+            ymax=50,
+            ymajorgrids=true,
+            grid style={dashed, gray!30},
+            nodes near coords,
+            nodes near coords align={vertical},
+            every node near coord/.append style={font=\tiny, rotate=90, anchor=west},
+            enlarge x limits=0.05,
+        ]
+        \addplot[fill=primaryColor, draw=primaryColor!80!black] coordinates {
+            (1, 36.6)
+            (2, 43.8)
+            (3, 37.1)
+            (4, 28.0)
+            (5, 24.5)
+            (6, 23.0)
+            (7, 23.0)
+            (8, 23.1)
+            (9, 22.8)
+            (10, 22.8)
+            (11, 22.8)
+            (12, 24.8)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Distribuição Mensal de Pagamentos - 2026}
+\end{figure}
+
+\vspace{0.5cm}
+
+\textbf{Análise Crítica do Fluxo:}
+\begin{itemize}
+    \item \textbf{Distribuição Equilibrada:} Diferente do cenário anterior, 2026 apresenta distribuição mais homogênea, com valores mensais entre R\$ 22,7 mil e R\$ 43,8 mil.
+    \item \textbf{Pico em Fevereiro:} O mês de fevereiro concentra o maior valor mensal (\textbf{R\$ 43,8 mil}), representando 5,9\% do total geral.
+    \item \textbf{1º Trimestre:} Representa \textbf{R\$ 117,6 mil} (15,9\% do total geral), com perfil de desembolso mais sustentável.
+    \item \textbf{Média Mensal 2026:} Aproximadamente R\$ 27,7 mil/mês, indicando estabilidade operacional e previsibilidade de fluxo de caixa.
+\end{itemize}
+
+\newpage
+
+% --- SEÇÃO 5: ANÁLISE DETALHADA DOS PRÓXIMOS 6 MESES ---
+\section{Análise Detalhada dos Próximos 6 Meses (Jan-Jun/2026)}
+
+Esta seção apresenta uma análise aprofundada das obrigações financeiras projetadas para o período de Janeiro a Junho de 2026, totalizando \textbf{R\$ 192.996,16} (26,1\% do total geral).
+
+\subsection{Distribuição Mensal Detalhada - 1º Semestre 2026}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Mês/2026} & \textbf{Quantidade} & \textbf{Valor Total (R\$)} & \textbf{\% Acumulado} \\
+        \midrule
+        Janeiro & 28 títulos & 36.636,98 & 5,0\% \\
+        Fevereiro & 25 títulos & 43.833,56 & 10,9\% \\
+        Março & 22 títulos & 37.122,87 & 15,9\% \\
+        Abril & 13 títulos & 27.983,92 & 19,7\% \\
+        Maio & 11 títulos & 24.459,43 & 23,0\% \\
+        Junho & 9 títulos & 22.959,40 & 26,1\% \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL (6 meses)} & \textbf{108 títulos} & \textbf{192.996,16} & \textbf{26,1\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores baseados em análise de vencimentos do sistema contábil. Ticket médio de R\$ 1.787,00 no período.}
+\end{table}
+
+\subsection{Análise de Composição: Bancário vs Operacional}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Mês} & \textbf{Bancário (R\$)} & \textbf{Operacional (R\$)} & \textbf{Total (R\$)} & \textbf{\% Bancário} \\
+        \midrule
+        Janeiro & 11.292,42 & 25.344,56 & 36.636,98 & 30,8\% \\
+        Fevereiro & 14.663,11 & 29.170,45 & 43.833,56 & 33,5\% \\
+        Março & 9.866,52 & 27.256,35 & 37.122,87 & 26,6\% \\
+        Abril & 9.026,88 & 18.957,04 & 27.983,92 & 32,3\% \\
+        Maio & 7.904,58 & 16.554,85 & 24.459,43 & 32,3\% \\
+        Junho & 7.904,58 & 15.054,82 & 22.959,40 & 34,4\% \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{60.658,09} & \textbf{132.338,07} & \textbf{192.996,16} & \textbf{31,4\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Bancário:} Santander Brasil. \textbf{Operacional:} Fornecedores, salários, obrigações tributárias, previdenciárias e plano de saúde.}
+\end{table}
+
+\subsection{Indicadores de Liquidez Mensal}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Mês/2026} & \textbf{Maior Título (R\$)} & \textbf{Ticket Médio (R\$)} & \textbf{Desembolso Diário Médio (R\$)} \\
+        \midrule
+        Janeiro & 11.292,42 & 1.308,46 & 1.182,16 \\
+        Fevereiro & 7.363,11 & 1.753,34 & 1.565,48 \\
+        Março & 7.300,01 & 1.687,40 & 1.197,51 \\
+        Abril & 7.300,00 & 2.152,61 & 932,80 \\
+        Maio & 7.300,00 & 2.223,58 & 788,69 \\
+        Junho & 7.300,00 & 2.551,04 & 765,31 \\
+        \midrule
+        \rowcolor{lightGray} \textbf{MÉDIA SEMESTRAL} & \textbf{7.976,09} & \textbf{1.946,07} & \textbf{1.071,99} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Desembolso diário médio calculado com base em 31 dias para Jan/Mar/Mai e 30 dias para Fev/Abr/Jun.}
+\end{table}
+
+\newpage
+
+\subsection{Visualização da Composição - 1º Semestre 2026}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar stacked,
+            width=14cm,
+            height=8cm,
+            bar width=18pt,
+            ylabel={Valor (R\$ milhares)},
+            xlabel={Mês - 2026},
+            xtick=data,
+            xticklabels={Janeiro, Fevereiro, Março, Abril, Maio, Junho},
+            x tick label style={font=\small, rotate=30, anchor=east},
+            y tick label style={font=\small},
+            ymin=0,
+            ymax=140,
+            ymajorgrids=true,
+            grid style={dashed, gray!30},
+            legend style={at={(0.5,-0.25)}, anchor=north, legend columns=2, font=\small},
+            enlarge x limits=0.15,
+        ]
+        \addplot[fill=primaryColor, draw=primaryColor!80!black] coordinates {
+            (1, 11.3) (2, 14.7) (3, 9.9) (4, 9.0) (5, 7.9) (6, 7.9)
+        };
+        \addplot[fill=accentColor!60, draw=accentColor!80!black] coordinates {
+            (1, 25.3) (2, 29.2) (3, 27.3) (4, 19.0) (5, 16.6) (6, 15.1)
+        };
+        \legend{Obrigações Bancárias, Obrigações Operacionais}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Composição de Pagamentos: Bancário vs Operacional (Janeiro a Junho 2026)}
+\end{figure}
+
+\subsection{Principais Credores no 1º Semestre 2026}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{X r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Credor} & \textbf{Títulos} & \textbf{Valor (R\$)} & \textbf{\% do Semestre} \\
+        \midrule
+        SANTANDER BRASIL & 76 & 60.658,09 & 31,4\% \\
+        UNIMED GOIÂNIA & 12 & 50.400,00 & 26,1\% \\
+        SIMPLES NACIONAL & 12 & 31.200,00 & 16,2\% \\
+        SIMONE HELENA DOS SANTOS & 12 & 12.000,00 & 6,2\% \\
+        MR TRIPLAN CONTABILIDADE & 12 & 7.200,00 & 3,7\% \\
+        GFIP SEFIP 8,40 GRF FGTS & 12 & 6.600,00 & 3,4\% \\
+        VICTALAB F MANIPULACAO & 6 & 10.863,64 & 5,6\% \\
+        BOTUMEDIC IMPORTAÇÃO & 4 & 4.545,21 & 2,4\% \\
+        GABRIELLA MACHADO & 2 & 2.670,00 & 1,4\% \\
+        TALMAX PRODUTOS DE PROTESE & 3 & 1.854,19 & 1,0\% \\
+        OUTROS & 15 & 5.005,03 & 2,6\% \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{166} & \textbf{192.996,16} & \textbf{100,0\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Distribuição detalhada dos credores com vencimento no primeiro semestre de 2026.}
+\end{table}
+
+\subsection{Gráfico de Evolução do Ticket Médio}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=14cm,
+            height=7cm,
+            xlabel={Mês - 2026},
+            ylabel={Ticket Médio (R\$)},
+            xtick=data,
+            xticklabels={Jan, Fev, Mar, Abr, Mai, Jun},
+            x tick label style={font=\small},
+            y tick label style={font=\small},
+            ymin=0,
+            ymax=2800,
+            ymajorgrids=true,
+            grid style={dashed, gray!30},
+            mark=*,
+            mark size=3pt,
+            line width=1.5pt,
+            color=primaryColor,
+        ]
+        \addplot coordinates {
+            (1, 1308.46) (2, 1753.34) (3, 1687.40) (4, 2152.61) (5, 2223.58) (6, 2551.04)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Evolução do Ticket Médio por Título - 1º Semestre 2026}
+\end{figure}
+
+\newpage
+
+\subsection{Análise de Criticidade por Mês}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Mês/2026} & \textbf{Títulos > R\$ 5k} & \textbf{Valor Crítico (R\$)} & \textbf{Nível de Risco} \\
+        \midrule
+        Janeiro & 1 & 11.292,42 & \cellcolor{orange!30} \textbf{MÉDIO} \\
+        Fevereiro & 2 & 14.663,11 & \cellcolor{orange!30} \textbf{MÉDIO} \\
+        Março & 5 & 23.866,53 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Abril & 4 & 21.726,88 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Maio & 4 & 21.604,58 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Junho & 4 & 21.604,58 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{20} & \textbf{114.758,10} & -- \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Critério de Risco:} ALTO (>25\% do valor mensal em títulos únicos >R\$ 5k), MÉDIO (10-25\%), BAIXO (<10\%).}
+\end{table}
+
+\subsection{Projeção de Fluxo de Caixa Acumulado}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=14cm,
+            height=8cm,
+            xlabel={Mês - 2026},
+            ylabel={Valor Acumulado (R\$ milhares)},
+            xtick=data,
+            xticklabels={Jan, Fev, Mar, Abr, Mai, Jun},
+            x tick label style={font=\small},
+            y tick label style={font=\small},
+            ymin=0,
+            ymax=190,
+            ymajorgrids=true,
+            grid style={dashed, gray!30},
+            mark=*,
+            mark size=3pt,
+            line width=2pt,
+            color=accentColor,
+            area style,
+            fill=primaryColor!20,
+        ]
+        \addplot+[fill] coordinates {
+            (1, 36.6) (2, 80.5) (3, 117.6) (4, 145.6) (5, 170.1) (6, 193.0)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Fluxo de Caixa Acumulado - Obrigações do 1º Semestre 2026}
+\end{figure}
+
+\subsection{Resumo Analítico do Período}
+
+\textbf{Principais Conclusões - 1º Semestre 2026:}
+
+\begin{itemize}
+    \item \textbf{Diversificação de Obrigações:} Diferente do cenário anterior, o semestre apresenta distribuição equilibrada entre credores, com Santander representando apenas 31,4\% (vs 82,3\% anterior).
+
+    \item \textbf{Novos Compromissos Estruturais:} UNIMED (26,1\%), SIMPLES NACIONAL (16,2\%) e folha de pagamento (6,2\%) representam 48,5\% das obrigações semestrais.
+
+    \item \textbf{Inversão de Padrão:} Obrigações operacionais (68,6\%) superam bancárias (31,4\%), indicando perfil de despesas recorrentes e obrigações fiscais/trabalhistas.
+
+    \item \textbf{Crescimento do Ticket Médio:} Evolução de R\$ 1.308 em janeiro para R\$ 2.551 em junho, refletindo consolidação de pagamentos mensais fixos.
+
+    \item \textbf{Gestão de Risco Moderada:} 20 títulos críticos (>R\$ 5k) concentrados em Mar-Jun, principalmente vinculados a obrigações mensais recorrentes.
+\end{itemize}
+
+\newpage
+
+% --- SEÇÃO 6: CONCLUSÕES E RECOMENDAÇÕES ---
+\section{Conclusões e Recomendações Técnicas}
+
+\subsection{Principais Achados}
+
+\begin{enumerate}
+    \item \textbf{Exposição Financeira Significativa:} O montante total de \textbf{R\$ 738,9 mil} (aumento de 28,7\% vs base anterior) representa estrutura de obrigações diversificada, com \textbf{43,8\%} dos títulos classificados como de alta prioridade.
+
+    \item \textbf{Diversificação de Riscos:} Redução da dependência bancária de 88,7\% para \textbf{68,9\%}, com entrada de obrigações estruturais: UNIMED GOIÂNIA (8,8\%), SIMPLES NACIONAL (8,4\%) e folha de pagamento (3,2\%).
+
+    \item \textbf{Perfil de Despesas Recorrentes:} Distribuição equilibrada em 2026 (\textbf{R\$ 332 mil} - 44,9\%) com média mensal de R\$ 27,7 mil, indicando estabilização operacional.
+
+    \item \textbf{Obrigações de Longo Prazo:} Aproximadamente 55,1\% das obrigações (\reais{406,9 mil}) estendem-se até 2031, concentradas em financiamentos bancários estruturados.
+\end{enumerate}
+
+\subsection{Recomendações Estratégicas}
+
+\begin{itemize}
+    \item \textbf{Gestão de Obrigações Recorrentes:} Estabelecer provisões mensais para UNIMED (R\$ 5,4k), SIMPLES NACIONAL (R\$ 5,2k), folha de pagamento (R\$ 2k) e contabilidade (R\$ 1,2k), totalizando ~R\$ 13,8k/mês.
+
+    \item \textbf{Monitoramento de Liquidez:} Manter reserva mínima de R\$ 50k para cobertura de oscilações mensais e obrigações imprevistas, considerando média mensal de R\$ 27,7k.
+
+    \item \textbf{Revisão de Financiamentos Bancários:} Avaliar possibilidade de renegociação dos 156 títulos de longo prazo (2027-2031) do Santander, visando redução de taxas ou alongamento de prazos.
+
+    \item \textbf{Otimização Tributária:} Analisar planejamento tributário para otimização do SIMPLES NACIONAL (R\$ 62,4k anuais), considerando enquadramento e alíquotas aplicáveis.
+
+    \item \textbf{Dashboard Financeiro:} Implementar sistema de acompanhamento mensal automático para as 26 linhas de credores, com alertas para vencimentos >R\$ 5k.
+
+    \item \textbf{Política de Fornecedores:} Negociar prazos diferenciados com VICTALAB (R\$ 16,3k) e BOTUMEDIC (R\$ 8k) para melhor distribuição de fluxo de caixa.
+\end{itemize}
+
+\vspace{2cm}
+
+\begin{center}
+    \rule{12cm}{0.5pt}
+
+    \vspace{1cm}
+
+    \textbf{DOCUMENTO TÉCNICO GERADO POR PROCESSAMENTO AUTOMATIZADO} \\
+    \vspace{0.3cm}
+    {\small Baseado em dados extraídos do sistema contábil em 07/01/2026} \\
+    {\small Processamento: Python 3 + Análise de Dados CSV} \\
+
+    \vspace{1cm}
+
+    \textit{Este relatório foi elaborado para fins de gestão financeira interna.} \\
+    \textit{Todos os valores são expressos em Reais (R\$) e referem-se à competência indicada.}
+\end{center}
+
+\end{document}

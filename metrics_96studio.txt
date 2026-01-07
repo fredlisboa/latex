@@ -1,0 +1,95 @@
+Processando arquivo: 96STUDIOaccount.move.line_SANITIZED.csv
+Data base: 08/01/2026
+--------------------------------------------------------------------------------
+
+================================================================================
+RESUMO GERAL
+================================================================================
+Total de títulos: 210
+Valor total a pagar: R$ 738.915,20
+Títulos de alta prioridade (> R$ 5.000): 92
+Quantidade de credores: 26
+Ticket médio: R$ 3.518,64
+Maior obrigação: R$ 11.292,42
+
+================================================================================
+TOP 15 CREDORES
+================================================================================
+ 1, SANTANDER BRASIL                                   R$      509.312,73 ( 68,9%)
+ 2, UNIMED GOIåNIA COOPERATIVA DE TRABALHO MEDICO      R$       64.800,00 (  8,8%)
+ 3, SIMPLES NACIONAL                                   R$       62.400,00 (  8,4%)
+ 4, SIMONE HELENA DOS SANTOS                           R$       24.000,00 (  3,2%)
+ 5, VICTALAB F MANIPULACAO LTDA                        R$       16.263,64 (  2,2%)
+ 6, MR TRIPLAN CONTABILIDADE E CONSULTORIA EIRELI      R$       14.400,00 (  1,9%)
+ 7, GFIP SEFIP 8,40 GRF FGTS                           R$       13.200,00 (  1,8%)
+ 8, BOTUMEDIC IMPORTAÌO E E.PORTAÌO EIRELLI          R$        8.045,21 (  1,1%)
+ 9, GABRIELLA MACHADO COSTA LISBOA                     R$        7.670,00 (  1,0%)
+10, TALMA. PRODUTOS DE PROTESE DENTARIA LTDA           R$        6.854,19 (  0,9%)
+11, 55DENTAL CREMER PRODUTOS ODONTOLOGICOS S,A         R$        5.642,06 (  0,8%)
+12, NADIR PACIENTE                                     R$        2.940,00 (  0,4%)
+13, SOUSAM IMPORTACAO E E.PORTACAO LTDA                R$        1.492,02 (  0,2%)
+14, CRO-GO                                             R$        1.347,93 (  0,2%)
+15, JJGC INDUSTRIA E COMERCIO DE MATERIAIS DENTARIOS S R$          547,20 (  0,1%)
+
+================================================================================
+DISTRIBUIÇÃO MENSAL - 2026
+================================================================================
+January/2026          28 títulos  R$       36.636,98 (  5,0%)
+February/2026         25 títulos  R$       43.833,56 (  5,9%)
+March/2026            22 títulos  R$       37.122,87 (  5,0%)
+April/2026            13 títulos  R$       27.983,92 (  3,8%)
+May/2026              11 títulos  R$       24.459,43 (  3,3%)
+June/2026              9 títulos  R$       22.959,40 (  3,1%)
+July/2026              8 títulos  R$       22.959,38 (  3,1%)
+August/2026            9 títulos  R$       23.059,60 (  3,1%)
+September/2026         7 títulos  R$       22.750,00 (  3,1%)
+October/2026           7 títulos  R$       22.750,00 (  3,1%)
+November/2026          7 títulos  R$       22.750,00 (  3,1%)
+December/2026          8 títulos  R$       24.750,00 (  3,3%)
+--------------------------------------------------------------------------------
+TOTAL 2026                     R$      332.015,14 ( 44,9%)
+
+================================================================================
+TOP 20 TÍTULOS DE ALTA PRIORIDADE (> R$ 5.000)
+================================================================================
+ 1, 26/01/2026 SANTANDER BRASIL                    R$    11.292,42 
+ 2, 25/02/2026 SANTANDER BRASIL                    R$     7.363,11 
+ 3, 09/06/2031 SANTANDER BRASIL                    R$     7.300,01 
+ 4, 09/02/2031 SANTANDER BRASIL                    R$     7.300,01 
+ 5, 11/03/2031 SANTANDER BRASIL                    R$     7.300,01 
+ 6, 10/04/2031 SANTANDER BRASIL                    R$     7.300,01 
+ 7, 10/05/2031 SANTANDER BRASIL                    R$     7.300,01 
+ 8, 09/07/2031 SANTANDER BRASIL                    R$     7.300,01 
+ 9, 08/02/2030 SANTANDER BRASIL                    R$     7.300,00 
+10, 10/03/2030 SANTANDER BRASIL                    R$     7.300,00 
+11, 09/04/2030 SANTANDER BRASIL                    R$     7.300,00 
+12, 09/05/2030 SANTANDER BRASIL                    R$     7.300,00 
+13, 08/06/2030 SANTANDER BRASIL                    R$     7.300,00 
+14, 08/07/2030 SANTANDER BRASIL                    R$     7.300,00 
+15, 07/08/2030 SANTANDER BRASIL                    R$     7.300,00 
+16, 04/01/2031 SANTANDER BRASIL                    R$     7.300,00 
+17, 05/12/2030 SANTANDER BRASIL                    R$     7.300,00 
+18, 05/11/2030 SANTANDER BRASIL                    R$     7.300,00 
+19, 06/10/2030 SANTANDER BRASIL                    R$     7.300,00 
+20, 06/09/2030 SANTANDER BRASIL                    R$     7.300,00 
+
+================================================================================
+ANÁLISE DETALHADA - 1º SEMESTRE 2026
+================================================================================
+Total 1º semestre: R$ 192.996,16
+Quantidade de títulos: 108
+Percentual do total: 26.1%
+
+================================================================================
+COMPOSIÇÃO: BANCÁRIO VS OPERACIONAL (1º SEMESTRE 2026)
+================================================================================
+January    Bancário: R$    11.292,42 | Operacional: R$    25.344,56 | Total: R$    36.636,98 ( 30,8% banc,)
+February   Bancário: R$    14.663,11 | Operacional: R$    29.170,45 | Total: R$    43.833,56 ( 33,5% banc,)
+March      Bancário: R$     9.866,52 | Operacional: R$    27.256,35 | Total: R$    37.122,87 ( 26,6% banc,)
+April      Bancário: R$     9.026,88 | Operacional: R$    18.957,04 | Total: R$    27.983,92 ( 32,3% banc,)
+May        Bancário: R$     7.904,58 | Operacional: R$    16.554,85 | Total: R$    24.459,43 ( 32,3% banc,)
+June       Bancário: R$     7.904,58 | Operacional: R$    15.054,82 | Total: R$    22.959,40 ( 34,4% banc,)
+
+================================================================================
+Processamento concluído!
+================================================================================
