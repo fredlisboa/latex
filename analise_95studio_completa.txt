@@ -1,0 +1,107 @@
+Processando arquivo: 95STUDIOaccount.move.line_SANITIZED.csv
+================================================================================
+
+================================================================================
+RESUMO EXECUTIVO - 95STUDIO
+================================================================================
+Valor Total Geral a Pagar: R$ 738.915,20
+Quantidade Total de Títulos: 210
+Títulos de Alta Prioridade (> R$ 5.000): 92
+Quantidade de Credores: 26
+Ticket Médio por Título: R$ 3.518,64
+Maior Obrigação Individual: R$ 11.292,42
+
+================================================================================
+RANKING DE CREDORES (TOP 15)
+================================================================================
+Credor                                                       Valor (R$)        %
+--------------------------------------------------------------------------------
+ 1. SANTANDER BRASIL                                R$        509.312,73   68.9%
+ 2. UNIMED GOIÂNIA COOPERATIVA DE TRABALHO MEDICO   R$         64.800,00    8.8%
+ 3. SIMPLES NACIONAL                                R$         62.400,00    8.4%
+ 4. SIMONE HELENA DOS SANTOS                        R$         24.000,00    3.2%
+ 5. VICTALAB F MANIPULACAO LTDA                     R$         16.263,64    2.2%
+ 6. MR TRIPLAN CONTABILIDADE E CONSULTORIA EIRELI   R$         14.400,00    1.9%
+ 7. GFIP SEFIP 8.40 GRF FGTS                        R$         13.200,00    1.8%
+ 8. BOTUMEDIC IMPORTAÇÃO E EXPORTAÇÃO EIRELLI       R$          8.045,21    1.1%
+ 9. GABRIELLA MACHADO COSTA LISBOA                  R$          7.670,00    1.0%
+10. TALMAX PRODUTOS DE PROTESE DENTARIA LTDA        R$          6.854,19    0.9%
+11. 55DENTAL CREMER PRODUTOS ODONTOLOGICOS S.A      R$          5.642,06    0.8%
+12. NADIR PACIENTE                                  R$          2.940,00    0.4%
+13. SOUSAM IMPORTACAO E EXPORTACAO LTDA             R$          1.492,02    0.2%
+14. CRO-GO                                          R$          1.347,93    0.2%
+15. JJGC INDUSTRIA E COMERCIO DE MATERIAIS DENTARIO R$            547,20    0.1%
+    OUTROS (11 fornecedores)                             R$              0,22    0.0%
+--------------------------------------------------------------------------------
+TOTAL                                              R$        738.915,20 100.0%
+
+================================================================================
+TÍTULOS DE ALTA PRIORIDADE - TOP 20 (> R$ 5.000,00)
+================================================================================
+Vencimento      Credor                                   Valor (R$) Referência          
+--------------------------------------------------------------------------------
+26/01/2026      SANTANDER BRASIL                    R$    11.292,42                     
+25/02/2026      SANTANDER BRASIL                    R$     7.363,11                     
+09/06/2031      SANTANDER BRASIL                    R$     7.300,01                     
+09/02/2031      SANTANDER BRASIL                    R$     7.300,01                     
+11/03/2031      SANTANDER BRASIL                    R$     7.300,01                     
+10/04/2031      SANTANDER BRASIL                    R$     7.300,01                     
+10/05/2031      SANTANDER BRASIL                    R$     7.300,01                     
+09/07/2031      SANTANDER BRASIL                    R$     7.300,01                     
+08/02/2030      SANTANDER BRASIL                    R$     7.300,00                     
+10/03/2030      SANTANDER BRASIL                    R$     7.300,00                     
+09/04/2030      SANTANDER BRASIL                    R$     7.300,00                     
+09/05/2030      SANTANDER BRASIL                    R$     7.300,00                     
+08/06/2030      SANTANDER BRASIL                    R$     7.300,00                     
+08/07/2030      SANTANDER BRASIL                    R$     7.300,00                     
+07/08/2030      SANTANDER BRASIL                    R$     7.300,00                     
+04/01/2031      SANTANDER BRASIL                    R$     7.300,00                     
+05/12/2030      SANTANDER BRASIL                    R$     7.300,00                     
+05/11/2030      SANTANDER BRASIL                    R$     7.300,00                     
+06/10/2030      SANTANDER BRASIL                    R$     7.300,00                     
+06/09/2030      SANTANDER BRASIL                    R$     7.300,00                     
+
+... e mais 72 títulos de alta prioridade
+
+================================================================================
+CRONOGRAMA DE PAGAMENTOS - EXERCÍCIO 2026
+================================================================================
+Mês/Ano                        Valor (R$)   % do Total
+--------------------------------------------------------------------------------
+Janeiro/2026         R$         36.636,98    5.0%
+Fevereiro/2026       R$         43.833,56    5.9%
+Março/2026           R$         37.122,87    5.0%
+Abril/2026           R$         27.983,92    3.8%
+Maio/2026            R$         24.459,43    3.3%
+Junho/2026           R$         22.959,40    3.1%
+Julho/2026           R$         22.959,38    3.1%
+Agosto/2026          R$         23.059,60    3.1%
+Setembro/2026        R$         22.750,00    3.1%
+Outubro/2026         R$         22.750,00    3.1%
+Novembro/2026        R$         22.750,00    3.1%
+Dezembro/2026        R$         24.750,00    3.3%
+--------------------------------------------------------------------------------
+TOTAL 2026           R$        332.015,14   44.9%
+
+================================================================================
+ANÁLISE DETALHADA - 1º SEMESTRE 2026
+================================================================================
+Total 1º Semestre: R$ 192.996,16
+Quantidade de Títulos: 108
+Percentual do Total Geral: 26,1%
+
+================================================================================
+DISTRIBUIÇÃO POR ANO
+================================================================================
+2026: R$           332.015,14 ( 44.9%)
+2027: R$            93.000,00 ( 12.6%)
+2028: R$            87.600,00 ( 11.9%)
+2029: R$            87.600,00 ( 11.9%)
+2030: R$            87.600,00 ( 11.9%)
+2031: R$            51.100,06 (  6.9%)
+
+================================================================================
+Processamento concluído com sucesso!
+================================================================================
+
+Métricas salvas em: metrics_95studio.txt

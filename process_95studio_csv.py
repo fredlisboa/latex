@@ -13,7 +13,7 @@ from decimal import Decimal
 
 # Configuração
 CSV_FILE = '95STUDIOaccount.move.line_SANITIZED.csv'
-DATA_BASE = datetime(2026, 1, 8)
+DATA_BASE = datetime(2026, 1, 8)  # Excluir pagamentos até 07/01/2026 (já efetuados)
 
 def parse_valor(valor_str):
     """Converte string de valor para Decimal"""
