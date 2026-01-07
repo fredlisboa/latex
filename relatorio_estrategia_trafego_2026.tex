@@ -1,0 +1,859 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\pgfplotsset{compat=1.18}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4cm, bottom=2.5cm, headsep=1cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}  % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}   % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}  % Verde para ROAS positivo
+\definecolor{warningOrange}{RGB}{255, 140, 0} % Laranja para validação
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize FRAMEWORK DE ESCALA: TRÁFEGO PAGO LOW TICKET 2026}} & \scriptsize \textit{Metodologia MVT} \\
+        \textcolor{secondaryText}{\scriptsize Modelagem, Vantagem e Tráfego} & {\scriptsize \textbf{Data Base: 07/01/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{FRAMEWORK DE ESCALA}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{TRÁFEGO PAGO LOW TICKET 2026}} \\
+    \vspace{0.3cm}
+    {\large Metodologia MVT e Ciclo de Vida de Ofertas no Facebook Ads} \\
+    \vspace{2cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{GUIA ESTRATÉGICO DE CRESCIMENTO}} \\
+            \vspace{0.3cm}
+            {\large Como escalar de \reais{50,00} para \reais{500,00} diários} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{2cm}
+
+    \begin{flushleft}
+    \textbf{PILARES DA METODOLOGIA:} \\
+    \vspace{0.2cm}
+    \textcolor{primaryColor}{\textbf{M}} - Modelagem de Ofertas Validadas \\
+    \textcolor{primaryColor}{\textbf{V}} - Vantagem Competitiva (Marketing de Nicho) \\
+    \textcolor{primaryColor}{\textbf{T}} - Tráfego Pago Estruturado e Escalável
+    \end{flushleft}
+
+    \vfill
+    {\small Framework prático para produtos digitais de baixo ticket, contemplando as novas regras fiscais do Facebook (Imposto de 12,5\% sobre investimento em tráfego) e estruturas validadas em campanhas reais rodando em dezembro/2025 e janeiro/2026.} \\
+    \vspace{1cm}
+    \textbf{Data Base:} 07 de Janeiro de 2026
+\end{titlepage}
+
+% --- CONTEÚDO ---
+\section{O Cenário do Tráfego Pago em 2026}
+
+O ano de 2026 trouxe mudanças estruturais no Facebook Ads que impactam diretamente a rentabilidade de campanhas low ticket. A principal alteração é a \textbf{tributação de 12,5\% sobre todo o investimento em tráfego}, independentemente do resultado da campanha.
+
+\subsection{Impacto da Nova Legislação}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Cenário de Investimento} & \textbf{Verba} & \textbf{Custo Tributário} \\
+        \midrule
+        Investimento Diário Básico & \reais{100,00} & \reais{12,50} \\
+        Investimento Escala Média & \reais{500,00} & \reais{62,50} \\
+        Investimento Escala Alta & \reais{1.000,00} & \reais{125,00} \\
+        \midrule
+        \rowcolor{accentColor!10} \textbf{Investimento Mensal (R\$ 1.000/dia)} & \textbf{\reais{30.000,00}} & \textbf{\reais{3.750,00}} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Atenção:} Este custo tributário incide mesmo em campanhas com ROAS 0x0 ou negativo, tornando essencial a validação de estruturas antes da escala.}
+\end{table}
+
+\subsection{Consequências Estratégicas}
+
+Esta nova realidade elimina do mercado dois perfis de operadores:
+
+\begin{enumerate}
+    \item \textbf{Mineradores de Ofertas:} Aqueles que vasculham a Biblioteca de Anúncios copiando criativos e estruturas alheias sem compreender a metodologia subjacente enfrentarão prejuízos sistemáticos.
+
+    \item \textbf{Testadores Compulsivos:} Operadores que sobem 10, 15, 20 criativos simultaneamente sem critérios de validação dilapidarão capital em testes desestruturados.
+\end{enumerate}
+
+\textcolor{accentColor}{\textbf{A solução:}} Dominar frameworks de validação progressiva, compreendendo as \textbf{6 Fases da Jornada Low Ticket} e aplicando estruturas de campanha com critérios objetivos de decisão.
+
+\newpage
+
+\section{As 6 Fases da Jornada Low Ticket}
+
+O ciclo de vida de uma oferta low ticket no Facebook Ads é composto por seis fases distintas, cada uma com objetivos, métricas e tomadas de decisão específicas.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Fase} & \textbf{Objetivo Principal} & \textbf{Duração Típica} \\
+        \midrule
+        \textbf{1} & \textbf{Teste Criativo:} Validar criativos com ROAS $\geq$ 1.8 & 2-3 dias \\
+        \rowcolor{lightGray}
+        \textbf{2} & \textbf{Escala:} Aumentar orçamento em estruturas validadas & 3-7 dias \\
+        \textbf{3} & \textbf{Teto de Oferta:} Identificar limite de saturação da demanda & Variável \\
+        \rowcolor{lightGray}
+        \textbf{4} & \textbf{Análise de Padrões:} Mapear estruturas de melhor performance & Contínuo \\
+        \textbf{5} & \textbf{Manutenção:} Garantir ROAS consistente sem intervenções diárias & 7-15 dias \\
+        \rowcolor{lightGray}
+        \textbf{6} & \textbf{Saturação:} Reconhecer queda irreversível e encerrar oferta & 3-5 dias \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Princípio Fundamental}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Não se escala número de vendas. Escala-se ROAS e lucro.''}}
+\end{quote}
+
+O erro crítico de gestores inexperientes é aumentar orçamento baseado em volume de conversões (``Este criativo vendeu 10 vezes, vou duplicar a verba''). A métrica correta de decisão é o \textbf{Retorno sobre Investimento Publicitário (ROAS)}, que indica a sustentabilidade financeira da operação.
+
+\textcolor{accentColor}{\textbf{Regra de Ouro:}} Somente criativos com ROAS mínimo de 1.8 na fase de teste justificam progressão para escala. Criativos com ROAS entre 1.3 e 1.5 permanecem em observação. Abaixo de 1.3, desativação imediata.
+
+\newpage
+
+\section{Protocolo de Teste de Criativo (Fase de Validação)}
+
+A Fase 1 é a fundação de toda operação escalável. Seu objetivo não é gerar lucro imediato, mas sim \textbf{identificar ativos criativos com potencial de escala}.
+
+\subsection{Estrutura ABO Validada (Ad Set Budget Optimization)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Elemento da Estrutura} & \textbf{Configuração} \\
+        \midrule
+        Número de Campanhas & 1 campanha por criativo testado \\
+        \rowcolor{lightGray}
+        Conjuntos por Campanha & 3 conjuntos idênticos (segmentação, idade, gênero) \\
+        Anúncios por Conjunto & 1 criativo (mesmo em todos os conjuntos) \\
+        \rowcolor{lightGray}
+        Orçamento por Conjunto & 45\%-50\% do ticket médio do produto \\
+        Público-Alvo & Advantage+ Audience (sugestão de gênero e idade) \\
+        \rowcolor{lightGray}
+        Tempo Mínimo de Teste & 2 dias (ideal: 3 dias para confirmação de constância) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Lógica da Estrutura 1-3-1}
+
+A arquitetura de \textbf{1 Campanha $\rightarrow$ 3 Conjuntos $\rightarrow$ 1 Anúncio} não testa públicos diferentes, mas sim \textbf{fatias distintas do mesmo público} processadas pelo algoritmo do Facebook. Isso permite:
+
+\begin{itemize}
+    \item Confirmar que o criativo tem apelo consistente (não é resultado de sorte em uma única fatia)
+    \item Identificar variações de CPM (Custo por Mil Impressões) entre diferentes segmentos de entrega
+    \item Validar estabilidade de métricas secundárias (CPV, taxa de checkout)
+\end{itemize}
+
+\subsection{Exemplo de Orçamento}
+
+Para um produto com ticket médio de \reais{37,00}:
+
+\begin{itemize}
+    \item \textbf{Orçamento por Conjunto:} \reais{17,00} a \reais{20,00} (45\%-50\% do ticket)
+    \item \textbf{Investimento Total por Criativo:} \reais{51,00} a \reais{60,00} (3 conjuntos)
+    \item \textbf{Teste de 3 criativos simultâneos:} \reais{153,00} a \reais{180,00}
+\end{itemize}
+
+\textcolor{warningOrange}{\textbf{Estrutura Simplificada:}} Para orçamentos mais restritos, é aceitável usar \textbf{2 conjuntos por criativo} com orçamento mínimo de 35\% do ticket.
+
+\newpage
+
+\subsection{KPIs de Sucesso no Teste de Criativo}
+
+Um criativo é considerado \textbf{validado} quando atende simultaneamente aos seguintes critérios:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X c c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Métrica} & \textbf{Range Ideal} & \textbf{Status} \\
+        \midrule
+        \textbf{ROAS (Retorno sobre Gasto)} & $\geq$ 1.8 & \textcolor{successGreen}{VALIDADO} \\
+        \rowcolor{lightGray}
+        ROAS Zona de Observação & 1.5 - 1.8 & \textcolor{warningOrange}{MANTER ATIVO} \\
+        ROAS Abaixo do Mínimo & $<$ 1.3 & \textcolor{accentColor}{DESATIVAR} \\
+        \midrule
+        \textbf{CPV (Custo por Visualização)} & 5\% - 6\% & Métrica Secundária \\
+        \rowcolor{lightGray}
+        \textbf{Taxa de Checkout} & 25\% - 30\% & Métrica Secundária \\
+        \textbf{CPM (Custo por Mil Impressões)} & \reais{15,00} - \reais{25,00} & Métrica Secundária \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Importância das Métricas Secundárias}
+
+Enquanto o ROAS é o indicador primário de viabilidade econômica, as métricas secundárias revelam a \textbf{saúde do funil de conversão}:
+
+\begin{itemize}
+    \item \textbf{CPV baixo (5\%-6\%):} Indica que o criativo está gerando tráfego qualificado para a página de vendas a um custo eficiente.
+    \item \textbf{Taxa de Checkout elevada (25\%-30\%):} Confirma que a página de vendas possui copy persuasivo e alinhamento com a promessa do anúncio.
+    \item \textbf{CPM dentro da faixa:} Sinaliza que o Facebook não está cobrando prêmio por segmentação excessiva (sinal de público adequado).
+\end{itemize}
+
+\textcolor{accentColor}{\textbf{Atenção:}} Criativos com ROAS alto mas métricas secundárias ruins tendem a ter \textbf{baixa durabilidade na escala}. Priorize criativos que atendam todos os critérios.
+
+\newpage
+
+\section{Metodologia de Escala: De \reais{50,00} para \reais{500,00}+}
+
+Após validar criativos na Fase 1, inicia-se a Fase 2: \textbf{Escala Progressiva}. O objetivo é aumentar o investimento diário mantendo ou melhorando o ROAS.
+
+\subsection{Princípio da Escala Validada}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Escala não vem do nada. Ela vem de algo validado.''}}
+\end{quote}
+
+Jamais escale campanhas com ROAS abaixo de 1.8. O aumento de orçamento em estruturas marginais (ROAS 1.3-1.5) invariavelmente resulta em ROAS ainda menor, transformando operações neutras em prejuízo.
+
+\subsection{Duas Rotas de Escala}
+
+Existem duas arquiteturas principais para escalar ofertas low ticket:
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Modelo} & \textbf{Estrutura} & \textbf{Orçamento Recomendado} \\
+        \midrule
+        \textbf{Escala em ABO} & Duplicação de conjuntos validados com aumento de verba & 3x a 6x o ticket médio \\
+        \rowcolor{lightGray}
+        \textbf{Escala em CBO} & Campaign Budget Optimization (1-3-1) & 5x a 6x o ticket médio \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Escala em ABO: Modelo 01 (Duplicação)}
+
+Quando um criativo performa bem no teste (ROAS $\geq$ 1.8 por 2-3 dias consecutivos):
+
+\begin{enumerate}
+    \item Duplique o conjunto vencedor 1 a 2 vezes \textbf{dentro da mesma campanha}
+    \item Aumente o orçamento para 3x o ticket médio (ex: produto de \reais{37,00} $\rightarrow$ orçamento de \reais{110,00})
+    \item Mantenha a estrutura ativa por 48-72h antes de avaliar novos movimentos
+\end{enumerate}
+
+\textcolor{warningOrange}{\textbf{Preferência Atual:}} Menos conjuntos com mais verba (concentração) ao invés de pulverização em múltiplas campanhas.
+
+\subsection{Escala em ABO: Modelo 02 (Multi-Criativo)}
+
+Agrupe 3 a 4 criativos validados em uma única campanha:
+
+\begin{enumerate}
+    \item Crie 1 campanha com 1 conjunto de anúncios
+    \item Insira 3 criativos que performaram bem no teste (ROAS individual $\geq$ 1.8)
+    \item Orçamento: 3x a 4x o ticket médio
+    \item O Facebook distribuirá orçamento entre os criativos conforme performance
+\end{enumerate}
+
+\newpage
+
+\subsection{Escala em CBO: Modelo 1-3-1}
+
+Para criativos com \textbf{constância validada} (ROAS estável por 5-7 dias):
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Elemento} & \textbf{Configuração} \\
+        \midrule
+        Número de Campanhas & 1 (CBO ativado) \\
+        \rowcolor{lightGray}
+        Conjuntos de Anúncios & 3 conjuntos idênticos \\
+        Anúncio por Conjunto & 1 criativo (mesmo em todos) \\
+        \rowcolor{lightGray}
+        Orçamento Total da Campanha & 5x a 6x o ticket médio \\
+        Estratégia de Lance & Menor Custo (padrão) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{Exemplo Prático:}
+\begin{itemize}
+    \item Produto: \reais{37,00}
+    \item Criativo 31 validado com ROAS 2.1 por 7 dias em ABO
+    \item Orçamento CBO: \reais{200,00} (5.4x o ticket)
+    \item Resultado esperado: ROAS entre 1.6 e 2.0 (queda aceitável vs. fase de teste)
+\end{itemize}
+
+\subsection{Gestão de Expectativa na Escala}
+
+\textcolor{accentColor}{\textbf{Fenômeno Normal:}} Nos primeiros 1-3 dias da escala, é comum o ROAS ficar neutro (1.0x) ou até negativo (0.8x-0.9x). Isso ocorre porque:
+
+\begin{itemize}
+    \item O algoritmo está re-otimizando para o novo patamar de orçamento
+    \item A entrega está sendo testada em novas fatias de público
+    \item O CPM pode aumentar temporariamente
+\end{itemize}
+
+\textbf{Regra de Paciência:} Mantenha estruturas de escala ativas por no mínimo 3 dias completos antes de desativar, \textbf{desde que o ROAS acumulado não caia abaixo de 0.7x}. Muitas campanhas que iniciam ruins tornam-se lucrativas no 4º ou 5º dia.
+
+\newpage
+
+\section{Metodologia MVT: Modelagem, Vantagem e Tráfego}
+
+A sustentabilidade de longo prazo no tráfego pago low ticket não depende apenas de habilidades técnicas no Facebook Ads, mas da \textbf{concepção estratégica da oferta}.
+
+\subsection{O Problema da Cópia}
+
+Operadores que mineram ofertas bem-sucedidas na Biblioteca de Anúncios enfrentam três desvantagens estruturais:
+
+\begin{enumerate}
+    \item \textbf{Saturação Prévia:} A oferta já foi exposta ao mercado por semanas/meses, esgotando demanda latente
+    \item \textbf{Guerra de Lance:} Múltiplos anunciantes competindo pela mesma audiência elevam o CPM artificialmente
+    \item \textbf{Custo de Tributação:} Com o imposto de 12,5\%, margens já comprimidas pela concorrência tornam-se insustentáveis
+\end{enumerate}
+
+\subsection{A Alternativa MVT}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Pilar} & \textbf{Descrição} \\
+        \midrule
+        \textbf{M - Modelagem} & Estudar estruturas vencedoras do mercado não para copiar, mas para entender princípios de conversão (gatilhos mentais, arquitetura de oferta, prova social). \\
+        \rowcolor{lightGray}
+        \textbf{V - Vantagem} & Criar concepções únicas direcionadas a nichos específicos onde não há concorrência direta. Posicionamento de ``Oceano Azul''. \\
+        \textbf{T - Tráfego} & Aplicar frameworks de escala validados (este documento) para maximizar ROI e sustentabilidade. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Ciclo de Vida da Vantagem Competitiva}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=14cm,
+        height=8cm,
+        xlabel={Tempo (semanas)},
+        ylabel={Lucro Semanal (R\$)},
+        xmin=0, xmax=12,
+        ymin=0, ymax=5000,
+        xtick={0,2,4,6,8,10,12},
+        ytick={0,1000,2000,3000,4000,5000},
+        legend pos=north west,
+        ymajorgrids=true,
+        grid style=dashed,
+    ]
+
+    \addplot[
+        color=blue,
+        mark=square,
+        thick
+        ]
+        coordinates {
+        (1,800)(2,1500)(3,2800)(4,4200)(5,4500)(6,4300)(7,3800)(8,3000)(9,2200)(10,1500)(11,900)(12,500)
+        };
+        \addlegendentry{Oferta com Vantagem (MVT)}
+
+    \addplot[
+        color=red,
+        mark=triangle,
+        thick,
+        dashed
+        ]
+        coordinates {
+        (1,200)(2,300)(3,400)(4,500)(5,450)(6,350)(7,250)(8,150)(9,100)(10,50)(11,0)(12,-100)
+        };
+        \addlegendentry{Oferta Copiada (Saturada)}
+
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Interpretação:} Ofertas criadas com vantagem competitiva geram lucro expressivo nas primeiras 4-8 semanas, antes que a concorrência replique o posicionamento. Ofertas copiadas iniciam com lucro marginal e rapidamente tornam-se deficitárias.
+
+\newpage
+
+\section{Fluxo de Decisão Pós-Teste de Criativo}
+
+Após completar 2-3 dias de teste com a estrutura ABO 1-3-1, você deve analisar os resultados e tomar uma das seguintes ações:
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{ROAS} & \textbf{Classificação} & \textbf{Ação Recomendada} \\
+        \midrule
+        \textcolor{successGreen}{$\geq$ 1.8} & \textbf{VALIDADO} & Levar para escala (Modelo ABO ou CBO) \\
+        \rowcolor{lightGray}
+        \textcolor{warningOrange}{1.5 - 1.8} & \textbf{EM VALIDAÇÃO} & Manter ativo por mais 1-2 dias \\
+        \textcolor{accentColor}{1.3 - 1.5} & \textbf{MARGINAL} & Desativar se não melhorar em 24h \\
+        \rowcolor{lightGray}
+        \textcolor{accentColor}{$<$ 1.3} & \textbf{REPROVADO} & Pausar imediatamente \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Cenário 1: Nenhum Criativo Validado}
+
+Se após testar 3-5 criativos todos apresentarem ROAS $<$ 1.3, realize os seguintes ajustes:
+
+\begin{enumerate}
+    \item \textbf{Troca de Estrutura:} Teste CBO ao invés de ABO (ou vice-versa)
+    \item \textbf{Novos Criativos:} Produza variações com diferentes ângulos de copy/creative
+    \item \textbf{Ajuste na Página:} Revise headline, prova social, garantia, call-to-action
+    \item \textbf{Novo Checkout:} Teste processadores de pagamento alternativos (taxas menores)
+    \item \textbf{Nova Oferta:} Em último caso, a concepção pode não ter fit com o mercado
+\end{enumerate}
+
+\subsection{Cenário 2: 1-2 Criativos Validados}
+
+Este é o cenário ideal. Concentre recursos nos criativos vencedores:
+
+\begin{enumerate}
+    \item Pause todos os criativos com ROAS $<$ 1.5
+    \item Mantenha criativos com ROAS 1.5-1.8 em observação (sem aumentar orçamento)
+    \item Escale imediatamente os criativos com ROAS $\geq$ 1.8 usando Modelo ABO 01 ou CBO
+\end{enumerate}
+
+\subsection{Cenário 3: Múltiplos Criativos Validados (3+)}
+
+Quando você tem 3 ou mais criativos com ROAS $\geq$ 1.8, você pode:
+
+\begin{itemize}
+    \item Criar uma campanha ABO Modelo 02 (top 3-4 criativos agrupados)
+    \item Criar múltiplas campanhas CBO (1 criativo por campanha)
+    \item Testar ambas as estruturas simultaneamente (cardápio de opções)
+\end{itemize}
+
+\textcolor{primaryColor}{\textbf{Filosofia do Cardápio:}} Não existe ``estrutura perfeita''. Ofertas diferentes respondem melhor a estruturas diferentes. Teste ABO e CBO em paralelo para identificar qual funciona melhor \textbf{para aquela oferta específica}.
+
+\newpage
+
+\section{Estudo de Caso Real: Dezembro/2025 - Janeiro/2026}
+
+Esta seção documenta uma operação real executada com produto low ticket de \reais{37,00} (ticket médio), demonstrando a aplicação prática do framework.
+
+\subsection{Linha do Tempo da Operação}
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{c X r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Data} & \textbf{Fase/Ação} & \textbf{Investimento} & \textbf{ROAS} \\
+        \midrule
+        10-11/12 & Teste Criativo (6 conjuntos, 3 criativos) & \reais{250,00} & 1.48 \\
+        \rowcolor{lightGray}
+        12-13/12 & Escala Modelo ABO (Criativos 31, 6, 14) & \reais{520,00} & 1.28 \\
+        14/12 & Confirmação de Performance & \reais{420,00} & 2.00 \\
+        \rowcolor{lightGray}
+        24-31/12 & Fase de Manutenção (sem intervenção) & \reais{1.140,00} & 1.77 \\
+        02/01 & Teste de 8 Variações do Criativo 31 & \reais{280,00} & 1.52 \\
+        \rowcolor{lightGray}
+        03/01 & Escala CBO + ABO Top 4 & \reais{650,00} & 1.89 \\
+        04/01 & Duplicação CBO 131 (orçamento \reais{200,00}) & \reais{866,00} & 2.03 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Análise por Período}
+
+\textbf{Semana 1 (10-17/12):} Lucro de \reais{1.377,00}
+\begin{itemize}
+    \item Teste criativo identificou Criativo 31 como vencedor (ROAS 1.8+)
+    \item Primeira escala em ABO apresentou oscilação (ROAS 1.28 no dia 12-13)
+    \item Paciência validada: ROAS subiu para 2.0 no dia 14
+\end{itemize}
+
+\textbf{Semana 2 (17-24/12):} Lucro de \reais{1.000,00}
+\begin{itemize}
+    \item Fase de consolidação, sem novos testes criativos
+    \item ROAS médio: 1.65
+\end{itemize}
+
+\textbf{Semana 3 (24-31/12):} Lucro de \reais{2.018,00}
+\begin{itemize}
+    \item \textbf{Fase de Manutenção:} 7 dias sem intervenção
+    \item Campanha ABO 111 (Criativo 31, orçamento \reais{170,00}) entregou ROAS 1.77
+    \item ROAS no dia 31/12 (virada de ano): 2.0
+\end{itemize}
+
+\textbf{Primeiros 4 Dias/2026 (01-04/01):} Lucro de \reais{2.469,00}
+\begin{itemize}
+    \item Novo teste criativo (8 variações) validou Criativos 39, 42, 44
+    \item Escala em CBO (Criativo 31, \reais{200,00}) performou ROAS 2.0+
+    \item Escala em ABO Top 4 (Criativos 14, 31, 42, 44) performou ROAS 1.8+
+\end{itemize}
+
+\newpage
+
+\subsection{Lições do Caso Real}
+
+\textbf{1. Oscilação é Normal nos Primeiros Dias de Escala}
+
+No dia 12/12, a campanha de escala entregou ROAS 1.28 (abaixo do ideal). A tentação seria desativar. Mantida ativa, no dia 14/12 o ROAS saltou para 2.0, gerando \reais{420,00} de lucro em um único dia.
+
+\textbf{2. Fase de Manutenção Gera Lucro Passivo}
+
+Do dia 24/12 ao 31/12, nenhuma intervenção foi feita. As campanhas validadas rodaram autonomamente, gerando \reais{2.018,00} de lucro. Isso só é possível quando você:
+\begin{itemize}
+    \item Valida criativos rigorosamente na Fase 1
+    \item Respeita o período de estabilização na Fase 2
+    \item Não desativa campanhas prematuramente por oscilações de 1-2 dias
+\end{itemize}
+
+\textbf{3. Escala Progressiva vs. Escala Agressiva}
+
+A operação levou 25 dias para passar de \reais{250,00}/dia (teste criativo) para \reais{866,00}/dia (escala consolidada). Tentativas de pular etapas invariavelmente resultam em prejuízo.
+
+\textbf{4. Cardápio de Estruturas}
+
+Ambas ABO e CBO funcionaram. No início (dia 12), ABO performou melhor. Após constância validada (dia 3/01), CBO entregou ROAS superior. Teste ambas.
+
+\subsection{Gráfico de Evolução de Lucro}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=14cm,
+        height=8cm,
+        xlabel={Período (Semanas)},
+        ylabel={Lucro Acumulado (R\$)},
+        xmin=0, xmax=4,
+        ymin=0, ymax=7000,
+        xtick={1,2,3,4},
+        xticklabels={Semana 1,Semana 2,Semana 3,Jan 01-04},
+        ytick={0,1000,2000,3000,4000,5000,6000,7000},
+        legend pos=north west,
+        ymajorgrids=true,
+        grid style=dashed,
+    ]
+
+    \addplot[
+        color=primaryColor,
+        mark=*,
+        ultra thick
+        ]
+        coordinates {
+        (1,1377)(2,2377)(3,4395)(4,6864)
+        };
+        \addlegendentry{Lucro Acumulado}
+
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Total em 25 dias:} \reais{6.864,00} de lucro líquido (após desconto de custos tributários e operacionais).
+
+\newpage
+
+\section{Checklist Executivo de Escala}
+
+\subsection{Fase 1: Teste de Criativo (Dias 1-3)}
+
+\begin{itemize}
+    \item[$\square$] Estrutura ABO 1-3-1 configurada (1 campanha, 3 conjuntos, 1 anúncio)
+    \item[$\square$] Orçamento: 45\%-50\% do ticket médio por conjunto
+    \item[$\square$] Público: Advantage+ com sugestões de gênero/idade
+    \item[$\square$] Rodou por no mínimo 2 dias completos
+    \item[$\square$] ROAS $\geq$ 1.8 confirmado em pelo menos 1 criativo
+    \item[$\square$] Métricas secundárias dentro do range (CPV 5\%-6\%, Checkout 25\%-30\%)
+\end{itemize}
+
+\subsection{Fase 2: Escala (Dias 4-10)}
+
+\begin{itemize}
+    \item[$\square$] Pausou todos os conjuntos com ROAS $<$ 1.3
+    \item[$\square$] Manteve em observação conjuntos com ROAS 1.5-1.8
+    \item[$\square$] Escolheu estrutura de escala (ABO Modelo 01, ABO Modelo 02 ou CBO)
+    \item[$\square$] Orçamento de escala: 3x a 6x o ticket médio
+    \item[$\square$] Manteve campanha de escala ativa por no mínimo 3 dias antes de avaliar
+    \item[$\square$] ROAS de escala acima de 1.5 (queda aceitável vs. teste criativo)
+\end{itemize}
+
+\subsection{Fase 3: Manutenção (Dias 11-25)}
+
+\begin{itemize}
+    \item[$\square$] Campanhas performando com ROAS $\geq$ 1.6 por 5+ dias consecutivos
+    \item[$\square$] Reduziu intervenções (verificação 1x ao dia ao invés de múltiplas)
+    \item[$\square$] Teste semanal de novos criativos (modelagem dos vencedores)
+    \item[$\square$] Análise de padrões: identificou estruturas de melhor performance
+    \item[$\square$] Duplicação de campanhas vencedoras com orçamento incrementado
+\end{itemize}
+
+\subsection{Fase 4: Saturação (Quando Aplicável)}
+
+\begin{itemize}
+    \item[$\square$] ROAS em queda constante por 5+ dias consecutivos
+    \item[$\square$] CPM em elevação (sinal de saturação de público)
+    \item[$\square$] Novos criativos não validam mais (ROAS $<$ 1.5)
+    \item[$\square$] Redução progressiva de orçamento antes do encerramento
+    \item[$\square$] Preparação de nova oferta seguindo metodologia MVT
+\end{itemize}
+
+\newpage
+
+\section{Ferramentas de Análise e Tomada de Decisão}
+
+\subsection{Planilha de Métricas (Template)}
+
+Para cada conjunto de anúncios testado, registre os seguintes KPIs em planilha:
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{X c c c c c c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Conjunto} & \textbf{Gasto} & \textbf{Receita} & \textbf{ROAS} & \textbf{CPV} & \textbf{Checkout} & \textbf{CPM} \\
+        \midrule
+        Criativo 31 - Conj. 1 & 35,00 & 77,00 & 2.20 & 5,2\% & 28\% & 18,50 \\
+        \rowcolor{lightGray}
+        Criativo 31 - Conj. 2 & 35,00 & 63,00 & 1.80 & 5,8\% & 26\% & 21,00 \\
+        Criativo 31 - Conj. 3 & 35,00 & 70,00 & 2.00 & 5,5\% & 27\% & 19,20 \\
+        \midrule
+        \rowcolor{lightGray}
+        \textbf{MÉDIA CRIATIVO 31} & \textbf{105,00} & \textbf{210,00} & \textbf{2.00} & \textbf{5,5\%} & \textbf{27\%} & \textbf{19,57} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{Decisão:} Criativo 31 está VALIDADO (ROAS 2.0, todas as métricas secundárias dentro do range). Levar para escala.
+
+\subsection{Funil de Métricas Secundárias}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    % Impressões
+    \draw[fill=primaryColor!20] (0,0) -- (8,0) -- (7,1) -- (1,1) -- cycle;
+    \node at (4,0.5) {\textbf{100.000 Impressões (CPM: \reais{18,50})}};
+
+    % Cliques
+    \draw[fill=primaryColor!40] (1,1) -- (7,1) -- (6.5,2) -- (1.5,2) -- cycle;
+    \node at (4,1.5) {\textbf{3.500 Cliques (CTR: 3,5\%)}};
+
+    % Visualizações de Página
+    \draw[fill=primaryColor!60] (1.5,2) -- (6.5,2) -- (6,3) -- (2,3) -- cycle;
+    \node at (4,2.5) {\textbf{210 Visualizações (CPV: 5,5\%)}};
+
+    % Checkouts Iniciados
+    \draw[fill=primaryColor!80] (2,3) -- (6,3) -- (5.5,4) -- (2.5,4) -- cycle;
+    \node at (4,3.5) {\textbf{57 Checkouts (27\%)}};
+
+    % Vendas Aprovadas
+    \draw[fill=successGreen!80] (2.5,4) -- (5.5,4) -- (5,5) -- (3,5) -- cycle;
+    \node at (4,4.5) {\textbf{20 Vendas (ROAS: 2.0)}};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Gatilhos de Desativação}
+
+Pause imediatamente um conjunto/campanha quando:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Condição} & \textbf{Limite} \\
+        \midrule
+        ROAS em teste criativo após 3 dias & $<$ 1.3 \\
+        \rowcolor{lightGray}
+        ROAS em escala após 3 dias & $<$ 1.2 \\
+        CPV (Custo por Visualização) & $>$ 10\% \\
+        \rowcolor{lightGray}
+        CPM (Custo por Mil Impressões) & $>$ \reais{35,00} \\
+        Taxa de Checkout & $<$ 15\% \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{accentColor}{\textbf{Exceção:}} Se um criativo teve ROAS excepcional (2.5+) por vários dias e de repente cai para 0.8x em um único dia, aguarde mais 24h antes de pausar (pode ser anomalia temporária do algoritmo).
+
+\newpage
+
+\section{Erros Fatais a Evitar}
+
+\subsection{1. Escalar Baseado em Número de Vendas}
+
+\textbf{Erro:} ``Este criativo vendeu 10 vezes hoje com orçamento de \reais{50,00}. Vou aumentar para \reais{200,00}.''
+
+\textbf{Por que é fatal:} Se o ROAS for 1.2 (prejuízo de 20\%), você está escalando prejuízo. Com orçamento de \reais{200,00}, o prejuízo será 4x maior.
+
+\textbf{Correção:} Escale apenas criativos com ROAS $\geq$ 1.8, independentemente do número de vendas.
+
+\subsection{2. Testar 10+ Criativos Simultaneamente}
+
+\textbf{Erro:} Subir 15 criativos de uma vez para ``acelerar a validação''.
+
+\textbf{Por que é fatal:} Com o imposto de 12,5\%, você pagará taxa sobre \reais{900,00} (15 criativos $\times$ \reais{60,00}) mesmo se nenhum criativo validar. Isso drena capital e cria viés negativo.
+
+\textbf{Correção:} Teste no máximo 3-4 criativos por rodada. Valide, escale, depois teste novos.
+
+\subsection{3. Desativar Campanhas no Primeiro Dia Ruim}
+
+\textbf{Erro:} Campanha de escala deu ROAS 0.9x no primeiro dia. Pausar imediatamente.
+
+\textbf{Por que é fatal:} O algoritmo precisa de 2-3 dias para otimizar. Você pode estar interrompendo uma campanha que seria lucrativa.
+
+\textbf{Correção:} Aguarde 3 dias completos. Só pause se ROAS acumulado for $<$ 0.7x.
+
+\subsection{4. Copiar Ofertas Saturadas}
+
+\textbf{Erro:} Ver oferta bem-sucedida na Biblioteca de Anúncios, clonar, e esperar o mesmo resultado.
+
+\textbf{Por que é fatal:} Você está competindo com o original + dezenas de outros clonadores. CPM inflado + tributação = prejuízo garantido.
+
+\textbf{Correção:} Use metodologia MVT. Modele princípios, não ofertas. Crie concepções únicas.
+
+\subsection{5. Ignorar Métricas Secundárias}
+
+\textbf{Erro:} ``ROAS está 2.0, não preciso olhar CPV, Checkout, CPM.''
+
+\textbf{Por que é fatal:} Criativos com ROAS alto mas métricas secundárias ruins saturam rapidamente. Você escala, e em 5 dias o ROAS desaba.
+
+\textbf{Correção:} Valide ROAS \textbf{e} métricas secundárias. Priorize criativos que atendam todos os critérios.
+
+\newpage
+
+\section{Considerações Finais}
+
+O framework apresentado neste documento não é teórico. É o resultado de operações reais executadas em dezembro/2025 e janeiro/2026, sob as novas condições tributárias do Facebook Ads.
+
+\subsection{Três Princípios Inegociáveis}
+
+\begin{enumerate}
+    \item \textbf{Validação antes de Escala:} Jamais aumente orçamento em campanhas com ROAS $<$ 1.8. A tentação de ``forçar'' uma oferta ruim a funcionar resulta em prejuízo proporcional ao investimento.
+
+    \item \textbf{Paciência Estratégica:} Campanhas de escala oscilam nos primeiros 3 dias. Operadores impacientes desativam cedo e nunca atingem fase de manutenção (lucro passivo).
+
+    \item \textbf{Vantagem Competitiva:} Com a tributação de 12,5\%, apenas ofertas com posicionamento único (metodologia MVT) sustentam margens saudáveis a longo prazo.
+\end{enumerate}
+
+\subsection{Próximos Passos}
+
+Após dominar este framework:
+
+\begin{itemize}
+    \item \textbf{Semana 1-2:} Execute teste criativo com 3 criativos (estrutura ABO 1-3-1)
+    \item \textbf{Semana 3:} Escale o(s) criativo(s) validado(s) usando ABO ou CBO
+    \item \textbf{Semana 4:} Entre em fase de manutenção, teste novos criativos semanalmente
+    \item \textbf{Mês 2:} Chegue a investimento diário de \reais{300,00}-\reais{500,00} com ROAS $\geq$ 1.6
+\end{itemize}
+
+\subsection{Recursos Complementares}
+
+Para aprofundar a metodologia MVT (Modelagem, Vantagem, Tráfego), incluindo:
+\begin{itemize}
+    \item Frameworks de concepção de oferta
+    \item Templates de página de vendas
+    \item Análise de criativos vencedores
+    \item Acompanhamento ao vivo 2x por semana
+\end{itemize}
+
+Entre em contato via WhatsApp ou Instagram para conhecer a \textbf{Mentoria Ou Processo}.
+
+\vspace{2cm}
+
+\begin{center}
+\colorbox{lightGray}{%
+    \parbox{0.85\textwidth}{%
+        \centering
+        \vspace{0.3cm}
+        \textcolor{primaryColor}{\textbf{``Não se copia ofertas. Cria-se concepções únicas,}}\\
+        \textcolor{primaryColor}{\textbf{surfa-se a onda antes da concorrência,}}\\
+        \textcolor{primaryColor}{\textbf{e coloca-se lucro no bolso.''}}\\
+        \vspace{0.3cm}
+    }%
+}
+\end{center}
+
+\end{document}
