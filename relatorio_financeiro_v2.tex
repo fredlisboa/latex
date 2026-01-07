@@ -37,7 +37,7 @@
 % Cabeçalho
 \fancyhead[C]{%
     \begin{tabularx}{\textwidth}{@{} X r @{}}
-        \textcolor{primaryColor}{\textbf{\footnotesize STUDIO DENTAL}} & \scriptsize \textit{Relatório de Contas a Pagar} \\
+        \textcolor{primaryColor}{\textbf{\footnotesize STUDIO DENTAL - VERSÃO 2}} & \scriptsize \textit{Relatório de Contas a Pagar} \\
         \textcolor{secondaryText}{\scriptsize CNPJ: 46.125.234/0001-66} & {\scriptsize \textbf{Data Base: 08/01/2026}}
     \end{tabularx}%
 }
@@ -92,6 +92,8 @@
             \centering
             \vspace{0.3cm}
             {\Large \textbf{STUDIO DENTAL}} \\
+            \vspace{0.2cm}
+            {\large \textcolor{accentColor}{\textbf{VERSÃO 2 - PROJEÇÃO AJUSTADA}}} \\
             \vspace{0.3cm}
             {\large CNPJ: 46.125.234/0001-66} \\
             \vspace{0.3cm}
@@ -105,6 +107,8 @@
     {\small Valores superiores a \textcolor{accentColor}{\textbf{R\$ 5.000,00}} destacados em vermelho para atenção prioritária.} \\
     \vspace{0.3cm}
     {\small \textit{Nota: Pagamentos com vencimento em 07/01/2026 já foram efetuados e não constam neste relatório.}} \\
+    \vspace{0.3cm}
+    {\small \textcolor{accentColor}{\textbf{VERSÃO 2:}} Projeção ajustada excluindo UNIMED GOIÂNIA, SIMONE HELENA e SIMPLES NACIONAL reduzido a 2/3.} \\
     \vspace{1cm}
     \textbf{Data Base:} 08 de Janeiro de 2026
 \end{titlepage}
@@ -126,11 +130,11 @@ A análise foi baseada exclusivamente nos dados extraídos do sistema contábil 
         \toprule
         \rowcolor{tableHeader} \textbf{Métrica} & \textbf{Valor} \\
         \midrule
-        \textbf{Valor Total Geral a Pagar} & \textbf{\reais{738.915,20}} \\
-        \textbf{Quantidade Total de Títulos} & \textbf{210 títulos} \\
-        \textbf{Títulos de Alta Prioridade (> R\$ 5.000)} & \textbf{92 títulos} \\
-        \textbf{Quantidade de Credores} & \textbf{26 fornecedores} \\
-        \textbf{Ticket Médio por Título} & \textbf{\reais{3.518,64}} \\
+        \textbf{Valor Total Geral a Pagar} & \textbf{\reais{629.317,28}} \\
+        \textbf{Quantidade Total de Títulos} & \textbf{186 títulos} \\
+        \textbf{Títulos de Alta Prioridade (> R\$ 5.000)} & \textbf{68 títulos} \\
+        \textbf{Quantidade de Credores} & \textbf{24 fornecedores} \\
+        \textbf{Ticket Médio por Título} & \textbf{\reais{3.383,43}} \\
         \midrule
         \rowcolor{accentColor!10} \textbf{Maior Obrigação Individual} & \textcolor{accentColor}{\textbf{\reais{11.292,42}}} \\
         \bottomrule
@@ -141,13 +145,13 @@ A análise foi baseada exclusivamente nos dados extraídos do sistema contábil 
 \subsection{Observações Críticas}
 
 \begin{itemize}
-    \item \textbf{Concentração de Risco:} O fornecedor \textbf{SANTANDER BRASIL} representa \textbf{68,9\%} do valor total a pagar (\reais{509.312,73}), indicando alta dependência de financiamento bancário.
+    \item \textbf{Concentração Bancária Acentuada:} O fornecedor \textbf{SANTANDER BRASIL} representa \textbf{80,9\%} do valor total a pagar (\reais{509.312,73}), evidenciando forte dependência de financiamento bancário.
 
-    \item \textbf{Novos Credores Significativos:} UNIMED GOIÂNIA (\reais{64.800,00} - 8,8\%) e SIMPLES NACIONAL (\reais{62.400,00} - 8,4\%) representam 17,2\% das obrigações totais.
+    \item \textbf{Redução Significativa:} VERSÃO 2 apresenta redução de \textbf{R\$ 109.597,92 (14,8\%)} em relação à projeção original, resultado da exclusão de UNIMED GOIÂNIA e ajuste do SIMPLES NACIONAL.
 
-    \item \textbf{Distribuição Equilibrada:} Ano de 2026 representa \textbf{44,9\%} das obrigações (\reais{332.015,14}), com distribuição mais homogênea ao longo dos meses.
+    \item \textbf{Projeção 2026:} Ano de 2026 representa \textbf{36,2\%} das obrigações (\reais{227.817,22}), com média mensal de R\$ 18.985, substancialmente inferior à versão original.
 
-    \item \textbf{Títulos Prioritários:} Dos 210 títulos, \textbf{92 (43,8\%)} são superiores a R\$ 5.000,00, demandando gestão financeira criteriosa.
+    \item \textbf{Títulos Prioritários:} Dos 186 títulos, \textbf{68 (36,6\%)} são superiores a R\$ 5.000,00, concentrados principalmente em financiamentos bancários de longo prazo.
 \end{itemize}
 
 \newpage
@@ -177,9 +181,7 @@ A tabela a seguir apresenta o ranking dos 26 credores ativos, ordenados por valo
     \endlastfoot
 
     SANTANDER BRASIL & \textcolor{accentColor}{\textbf{509.312,73}} \\
-    UNIMED GOIÂNIA COOPERATIVA DE TRABALHO MÉDICO & \textcolor{accentColor}{\textbf{64.800,00}} \\
-    SIMPLES NACIONAL & \textcolor{accentColor}{\textbf{62.400,00}} \\
-    SIMONE HELENA DOS SANTOS & \textcolor{accentColor}{\textbf{24.000,00}} \\
+    SIMPLES NACIONAL & \textcolor{accentColor}{\textbf{41.602,08}} \\
     VICTALAB F MANIPULACAO LTDA & \textcolor{accentColor}{\textbf{16.263,64}} \\
     MR TRIPLAN CONTABILIDADE E CONSULTORIA EIRELI & \textcolor{accentColor}{\textbf{14.400,00}} \\
     GFIP SEFIP 8,40 GRF FGTS & \textcolor{accentColor}{\textbf{13.200,00}} \\
@@ -189,16 +191,14 @@ A tabela a seguir apresenta o ranking dos 26 credores ativos, ordenados por valo
     55DENTAL CREMER PRODUTOS ODONTOLOGICOS S.A & \textcolor{accentColor}{\textbf{5.642,06}} \\
     NADIR PACIENTE & 2.940,00 \\
     SOUSAM IMPORTACAO E EXPORTACAO LTDA & 1.492,02 \\
-    CRO-GO & 1.347,93 \\
-    JJGC INDUSTRIA E COMERCIO DE MATERIAIS DENTARIOS S.A & 547,20 \\
-    OUTROS (11 fornecedores) & 3.999,96 \\
+    OUTROS (13 fornecedores) & 1.895,35 \\
     \midrule
-    \rowcolor{lightGray} \textbf{TOTAL (26 credores)} & \textbf{738.915,20} \\
+    \rowcolor{lightGray} \textbf{TOTAL (24 credores)} & \textbf{629.317,28} \\
 \end{longtable}
 
 \vspace{-0.3cm}
 \begin{quote}
-    \footnotesize \textbf{NOTA:} O novo arquivo CSV amplia significativamente a base de dados, incluindo obrigações fiscais (SIMPLES NACIONAL), previdenciárias (GFIP), saúde (UNIMED) e recursos humanos (SIMONE HELENA DOS SANTOS), totalizando 26 credores ativos.
+    \footnotesize \textbf{NOTA VERSÃO 2:} Esta projeção ajustada exclui UNIMED GOIÂNIA e SIMONE HELENA DOS SANTOS, e considera SIMPLES NACIONAL reduzido a 2/3 devido à previsão de menor volume de notas fiscais. Total de 24 credores ativos, com forte concentração no Santander Brasil (80,9\%).
 \end{quote}
 
 \newpage
@@ -251,7 +251,7 @@ Relação dos principais títulos com valor superior a \textbf{R\$ 5.000,00}, or
 
 \vspace{-0.3cm}
 \begin{quote}
-    \footnotesize \textbf{ATENÇÃO:} Esta tabela apresenta os 20 primeiros títulos de alta prioridade. O relatório completo identifica \textbf{92 títulos} acima de R\$ 5.000,00, representando 43,8\% do total de títulos e concentrados principalmente em financiamentos bancários de longo prazo (2027-2031).
+    \footnotesize \textbf{ATENÇÃO:} Esta tabela apresenta os 20 primeiros títulos de alta prioridade. O relatório completo identifica \textbf{68 títulos} acima de R\$ 5.000,00, representando 36,6\% do total de títulos e concentrados principalmente em financiamentos bancários de longo prazo (2027-2031).
 \end{quote}
 
 \newpage
@@ -270,23 +270,23 @@ A tabela a seguir apresenta a projeção de desembolso mensal para o exercício 
         \toprule
         \rowcolor{tableHeader} \textbf{Mês/Ano} & \textbf{Valor (R\$)} & \textbf{\% do Total} \\
         \midrule
-        Janeiro/2026 & 36.636,98 & 5,0\% \\
-        Fevereiro/2026 & 43.833,56 & 5,9\% \\
-        Março/2026 & 37.122,87 & 5,0\% \\
-        Abril/2026 & 27.983,92 & 3,8\% \\
-        Maio/2026 & 24.459,43 & 3,3\% \\
-        Junho/2026 & 22.959,40 & 3,1\% \\
-        Julho/2026 & 22.959,38 & 3,1\% \\
-        Agosto/2026 & 23.059,60 & 3,1\% \\
-        Setembro/2026 & 22.750,00 & 3,1\% \\
-        Outubro/2026 & 22.750,00 & 3,1\% \\
-        Novembro/2026 & 22.750,00 & 3,1\% \\
-        Dezembro/2026 & 24.750,00 & 3,3\% \\
+        Janeiro/2026 & 34.903,82 & 5,5\% \\
+        Fevereiro/2026 & 34.700,40 & 5,5\% \\
+        Março/2026 & 27.989,71 & 4,4\% \\
+        Abril/2026 & 18.850,76 & 3,0\% \\
+        Maio/2026 & 15.326,27 & 2,4\% \\
+        Junho/2026 & 13.826,24 & 2,2\% \\
+        Julho/2026 & 13.826,22 & 2,2\% \\
+        Agosto/2026 & 13.926,44 & 2,2\% \\
+        Setembro/2026 & 13.616,84 & 2,2\% \\
+        Outubro/2026 & 13.616,84 & 2,2\% \\
+        Novembro/2026 & 13.616,84 & 2,2\% \\
+        Dezembro/2026 & 13.616,84 & 2,2\% \\
         \midrule
-        \rowcolor{lightGray} \textbf{TOTAL 2026} & \textbf{332.015,14} & \textbf{44,9\%} \\
+        \rowcolor{lightGray} \textbf{TOTAL 2026} & \textbf{227.817,22} & \textbf{36,2\%} \\
         \bottomrule
     \end{tabularx}
-    \caption*{\footnotesize \textbf{Nota:} Os 55,1\% restantes (\reais{406.900,06}) referem-se a obrigações com vencimento em 2027 a 2031.}
+    \caption*{\footnotesize \textbf{Nota:} Os 63,8\% restantes (\reais{401.500,06}) referem-se a obrigações com vencimento em 2027 a 2031, concentradas em financiamentos bancários.}
 \end{table}
 
 \subsection{Visualização Gráfica}
@@ -317,18 +317,18 @@ O gráfico abaixo demonstra a concentração temporal das obrigações ao longo 
             enlarge x limits=0.05,
         ]
         \addplot[fill=primaryColor, draw=primaryColor!80!black] coordinates {
-            (1, 36.6)
-            (2, 43.8)
-            (3, 37.1)
-            (4, 28.0)
-            (5, 24.5)
-            (6, 23.0)
-            (7, 23.0)
-            (8, 23.1)
-            (9, 22.8)
-            (10, 22.8)
-            (11, 22.8)
-            (12, 24.8)
+            (1, 34.9)
+            (2, 34.7)
+            (3, 28.0)
+            (4, 18.9)
+            (5, 15.3)
+            (6, 13.8)
+            (7, 13.8)
+            (8, 13.9)
+            (9, 13.6)
+            (10, 13.6)
+            (11, 13.6)
+            (12, 13.6)
         };
         \end{axis}
     \end{tikzpicture}
@@ -337,12 +337,12 @@ O gráfico abaixo demonstra a concentração temporal das obrigações ao longo 
 
 \vspace{0.5cm}
 
-\textbf{Análise Crítica do Fluxo:}
+\textbf{Análise Crítica do Fluxo - VERSÃO 2:}
 \begin{itemize}
-    \item \textbf{Distribuição Equilibrada:} Diferente do cenário anterior, 2026 apresenta distribuição mais homogênea, com valores mensais entre R\$ 22,7 mil e R\$ 43,8 mil.
-    \item \textbf{Pico em Fevereiro:} O mês de fevereiro concentra o maior valor mensal (\textbf{R\$ 43,8 mil}), representando 5,9\% do total geral.
-    \item \textbf{1º Trimestre:} Representa \textbf{R\$ 117,6 mil} (15,9\% do total geral), com perfil de desembolso mais sustentável.
-    \item \textbf{Média Mensal 2026:} Aproximadamente R\$ 27,7 mil/mês, indicando estabilidade operacional e previsibilidade de fluxo de caixa.
+    \item \textbf{Redução Significativa:} Versão 2 apresenta valores mensais entre R\$ 13,6 mil e R\$ 34,9 mil, substancialmente menores que V1.
+    \item \textbf{Concentração no 1º Bimestre:} Janeiro e fevereiro mantêm valores similares (\textbf{R\$ 34,9k e R\$ 34,7k}), representando 11,0\% do total geral.
+    \item \textbf{1º Trimestre:} Representa \textbf{R\$ 97,6 mil} (15,5\% do total geral), com redução de 17,0\% em relação à V1.
+    \item \textbf{Média Mensal 2026:} Aproximadamente R\$ 19,0 mil/mês (31,4\% menor que V1), indicando alívio significativo no fluxo de caixa.
 \end{itemize}
 
 \newpage
@@ -350,7 +350,7 @@ O gráfico abaixo demonstra a concentração temporal das obrigações ao longo 
 % --- SEÇÃO 5: ANÁLISE DETALHADA DOS PRÓXIMOS 6 MESES ---
 \section{Análise Detalhada dos Próximos 6 Meses (Jan-Jun/2026)}
 
-Esta seção apresenta uma análise aprofundada das obrigações financeiras projetadas para o período de Janeiro a Junho de 2026, totalizando \textbf{R\$ 192.996,16} (26,1\% do total geral).
+Esta seção apresenta uma análise aprofundada das obrigações financeiras projetadas para o período de Janeiro a Junho de 2026, totalizando \textbf{R\$ 145.597,20} (23,1\% do total geral) na Versão 2.
 
 \subsection{Distribuição Mensal Detalhada - 1º Semestre 2026}
 
@@ -361,17 +361,17 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
         \toprule
         \rowcolor{tableHeader} \textbf{Mês/2026} & \textbf{Quantidade} & \textbf{Valor Total (R\$)} & \textbf{\% Acumulado} \\
         \midrule
-        Janeiro & 28 títulos & 36.636,98 & 5,0\% \\
-        Fevereiro & 25 títulos & 43.833,56 & 10,9\% \\
-        Março & 22 títulos & 37.122,87 & 15,9\% \\
-        Abril & 13 títulos & 27.983,92 & 19,7\% \\
-        Maio & 11 títulos & 24.459,43 & 23,0\% \\
-        Junho & 9 títulos & 22.959,40 & 26,1\% \\
+        Janeiro & 28 títulos & 34.903,82 & 5,5\% \\
+        Fevereiro & 23 títulos & 34.700,40 & 11,1\% \\
+        Março & 20 títulos & 27.989,71 & 15,5\% \\
+        Abril & 11 títulos & 18.850,76 & 18,5\% \\
+        Maio & 9 títulos & 15.326,27 & 20,9\% \\
+        Junho & 7 títulos & 13.826,24 & 23,1\% \\
         \midrule
-        \rowcolor{lightGray} \textbf{TOTAL (6 meses)} & \textbf{108 títulos} & \textbf{192.996,16} & \textbf{26,1\%} \\
+        \rowcolor{lightGray} \textbf{TOTAL (6 meses)} & \textbf{98 títulos} & \textbf{145.597,20} & \textbf{23,1\%} \\
         \bottomrule
     \end{tabularx}
-    \caption*{\footnotesize Valores baseados em análise de vencimentos do sistema contábil. Ticket médio de R\$ 1.787,00 no período.}
+    \caption*{\footnotesize Valores V2 baseados em análise de vencimentos excluindo UNIMED, SIMONE HELENA e SIMPLES reduzido. Ticket médio de R\$ 1.486,00 no período.}
 \end{table}
 
 \subsection{Análise de Composição: Bancário vs Operacional}
@@ -383,17 +383,17 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
         \toprule
         \rowcolor{tableHeader} \textbf{Mês} & \textbf{Bancário (R\$)} & \textbf{Operacional (R\$)} & \textbf{Total (R\$)} & \textbf{\% Bancário} \\
         \midrule
-        Janeiro & 11.292,42 & 25.344,56 & 36.636,98 & 30,8\% \\
-        Fevereiro & 14.663,11 & 29.170,45 & 43.833,56 & 33,5\% \\
-        Março & 9.866,52 & 27.256,35 & 37.122,87 & 26,6\% \\
-        Abril & 9.026,88 & 18.957,04 & 27.983,92 & 32,3\% \\
-        Maio & 7.904,58 & 16.554,85 & 24.459,43 & 32,3\% \\
-        Junho & 7.904,58 & 15.054,82 & 22.959,40 & 34,4\% \\
+        Janeiro & 11.292,42 & 23.611,40 & 34.903,82 & 32,3\% \\
+        Fevereiro & 14.663,11 & 20.037,29 & 34.700,40 & 42,3\% \\
+        Março & 9.866,52 & 18.123,19 & 27.989,71 & 35,3\% \\
+        Abril & 9.026,88 & 9.823,88 & 18.850,76 & 47,9\% \\
+        Maio & 7.904,58 & 7.421,69 & 15.326,27 & 51,6\% \\
+        Junho & 7.904,58 & 5.921,66 & 13.826,24 & 57,2\% \\
         \midrule
-        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{60.658,09} & \textbf{132.338,07} & \textbf{192.996,16} & \textbf{31,4\%} \\
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{60.658,09} & \textbf{84.939,11} & \textbf{145.597,20} & \textbf{41,7\%} \\
         \bottomrule
     \end{tabularx}
-    \caption*{\footnotesize \textbf{Bancário:} Santander Brasil. \textbf{Operacional:} Fornecedores, salários, obrigações tributárias, previdenciárias e plano de saúde.}
+    \caption*{\footnotesize \textbf{Bancário:} Santander Brasil. \textbf{Operacional V2:} Fornecedores e obrigações tributárias (SIMPLES reduzido), excluindo UNIMED e SIMONE HELENA.}
 \end{table}
 
 \subsection{Indicadores de Liquidez Mensal}
@@ -405,14 +405,14 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
         \toprule
         \rowcolor{tableHeader} \textbf{Mês/2026} & \textbf{Maior Título (R\$)} & \textbf{Ticket Médio (R\$)} & \textbf{Desembolso Diário Médio (R\$)} \\
         \midrule
-        Janeiro & 11.292,42 & 1.308,46 & 1.182,16 \\
-        Fevereiro & 7.363,11 & 1.753,34 & 1.565,48 \\
-        Março & 7.300,01 & 1.687,40 & 1.197,51 \\
-        Abril & 7.300,00 & 2.152,61 & 932,80 \\
-        Maio & 7.300,00 & 2.223,58 & 788,69 \\
-        Junho & 7.300,00 & 2.551,04 & 765,31 \\
+        Janeiro & 11.292,42 & 1.246,56 & 1.126,25 \\
+        Fevereiro & 7.363,11 & 1.388,02 & 1.239,30 \\
+        Março & 7.300,01 & 1.272,71 & 902,86 \\
+        Abril & 7.300,00 & 1.450,06 & 628,36 \\
+        Maio & 7.300,00 & 1.393,30 & 494,46 \\
+        Junho & 7.300,00 & 1.536,03 & 460,87 \\
         \midrule
-        \rowcolor{lightGray} \textbf{MÉDIA SEMESTRAL} & \textbf{7.976,09} & \textbf{1.946,07} & \textbf{1.071,99} \\
+        \rowcolor{lightGray} \textbf{MÉDIA SEMESTRAL} & \textbf{7.976,09} & \textbf{1.381,11} & \textbf{808,68} \\
         \bottomrule
     \end{tabularx}
     \caption*{\footnotesize Desembolso diário médio calculado com base em 31 dias para Jan/Mar/Mai e 30 dias para Fev/Abr/Jun.}
@@ -447,7 +447,7 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
             (1, 11.3) (2, 14.7) (3, 9.9) (4, 9.0) (5, 7.9) (6, 7.9)
         };
         \addplot[fill=accentColor!60, draw=accentColor!80!black] coordinates {
-            (1, 25.3) (2, 29.2) (3, 27.3) (4, 19.0) (5, 16.6) (6, 15.1)
+            (1, 23.6) (2, 20.0) (3, 18.1) (4, 9.8) (5, 7.5) (6, 6.0)
         };
         \legend{Obrigações Bancárias, Obrigações Operacionais}
         \end{axis}
@@ -464,19 +464,19 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
         \toprule
         \rowcolor{tableHeader} \textbf{Credor} & \textbf{Títulos} & \textbf{Valor (R\$)} & \textbf{\% do Semestre} \\
         \midrule
-        SANTANDER BRASIL & 76 & 60.658,09 & 31,4\% \\
-        UNIMED GOIÂNIA & 12 & 50.400,00 & 26,1\% \\
-        SIMPLES NACIONAL & 12 & 31.200,00 & 16,2\% \\
-        SIMONE HELENA DOS SANTOS & 12 & 12.000,00 & 6,2\% \\
-        MR TRIPLAN CONTABILIDADE & 12 & 7.200,00 & 3,7\% \\
-        GFIP SEFIP 8,40 GRF FGTS & 12 & 6.600,00 & 3,4\% \\
-        VICTALAB F MANIPULACAO & 6 & 10.863,64 & 5,6\% \\
-        BOTUMEDIC IMPORTAÇÃO & 4 & 4.545,21 & 2,4\% \\
-        GABRIELLA MACHADO & 2 & 2.670,00 & 1,4\% \\
-        TALMAX PRODUTOS DE PROTESE & 3 & 1.854,19 & 1,0\% \\
-        OUTROS & 15 & 5.005,03 & 2,6\% \\
+        SANTANDER BRASIL & 76 & 60.658,09 & 41,7\% \\
+        SIMPLES NACIONAL & 12 & 20.802,08 & 14,3\% \\
+        MR TRIPLAN CONTABILIDADE & 12 & 7.200,00 & 4,9\% \\
+        GFIP SEFIP 8,40 GRF FGTS & 12 & 6.600,00 & 4,5\% \\
+        VICTALAB F MANIPULACAO & 6 & 10.863,64 & 7,5\% \\
+        BOTUMEDIC IMPORTAÇÃO & 4 & 4.545,21 & 3,1\% \\
+        GABRIELLA MACHADO & 2 & 2.670,00 & 1,8\% \\
+        TALMAX PRODUTOS DE PROTESE & 3 & 1.854,19 & 1,3\% \\
+        EDUARDO BORGES NUNES & 6 & 16.200,00 & 11,1\% \\
+        WANESSA DIAS VARANDA & 6 & 9.000,00 & 6,2\% \\
+        OUTROS & 7 & 5.204,03 & 3,6\% \\
         \midrule
-        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{166} & \textbf{192.996,16} & \textbf{100,0\%} \\
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{146} & \textbf{145.597,24} & \textbf{100,0\%} \\
         \bottomrule
     \end{tabularx}
     \caption*{\footnotesize Distribuição detalhada dos credores com vencimento no primeiro semestre de 2026.}
@@ -506,7 +506,7 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
             color=primaryColor,
         ]
         \addplot coordinates {
-            (1, 1308.46) (2, 1753.34) (3, 1687.40) (4, 2152.61) (5, 2223.58) (6, 2551.04)
+            (1, 1246.56) (2, 1388.02) (3, 1272.71) (4, 1450.06) (5, 1393.30) (6, 1536.03)
         };
         \end{axis}
     \end{tikzpicture}
@@ -525,13 +525,13 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
         \rowcolor{tableHeader} \textbf{Mês/2026} & \textbf{Títulos > R\$ 5k} & \textbf{Valor Crítico (R\$)} & \textbf{Nível de Risco} \\
         \midrule
         Janeiro & 1 & 11.292,42 & \cellcolor{orange!30} \textbf{MÉDIO} \\
-        Fevereiro & 2 & 14.663,11 & \cellcolor{orange!30} \textbf{MÉDIO} \\
-        Março & 5 & 23.866,53 & \cellcolor{accentColor!30} \textbf{ALTO} \\
-        Abril & 4 & 21.726,88 & \cellcolor{accentColor!30} \textbf{ALTO} \\
-        Maio & 4 & 21.604,58 & \cellcolor{accentColor!30} \textbf{ALTO} \\
-        Junho & 4 & 21.604,58 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Fevereiro & 2 & 14.663,11 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Março & 3 & 16.566,53 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Abril & 2 & 14.426,88 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Maio & 2 & 14.304,58 & \cellcolor{accentColor!30} \textbf{ALTO} \\
+        Junho & 2 & 14.304,58 & \cellcolor{accentColor!30} \textbf{ALTO} \\
         \midrule
-        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{20} & \textbf{114.758,10} & -- \\
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{12} & \textbf{85.558,10} & -- \\
         \bottomrule
     \end{tabularx}
     \caption*{\footnotesize \textbf{Critério de Risco:} ALTO (>25\% do valor mensal em títulos únicos >R\$ 5k), MÉDIO (10-25\%), BAIXO (<10\%).}
@@ -563,7 +563,7 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
             fill=primaryColor!20,
         ]
         \addplot+[fill] coordinates {
-            (1, 36.6) (2, 80.5) (3, 117.6) (4, 145.6) (5, 170.1) (6, 193.0)
+            (1, 34.9) (2, 69.6) (3, 97.6) (4, 116.5) (5, 131.8) (6, 145.6)
         };
         \end{axis}
     \end{tikzpicture}
@@ -576,15 +576,15 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
 \textbf{Principais Conclusões - 1º Semestre 2026:}
 
 \begin{itemize}
-    \item \textbf{Diversificação de Obrigações:} Diferente do cenário anterior, o semestre apresenta distribuição equilibrada entre credores, com Santander representando apenas 31,4\% (vs 82,3\% anterior).
+    \item \textbf{Diversificação de Obrigações:} Diferente do cenário anterior, o semestre apresenta distribuição equilibrada entre credores, com Santander representando apenas 41,7\% (vs 82,3\% anterior).
 
-    \item \textbf{Novos Compromissos Estruturais:} UNIMED (26,1\%), SIMPLES NACIONAL (16,2\%) e folha de pagamento (6,2\%) representam 48,5\% das obrigações semestrais.
+    \item \textbf{Compromissos Estruturais Reduzidos:} SIMPLES NACIONAL (14,3\%) representa as principais obrigações fiscais, com redução significativa de custos operacionais no cenário V2.
 
-    \item \textbf{Inversão de Padrão:} Obrigações operacionais (68,6\%) superam bancárias (31,4\%), indicando perfil de despesas recorrentes e obrigações fiscais/trabalhistas.
+    \item \textbf{Inversão de Padrão:} Obrigações operacionais (58,3\%) superam bancárias (41,7\%), indicando perfil de despesas recorrentes e obrigações fiscais otimizadas.
 
-    \item \textbf{Crescimento do Ticket Médio:} Evolução de R\$ 1.308 em janeiro para R\$ 2.551 em junho, refletindo consolidação de pagamentos mensais fixos.
+    \item \textbf{Crescimento do Ticket Médio:} Evolução de R\$ 1.247 em janeiro para R\$ 1.536 em junho, refletindo consolidação de pagamentos mensais otimizados.
 
-    \item \textbf{Gestão de Risco Moderada:} 20 títulos críticos (>R\$ 5k) concentrados em Mar-Jun, principalmente vinculados a obrigações mensais recorrentes.
+    \item \textbf{Gestão de Risco Otimizada:} 12 títulos críticos (>R\$ 5k) concentrados em Fev-Jun, com redução significativa de 40\% vs cenário V1.
 \end{itemize}
 
 \newpage
@@ -595,27 +595,27 @@ Esta seção apresenta uma análise aprofundada das obrigações financeiras pro
 \subsection{Principais Achados}
 
 \begin{enumerate}
-    \item \textbf{Exposição Financeira Significativa:} O montante total de \textbf{R\$ 738,9 mil} (aumento de 28,7\% vs base anterior) representa estrutura de obrigações diversificada, com \textbf{43,8\%} dos títulos classificados como de alta prioridade.
+    \item \textbf{Exposição Financeira Otimizada:} O montante total de \textbf{R\$ 629,3 mil} (redução de 14,8\% vs V1) representa estrutura de obrigações otimizada, com \textbf{36,6\%} dos títulos classificados como de alta prioridade.
 
-    \item \textbf{Diversificação de Riscos:} Redução da dependência bancária de 88,7\% para \textbf{68,9\%}, com entrada de obrigações estruturais: UNIMED GOIÂNIA (8,8\%), SIMPLES NACIONAL (8,4\%) e folha de pagamento (3,2\%).
+    \item \textbf{Diversificação de Riscos:} Redução da dependência bancária de 88,7\% para \textbf{80,9\%}, com foco em obrigações essenciais: SIMPLES NACIONAL (6,6\%) como principal obrigação operacional.
 
-    \item \textbf{Perfil de Despesas Recorrentes:} Distribuição equilibrada em 2026 (\textbf{R\$ 332 mil} - 44,9\%) com média mensal de R\$ 27,7 mil, indicando estabilização operacional.
+    \item \textbf{Perfil de Despesas Recorrentes:} Distribuição equilibrada em 2026 (\textbf{R\$ 227,8 mil} - 36,2\%) com média mensal de R\$ 19,0 mil, indicando estabilização operacional otimizada.
 
-    \item \textbf{Obrigações de Longo Prazo:} Aproximadamente 55,1\% das obrigações (\reais{406,9 mil}) estendem-se até 2031, concentradas em financiamentos bancários estruturados.
+    \item \textbf{Obrigações de Longo Prazo:} Aproximadamente 63,8\% das obrigações (\reais{401,5 mil}) estendem-se até 2031, concentradas em financiamentos bancários estruturados.
 \end{enumerate}
 
 \subsection{Recomendações Estratégicas}
 
 \begin{itemize}
-    \item \textbf{Gestão de Obrigações Recorrentes:} Estabelecer provisões mensais para UNIMED (R\$ 5,4k), SIMPLES NACIONAL (R\$ 5,2k), folha de pagamento (R\$ 2k) e contabilidade (R\$ 1,2k), totalizando ~R\$ 13,8k/mês.
+    \item \textbf{Gestão de Obrigações Recorrentes:} Estabelecer provisões mensais para SIMPLES NACIONAL (R\$ 3,5k) e contabilidade (R\$ 1,2k), totalizando ~R\$ 4,7k/mês em obrigações fixas operacionais.
 
-    \item \textbf{Monitoramento de Liquidez:} Manter reserva mínima de R\$ 50k para cobertura de oscilações mensais e obrigações imprevistas, considerando média mensal de R\$ 27,7k.
+    \item \textbf{Monitoramento de Liquidez:} Manter reserva mínima de R\$ 40k para cobertura de oscilações mensais e obrigações imprevistas, considerando média mensal de R\$ 19,0k.
 
     \item \textbf{Revisão de Financiamentos Bancários:} Avaliar possibilidade de renegociação dos 156 títulos de longo prazo (2027-2031) do Santander, visando redução de taxas ou alongamento de prazos.
 
-    \item \textbf{Otimização Tributária:} Analisar planejamento tributário para otimização do SIMPLES NACIONAL (R\$ 62,4k anuais), considerando enquadramento e alíquotas aplicáveis.
+    \item \textbf{Otimização Tributária:} Analisar planejamento tributário para otimização do SIMPLES NACIONAL (R\$ 41,6k anuais no cenário V2), considerando enquadramento e alíquotas aplicáveis.
 
-    \item \textbf{Dashboard Financeiro:} Implementar sistema de acompanhamento mensal automático para as 26 linhas de credores, com alertas para vencimentos >R\$ 5k.
+    \item \textbf{Dashboard Financeiro:} Implementar sistema de acompanhamento mensal automático para as 24 linhas de credores, com alertas para vencimentos >R\$ 5k.
 
     \item \textbf{Política de Fornecedores:} Negociar prazos diferenciados com VICTALAB (R\$ 16,3k) e BOTUMEDIC (R\$ 8k) para melhor distribuição de fluxo de caixa.
 \end{itemize}
