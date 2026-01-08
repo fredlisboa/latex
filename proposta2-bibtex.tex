@@ -1,5 +1,5 @@
 \PassOptionsToPackage{table}{xcolor}
-\documentclass[10pt, aspectratio=169]{beamer}
+\documentclass[10pt, aspectratio=169, squeeze]{beamer}
 
 % --- Tema e Cores ---
 \usetheme{metropolis} % Tema moderno e limpo
@@ -45,34 +45,34 @@
 
 % --- Slide 1: Visão Geral ---
 \begin{frame}{Quadro Societário Atual}
-    \begin{columns}
-        \column{0.5\textwidth}
-            \textbf{Objetivo:} Dissolução societária com partilha de bens e reconhecimento de passivos.
-            \vspace{1cm}
-            
-            \begin{alertblock}{Cenário Base}
-                Reconhecimento de passivo de locação retroativo e inviabilidade de venda externa dos ativos.
-            \end{alertblock}
+    \begin{block}{Objetivo}
+        Dissolução societária com partilha de bens e reconhecimento de passivos.
+    \end{block}
+    
+    \vspace{0.5cm}
+    
+    \begin{alertblock}{Cenário Base}
+        Reconhecimento de passivo de locação retroativo e inviabilidade de venda externa dos ativos.
+    \end{alertblock}
+\end{frame}
 
-        \column{0.5\textwidth}
-            \centering
-            \textbf{Distribuição de Cotas}
-            \vspace{0.5cm}
-            \begin{table}
-                \rowcolors{1}{lightGray}{white}
-                \begin{tabular}{l c}
-                    \toprule
-                    \textbf{Sócio} & \textbf{\%} \\
-                    \midrule
-                    Frederique A. Lisboa & 40\% \\
-                    Kroner M. Costa & 40\% \\
-                    Eduardo B. Nunes & 10\% \\
-                    Alessandra S. Alves & 5\% \\
-                    Simone H. dos Santos & 5\% \\
-                    \bottomrule
-                \end{tabular}
-            \end{table}
-    \end{columns}
+% --- Slide 1b: Distribuição de Cotas ---
+\begin{frame}{Distribuição de Cotas}
+    \centering
+    \begin{table}
+        \rowcolors{1}{lightGray}{white}
+        \begin{tabular}{l c}
+            \toprule
+            \textbf{Sócio} & \textbf{\%} \\
+            \midrule
+            Frederique A. Lisboa & 40\% \\
+            Kroner M. Costa & 40\% \\
+            Eduardo B. Nunes & 10\% \\
+            Alessandra S. Alves & 5\% \\
+            Simone H. dos Santos & 5\% \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
 \end{frame}
 
 % --- Slide 2: Premissas ---
@@ -186,33 +186,34 @@
 
 % --- Slide 7: Encontro de Contas (GRANDE FINAL) ---
 \begin{frame}{Encontro de Contas e Conclusão}
+    \small
     A matemática da dissolução demonstra que o acordo favorece a liberação dos sócios minoritários.
 
-    \vspace{0.5cm}
+    \vspace{0.3cm}
     \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.85, transform shape]
         % Caixa Dívida
-        \node[draw=accentColor, fill=accentColor!10, line width=1pt, rounded corners, align=center, minimum width=4cm, minimum height=1.5cm] (divida) at (0,0) {\textbf{Dívida Aluguel} \\ \reais{1.420.000}};
+        \node[draw=accentColor, fill=accentColor!10, line width=1pt, rounded corners, align=center, minimum width=3.5cm, minimum height=1.2cm] (divida) at (0,0) {\textbf{Dívida Aluguel} \\ \reais{1.420.000}};
         
         % Sinal de Menos
-        \node[font=\Huge, text=secondaryText] at (2.5,0) {$-$};
+        \node[font=\Large, text=secondaryText] at (2,0) {$-$};
         
         % Caixa Bens
-        \node[draw=primaryColor, fill=primaryColor!10, line width=1pt, rounded corners, align=center, minimum width=4cm, minimum height=1.5cm] (bens) at (5,0) {\textbf{Bens Entregues} \\ \reais{640.830}};
+        \node[draw=primaryColor, fill=primaryColor!10, line width=1pt, rounded corners, align=center, minimum width=3.5cm, minimum height=1.2cm] (bens) at (4.5,0) {\textbf{Bens Entregues} \\ \reais{640.830}};
         
         % Sinal de Igual
-        \node[font=\Huge, text=secondaryText] at (7.5,0) {$=$};
+        \node[font=\Large, text=secondaryText] at (7,0) {$=$};
         
         % Saldo Restante
-        \node[draw=black, fill=lightGray, dashed, align=center, minimum width=4cm, minimum height=1.5cm] (saldo) at (10,0) {\textbf{Saldo Restante} \\ \reais{779.170}};
+        \node[draw=black, fill=lightGray, dashed, align=center, minimum width=3.5cm, minimum height=1.2cm] (saldo) at (9.5,0) {\textbf{Saldo Restante} \\ \reais{779.170}};
         
         % Setas e Explicação
-        \node[text=successColor, font=\bfseries, align=center] at (10, -1.5) {Valor Perdoado \\ por Kroner};
-        \draw[->, thick, successColor] (10, -0.8) -- (10, -1.2);
+        \node[text=successColor, font=\small\bfseries, align=center] at (9.5, -1.2) {Valor Perdoado \\ por Kroner};
+        \draw[->, thick, successColor] (9.5, -0.7) -- (9.5, -1.0);
     \end{tikzpicture}
     \end{center}
 
-    \vspace{0.5cm}
+    \vspace{0.3cm}
     \textbf{Conclusão:} Kroner renuncia a \textbf{55\% da dívida} para permitir que os sócios levem seus laboratórios e kits de trabalho.
 \end{frame}
 

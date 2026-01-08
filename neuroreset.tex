@@ -1,0 +1,152 @@
+\documentclass[11pt,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage[spanish]{babel}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{helvet} % Fonte similar à Montserrat/Inter
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Definição de Cores Biohacking ---
+\definecolor{deepnavy}{HTML}{0F172A}
+\definecolor{neoncyan}{HTML}{06B6D4}
+\definecolor{neonviolet}{HTML}{A855F7}
+\definecolor{neonpink}{HTML}{EC4899}
+\definecolor{emerald}{HTML}{10B981}
+\definecolor{amber}{HTML}{F59E0B}
+\definecolor{textgray}{HTML}{E0D6DE}
+
+% --- Estilo de Página ---
+\pagecolor{deepnavy}
+\color{textgray}
+
+% --- Customização de Títulos ---
+\titleformat{\section}{\color{neoncyan}\huge\bfseries}{}{0em}{}
+\titleformat{\subsection}{\color{neonviolet}\Large\bfseries}{}{0em}{}
+
+% --- Cards Estilizados ---
+\newtcolorbox{neurocard}[2][]{
+    colback=deepnavy!95!black,
+    colframe=neonviolet!50!black,
+    fonttitle=\bfseries\color{white},
+    title=#2,
+    arc=4mm,
+    boxrule=1.5pt,
+    shadow={2mm}{-2mm}{0mm}{black!50},
+    #1
+}
+
+\newtcolorbox{alertbox}{
+    colback=amber!10!deepnavy,
+    colframe=amber,
+    arc=2mm,
+    boxrule=1pt,
+    fontupper=\small\color{amber}
+}
+
+\begin{document}
+
+% --- CAPA ---
+\begin{center}
+    \vspace*{2cm}
+    {\color{neoncyan}\Huge \faBrain} \\
+    \vspace{0.5cm}
+    {\color{white}\Huge \bfseries NeuroReset} \\
+    \vspace{0.3cm}
+    {\color{neonpink}\Large Guía de Inicio Rápido \& Manual de Usuario} \\
+    \vspace{1cm}
+    \begin{tcolorbox}[colback=neoncyan!10, colframe=neoncyan, arc=5mm, center, width=12cm]
+        \centering \bfseries \color{white} Reprograma tu mente y elimina la ansiedad en 5 minutos.
+    \end{tcolorbox}
+    \vspace{1cm}
+    {\small \color{neoncyan!50} Método Científicamente Validado | Dr. Mateo Velasco}
+\end{center}
+
+\vspace{1.5cm}
+
+% --- SEÇÃO 1 ---
+\section{¿Por Qué la Meditación Tradicional Te Ha Fallado?}
+\begin{neurocard}{}
+    ¿Alguna vez has intentado meditar y sentiste tu mente aún más agitada? \\
+    \textbf{\color{neonpink}No es tu culpa. Es biología.} \\
+    
+    Cuando estamos ansiosos, el cerebro opera en \textbf{Ondas Beta Altas (13-30Hz)}, un estado de supervivencia que hace imposible "simplemente relajarse".
+\end{neurocard}
+
+\begin{neurocard}[colframe=neoncyan!50!black]{La Solución: Tecnología Neuroacústica}
+    NeuroReset utiliza \textbf{Tons Binaurales} que actúan como un atajo neurológico. Sincronizan tu cerebro automáticamente con estados de calma profunda (Alfa y Delta) sin requerir años de práctica.
+\end{neurocard}
+
+\newpage
+
+% --- SEÇÃO 2: CIÊNCIA ---
+\section{La Ciencia del Cambio}
+\begin{center}
+\begin{neurocard}[width=16cm, title=Frecuencias de Dominio Mental]
+    {\color{neoncyan}\faBolt} \textbf{Beta Altas (13-30 Hz):} Alerta máxima, estrés, cortisol alto. \\[0.3cm]
+    {\color{neoncyan}\faBolt} \textbf{Alfa (8-12 Hz):} Relajación consciente, enfoque y creatividad. \\[0.3cm]
+    {\color{neoncyan}\faBolt} \textbf{Delta (0.5-4 Hz):} Sueño profundo y regeneración celular.
+\end{neurocard}
+\end{center}
+
+\section{Las 3 Reglas de Oro}
+\begin{neurocard}[colframe=emerald]{1. Audífonos Estéreo Obligatorios}
+    \faHeadphones \hspace{0.2cm} El efecto binaural requiere señales distintas en cada oído. Sin audífonos, la tecnología no funcionaaaa.
+\end{neurocard}
+
+\begin{neurocard}[colframe=neonpink]{2. Nunca al Volante}
+    \faExclamationTriangle \hspace{0.2cm} Estas frecuencias inducen somnolencia real. Úsalas solo en lugares seguros como tu cama o sofá.
+\end{neurocard}
+
+\begin{neurocard}[colframe=neoncyan]{3. Consistencia > Intensidad}
+    \faCalendarCheck \hspace{0.2cm} 5-10 minutos diarios reprograman tu cerebro más rápido que una sesión de 2 horas al mes.
+\end{neurocard}
+
+\newpage
+
+% --- SESIONES ---
+\section{Catálogo de Sesiones}
+
+\begin{neurocard}[colframe=amber]{Track 1: El Despertar Energético}
+    \textbf{\faSun \hspace{0.1cm} Uso:} 6h-9h de la mañana. \\
+    \textbf{Frecuencia:} 12-15 Hz. \\
+    \textit{Sustituye el café por energía neural pura. Despierta tu córtex sin agitación.}
+\end{neurocard}
+
+\begin{neurocard}[colframe=neonpink]{Track 2: SOS Ansiedad}
+    \textbf{\faBolt \hspace{0.1cm} Uso:} Crisis agudas o ataques de pánico. \\
+    \textbf{Frecuencia:} 8-10 Hz. \\
+    \textit{El "freno de mano" para tu sistema nervioso. Corta el cortisol en 5 minutos.}
+\end{neurocard}
+
+\begin{neurocard}[colframe=neonviolet]{Track 3: Sueño Profundo}
+    \textbf{\faMoon \hspace{0.1cm} Uso:} Ya en la cama, luces apagadas. \\
+    \textbf{Frecuencia:} 0.5-4 Hz. \\
+    \textit{Apaga el bucle de pensamientos y fuerza la entrada al sueño Delta profundo.}
+\end{neurocard}
+
+\begin{neurocard}[colframe=neoncyan]{Track 4: Enfoque Láser}
+    \textbf{\faBullseye \hspace{0.1cm} Uso:} Trabajo intenso o estudio. \\
+    \textbf{Frecuencia:} 10-12 Hz. \\
+    \textit{Induce el "Estado de Flow" para terminar en 2 horas lo que antes llevaba 5.}
+\end{neurocard}
+
+\vspace{1cm}
+
+% --- RODAPÉ ---
+\begin{alertbox}
+    \centering
+    \faCheckCircle \hspace{0.1cm} \textbf{Garantía de Satisfacción:} Si en 30 días no sientes el cambio, te devolvemos el 100\%. \\
+    \textbf{Soporte:} neuroreset@1sd.online
+\end{alertbox}
+
+\begin{center}
+    \color{textgray!50} \scriptsize © 2025 NeuroReset. Todos los derechos reservados.
+\end{center}
+
+\end{document}
