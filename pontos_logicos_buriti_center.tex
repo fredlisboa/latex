@@ -178,6 +178,7 @@ Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados 
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.6}
+    \Large
     \begin{tabularx}{\textwidth}{X r}
         \toprule
         \rowcolor{tableHeaderLight} \textbf{Parâmetro} & \textbf{Informação} \\
@@ -188,11 +189,11 @@ Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados 
         Portas por Patch Panel & 24 portas \\
         \rowcolor{lightGray}
         Total de Pontos Lógicos & 48 pontos \\
-        Pontos Ativos (em uso) & \textcolor{portActive}{\textbf{7 pontos}} \\
+        Pontos Ativos (em uso) & \textcolor{portActive}{\textbf{20 pontos}} \\
         \rowcolor{lightGray}
-        Pontos Livres (disponíveis) & \textcolor{secondaryText}{\textbf{41 pontos}} \\
+        Pontos Livres (disponíveis) & \textcolor{secondaryText}{\textbf{28 pontos}} \\
         \midrule
-        \rowcolor{accentColor!10} \textbf{Taxa de Ocupação} & \textbf{14,6\%} \\
+        \rowcolor{accentColor!10} \textbf{Taxa de Ocupação} & \textbf{41,7\%} \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -204,8 +205,9 @@ Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados 
 
 \begin{table}[H]
     \centering
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.2}
     \setlength{\tabcolsep}{4pt}
+    \large
     \begin{tabularx}{\textwidth}{
         C{1cm}       % Porta
         c            % Status
@@ -244,32 +246,31 @@ Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados 
         15 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
         \rowcolor{lightGray}
         16 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        17 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        17 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 03 Superior Direita \\
         \rowcolor{lightGray}
         18 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        19 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        19 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 02 Inferior Esquerda \\
         \rowcolor{lightGray}
         20 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        21 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        21 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 01 Superior Esquerda \\
         \rowcolor{lightGray}
         22 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        23 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        23 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 04 Inferior Direita \\
         \rowcolor{lightGray}
         24 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
         \bottomrule
     \end{tabularx}
+    \vspace{0.3cm}
+    \noindent
+    \colorbox{accentColor!10}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep}{%
+            \vspace{0.3cm}
+            \centering
+            \textbf{Patch Panel 01:} \textcolor{portActive}{\rule{8pt}{8pt}} \textbf{11} portas em uso \quad | \quad \textcolor{portFree}{\rule{8pt}{8pt}} \textbf{13} portas livres
+            \vspace{0.3cm}
+        }%
+    }
 \end{table}
-
-\vspace{0.3cm}
-\noindent
-\colorbox{accentColor!10}{%
-    \parbox{\dimexpr\textwidth-2\fboxsep}{%
-        \vspace{0.3cm}
-        \centering
-        \textbf{Patch Panel 01:} \textcolor{portActive}{\rule{8pt}{8pt}} \textbf{7} portas em uso \quad | \quad \textcolor{portFree}{\rule{8pt}{8pt}} \textbf{17} portas livres
-        \vspace{0.3cm}
-    }%
-}
 
 % =====================================================================
 % SEÇÃO 3 - PATCH PANEL 02
@@ -279,8 +280,9 @@ Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados 
 
 \begin{table}[H]
     \centering
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.2}
     \setlength{\tabcolsep}{4pt}
+    \large
     \begin{tabularx}{\textwidth}{
         C{1cm}       % Porta
         c            % Status
@@ -304,63 +306,64 @@ Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados 
         05 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
         \rowcolor{lightGray}
         06 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        07 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        07 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 03 Superior Direita \\
         \rowcolor{lightGray}
         08 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        09 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        09 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 04 Inferior Direita \\
         \rowcolor{lightGray}
         10 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        11 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        11 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 03 Superior Direita \\
         \rowcolor{lightGray}
         12 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        13 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        13 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 02 Inferior Esquerda \\
         \rowcolor{lightGray}
         14 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        15 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        15 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 01 Superior Esquerda \\
         \rowcolor{lightGray}
         16 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        17 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        17 & \textcolor{portActive}{\rule{8pt}{8pt}} & Corredor Esquerda & WiFi TP Link Deco \\
         \rowcolor{lightGray}
         18 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        19 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        19 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 04 Inferior Direita \\
         \rowcolor{lightGray}
         20 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        21 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        21 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 01 Superior Esquerda \\
         \rowcolor{lightGray}
         22 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
-        23 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        23 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 02 Inferior Esquerda \\
         \rowcolor{lightGray}
         24 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
         \bottomrule
     \end{tabularx}
+    \vspace{0.3cm}
+    \noindent
+    \colorbox{warmAccent!10}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep}{%
+            \vspace{0.3cm}
+            \centering
+            \textbf{Patch Panel 02:} \textcolor{portActive}{\rule{8pt}{8pt}} \textbf{9} portas em uso \quad | \quad \textcolor{portFree}{\rule{8pt}{8pt}} \textbf{15} portas livres
+            \vspace{0.3cm}
+        }%
+    }
 \end{table}
-
-\vspace{0.3cm}
-\noindent
-\colorbox{warmAccent!10}{%
-    \parbox{\dimexpr\textwidth-2\fboxsep}{%
-        \vspace{0.3cm}
-        \centering
-        \textbf{Patch Panel 02:} \textcolor{portActive}{\rule{8pt}{8pt}} \textbf{0} portas em uso \quad | \quad \textcolor{portFree}{\rule{8pt}{8pt}} \textbf{24} portas livres
-        \vspace{0.3cm}
-    }%
-}
 
 % =====================================================================
 % SEÇÃO 4 - LEGENDA
 % =====================================================================
+\newpage
 \section{Legenda e Observações}
 
 \begin{table}[H]
     \centering
-    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\arraystretch}{2.2}
+    \Large
     \begin{tabularx}{\textwidth}{c X}
         \toprule
         \rowcolor{tableHeaderLight} \textbf{Símbolo} & \textbf{Significado} \\
         \midrule
-        \textcolor{portActive}{\rule{10pt}{10pt}} & Porta ativa --- ponto lógico em uso, com cabo conectado ao destino \\
+        \textcolor{portActive}{\rule{14pt}{14pt}} & Porta ativa --- ponto lógico em uso, com cabo conectado ao destino \\
         \rowcolor{lightGray}
-        \textcolor{portFree}{\rule{10pt}{10pt}} & Porta livre --- ponto lógico disponível para nova conexão \\
+        \textcolor{portFree}{\rule{14pt}{14pt}} & Porta livre --- ponto lógico disponível para nova conexão \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -370,20 +373,22 @@ Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados 
 \noindent\textbf{Observações:}
 \begin{itemize}
     \item Cada patch panel possui \textbf{24 portas RJ-45} para cabeamento estruturado Cat5e/Cat6.
-    \item Os pontos marcados como ``Carrinho'' referem-se a conexões em estações móveis dentro dos consultórios.
-    \item Os pontos marcados como ``Bancada'' ou ``Balcão'' referem-se a conexões fixas em mobiliário.
-    \item Os pontos marcados como ``WiFi TP Link Deco'' referem-se a access points da rede mesh sem fio.
+    \item Os pontos marcados como ``Carrinho'' referem-se a conexões em \textbf{estações móveis} dentro dos consultórios.
+    \item Os pontos marcados como ``Bancada'' ou ``Balcão'' referem-se a conexões \textbf{fixas} em mobiliário.
+    \item Os pontos marcados como ``WiFi TP Link Deco'' referem-se a \textbf{access points} da rede mesh sem fio.
+    \item A descrição ``Ponto XX'' indica a \textbf{posição física} da tomada na parede (Superior/Inferior, Esquerda/Direita).
     \item A numeração das portas segue a ordem física de cima para baixo no patch panel.
     \item Recomenda-se manter registro atualizado sempre que novos pontos forem ativados ou desativados.
 \end{itemize}
 
-\vspace{2cm}
+\vfill
 
 \begin{center}
     \rule{8cm}{0.5pt} \\
     \vspace{0.3cm}
-    \textbf{Responsável pela Documentação} \\
-    \textcolor{secondaryText}{\small Infraestrutura de TI --- Buriti Center}
+    {\large \textbf{Responsável pela Documentação}} \\
+    \vspace{0.2cm}
+    \textcolor{secondaryText}{Infraestrutura de TI --- Buriti Center}
 \end{center}
 
 \end{document}
