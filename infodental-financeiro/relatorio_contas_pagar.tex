@@ -1,0 +1,947 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\usepackage{needspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\pgfplotsset{compat=1.18}
+
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Relatório de Gestão Financeira -- Infodental -- Dez/2022 a Mar/2026},
+    pdfauthor={Infodental}
+}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4.5cm, bottom=2cm, headsep=1.5cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}  % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}   % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}
+\definecolor{warningOrange}{RGB}{255, 140, 0}
+\definecolor{alertRed}{RGB}{200, 30, 30}
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize RELATÓRIO DE GESTÃO FINANCEIRA -- INFODENTAL}} & \scriptsize \textit{Análise Gerencial} \\
+        \textcolor{secondaryText}{\scriptsize Dados: ERP Odoo + Extratos Bancários Sicredi (Dez/2022 a Mar/2026)} & {\scriptsize \textbf{Data Base: 31/03/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Infodental | Relatório de Gestão Financeira | Dez/2022--Mar/2026}}
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% ============================================================
+% INÍCIO DO DOCUMENTO
+% ============================================================
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{RELATÓRIO DE GESTÃO}}} \\
+    \vspace{0.3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{FINANCEIRA}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{INFODENTAL}} \\
+    \vspace{0.3cm}
+    {\large Custos, Receita, Aportes e Oportunidades de Otimização} \\
+    \vspace{2cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{DIAGNÓSTICO FINANCEIRO COMPLETO}} \\
+            \vspace{0.3cm}
+            {\large Período: Dezembro/2022 a Março/2026} \\
+            \vspace{0.1cm}
+            {\normalsize Fontes: ERP Odoo (1.215 lançamentos de contas a pagar) + Extratos Bancários Sicredi (40 meses)} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{2cm}
+
+    \begin{flushleft}
+    \textbf{EIXOS DE ANÁLISE:} \\
+    \vspace{0.2cm}
+    \textcolor{primaryColor}{\textbf{1}} -- Evolução mensal de custos e tendências \\
+    \textcolor{primaryColor}{\textbf{2}} -- Concentração por fornecedor e categoria \\
+    \textcolor{primaryColor}{\textbf{3}} -- Receita operacional vs. aportes dos sócios \\
+    \textcolor{primaryColor}{\textbf{4}} -- Caminho para o break-even operacional \\
+    \textcolor{primaryColor}{\textbf{5}} -- Identificação de custos passíveis de redução \\
+    \textcolor{primaryColor}{\textbf{6}} -- Recomendações estratégicas
+    \end{flushleft}
+
+    \vfill
+    {\small Dados extraídos do ERP Odoo (diário de contas a pagar) e extratos bancários Sicredi conta 81716-3 (dez/2022 a mar/2026). Análise contempla custos operacionais, receita de assinaturas SaaS (Stripe, IUGU, PIX clientes) e aportes de capital dos sócios.} \\
+    \vspace{1.5cm}
+
+    \colorbox{primaryColor}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.5cm}
+            \textcolor{white}{\Large \textbf{INFODENTAL}} \\
+            \vspace{0.2cm}
+            \textcolor{white}{\normalsize Data Base: 31 de Março de 2026} \\
+            \vspace{0.5cm}
+        }%
+    }
+\end{titlepage}
+
+% ============================================================
+\section{Visão Geral -- Indicadores Consolidados}
+% ============================================================
+
+O presente relatório analisa a situação financeira completa da Infodental, cruzando duas fontes de dados: o \textbf{ERP Odoo} (1.215 lançamentos de contas a pagar, totalizando R\$ 3.077.280) e os \textbf{extratos bancários Sicredi} de dez/2022 a mar/2026 (receita operacional de R\$ 779.573 e aportes de capital de R\$ 2.711.861).
+
+\subsection{Evolução da Média Mensal de Gastos}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Período} & \textbf{Total} & \textbf{Meses} & \textbf{Média Mensal} \\
+        \midrule
+        2024 (ano completo) & \reais{1.145.764,50} & 12 & \reais{95.480,38} \\
+        2025 (ano completo) & \reais{918.245,66} & 12 & \reais{76.520,47} \\
+        \rowcolor{successGreen!15} 2026 (jan--mar) & \reais{160.349,12} & 3 & \reais{53.449,71} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textcolor{successGreen}{\textbf{Tendência positiva:}} redução de 19,8\% na média mensal de 2024 para 2025, e 30,2\% de 2025 para o 1T/2026.}
+\end{table}
+
+\subsection{Gráfico -- Evolução Mensal (2024--2026)}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=\textwidth,
+    height=7cm,
+    ybar,
+    bar width=6pt,
+    ymin=0,
+    ymax=130000,
+    ylabel={R\$ (mil)},
+    ylabel style={font=\small},
+    symbolic x coords={
+        Jan/24,Fev/24,Mar/24,Abr/24,Mai/24,Jun/24,
+        Jul/24,Ago/24,Set/24,Out/24,Nov/24,Dez/24,
+        Jan/25,Fev/25,Mar/25,Abr/25,Mai/25,Jun/25,
+        Jul/25,Ago/25,Set/25,Out/25,Nov/25,Dez/25,
+        Jan/26,Fev/26,Mar/26},
+    xtick=data,
+    x tick label style={rotate=70, anchor=east, font=\tiny},
+    ytick={0,20000,40000,60000,80000,100000,120000},
+    yticklabel={\pgfmathprintnumber[precision=0,1000 sep=.]{\tick}},
+    yticklabel style={font=\tiny},
+    enlarge x limits=0.02,
+    nodes near coords=,
+    grid=major,
+    grid style={dashed, gray!30},
+    fill=primaryColor!70,
+    draw=primaryColor,
+]
+\addplot coordinates {
+    (Jan/24,58532) (Fev/24,118072) (Mar/24,95691) (Abr/24,106360) (Mai/24,91353) (Jun/24,84617)
+    (Jul/24,93837) (Ago/24,94075) (Set/24,88252) (Out/24,107031) (Nov/24,121259) (Dez/24,86685)
+    (Jan/25,85930) (Fev/25,69755) (Mar/25,52785) (Abr/25,79765) (Mai/25,76430) (Jun/25,85416)
+    (Jul/25,80434) (Ago/25,69040) (Set/25,75652) (Out/25,82891) (Nov/25,78403) (Dez/25,81745)
+    (Jan/26,55673) (Fev/26,54091) (Mar/26,50586)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Observações:}
+\begin{itemize}[nosep]
+    \item Pico em fev/2024 (R\$ 118 mil) e nov/2024 (R\$ 121 mil) -- provavelmente lançamentos acumulados ou investimentos pontuais.
+    \item 2025 apresentou maior estabilidade, oscilando entre R\$ 53 mil e R\$ 86 mil.
+    \item 1T/2026 mostra redução consistente, com média de R\$ 53,4 mil/mês.
+\end{itemize}
+
+% ============================================================
+\newpage
+\section{Composição dos Custos por Categoria (Etiqueta Analítica)}
+% ============================================================
+
+As etiquetas analíticas do Odoo permitem classificar cada despesa por centro de custo. A tabela abaixo apresenta a distribuição total e recente.
+
+\subsection{Distribuição Total e Período Recente (2025--2026)}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{X r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Etiqueta} & \textbf{Total Geral} & \textbf{\%} & \textbf{2025--2026} & \textbf{\%} \\
+        \midrule
+        \textbf{DEV-SOFT} (Desenvolvimento) & \reais{1.266.331} & 41,2\% & \reais{435.500} & 40,4\% \\
+        \textbf{MKT} (Marketing) & \reais{704.717} & 22,9\% & \reais{232.241} & 21,5\% \\
+        \textbf{INFRA-DADOS} (Infraestrutura) & \reais{547.437} & 17,8\% & \reais{223.940} & 20,8\% \\
+        \textbf{ADMIN} (Administrativo) & \reais{229.831} & 7,5\% & \reais{114.970} & 10,7\% \\
+        \textbf{IMPOST} (Impostos) & \reais{92.296} & 3,0\% & \reais{45.867} & 4,3\% \\
+        REFORMA & \reais{90.254} & 2,9\% & \reais{752} & 0,1\% \\
+        MAQ-EQUIP & \reais{52.088} & 1,7\% & \reais{0} & 0,0\% \\
+        BONUS & \reais{37.886} & 1,2\% & \reais{4.444} & 0,4\% \\
+        VENDAS & \reais{19.500} & 0,6\% & \reais{6.000} & 0,6\% \\
+        SALARIO & \reais{19.500} & 0,6\% & \reais{6.000} & 0,6\% \\
+        LIMPEZA & \reais{16.570} & 0,5\% & \reais{8.770} & 0,8\% \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{\reais{3.077.280}} & \textbf{100\%} & \textbf{\reais{1.078.595}} & \textbf{100\%} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Gráfico -- Composição por Categoria (2025--2026)}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.85\textwidth,
+    height=6cm,
+    xbar,
+    bar width=12pt,
+    xmin=0,
+    xmax=480000,
+    xlabel={R\$},
+    xlabel style={font=\small},
+    ytick=data,
+    symbolic y coords={LIMPEZA,SALARIO,VENDAS,BONUS,IMPOST,ADMIN,INFRA-DADOS,MKT,DEV-SOFT},
+    y tick label style={font=\small},
+    xticklabel={\pgfmathprintnumber[precision=0,1000 sep=.]{\tick}},
+    xticklabel style={font=\tiny},
+    nodes near coords={\pgfmathprintnumber[precision=0,1000 sep=.]{\pgfplotspointmeta}},
+    nodes near coords style={font=\tiny, anchor=west},
+    enlarge y limits=0.1,
+    grid=major,
+    grid style={dashed, gray!20},
+    fill=primaryColor!60,
+    draw=primaryColor,
+]
+\addplot coordinates {
+    (435500,DEV-SOFT)
+    (232241,MKT)
+    (223940,INFRA-DADOS)
+    (114970,ADMIN)
+    (45867,IMPOST)
+    (4444,BONUS)
+    (6000,VENDAS)
+    (6000,SALARIO)
+    (8770,LIMPEZA)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textcolor{accentColor}{\textbf{Insight principal:}} Os três maiores centros de custo -- \textbf{DEV-SOFT}, \textbf{MKT} e \textbf{INFRA-DADOS} -- representam \textbf{82,7\%} do total de despesas em 2025--2026. Qualquer estratégia de redução de custos deve focar prioritariamente nestes três eixos.
+
+% ============================================================
+\newpage
+\section{Evolução Trimestral por Categoria}
+% ============================================================
+
+A análise trimestral permite identificar tendências de crescimento ou redução em cada centro de custo.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{X r r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Categoria} & \textbf{1T/2025} & \textbf{2T/2025} & \textbf{3T/2025} & \textbf{4T/2025} & \textbf{1T/2026} \\
+        \midrule
+        DEV-SOFT & 67.900 & 102.000 & 89.800 & 110.900 & \textbf{64.900} \\
+        MKT & 72.058 & 54.941 & 37.718 & 43.854 & \textbf{23.670} \\
+        INFRA-DADOS & 34.266 & 41.400 & 56.014 & 44.679 & \textbf{47.580} \\
+        ADMIN & 19.979 & 22.803 & 26.439 & 26.873 & \textbf{18.876} \\
+        IMPOST & 5.054 & 10.206 & 11.553 & 14.563 & \textbf{4.491} \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{208.469} & \textbf{241.610} & \textbf{225.127} & \textbf{243.039} & \textbf{160.349} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores em R\$. Categorias menores (BONUS, VENDAS, SALARIO, LIMPEZA) omitidas por representarem menos de 2\% do total.}
+\end{table}
+
+\textbf{Destaques da evolução trimestral:}
+
+\begin{itemize}[nosep]
+    \item \textcolor{successGreen}{\textbf{MKT em queda acentuada:}} De R\$ 72 mil (1T/25) para R\$ 23,7 mil (1T/26) -- redução de 67\%. Importante avaliar se há impacto nas receitas.
+    \item \textcolor{warningOrange}{\textbf{INFRA-DADOS estável/crescente:}} Passou de R\$ 34 mil (1T/25) para R\$ 47,6 mil (1T/26) -- aumento de 39\%. Merece investigação.
+    \item \textcolor{successGreen}{\textbf{ADMIN reduzindo:}} De R\$ 27 mil (4T/25) para R\$ 19 mil (1T/26).
+    \item \textcolor{warningOrange}{\textbf{DEV-SOFT oscilante:}} Picos no 2T e 4T/2025, redução no 1T/2026.
+\end{itemize}
+
+% ============================================================
+\newpage
+\section{Análise dos 15 Maiores Fornecedores (2025--2026)}
+% ============================================================
+
+A concentração de fornecedores é um fator de risco e também de oportunidade de negociação.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{r X r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{\#} & \textbf{Fornecedor} & \textbf{Valor (R\$)} & \textbf{Categoria} \\
+        \midrule
+        1 & SICREDI & 199.619,91 & INFRA-DADOS \\
+        2 & KRONER MACHADO COSTA & 151.204,27 & MKT / ADMIN \\
+        3 & LRC DIGITAL LTDA & 140.000,00 & DEV-SOFT \\
+        4 & FREDERIQUE A. LISBOA & 112.340,00 & MKT \\
+        5 & ATHILA DA S. BATISTA & 95.444,31 & DEV-SOFT \\
+        6 & CAIO C. LUCENA DOS SANTOS & 77.480,47 & DEV-SOFT \\
+        7 & LUCIANO D. MORAIS & 62.450,00 & DEV-SOFT \\
+        8 & PEDRO H. SADDI DE AZEVEDO & 60.850,00 & DEV-SOFT \\
+        9 & LIVIA F. COTA BERGAMIN & 35.403,19 & MKT \\
+        10 & DARF RECEITA FEDERAL & 33.890,41 & IMPOST \\
+        11 & SOLUTI SOLUÇÕES & 20.100,00 & INFRA-DADOS \\
+        12 & WELLINGTON SARAIVA & 11.900,00 & DEV-SOFT \\
+        13 & VERA LUCIA GARCIA & 8.770,00 & LIMPEZA \\
+        14 & TRIPLAN CONTABILIDADE & 8.562,96 & ADMIN \\
+        15 & DUAM PREF. GOIÂNIA & 7.850,93 & IMPOST \\
+        \midrule
+        \rowcolor{lightGray} & \textbf{Subtotal Top 15} & \textbf{1.025.866,45} & \textbf{95,1\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Os 15 maiores fornecedores concentram 95,1\% de todo o gasto em 2025--2026.}
+\end{table}
+
+\textcolor{accentColor}{\textbf{Alerta de concentração:}} Os 3 maiores fornecedores (SICREDI, KRONER, LRC) respondem por \textbf{45,5\%} do total. Esta concentração cria dependência e reduz poder de negociação.
+
+% ============================================================
+\newpage
+\section{Análise Detalhada por Centro de Custo}
+% ============================================================
+
+\subsection{DEV-SOFT -- Desenvolvimento de Software (41\% do total)}
+
+Maior centro de custo da empresa, com \textbf{R\$ 435.500} em 2025--2026 e R\$ 1,27 milhão acumulado.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{X r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Fornecedor} & \textbf{Total Geral} & \textbf{Natureza Provável} \\
+        \midrule
+        LRC DIGITAL LTDA & \reais{282.500} & Fábrica de software / squad \\
+        SADDI E ANTONINI LTDA ME & \reais{232.530} & Desenvolvimento \\
+        ATHILA DA S. BATISTA & \reais{194.200} & Desenvolvedor PJ \\
+        CAIO C. LUCENA DOS SANTOS & \reais{152.361} & Desenvolvedor PJ \\
+        LUCIANO D. MORAIS & \reais{138.700} & Desenvolvedor PJ \\
+        PEDRO H. SADDI DE AZEVEDO & \reais{117.100} & Desenvolvedor PJ \\
+        INFINITE COMPUTAÇÃO NUVEM & \reais{70.608} & Cloud / hosting \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{accentColor}{\textbf{Pontos de atenção:}}
+\begin{itemize}[nosep]
+    \item \textbf{6 desenvolvedores PJ ativos} com custo mensal médio estimado de R\$ 29 mil/mês (total DEV-SOFT).
+    \item A conta INFINITE COMPUTAÇÃO (R\$ 70 mil histórico) sugere custos de cloud que podem ser otimizados.
+    \item Alto custo de desenvolvimento exige análise de \textit{output} vs. investimento (entregas realizadas).
+\end{itemize}
+
+\subsection{MKT -- Marketing (22\% do total)}
+
+Segundo maior centro de custo, com \textbf{R\$ 232.241} em 2025--2026, porém em \textbf{tendência de queda significativa}.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{X r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Fornecedor} & \textbf{Total Geral} & \textbf{Natureza Provável} \\
+        \midrule
+        KRONER MACHADO COSTA & \reais{266.470} & Agência / gestor de tráfego \\
+        FREDERIQUE A. LISBOA & \reais{187.780} & Marketing / gestão \\
+        SICREDI (parcela MKT) & \reais{51.539} & Mídia paga / ads \\
+        LIVIA F. COTA BERGAMIN & \reais{35.403} & Social media / conteúdo \\
+        SIRIGUELA LTDA & \reais{30.000} & Produção criativa \\
+        JARBASAI & \reais{25.000} & IA / automação MKT \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{warningOrange}{\textbf{Observação:}} A redução de MKT de R\$ 72 mil/tri para R\$ 24 mil/tri é expressiva. Se intencional (otimização), é positiva. Se por corte abrupto, pode impactar geração de leads e receita futura.
+
+\subsection{INFRA-DADOS -- Infraestrutura e Dados (18\% do total)}
+
+Centro de custo em \textbf{tendência de alta}, com \textbf{R\$ 223.940} em 2025--2026.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{X r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Fornecedor} & \textbf{Total Geral} & \textbf{Natureza Provável} \\
+        \midrule
+        \rowcolor{accentColor!10} SICREDI (parcela INFRA) & \reais{504.545} & Serviços cloud / SaaS \\
+        SOLUTI SOLUÇÕES & \reais{28.100} & Certificado digital / segurança \\
+        FREDERIQUE A. LISBOA & \reais{7.327} & Consultoria infra \\
+        SCALEWAY & \reais{1.951} & Cloud europeu \\
+        KRONER MACHADO COSTA & \reais{1.829} & Suporte técnico \\
+        ACRAS FOCUS NFE & \reais{990} & Emissão NFe \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{alertRed}{\textbf{Alerta crítico -- SICREDI:}} Este fornecedor concentra \textbf{R\$ 504,5 mil} apenas em INFRA-DADOS, com pagamentos mensais entre R\$ 10 mil e R\$ 23 mil. Em 2025--2026, os pagamentos ao SICREDI para INFRA-DADOS representam em média \textbf{R\$ 12--15 mil/mês}. Sendo a maior despesa individual da empresa, merece auditoria detalhada:
+
+\begin{itemize}[nosep]
+    \item Quais serviços específicos estão sendo pagos via SICREDI?
+    \item Há contratos de cloud/SaaS que podem ser renegociados ou substituídos?
+    \item O salto em jul/2025 (R\$ 23,4 mil vs. média de R\$ 12 mil) foi pontual ou recorrente?
+\end{itemize}
+
+\subsection{ADMIN -- Administrativo (8\% do total)}
+
+Com \textbf{R\$ 114.970} em 2025--2026, cresceu de 3\% para quase 11\% da composição.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{X r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Fornecedor} & \textbf{Total Geral} \\
+        \midrule
+        KRONER MACHADO COSTA & \reais{93.600} \\
+        THIAGO SCOLARICK & \reais{47.000} \\
+        LUIS P. SOARES ADV. & \reais{20.610} \\
+        CORNELIO E SOARES ADV. & \reais{11.220} \\
+        TRIPLAN CONTABILIDADE & \reais{10.863} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{warningOrange}{\textbf{Ponto de atenção:}} KRONER MACHADO COSTA aparece em \textbf{três centros de custo} (MKT R\$ 266 mil + ADMIN R\$ 93,6 mil + INFRA R\$ 1,8 mil = \textbf{R\$ 361,9 mil total}). É o segundo maior fornecedor geral. Verificar se há sobreposição de escopo entre os serviços prestados nas diferentes categorias.
+
+% ============================================================
+\newpage
+\section{Oportunidades de Redução de Custos}
+% ============================================================
+
+Com base na análise dos dados, identificamos as seguintes oportunidades concretas de redução, organizadas por impacto potencial.
+
+\subsection{Alta Prioridade -- Impacto Estimado: R\$ 8.000 a 15.000/mês}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{accentColor!15} \textbf{\#} & \textbf{Oportunidade} & \textbf{Ação Recomendada} \\
+        \midrule
+        \textbf{1} & \textbf{Auditoria SICREDI/INFRA-DADOS} (R\$ 12--15 mil/mês). Maior gasto individual e em tendência de alta. & Solicitar detalhamento de cada serviço contratado via SICREDI. Avaliar migração para provedores mais econômicos (ex: Hetzner, Contabo) ou renegociação de contratos. \\
+        \midrule
+        \textbf{2} & \textbf{Revisão do squad de desenvolvimento} (6 PJs, R\$ 29 mil/mês médio). DEV-SOFT é 41\% do custo total. & Mapear entregas por desenvolvedor. Avaliar se todos os contratos são necessários simultaneamente. Considerar modelo híbrido (time fixo menor + demanda pontual). \\
+        \midrule
+        \textbf{3} & \textbf{Concentração KRONER MACHADO} (R\$ 362 mil total, 3 categorias). Risco de dependência e sobreposição de escopo. & Revisar contratos e escopos em MKT, ADMIN e INFRA. Verificar se há atividades duplicadas ou que podem ser internalizadas. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Média Prioridade -- Impacto Estimado: R\$ 3.000 a 8.000/mês}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{warningOrange!15} \textbf{\#} & \textbf{Oportunidade} & \textbf{Ação Recomendada} \\
+        \midrule
+        \textbf{4} & \textbf{SOLUTI SOLUÇÕES} (R\$ 20 mil em 2025--26, certificados digitais). & Cotação com concorrentes (AC Certisign, AC Valid). Volume pode justificar desconto. \\
+        \midrule
+        \textbf{5} & \textbf{Cloud INFINITE COMPUTAÇÃO} (R\$ 70,6 mil histórico, R\$ 4,8 mil recente). & Avaliar uso real vs. provisionado. Considerar instâncias reservadas ou migração para alternativas. \\
+        \midrule
+        \textbf{6} & \textbf{Custos jurídicos} (2 escritórios: LUIS P. SOARES + CORNELIO E SOARES = R\$ 31,8 mil). & Avaliar se é necessário manter dois escritórios ou se pode consolidar em um. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Baixa Prioridade -- Otimizações Pontuais}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{lightGray} \textbf{\#} & \textbf{Oportunidade} & \textbf{Ação Recomendada} \\
+        \midrule
+        \textbf{7} & \textbf{Telecom LINQ} (R\$ 2,4 mil em 2025--26). & Verificar se plano está adequado ao uso real. \\
+        \midrule
+        \textbf{8} & \textbf{SaaS diversos} (ENOTAS R\$ 861, IUGU R\$ 390, BR Tech R\$ 350). & Revisar se todos os SaaS contratados ainda são utilizados. Cancelar licenças ociosas. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+% ============================================================
+\newpage
+\section{Análise de Receita e Aportes (Extrato Bancário Dez/2022--Mar/2026)}
+% ============================================================
+
+A partir dos extratos bancários da conta Sicredi (cooperativa 3950, conta 81716-3), foi possível identificar as \textbf{fontes de entrada de recursos} da Infodental desde a abertura da conta (dez/2022) até março/2026.
+
+\subsection{Classificação das Entradas -- Acumulado Total}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{l r r X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Fonte} & \textbf{Total (R\$)} & \textbf{\%} & \textbf{Composição} \\
+        \midrule
+        \textbf{Receita Operacional} & 779.573 & 22,8\% & Assinaturas SaaS (Stripe, IUGU), PIX de clientes (clínicas dentárias), liquidações de gateways de pagamento \\
+        \textbf{Aportes e Capital} & 2.711.860 & 77,2\% & Aportes dos sócios (Kroner, Arantes, Frederique, São José), depósitos em espécie e resgates de aplicações financeiras \\
+        \midrule
+        \rowcolor{lightGray} \textbf{Total de Entradas} & \textbf{3.491.433} & \textbf{100\%} & \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Evolução Anual -- Receita vs. Aportes}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Ano} & \textbf{Receita} & \textbf{Aportes} & \textbf{Saídas} & \textbf{Cobertura} & \textbf{Dependência} \\
+        \midrule
+        2022 (dez) & 0 & 70.000 & 43.668 & 0\% & 100\% \\
+        2023 (12 meses) & 88.347 & 522.600 & 631.039 & 14\% & 86\% \\
+        2024 (12 meses) & 194.593 & 1.479.261 & 1.658.336 & 12\% & 88\% \\
+        2025 (12 meses) & 368.443 & 595.000 & 960.966 & 38\% & 62\% \\
+        \rowcolor{successGreen!15} 2026 (jan--mar) & 128.190 & 45.000 & 169.267 & \textbf{76\%} & \textbf{24\%} \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL} & \textbf{779.573} & \textbf{2.711.861} & \textbf{3.463.276} & \textbf{23\%} & \textbf{77\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Cobertura} = \% dos gastos cobertos apenas pela receita operacional. \textbf{Dependência} = \% que depende de aportes/capital externo.}
+\end{table}
+
+\textcolor{accentColor}{\textbf{Diagnóstico:}} Historicamente, a operação financiou-se majoritariamente com aportes dos sócios (\textbf{R\$ 2,7 milhões} desde 2022). Porém, a dependência caiu de 86--88\% (2023--2024) para \textbf{24\%} no 1T/2026 -- uma evolução expressiva.
+
+\textbf{Nota sobre 2024:} O volume excepcionalmente alto de aportes (R\$ 1,48 milhão) e saídas (R\$ 1,66 milhão) reflete uma grande injeção de capital em fev/2024 (R\$ 575 mil, incluindo aporte de sócio de R\$ 495 mil) seguida de investimentos concentrados (reforma, equipamentos, contratações). Os resgates de aplicação financeira nos meses seguintes (R\$ 404 mil) representam a mobilização desse capital previamente investido.
+
+\subsection{Gráfico -- Receita Operacional vs. Aportes (Trimestral)}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=\textwidth,
+    height=7cm,
+    ybar stacked,
+    bar width=16pt,
+    ymin=0,
+    ymax=850000,
+    ylabel={R\$},
+    ylabel style={font=\small},
+    symbolic x coords={
+        1T/23,2T/23,3T/23,4T/23,
+        1T/24,2T/24,3T/24,4T/24,
+        1T/25,2T/25,3T/25,4T/25,
+        1T/26},
+    xtick=data,
+    x tick label style={rotate=45, anchor=east, font=\small},
+    yticklabel={\pgfmathprintnumber[precision=0,1000 sep=.]{\tick}},
+    yticklabel style={font=\tiny},
+    enlarge x limits=0.05,
+    grid=major,
+    grid style={dashed, gray!20},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=2, font=\small},
+]
+% Receita trimestral
+\addplot[fill=successGreen!60, draw=successGreen!80] coordinates {
+    (1T/23,1163) (2T/23,17513) (3T/23,36959) (4T/23,32712)
+    (1T/24,37726) (2T/24,45604) (3T/24,50962) (4T/24,60301)
+    (1T/25,62328) (2T/25,80000) (3T/25,96698) (4T/25,129419)
+    (1T/26,128190)
+};
+% Aporte trimestral
+\addplot[fill=warningOrange!60, draw=warningOrange!80] coordinates {
+    (1T/23,69500) (2T/23,173000) (3T/23,140100) (4T/23,140000)
+    (1T/24,675000) (2T/24,273549) (3T/24,190711) (4T/24,240000)
+    (1T/25,155000) (2T/25,150000) (3T/25,170000) (4T/25,120000)
+    (1T/26,45000)
+};
+\legend{Receita Operacional, Aportes / Capital}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Tendência de Autonomia Financeira}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Período} & \textbf{Receita Média/Mês} & \textbf{Saída Média/Mês} & \textbf{Cobertura} \\
+        \midrule
+        2023 (ano completo) & \reais{7.362} & \reais{52.587} & 14\% \\
+        2024 (ano completo) & \reais{16.216} & \reais{138.195} & 12\% \\
+        1T/2025 & \reais{20.776} & \reais{71.502} & 29\% \\
+        2T/2025 & \reais{26.666} & \reais{84.375} & 32\% \\
+        3T/2025 & \reais{32.232} & \reais{78.070} & 41\% \\
+        4T/2025 & \reais{43.140} & \reais{86.374} & 50\% \\
+        \rowcolor{successGreen!15} 1T/2026 & \reais{42.730} & \reais{56.422} & \textbf{76\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textcolor{successGreen}{\textbf{Tendência clara de melhora:}} a receita subiu de 14\% (2023) para 76\% de cobertura dos gastos no 1T/2026, combinando crescimento de receita com redução drástica de custos. Em março/2026, a receita superou os gastos pela primeira vez (\textbf{101\%}).}
+\end{table}
+
+\textbf{Projeção:} Se mantida a trajetória atual (receita média de R\$ 43 mil/mês e custos em queda para R\$ 50--53 mil/mês), a empresa pode atingir o \textbf{break-even operacional sustentável} (receita cobrindo 100\% dos gastos por 3+ meses consecutivos) entre o \textbf{3T e 4T de 2026}, eliminando a necessidade de aportes.
+
+% ============================================================
+\newpage
+\section{Pontos Positivos Identificados}
+% ============================================================
+
+\begin{itemize}
+    \item \textcolor{successGreen}{\textbf{Receita operacional em forte crescimento:}} A receita SaaS saltou de R\$ 0/mês (dez/2022) para R\$ 51 mil/mês (mar/2026). Em março/2026, a receita superou os gastos pela primeira vez (\textbf{101\% de cobertura}), sinalizando proximidade do break-even sustentável.
+
+    \item \textcolor{successGreen}{\textbf{Dependência de aportes em queda:}} Os aportes dos sócios caíram de R\$ 123 mil/mês (média 2024) para R\$ 15 mil/mês (1T/2026) -- redução de \textbf{88\%}. Em fev e mar/2026 não houve nenhum aporte.
+
+    \item \textcolor{successGreen}{\textbf{Custos em redução consistente:}} A média mensal caiu de R\$ 95,5 mil (2024) para R\$ 53,4 mil (1T/2026) -- uma redução de \textbf{44\%} em dois anos, demonstrando gestão ativa.
+
+    \item \textcolor{successGreen}{\textbf{Reforma e equipamentos concluídos:}} As etiquetas REFORMA (R\$ 90 mil) e MAQ-EQUIP (R\$ 52 mil) estão com gasto praticamente zero em 2025--2026. Os investimentos em infraestrutura física foram encerrados.
+
+    \item \textcolor{successGreen}{\textbf{Modelo operacional enxuto:}} A migração para 100\% prestadores PJ (sem folha de pagamento CLT) reduziu a zero os gastos com SALARIO e BONUS desde o 4T/2025.
+
+    \item \textcolor{successGreen}{\textbf{Efeito tesoura positivo:}} O cruzamento da curva de receita crescente com a curva de custos decrescente acelera a convergência para o break-even -- a receita cresceu 6x enquanto os custos caíram pela metade.
+\end{itemize}
+
+% ============================================================
+\newpage
+\section{Demonstrativo Mensal Completo -- Visão Investidor}
+% ============================================================
+
+Para facilitar a compreensão da estrutura financeira da Infodental, os centros de custo foram agrupados em \textbf{6 categorias simplificadas}. A tabela inclui também a \textbf{receita operacional} (assinaturas SaaS), os \textbf{aportes de capital} dos sócios e o \textbf{percentual de cobertura} (quanto da receita já cobre os gastos sem depender de aportes).
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{l X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Grupo} & \textbf{O que inclui} \\
+        \midrule
+        \textbf{Tecnologia} & Desenvolvimento de software (DEV-SOFT) e infraestrutura de dados, servidores e sistemas (INFRA-DADOS) \\
+        \textbf{Marketing} & Agência de marketing, gestão de tráfego, mídia paga, produção de conteúdo e criativos (MKT) \\
+        \textbf{Administrativo} & Contabilidade, advocacia, telecomunicações, limpeza e despesas gerais (ADMIN, LIMPEZA, GER) \\
+        \textbf{Impostos} & Tributos federais (DARF), municipais (ISS), FGTS e demais encargos (IMPOST, ENCARGOS) \\
+        \textbf{Pessoal} & Salários, comissões de vendas e bonificações a colaboradores (SALARIO, VENDAS, BONUS) \\
+        \textbf{Investimentos} & Reforma do espaço físico, móveis, máquinas e equipamentos (REFORMA, MAQ-EQUIP) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Tabela Mensal Completa -- Desde o Início da Operação}
+
+{\small \textit{Valores em R\$. Células em branco indicam ausência de lançamentos no período.}}
+
+\begin{landscape}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{6pt}
+
+\begin{longtable}{
+    >{\bfseries}l
+    r
+    r
+    r
+    r
+    r
+    r
+    r
+    |
+    >{\color{successGreen}}r
+    >{\color{warningOrange}}r
+    r
+}
+
+\toprule
+\rowcolor{tableHeader}
+\textbf{Mês} &
+\textbf{Tecnologia} &
+\textbf{Marketing} &
+\textbf{Administ.} &
+\textbf{Impostos} &
+\textbf{Pessoal} &
+\textbf{Investim.} &
+\textbf{Total Gastos} &
+\textbf{\textcolor{successGreen}{Receita}} &
+\textbf{\textcolor{warningOrange}{Aporte}} &
+\textbf{Cobertura} \\
+\midrule
+\endfirsthead
+
+\toprule
+\rowcolor{tableHeader}
+\textbf{Mês} &
+\textbf{Tecnologia} &
+\textbf{Marketing} &
+\textbf{Administ.} &
+\textbf{Impostos} &
+\textbf{Pessoal} &
+\textbf{Investim.} &
+\textbf{Total Gastos} &
+\textbf{\textcolor{successGreen}{Receita}} &
+\textbf{\textcolor{warningOrange}{Aporte}} &
+\textbf{Cobertura} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{11}{r}{\footnotesize \textit{continua na próxima página...}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+% === FASE INICIAL (2020--2022) ===
+\multicolumn{11}{l}{\cellcolor{primaryColor!10}\textbf{\small Fase Inicial -- Primeiros Investimentos em Tecnologia (2020--2022)}} \\
+\midrule
+Jun/20 & 5.000 & & & & & & 5.000 & & & \\
+Jul/20 & 4.800 & & & & & & 4.800 & & & \\
+Ago/20 & 64.800 & & & & & & 64.800 & & & \\
+\rowcolor{lightGray} \multicolumn{7}{r}{\footnotesize \textit{Sem lançamentos de Set/2020 a Ago/2021}} & & \multicolumn{2}{l}{} & \\
+Set/21 & 5.000 & & & & & & 5.000 & & & \\
+Out/21 & 5.000 & & & & & & 5.000 & & & \\
+Nov/21 & 5.000 & & & & & & 5.000 & & & \\
+Dez/21 & 9.000 & & & 292 & & & 9.292 & & & \\
+Jan/22 & 6.352 & & & & & & 6.352 & & & \\
+Fev/22 & 6.514 & & & & & & 6.514 & & & \\
+Mar/22 & 6.500 & & & & & & 6.500 & & & \\
+Abr/22 & 5.324 & & & & & & 5.324 & & & \\
+Mai/22 & 5.000 & & & & & & 5.000 & & & \\
+Jun/22 & 5.000 & & & & & & 5.000 & & & \\
+Jul/22 & 5.000 & & & & & & 5.000 & & & \\
+Ago/22 & 5.000 & 761 & & & & & 5.761 & & & \\
+Set/22 & 15.000 & & & & & & 15.000 & & & \\
+Out/22 & 5.000 & 2.015 & & & & & 7.015 & & & \\
+Nov/22 & 7.000 & 2.325 & & & & & 9.325 & & & \\
+Dez/22 & 15.363 & 2.013 & 21.534 & 162 & & 76.760 & 115.831 & 0 & 70.000 & 0\% \\
+
+\midrule
+% === FASE DE ESTRUTURAÇÃO (2023) ===
+\multicolumn{11}{l}{\cellcolor{primaryColor!10}\textbf{\small Fase de Estruturação -- Crescimento e Investimentos (2023)}} \\
+\midrule
+Jan/23 & 10.012 & 4.317 & 1.276 & 244 & & 8.773 & 24.624 & 0 & 20.000 & 0\% \\
+Fev/23 & 10.000 & 1.350 & 1.557 & & & & 12.907 & 163 & 30.000 & 1\% \\
+Mar/23 & 12.983 & 15.970 & 2.555 & 807 & & & 32.315 & 1.000 & 19.500 & 3\% \\
+Abr/23 & 32.991 & 9.182 & 1.573 & 335 & 1.344 & 39.714 & 85.140 & 4.427 & 53.000 & 5\% \\
+Mai/23 & 20.143 & 35.065 & 4.671 & 2.266 & & 15.306 & 77.451 & 5.784 & 80.000 & 7\% \\
+Jun/23 & 12.667 & 8.541 & 3.736 & 1.757 & & 110 & 26.811 & 7.302 & 40.000 & 27\% \\
+Jul/23 & 24.269 & 16.143 & 2.878 & 2.435 & & 46 & 45.771 & 7.544 & 20.000 & 16\% \\
+Ago/23 & 27.537 & 12.500 & 3.809 & 1.188 & & & 45.034 & 21.149 & 40.100 & 47\% \\
+Set/23 & 31.579 & 2.369 & 2.941 & 1.156 & & & 38.045 & 8.266 & 80.000 & 22\% \\
+Out/23 & 31.002 & 3.433 & 3.681 & 1.754 & & & 39.870 & 9.675 & --- & 24\% \\
+Nov/23 & 49.976 & 5.740 & 5.278 & 1.029 & & & 62.023 & 12.125 & 70.000 & 20\% \\
+Dez/23 & 51.916 & 6.630 & 5.830 & 2.540 & 4.500 & & 71.416 & 10.912 & 70.000 & 15\% \\
+\rowcolor{tableHeader!40}
+\textit{Média/mês} & \textit{26.256} & \textit{10.104} & \textit{3.315} & \textit{1.293} & \textit{487} & \textit{5.329} & \textit{46.784} & \textit{7.362} & \textit{43.550} & \textit{14\%} \\
+\rowcolor{lightGray}
+\textit{2023} & \textit{315.076} & \textit{121.241} & \textit{39.785} & \textit{15.512} & \textit{5.844} & \textit{63.950} & \textit{561.407} & \textit{88.347} & \textit{522.600} & \textit{14\%} \\
+
+\midrule
+% === FASE DE OPERAÇÃO PLENA (2024) ===
+\multicolumn{11}{l}{\cellcolor{primaryColor!10}\textbf{\small Operação Plena -- Pico de Custos (2024)}} \\
+\midrule
+Jan/24 & 48.556 & 1.922 & 3.000 & 3.682 & 1.373 & & 58.532 & 13.283 & 70.000 & 23\% \\
+Fev/24 & 64.184 & 42.850 & 3.216 & 2.564 & 5.258 & & 118.072 & 11.617 & 575.000 & 10\% \\
+Mar/24 & 70.913 & 15.847 & 3.502 & 3.172 & 2.257 & & 95.691 & 12.826 & 30.000 & 13\% \\
+Abr/24 & 56.479 & 32.605 & 3.887 & 2.431 & 10.957 & & 106.360 & 18.407 & 180.939 & 17\% \\
+Mai/24 & 56.425 & 23.654 & 4.919 & 1.857 & 4.498 & & 91.353 & 12.696 & 90.000 & 14\% \\
+Jun/24 & 44.092 & 32.405 & 4.338 & & 3.782 & & 84.617 & 14.501 & 102.610 & 17\% \\
+Jul/24 & 41.275 & 28.213 & 18.534 & 2.750 & 3.065 & & 93.837 & 18.434 & 711 & 20\% \\
+Ago/24 & 46.028 & 35.292 & 3.874 & 3.295 & 4.705 & 880 & 94.075 & 15.233 & 100.000 & 16\% \\
+Set/24 & 46.325 & 30.394 & 4.227 & 3.680 & 3.627 & & 88.252 & 17.295 & 90.000 & 20\% \\
+Out/24 & 57.746 & 37.468 & 3.435 & 3.891 & 4.491 & & 107.031 & 25.052 & 80.000 & 23\% \\
+Nov/24 & 72.786 & 34.013 & 6.005 & 1.644 & 6.810 & & 121.259 & 17.875 & 80.000 & 15\% \\
+Dez/24 & 48.790 & 29.457 & 3.007 & 1.656 & 3.776 & & 86.685 & 17.374 & 80.000 & 20\% \\
+\rowcolor{tableHeader!40}
+\textit{Média/mês} & \textit{54.467} & \textit{28.677} & \textit{5.162} & \textit{2.885} & \textit{4.550} & \textit{73} & \textit{95.480} & \textit{16.216} & \textit{123.272} & \textit{17\%} \\
+\rowcolor{lightGray}
+\textit{2024} & \textit{653.599} & \textit{344.121} & \textit{61.944} & \textit{34.620} & \textit{54.598} & \textit{880} & \textit{1.145.765} & \textit{194.593} & \textit{1.479.261} & \textit{12\%} \\
+
+\midrule
+% === FASE DE OTIMIZAÇÃO (2025) ===
+\multicolumn{11}{l}{\cellcolor{successGreen!10}\textbf{\small Fase de Otimização -- Redução de Custos + Crescimento de Receita SaaS (2025)}} \\
+\midrule
+Jan/25 & 44.511 & 31.319 & 1.686 & 4.182 & 4.232 & & 85.930 & 16.592 & 80.000 & 19\% \\
+Fev/25 & 43.959 & 11.558 & 10.388 & & 3.850 & & 69.755 & 19.213 & 75.000 & 28\% \\
+Mar/25 & 13.696 & 29.181 & 9.036 & 872 & & & 52.785 & 26.523 & --- & 50\% \\
+Abr/25 & 45.917 & 14.858 & 9.040 & 5.917 & 4.033 & & 79.765 & 28.000 & 75.000 & 35\% \\
+Mai/25 & 46.481 & 16.495 & 8.230 & 1.998 & 3.225 & & 76.430 & 24.746 & 75.000 & 32\% \\
+Jun/25 & 51.002 & 23.588 & 8.393 & 2.291 & 141 & & 85.416 & 27.253 & --- & 32\% \\
+Jul/25 & 52.087 & 12.277 & 8.522 & 7.549 & & & 80.434 & 30.827 & 95.000 & 38\% \\
+Ago/25 & 44.964 & 12.741 & 9.124 & 1.657 & 553 & & 69.040 & 27.597 & 45.000 & 40\% \\
+Set/25 & 48.763 & 12.700 & 11.433 & 2.347 & 410 & & 75.652 & 38.274 & 30.000 & 51\% \\
+Out/25 & 49.843 & 12.942 & 9.585 & 10.521 & & & 82.891 & 16.925 & 45.000 & 20\% \\
+Nov/25 & 46.517 & 21.700 & 8.719 & 1.467 & & & 78.403 & 66.986 & 30.000 & 85\% \\
+Dez/25 & 59.219 & 9.212 & 10.739 & 2.574 & & & 81.745 & 45.508 & 45.000 & 56\% \\
+\rowcolor{tableHeader!40}
+\textit{Média/mês} & \textit{49.747} & \textit{17.381} & \textit{9.575} & \textit{3.448} & \textit{1.370} & \textit{---} & \textit{76.520} & \textit{30.704} & \textit{49.583} & \textit{40\%} \\
+\rowcolor{lightGray}
+\textit{2025} & \textit{596.960} & \textit{208.571} & \textit{114.895} & \textit{41.376} & \textit{16.444} & \textit{---} & \textit{918.246} & \textit{368.443} & \textit{595.000} & \textit{40\%} \\
+
+\midrule
+% === 2026 ===
+\multicolumn{11}{l}{\cellcolor{successGreen!10}\textbf{\small Consolidação -- Custos sob Controle + Receita Crescente (2026)}} \\
+\midrule
+Jan/26 & 37.477 & 7.200 & 9.260 & 1.649 & & 86 & 55.673 & 36.386 & 45.000 & 65\% \\
+Fev/26 & 35.978 & 8.270 & 7.848 & 1.424 & & 571 & 54.091 & 40.465 & --- & 75\% \\
+Mar/26 & 39.026 & 8.200 & 1.847 & 1.418 & & 94 & 50.586 & 51.339 & --- & \textbf{101\%} \\
+\rowcolor{tableHeader!40}
+\textit{Média/mês} & \textit{37.494} & \textit{7.890} & \textit{6.319} & \textit{1.497} & \textit{---} & \textit{251} & \textit{53.450} & \textit{42.730} & \textit{15.000} & \textit{80\%} \\
+\rowcolor{lightGray}
+\textit{1T/2026} & \textit{112.480} & \textit{23.670} & \textit{18.956} & \textit{4.491} & \textit{---} & \textit{752} & \textit{160.349} & \textit{128.190} & \textit{45.000} & \textit{80\%} \\
+
+\end{longtable}
+
+{\scriptsize \textbf{Legenda:} \textcolor{successGreen}{\textbf{Receita}} = faturamento operacional SaaS (Stripe, IUGU, PIX de clientes). \textcolor{warningOrange}{\textbf{Aporte}} = capital injetado pelos sócios, depósitos e resgates de aplicação financeira. \textbf{Cobertura} = \% dos gastos cobertos apenas pela receita operacional (sem aportes). Linhas ``Média/mês'' mostram a média aritmética de cada coluna no período. Fonte: extratos bancários Sicredi (dez/2022 a mar/2026).}
+
+\end{landscape}
+
+\subsection{Leitura da Tabela para o Investidor}
+
+\colorbox{lightGray}{%
+    \parbox{0.95\textwidth}{%
+        \vspace{0.3cm}
+        \textbf{Como interpretar estes números:}
+        \begin{itemize}[nosep, leftmargin=*]
+            \item \textbf{Tecnologia} é o motor do negócio -- inclui o desenvolvimento do software/produto e toda a infraestrutura digital (servidores, banco de dados, sistemas). Representa hoje cerca de \textbf{70\%} dos gastos, o que é esperado para uma empresa de tecnologia.
+            \item \textbf{Marketing} é o investimento em aquisição de clientes. Caiu de R\$ 29 mil/mês (média 2024) para R\$ 8 mil/mês (1T/2026) -- a empresa está buscando canais mais eficientes ou reduzindo verba de mídia paga.
+            \item \textbf{Administrativo} permanece estável em torno de R\$ 6--10 mil/mês, cobrindo serviços essenciais (contabilidade, advocacia, telecom).
+            \item \textbf{Impostos} variam conforme o faturamento e folha de pagamento, oscilando entre R\$ 1 mil e R\$ 10 mil/mês.
+            \item \textbf{Pessoal} reduziu-se a praticamente zero em 2026, indicando modelo operacional 100\% baseado em prestadores PJ (já contabilizados nas demais categorias).
+            \item \textbf{Investimentos} em reforma e equipamentos foram concentrados em 2022--2023 (R\$ 141 mil) e já estão encerrados.
+            \item \textcolor{successGreen}{\textbf{Receita}} são os pagamentos recebidos de clientes (assinaturas SaaS via Stripe, IUGU e PIX). Saiu do zero em dez/2022 para R\$ 51 mil/mês em mar/2026.
+            \item \textcolor{warningOrange}{\textbf{Aporte}} é o capital injetado pelos sócios e resgates de aplicação financeira. Caiu de R\$ 123 mil/mês (2024) para R\$ 15 mil/mês (1T/2026).
+            \item \textbf{Cobertura} indica qual percentual dos gastos a receita operacional já cobre sozinha, sem depender de aportes. Em março/2026, atingiu \textbf{101\%} pela primeira vez.
+        \end{itemize}
+        \vspace{0.2cm}
+        \textbf{Tendência geral:} A empresa saiu de receita \textbf{zero} e custos de R\$ 53 mil/mês (2023) para \textbf{R\$ 51 mil de receita} contra R\$ 53 mil de custos em 2026. Em paralelo, os aportes caíram de R\$ 44 mil/mês (2023) para R\$ 15 mil/mês (1T/2026), com dois meses consecutivos sem nenhum aporte (fev--mar/2026). O \textbf{break-even operacional foi alcançado em março/2026}.
+        \vspace{0.3cm}
+    }%
+}
+
+% ============================================================
+\newpage
+\section{Matriz de Priorização -- Resumo Executivo}
+% ============================================================
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabularx}{\textwidth}{X c c r}
+        \toprule
+        \rowcolor{primaryColor!15} \textbf{Ação} & \textbf{Urgência} & \textbf{Facilidade} & \textbf{Economia Est./mês} \\
+        \midrule
+        Auditoria SICREDI/INFRA & Alta & Média & R\$ 3.000--5.000 \\
+        Revisão squad DEV-SOFT & Alta & Baixa & R\$ 5.000--10.000 \\
+        Consolidar KRONER & Média & Média & R\$ 2.000--5.000 \\
+        Renegociar SOLUTI & Média & Alta & R\$ 500--1.000 \\
+        Otimizar cloud & Média & Alta & R\$ 1.000--2.000 \\
+        Consolidar jurídico & Baixa & Alta & R\$ 500--1.000 \\
+        Revisar SaaS ociosos & Baixa & Alta & R\$ 200--500 \\
+        \midrule
+        \rowcolor{successGreen!15} \multicolumn{3}{l}{\textbf{Economia mensal potencial total}} & \textbf{R\$ 12.200--24.500} \\
+        \rowcolor{successGreen!15} \multicolumn{3}{l}{\textbf{Economia anual estimada}} & \textbf{R\$ 146.400--294.000} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\vspace{0.5cm}
+\colorbox{primaryColor}{%
+    \parbox{0.95\textwidth}{%
+        \centering
+        \vspace{0.4cm}
+        \textcolor{white}{\large \textbf{CONCLUSÃO}} \\
+        \vspace{0.3cm}
+        \textcolor{white}{\normalsize A Infodental investiu \textbf{R\$ 2,7 milhões} em aportes desde 2022 para construir seu produto SaaS.} \\
+        \textcolor{white}{\normalsize A receita cresceu de \textbf{zero para R\$ 51 mil/mês}, enquanto os custos caíram de \textbf{R\$ 95 mil para R\$ 53 mil/mês}.} \\
+        \textcolor{white}{\normalsize Em março/2026, a receita superou os gastos pela primeira vez (\textbf{break-even operacional}).} \\
+        \textcolor{white}{\normalsize As oportunidades de redução de custos (economia de \textbf{R\$ 146--294 mil/ano}) podem acelerar a lucratividade.} \\
+        \textcolor{white}{\normalsize A dependência de aportes caiu de 88\% (2024) para \textbf{24\% (1T/2026)}, com tendência de eliminação total.} \\
+        \vspace{0.4cm}
+    }%
+}
+
+\end{document}
