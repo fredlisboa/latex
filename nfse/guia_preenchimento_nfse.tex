@@ -1,0 +1,179 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+% --- Configurações de Layout (margens compactas para caber em 1 página) ---
+\geometry{left=1.5cm, right=1.5cm, top=2.8cm, bottom=1.5cm, headsep=0.8cm, headheight=40pt}
+
+% --- Definição de Cores (mesma paleta do relatório de tráfego) ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}
+\definecolor{secondaryText}{RGB}{80, 80, 80}
+\definecolor{accentColor}{RGB}{178, 34, 34}
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}
+\definecolor{warningOrange}{RGB}{255, 140, 0}
+
+% --- Hyperlinks ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Guia de Preenchimento NFS-e -- Serviços Odontológicos},
+    pdfauthor={Fred Lisboa}
+}
+
+% --- Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize GUIA DE PREENCHIMENTO -- NFS-e}} & \scriptsize \textit{Serviços Odontológicos} \\
+        \textcolor{secondaryText}{\scriptsize Emissão de Nota Fiscal de Serviço Eletrônica} & {\scriptsize \textbf{Referência: Abril/2026}}
+    \end{tabularx}%
+}
+
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{NFS-e | \textbf{ME/EPP -- Simples Nacional}}}
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.05cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.1cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\normalsize\bfseries}
+{\thesection}{0.6em}{}[{\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\small\bfseries}
+{}{0em}{}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+
+% --- Espaçamento compacto ---
+\setlength{\parskip}{1pt}
+\setlist[itemize]{nosep, leftmargin=1.2em, itemsep=0pt, parsep=0pt, topsep=1pt}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- Seção 1: Campo Descrição ---
+\section{Localização do Campo ``Descrição dos Serviços''}
+
+\colorbox{warningOrange!15}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \small\textbf{\textcolor{accentColor}{Campo obrigatório}} -- o sistema trava se estiver vazio.
+        Localizado abaixo de \textit{``DADOS DO INTERMEDIÁRIO DE SERVIÇO''} e acima de \textit{``Atividade do Município''}.
+    }%
+}
+
+\vspace{3pt}
+\colorbox{lightGray}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \small\textbf{Texto a inserir:} \textit{Prestação de serviços odontológicos referentes a consulta e procedimentos clínicos.}
+    }%
+}
+
+% --- Seção 2: Guia Completo (em duas colunas) ---
+\section{Guia Completo de Preenchimento}
+
+\begin{multicols}{2}
+
+\subsection{Dados do Serviço e Localização}
+\begin{itemize}
+    \item \textbf{Atividade:} 412 -- 04.12 -- Odontologia
+    \item \textbf{NBS:} 1.2301.23.00 -- Serv. odontológicos
+    \item \textbf{País:} Brasil \,|\, \textbf{UF:} Goiás \,|\, \textbf{Cidade:} Goiânia
+\end{itemize}
+
+\subsection{ISSQN}
+\begin{itemize}
+    \item \textbf{Simples Nacional:} Optante -- ME/EPP
+    \item \textbf{Regime:} Apuração tributos federais e municipais pelo Simples Nacional
+    \item \textbf{Tributação:} Operação Tributável
+    \item \textbf{Retenção ISSQN:} Não Retido
+\end{itemize}
+
+\subsection{Tributação Federal}
+\begin{itemize}
+    \item \textbf{PIS/COFINS:} 08 -- Sem Incidência
+    \item \textbf{Retenção PIS/COFINS/CSLL:} Não Retidos
+    \item \textbf{\textcolor{accentColor}{Perc. Tot. Tributos -- SN: 13,45}}
+\end{itemize}
+\colorbox{warningOrange!15}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep}{%
+        \scriptsize\textbf{Atenção:} preencher o campo 13,45\% para evitar erro de validação.
+    }%
+}
+
+\columnbreak
+
+\subsection{IBS/CBS}
+\begin{itemize}
+    \item \textbf{Indicador:} 030101 -- Serviço prestado fisicamente sobre pessoa ou bem móvel em localidade determinada
+    \item \textbf{Sit. Tributária:} 200 -- Alíquota reduzida
+    \item \textbf{Classif. Tributária:} 200029 -- Serviços de saúde (art. 9\textsuperscript{o}, LC 196/2024)
+    \item \textbf{Tipo Ente Gov.:} \textit{(vazio)}
+    \item \textbf{Tipo Operação:} Fornecimento com pagamento já realizado
+\end{itemize}
+
+\subsection{Informações Complementares}
+\colorbox{lightGray}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep}{%
+        \scriptsize\texttt{DOCUMENTO EMITIDO POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL; NÃO GERA DIREITO A CRÉDITO FISCAL DE IPI.}
+    }%
+}
+
+\end{multicols}
+
+% --- Seção 3: Resumo para Desenvolvedor ---
+\section{Resumo para o Desenvolvedor (Documentação API)}
+
+\vspace{2pt}
+\footnotesize
+\begin{tabularx}{\textwidth}{>{\columncolor{tableHeader}}l X}
+    \hline
+    \rowcolor{primaryColor!15}
+    \textbf{Campo API} & \textbf{Valor / Regra} \\
+    \hline
+    \texttt{xServ} & Enviar a string completa da prestação de serviço \\
+    \texttt{vTotTrib} (Lei 12.741) & Valor calculado sobre \textbf{13,45\%} \\
+    \texttt{CST\_IBS\_CBS} & Código \textbf{200} com classificação \textbf{200029} \\
+    Retenções (PIS, COFINS, CSLL, IRRF) & Enviar como \textbf{0,00} em formato \texttt{Double/Decimal} \\
+    \hline
+\end{tabularx}
+
+\vspace{4pt}
+\colorbox{successGreen!12}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \small\textbf{\textcolor{successGreen}{Dica:}} Se não encontrar o campo de descrição, ele pode estar recolhido. Clique no título da seção \textit{IDENTIFICAÇÃO DOS SERVIÇOS} para expandir.
+    }%
+}
+
+\end{document}
