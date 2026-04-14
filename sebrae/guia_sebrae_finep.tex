@@ -1,0 +1,155 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+% --- Configuração de Hyperlinks ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Guia SEBRAE - Requisito FINEP},
+    pdfauthor={Info Dental}
+}
+
+% --- Layout de Página Única ---
+\geometry{left=2cm, right=2cm, top=3.8cm, bottom=1.8cm, headsep=1.2cm, headheight=50pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}    % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}   % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}    % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}
+\definecolor{warningOrange}{RGB}{255, 140, 0}
+
+% --- Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize GUIA DE AÇÃO: PROGRAMAS SEBRAE PARA REQUISITO FINEP}} & \scriptsize \textit{Info Dental} \\
+        \textcolor{secondaryText}{\scriptsize CNPJ 48.818.166/0001-46 \,|\, Microempresa de Tecnologia em Saúde} & {\scriptsize \textbf{Abril 2026}}
+    \end{tabularx}%
+}
+
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Info Dental \,|\, Documento interno de orientação estratégica}}
+\fancyfoot[R]{\normalsize \textbf{1/1}}
+
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\large\bfseries}
+{}{0em}{}[{\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\normalsize\bfseries}
+{}{0em}{}
+\titlespacing*{\subsection}{0pt}{6pt}{2pt}
+
+% --- Compactar listas ---
+\setlist{nosep, leftmargin=1.2em}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+\section{Contexto}
+
+\textcolor{accentColor}{\textbf{O que a FINEP exige:}} como alternativa ao faturamento de R\$ 1M, a Info Dental deve comprovar ter sido \textbf{selecionada como cliente em programa de inovação do SEBRAE com apoio financeiro}. Abaixo, os três caminhos viáveis e o plano de ação imediato.
+
+\vspace{2pt}
+
+\section{Opções de Programas SEBRAE}
+
+\renewcommand{\arraystretch}{1.35}
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{@{} l X c c @{}}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Programa} & \textbf{O que é} & \textbf{Subsídio} & \textbf{Prazo} \\
+        \midrule
+        \textbf{Sebraetec} & Consultoria em Desenvolvimento Tecnológico / Transformação Digital. ME e EPP elegíveis. Ao final, gera \textbf{documentação comprobatória} de participação. & até 70\% & Semanas \\
+        \rowcolor{lightGray}
+        \textbf{Negócios Inovadores} & Três modalidades: Validação, Operação e \textbf{Tração}. Info Dental se enquadra em Tração (produto com clientes e IA rodando). Mentorias de incubadoras/aceleradoras por até 8 meses. & até 90\% & Meses \\
+        \textbf{ALI Produtividade} & Programa Brasil Mais Produtivo: Agente Local de Inovação visita a empresa por 6 meses. SEBRAE-GO abriu 357 vagas de agentes ALI --- programa ativo em Goiânia agora. & 100\% & 6 meses \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\vspace{-4pt}
+
+\colorbox{accentColor!10}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \small
+        \textcolor{accentColor}{\textbf{Recomendação:}} Iniciar o \textbf{Sebraetec} (conclusão mais rápida, atende o requisito FINEP) \textbf{e simultaneamente} o \textbf{Negócios Inovadores -- Tração} (dá mais peso documental). O ALI é complementar e passivo.%
+    }%
+}
+
+\vspace{4pt}
+
+\section{Plano de Ação --- Esta Semana}
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{\arabic*.}}, leftmargin=1.8em]
+    \item \textbf{Ligar para o SEBRAE Goiás:} \textcolor{primaryColor}{\textbf{(62) 3250-2000}} --- ou ir presencialmente à Rua 1.109, Setor Marista, Goiânia.
+    \item \textbf{Levar:} RG + Cartão CNPJ (48.818.166/0001-46).
+    \item \textbf{Solicitar no atendimento:}
+    \begin{itemize}[label=\textcolor{accentColor}{$\blacktriangleright$}]
+        \item Consultoria \textbf{Sebraetec} na área \textit{Desenvolvimento Tecnológico $\to$ Transformação Digital}.
+        \item Cadastro no \textbf{Sebraetec Negócios Inovadores}, modalidade \textbf{Tração}.
+    \end{itemize}
+    \item \textbf{Informar} que é ME de tecnologia em saúde. O SEBRAE direciona para o atendimento certo e inicia o processo.
+    \item \textbf{Guardar toda documentação} recebida (comprovantes, protocolos, termos de adesão) --- será a evidência para a FINEP.
+\end{enumerate}
+
+\vspace{4pt}
+
+\section{Resumo Comparativo de Velocidade vs.\ Peso Documental}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{@{} X c c @{}}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Programa} & \textbf{Velocidade de Conclusão} & \textbf{Peso para FINEP} \\
+        \midrule
+        Sebraetec (convencional) & \textcolor{successGreen}{\textbf{Alta}} (semanas) & Médio \\
+        \rowcolor{lightGray}
+        Negócios Inovadores -- Tração & \textcolor{warningOrange}{\textbf{Média}} (meses) & \textcolor{successGreen}{\textbf{Alto}} \\
+        ALI Produtividade & \textcolor{accentColor}{\textbf{Baixa}} (6 meses) & Médio \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\end{document}
