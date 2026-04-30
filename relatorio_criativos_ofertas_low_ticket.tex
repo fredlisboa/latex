@@ -333,7 +333,7 @@ O criativo é o 80/20 da operação. Após ter oferta validada, o jogo é \textb
         \midrule
         \textbf{Hook} & Gancho viral do TikTok + antes/depois explícito & 0-5s \\
         \rowcolor{lightGray}
-        \textbf{Body} & GC natural: pessoa usando o app / fazendo ação + antes/depois no meio & 5-35s \\
+        \textbf{Body} & UGC natural: pessoa usando o app / fazendo ação + antes/depois no meio & 5-35s \\
         \textbf{CTA} & ``Teste grátis'' / ``Preencha o quiz e ganhe um presente'' + antes/depois final & 35-50s \\
         \bottomrule
     \end{tabularx}
@@ -368,7 +368,7 @@ Essa técnica é o que faz o criativo low ticket converter em volume:
         \midrule
         Duração máxima & 50 segundos \\
         \rowcolor{lightGray}
-        Estilo visual & 100\% orgânico / GC / TikTok \\
+        Estilo visual & 100\% orgânico / UGC (User Generated Content) / TikTok \\
         Cortes / Transições & A cada 3 segundos \\
         \rowcolor{lightGray}
         Música & Viral do momento (trending) \\
@@ -401,33 +401,65 @@ A estratégia de tráfego não é ``usar a estrutura que funciona pro mercado''.
 
 \subsection{Os 3 Testes Obrigatórios}
 
+\noindent
 \begin{center}
-\begin{tikzpicture}[scale=0.9]
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+    box/.style={
+        rounded corners=8pt,
+        minimum width=5cm,
+        minimum height=4cm,
+        inner sep=6pt,
+    },
+    boxtitle/.style={
+        font=\Large\bfseries,
+    },
+    boxsubtitle/.style={
+        font=\large\bfseries,
+    },
+    boxcontent/.style={
+        font=\normalsize,
+        text width=4.2cm,
+        align=center,
+    },
+    arrow/.style={
+        ->,
+        line width=2pt,
+        primaryColor,
+        >=stealth,
+        shorten <=3pt,
+        shorten >=3pt,
+    },
+]
     % Teste 1
-    \draw[fill=primaryColor!20, rounded corners] (0,0) rectangle (4.5,3);
-    \node[text width=3.8cm, align=center] at (2.25,2.2) {\textbf{\textcolor{primaryColor}{TESTE 1}}};
-    \node[text width=3.8cm, align=center] at (2.25,1.5) {\textbf{Estrutura}};
-    \node[text width=3.8cm, align=center, font=\small] at (2.25,0.7) {ABO 1-1-1\\ABO 1-3-1\\CBO 1-3-3\\etc.};
+    \node[box, fill=primaryColor!12, draw=primaryColor!50, line width=1pt] (t1) at (0,0) {};
+    \node[boxtitle, text=primaryColor] at (0, 1.2) {TESTE 1};
+    \node[boxsubtitle] at (0, 0.4) {Estrutura};
+    \draw[primaryColor!40, line width=0.5pt] (-1.8, 0) -- (1.8, 0);
+    \node[boxcontent] at (0, -0.8) {ABO 1-1-1\\[3pt]ABO 1-3-1\\[3pt]CBO 1-3-3};
 
     % Teste 2
-    \draw[fill=accentColor!15, rounded corners] (5,0) rectangle (9.5,3);
-    \node[text width=3.8cm, align=center] at (7.25,2.2) {\textbf{\textcolor{accentColor}{TESTE 2}}};
-    \node[text width=3.8cm, align=center] at (7.25,1.5) {\textbf{Orçamento}};
-    \node[text width=3.8cm, align=center, font=\small] at (7.25,0.7) {R\$17 (baixo)\\Valor do ticket\\3x o ticket};
+    \node[box, fill=accentColor!10, draw=accentColor!50, line width=1pt] (t2) at (7,0) {};
+    \node[boxtitle, text=accentColor] at (7, 1.2) {TESTE 2};
+    \node[boxsubtitle] at (7, 0.4) {Orçamento};
+    \draw[accentColor!40, line width=0.5pt] (5.2, 0) -- (8.8, 0);
+    \node[boxcontent] at (7, -0.8) {R\$17 (baixo)\\[3pt]Valor do ticket\\[3pt]3x o ticket};
 
     % Teste 3
-    \draw[fill=successGreen!15, rounded corners] (10,0) rectangle (14.5,3);
-    \node[text width=3.8cm, align=center] at (12.25,2.2) {\textbf{\textcolor{successGreen}{TESTE 3}}};
-    \node[text width=3.8cm, align=center] at (12.25,1.5) {\textbf{Conta de Anúncio}};
-    \node[text width=3.8cm, align=center, font=\small] at (12.25,0.7) {Conta A\\Conta B\\(mesmo criativo)};
+    \node[box, fill=successGreen!10, draw=successGreen!50, line width=1pt] (t3) at (14,0) {};
+    \node[boxtitle, text=successGreen] at (14, 1.2) {TESTE 3};
+    \node[boxsubtitle] at (14, 0.4) {Conta de Anúncio};
+    \draw[successGreen!40, line width=0.5pt] (12.2, 0) -- (15.8, 0);
+    \node[boxcontent] at (14, -0.8) {Conta A\\[3pt]Conta B\\[3pt]\textit{(mesmo criativo)}};
 
     % Setas
-    \draw[->, ultra thick, primaryColor] (4.5,1.5) -- (5,1.5);
-    \draw[->, ultra thick, primaryColor] (9.5,1.5) -- (10,1.5);
-\end{tikzpicture}
+    \draw[arrow] (t1.east) -- (t2.west);
+    \draw[arrow] (t2.east) -- (t3.west);
+\end{tikzpicture}%
+}
 \end{center}
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
 \textcolor{accentColor}{\textbf{Por que isso importa:}} Existem operações que foram salvas apenas com mudança de estrutura. Mesmo criativo, mesma copy, mesmo título --- trocou de CBO para ABO (ou vice-versa) e começou a vender. Cada conta performa diferente.
 
@@ -517,7 +549,7 @@ Este é o mapa mental completo do processo, da concepção da oferta até a esca
 
 \begin{enumerate}
     \item Selecione 5-10 hooks do banco de dados TikTok
-    \item Produza 3-5 criativos de até 50 segundos (orgânico/GC)
+    \item Produza 3-5 criativos de até 50 segundos (orgânico/UGC)
     \item Aplique a técnica do antes/depois repetido (3x, mesma pessoa)
     \item Demonstre o app sendo usado fisicamente (não tela estática)
     \item CTA: ``teste grátis'' / ``quiz gratuito'' / ``presente no final''

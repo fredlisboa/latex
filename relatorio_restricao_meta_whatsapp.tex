@@ -1,0 +1,665 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\usepackage{needspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\pgfplotsset{compat=1.18}
+
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Restrição da Meta no Envio de Mensagens via WhatsApp Business},
+    pdfauthor={Operação de Atendimento}
+}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4.5cm, bottom=2cm, headsep=1.5cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}  % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}   % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}  % Verde para sucesso
+\definecolor{warningOrange}{RGB}{255, 140, 0} % Laranja para atenção
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize RESTRIÇÃO DA META NO ENVIO DE MENSAGENS VIA WHATSAPP BUSINESS}} & \scriptsize \textit{Relatório Técnico} \\
+        \textcolor{secondaryText}{\scriptsize Diagnóstico $\rightarrow$ Causa $\rightarrow$ Mitigação} & {\scriptsize \textbf{Data Base: Abril/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Conta: \textbf{+55 62 3190-0509} | Sistema de Integração: InfoZAP}}
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{2.5cm}
+    {\Huge \textbf{\textcolor{primaryColor}{RESTRIÇÃO DA META}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{NO ENVIO DE MENSAGENS VIA WHATSAPP BUSINESS}} \\
+    \vspace{0.3cm}
+    {\large Diagnóstico técnico, causa raiz e plano de mitigação} \\
+    \vspace{1.5cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{RELATÓRIO TÉCNICO PARA O CLIENTE}} \\
+            \vspace{0.3cm}
+            {\large Por que aconteceu, o que está bloqueado e como reduzir a reincidência} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{1.5cm}
+
+    \begin{flushleft}
+    \textbf{ESTRUTURA DO RELATÓRIO:} \\
+    \vspace{0.2cm}
+    \textcolor{primaryColor}{\textbf{1}} - O Que Aconteceu (Classificação RESTRICT\_ALL\_COMPANIONS) \\
+    \textcolor{primaryColor}{\textbf{2}} - Como Confirmamos que é a Meta (Não nosso Sistema) \\
+    \textcolor{primaryColor}{\textbf{3}} - Causas Prováveis e Janela de Restrição \\
+    \textcolor{primaryColor}{\textbf{4}} - O Que Funciona Durante a Restrição (Workaround) \\
+    \textcolor{primaryColor}{\textbf{5}} - Como Reduzir a Probabilidade de Reincidência \\
+    \textcolor{primaryColor}{\textbf{6}} - Solução Definitiva: WhatsApp Business Cloud API
+    \end{flushleft}
+
+    \vfill
+    {\small Documento técnico explicativo sobre a classificação automática aplicada pelos algoritmos da Meta na conta empresarial +55 62 3190-0509, bloqueando o envio de mensagens a partir de plataformas integradas (InfoZAP, CRMs e dispositivos conectados) durante uma janela definida pela própria Meta.} \\
+    \vspace{1.5cm}
+
+    % Box de Créditos
+    \colorbox{accentColor}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.6cm}
+            \textcolor{white}{\Large \textbf{CONTA AFETADA: +55 62 3190-0509}} \\
+            \vspace{0.2cm}
+            \textcolor{white}{\normalsize Classificação: RESTRICT\_ALL\_COMPANIONS | Encerramento: 06/05/2026 17:13 BRT} \\
+            \vspace{0.6cm}
+        }%
+    }
+
+    \vspace{0.2cm}
+    \textbf{Data Base:} Abril de 2026
+\end{titlepage}
+
+% --- CONTEÚDO ---
+\section{Resumo Executivo: O Que Aconteceu}
+
+O WhatsApp (Meta) aplicou uma \textbf{restrição automática} na conta empresarial \textbf{+55 62 3190-0509} que bloqueia envios a partir de plataformas integradas (InfoZAP, CRMs, automações). \textbf{Não é um problema técnico do InfoZAP} --- é uma classificação automática feita pelos algoritmos da Meta diretamente na conta.
+
+\textcolor{secondaryText}{\small \textit{Nota: o \textbf{InfoZAP} é o sistema de integração via WhatsApp utilizado na operação de atendimento. Foi através dele que o sintoma foi detectado, e foi a partir dele que o diagnóstico técnico junto aos servidores da Meta foi conduzido.}}
+
+\subsection{Diagnóstico em Uma Linha}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``A conta recebeu uma classificação interna da Meta chamada RESTRICT\_ALL\_COMPANIONS, que bloqueia envios via dispositivos conectados (incluindo InfoZAP) por uma janela temporária definida pelos algoritmos da própria Meta.''}}
+\end{quote}
+
+\subsection{O Que a Classificação Faz}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Comportamento da Conta} & \textbf{Status} \\
+        \midrule
+        Receber mensagens normalmente & \textcolor{successGreen}{\textbf{Funciona}} \\
+        \rowcolor{lightGray}
+        Enviar mensagens pelo aplicativo no celular & \textcolor{successGreen}{\textbf{Funciona}} \\
+        Responder a chats que o cliente iniciou (qualquer canal) & \textcolor{successGreen}{\textbf{Funciona}} \\
+        \rowcolor{lightGray}
+        Enviar via WhatsApp Web / Multidevice & \textcolor{accentColor}{\textbf{Bloqueado}} \\
+        Enviar via InfoZAP / CRM / Integrações & \textcolor{accentColor}{\textbf{Bloqueado}} \\
+        \rowcolor{lightGray}
+        Iniciar conversas novas (lead frio) pelo InfoZAP & \textcolor{accentColor}{\textbf{Bloqueado}} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{accentColor}{\textbf{Sintoma observável:}} Quando uma mensagem é enviada pelo InfoZAP e a conta está nessa classificação, o WhatsApp aceita a mensagem na rede mas devolve um código de erro \textbf{(463 --- \textit{caller reachout-timelocked})} que faz a mensagem aparecer como ``Falha ao enviar'' no InfoZAP, sem chegar ao destinatário.
+
+\needspace{8cm}
+
+\section{Como Confirmamos Que é a Meta (e Não Nosso Sistema)}
+
+Para isolar a causa, implementamos um endpoint que consulta diretamente os servidores da Meta perguntando se a conta está com restrição ativa. A resposta é inequívoca.
+
+\subsection{Resposta da Meta para a Sua Conta}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{l X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Campo Retornado pela Meta} & \textbf{Valor} \\
+        \midrule
+        \textbf{is\_active} & \textcolor{accentColor}{\textbf{true}} (restrição ativa) \\
+        \rowcolor{lightGray}
+        \textbf{enforcement\_type} & RESTRICT\_ALL\_COMPANIONS \\
+        \textbf{time\_enforcement\_ends} & \textbf{2026-05-06 17:13 (BRT)} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Comparação com Outras Contas (Mesmo Ambiente)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Conta Consultada} & \textbf{is\_active} & \textbf{Status} \\
+        \midrule
+        Conta afetada (+55 62 3190-0509) & \textcolor{accentColor}{\textbf{true}} & \textbf{Restrita} \\
+        \rowcolor{lightGray}
+        Conta WhatsApp Business 1 (mesmo InfoZAP) & false & Normal \\
+        Conta WhatsApp Business 2 (mesmo InfoZAP) & false & Normal \\
+        \rowcolor{lightGray}
+        Conta WhatsApp Business 3 (mesmo InfoZAP) & false & Normal \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{primaryColor}{\textbf{Conclusão:}} As 3 outras contas WhatsApp Business no mesmo ambiente, mesma instância de InfoZAP, mesma infraestrutura, retornaram \textit{is\_active: false}. \textbf{A diferença está exclusivamente na classificação que a Meta atribuiu à sua conta} --- não em algo que possamos corrigir do lado da plataforma.
+
+\needspace{10cm}
+
+\section{Por Que a Meta Aplicou a Restrição}
+
+A Meta não publica os critérios exatos do classificador, mas as causas mais comuns observadas na comunidade técnica para classificações \textbf{RESTRICT\_ALL\_COMPANIONS} são bem documentadas.
+
+\subsection{Os 5 Sinais Que Disparam a Classificação}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Sinal} & \textbf{O Que a Meta Observa} & \textbf{Como Interpreta} \\
+        \midrule
+        \textbf{1} & Muitas mensagens iniciadas pela empresa para destinatários que ainda não falaram antes & Cold outreach / mass marketing \\
+        \rowcolor{lightGray}
+        \textbf{2} & Sequências rápidas de envios em curto intervalo & Automação suspeita \\
+        \textbf{3} & Várias mensagens iniciais idênticas ou muito parecidas & Template/script automatizado \\
+        \rowcolor{lightGray}
+        \textbf{4} & Destinatários clicando em ``Reportar contato'' & Score negativo na conta \\
+        \textbf{5} & Combinação número fixo + Business + dispositivo conectado & Padrão minoritário sob escrutínio \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{warningOrange}{\textbf{Importante:}} A classificação é feita \textbf{automaticamente} por modelos de \textit{machine learning} da Meta. Não há intervenção humana, não há aviso prévio, e não existe um botão de ``contestar'' na interface comum.
+
+\subsection{Linha do Tempo da Restrição}
+
+\noindent
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+    box/.style={
+        rounded corners=8pt,
+        minimum width=5cm,
+        minimum height=4.5cm,
+        inner sep=6pt,
+    },
+    boxtitle/.style={
+        font=\Large\bfseries,
+        anchor=north,
+    },
+    boxsubtitle/.style={
+        font=\large\bfseries,
+        anchor=north,
+    },
+    boxcontent/.style={
+        font=\normalsize,
+        text width=4.2cm,
+        align=center,
+        anchor=north,
+    },
+    arrow/.style={
+        ->,
+        line width=2pt,
+        primaryColor,
+        >=stealth,
+        shorten <=3pt,
+        shorten >=3pt,
+    },
+]
+    % Etapa 1
+    \node[box, fill=accentColor!10, draw=accentColor!50, line width=1pt] (t1) at (0,0) {};
+    \node[boxtitle, text=accentColor] at (0, 1.95) {ATIVA};
+    \node[boxsubtitle] at (0, 1.0) {Restrição};
+    \draw[accentColor!40, line width=0.5pt] (-1.8, 0.45) -- (1.8, 0.45);
+    \node[boxcontent] at (0, 0.2) {Erro 463\\[3pt]Envios bloqueados\\[3pt]via InfoZAP};
+
+    % Etapa 2
+    \node[box, fill=warningOrange!12, draw=warningOrange!60, line width=1pt] (t2) at (7,0) {};
+    \node[boxtitle, text=warningOrange] at (7, 1.95) {06/MAIO};
+    \node[boxsubtitle] at (7, 1.0) {Encerramento};
+    \draw[warningOrange!60, line width=0.5pt] (5.2, 0.45) -- (8.8, 0.45);
+    \node[boxcontent] at (7, 0.2) {17:13 BRT\\[3pt]Volta automática\\[3pt]Sem reconexão};
+
+    % Etapa 3
+    \node[box, fill=successGreen!12, draw=successGreen!60, line width=1pt] (t3) at (14,0) {};
+    \node[boxtitle, text=successGreen] at (14, 1.95) {07/MAIO};
+    \node[boxsubtitle] at (14, 1.0) {Verificação};
+    \draw[successGreen!60, line width=0.5pt] (12.2, 0.45) -- (15.8, 0.45);
+    \node[boxcontent] at (14, 0.2) {16:00 BRT\\[3pt]Check automático\\[3pt]Envio teste real};
+
+    % Setas
+    \draw[arrow] (t1.east) -- (t2.west);
+    \draw[arrow] (t2.east) -- (t3.west);
+\end{tikzpicture}%
+}
+\end{center}
+
+\vspace{0.3cm}
+
+\textcolor{primaryColor}{\textbf{Volta a funcionar quando?}} A janela encerra em \textbf{6 de maio de 2026 (quarta-feira), às 17:13 BRT}. A partir desse momento, o envio pelo InfoZAP retoma normalmente, \textbf{de forma automática}, sem necessidade de re-conectar a sessão ou fazer ajuste técnico.
+
+\needspace{10cm}
+
+\section{O Que Funciona Durante a Janela de Restrição}
+
+A restrição não é total. Várias formas de comunicação continuam funcionando perfeitamente, e existe um \textit{workaround} eficaz para casos urgentes.
+
+\subsection{Mapa do Que Funciona e do Que Está Bloqueado}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Cenário} & \textbf{Status} \\
+        \midrule
+        Receber qualquer mensagem (entrada normal) & \textcolor{successGreen}{\textbf{Funciona}} \\
+        \rowcolor{lightGray}
+        Responder por chats iniciados pelo cliente & \textcolor{successGreen}{\textbf{Funciona}} \\
+        Enviar pelo app WhatsApp Business no celular (qualquer contato) & \textcolor{successGreen}{\textbf{Funciona}} \\
+        \rowcolor{lightGray}
+        Iniciar conversas novas pelo InfoZAP (contato sem inbound prévio) & \textcolor{accentColor}{\textbf{Bloqueado}} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Workaround Imediato para Conversas Urgentes}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Peça para o contato enviar qualquer mensagem primeiro --- mesmo um simples `oi'. Quando essa mensagem chegar, o WhatsApp automaticamente libera o envio bidirecional para aquele contato específico.''}}
+\end{quote}
+
+\textcolor{accentColor}{\textbf{Detalhe importante:}} A liberação acontece \textbf{por contato}, não global. Cada cliente que mandar a primeira mensagem libera o envio apenas para aquele número. Para um time de atendimento, isso significa que \textbf{todos os clientes que já interagiram em algum momento continuam acessíveis}.
+
+\subsection{Estratégia Operacional Durante a Janela}
+
+\begin{enumerate}
+    \item \textbf{Atendimento receptivo:} continua 100\% normal. Se o cliente fala primeiro, o atendente responde sem qualquer impacto.
+    \item \textbf{Conversas urgentes com novos contatos:} pedir ao contato (por outro canal --- ligação, e-mail, SMS) que envie um ``oi'' no WhatsApp. Após o inbound, a liberação para aquele contato é automática.
+    \item \textbf{Disparos ativos pelo InfoZAP:} suspender até 6 de maio. Tentar enviar agora só vai gerar mais sinais negativos no classificador da Meta.
+    \item \textbf{Mensagens proativas absolutamente críticas:} usar o app WhatsApp Business no celular (continua funcionando). Não é escalável, mas resolve casos pontuais.
+\end{enumerate}
+
+\needspace{10cm}
+
+\section{Pode Acontecer de Novo? Probabilidade de Reincidência}
+
+\textbf{Sim, pode.} Esta é a parte mais importante de entender: a janela de restrição é uma \textbf{suspensão temporária, não uma absolvição}.
+
+\subsection{O Que Muda Após o Encerramento}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{O Que Acontece} & \textbf{O Que NÃO Acontece} \\
+        \midrule
+        A conta volta ao estado DEFAULT em 06/maio 17:13 & O score da conta NÃO é zerado \\
+        \rowcolor{lightGray}
+        O envio via InfoZAP retoma normalmente & A Meta NÃO esquece o histórico de sinais \\
+        Não é necessária reconexão técnica & A conta NÃO recebe ``imunidade'' por ter cumprido a janela \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Pense nisso como uma multa de trânsito: você cumpre a suspensão, dirige de novo, mas se cometer a mesma infração, leva outra suspensão --- geralmente com janelas maiores.''}}
+\end{quote}
+
+\textcolor{warningOrange}{\textbf{Risco real:}} Se os mesmos sinais que dispararam a primeira restrição aparecerem de novo após 06/maio, a Meta pode re-aplicar a classificação --- eventualmente com janelas mais longas (dias podem virar semanas em reincidências).
+
+\needspace{10cm}
+
+\section{Como Reduzir a Probabilidade de Reincidência}
+
+Estas são práticas baseadas em recomendações da comunidade técnica e padrões que historicamente reduzem o risco de re-classificação. Não há garantia, mas cada uma diminui a probabilidade.
+
+\subsection{Práticas Recomendadas}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Prática} & \textbf{Por Que Ajuda} \\
+        \midrule
+        Priorizar atendimento receptivo (cliente sempre manda primeiro) & Cada inbound estabelece um ``passe livre'' automático para aquele contato. Conversas com inbound prévio nunca são bloqueadas \\
+        \rowcolor{lightGray}
+        Divulgar o número via link \texttt{wa.me/55623190050X} em site, anúncios e materiais & Faz o cliente iniciar a conversa, gerando o passe livre naturalmente \\
+        Evitar disparos em massa para contatos novos & É exatamente o padrão que a Meta classifica como problemático \\
+        \rowcolor{lightGray}
+        Variar o conteúdo das mensagens iniciais & Evita detecção de template/script automatizado \\
+        Espaçar envios (evitar \textit{bursts}) & Padrão ``humano'' de digitação reduz score de automação \\
+        \rowcolor{lightGray}
+        Verificar regularmente a ``Qualidade do número'' no app WhatsApp Business (Ferramentas comerciais $\rightarrow$ Status do número) & Se a qualidade está em ``Médio'' ou ``Baixo'', a chance de re-restrição é alta \\
+        Não usar o mesmo número para \textit{mass marketing} + atendimento & Mistura de uso pode rebaixar a qualidade da conta \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Hierarquia das Práticas (Por Impacto)}
+
+\begin{enumerate}
+    \item \textcolor{successGreen}{\textbf{Maior impacto:}} fazer o cliente sempre iniciar a conversa (link \texttt{wa.me} em site, redes sociais, materiais).
+    \item \textcolor{successGreen}{\textbf{Alto impacto:}} eliminar mensagens iniciais idênticas em sequência. Variar texto e espaçamento.
+    \item \textcolor{warningOrange}{\textbf{Impacto médio:}} monitorar a qualidade do número semanalmente no app.
+    \item \textcolor{warningOrange}{\textbf{Impacto médio:}} separar número de atendimento do número de \textit{outbound} em volume.
+\end{enumerate}
+
+\needspace{10cm}
+
+\section{Solução Definitiva: WhatsApp Business Cloud API}
+
+A única forma de \textbf{eliminar o risco} dessa restrição em casos onde o \textit{outbound} proativo é crítico para o negócio é migrar para a \textbf{WhatsApp Business Cloud API} (a API paga oficial da Meta).
+
+\subsection{Comparativo: Modelo Atual vs. Cloud API}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Critério} & \textbf{WhatsApp Business + InfoZAP (modelo atual)} & \textbf{WhatsApp Business Cloud API} \\
+        \midrule
+        \textbf{Custo} & Sem custo (só infraestrutura) & Pago por conversa iniciada \\
+        \rowcolor{lightGray}
+        \textbf{Início de conversa fria} & Sujeito ao classificador (erro 463) & Permitido via templates aprovados pela Meta \\
+        \textbf{Templates de mensagem} & Não tem & Pré-aprovados pela Meta, com previsibilidade \\
+        \rowcolor{lightGray}
+        \textbf{Quality Rating} & Apenas visível no app & Painel oficial verde / amarelo / vermelho \\
+        \textbf{Limites de envio} & Definidos pelo classificador, sem aviso & Por tier: 1k $\rightarrow$ 10k $\rightarrow$ 100k $\rightarrow$ ilimitado, com regras claras \\
+        \rowcolor{lightGray}
+        \textbf{Risco de bloqueio inesperado} & \textcolor{accentColor}{\textbf{Existe}} (caso atual) & \textcolor{successGreen}{\textbf{Praticamente zero}} se respeitar templates \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{primaryColor}{\textbf{Recomendação da Meta:}} a Cloud API é a recomendação padrão para empresas que precisam iniciar conversas em volume. Para empresas que só respondem ao cliente, o modelo atual (InfoZAP integrado ao WhatsApp Business no celular) funciona bem e é mais econômico.
+
+\needspace{12cm}
+
+\subsection{Os 3 Cenários Típicos de Decisão}
+
+\noindent
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+    box/.style={
+        rounded corners=8pt,
+        minimum width=5cm,
+        minimum height=6cm,
+        inner sep=6pt,
+    },
+    boxtitle/.style={
+        font=\Large\bfseries,
+        anchor=north,
+    },
+    boxsubtitle/.style={
+        font=\normalsize\bfseries,
+        anchor=north,
+    },
+    boxcontent/.style={
+        font=\small,
+        text width=4.4cm,
+        align=center,
+        anchor=north,
+    },
+]
+    % Cenário 1
+    \node[box, fill=successGreen!12, draw=successGreen!60, line width=1pt] (t1) at (0,0) {};
+    \node[boxtitle, text=successGreen] at (0, 2.65) {CENÁRIO 1};
+    \node[boxsubtitle] at (0, 1.7) {100\% Receptivo};
+    \draw[successGreen!50, line width=0.5pt] (-1.8, 1.15) -- (1.8, 1.15);
+    \node[boxcontent] at (0, 0.9) {Cliente sempre fala primeiro\\[4pt]\textbf{Solução:}\\Manter modelo atual\\[4pt]Restrição praticamente nunca atrapalha};
+
+    % Cenário 2
+    \node[box, fill=warningOrange!12, draw=warningOrange!60, line width=1pt] (t2) at (7,0) {};
+    \node[boxtitle, text=warningOrange] at (7, 2.65) {CENÁRIO 2};
+    \node[boxsubtitle] at (7, 1.7) {Atendimento Misto};
+    \draw[warningOrange!60, line width=0.5pt] (5.2, 1.15) -- (8.8, 1.15);
+    \node[boxcontent] at (7, 0.9) {Cliente normalmente fala primeiro, mas eventualmente vocês iniciam\\[4pt]\textbf{Solução:}\\Modelo atual + práticas de moderação};
+
+    % Cenário 3
+    \node[box, fill=accentColor!10, draw=accentColor!60, line width=1pt] (t3) at (14,0) {};
+    \node[boxtitle, text=accentColor] at (14, 2.65) {CENÁRIO 3};
+    \node[boxsubtitle] at (14, 1.7) {Outbound em Volume};
+    \draw[accentColor!50, line width=0.5pt] (12.2, 1.15) -- (15.8, 1.15);
+    \node[boxcontent] at (14, 0.9) {Vocês precisam iniciar muitas conversas com base de contatos\\[4pt]\textbf{Solução:}\\Migrar para Cloud API};
+\end{tikzpicture}%
+}
+\end{center}
+
+\vspace{0.3cm}
+
+\textcolor{accentColor}{\textbf{Aviso direto:}} se o caso de uso é o Cenário 3 (\textit{outbound} proativo em volume), o modelo atual vai bater nessa restrição \textbf{recorrentemente}. Não há ajuste técnico no InfoZAP que resolva isso --- a única saída é a Cloud API.
+
+\needspace{10cm}
+
+\section{Plano de Ação Imediato}
+
+\subsection{Para os Próximos 7 Dias (até 06/maio 17:13 BRT)}
+
+\begin{itemize}[label=$\square$]
+    \item Suspender disparos ativos pelo InfoZAP para contatos sem histórico de inbound
+    \item Manter atendimento receptivo normal (não há impacto)
+    \item Para casos urgentes: pedir ao cliente que envie ``oi'' primeiro, ou usar o app no celular
+    \item Comunicar internamente o time de atendimento sobre o workaround
+    \item Não tentar ``forçar'' envios pelo InfoZAP --- só gera mais sinais negativos
+\end{itemize}
+
+\subsection{Após o Encerramento (07/maio em diante)}
+
+\begin{itemize}[label=$\square$]
+    \item Confirmar via verificação automática (07/maio 16:00 BRT) que a restrição expirou
+    \item Disparar envio teste real para validar normalidade
+    \item Reativar fluxos de envio gradualmente, sem \textit{burst} no primeiro dia
+    \item Aplicar práticas de mitigação: variação de conteúdo, espaçamento, link \texttt{wa.me} em materiais
+    \item Monitorar semanalmente a Qualidade do número no app WhatsApp Business
+\end{itemize}
+
+\subsection{Decisão Estratégica de Médio Prazo}
+
+\begin{itemize}[label=$\square$]
+    \item Mapear que percentual do volume é receptivo vs. ativo (define o cenário)
+    \item Se predominantemente ativo / em volume: orçar e planejar migração para Cloud API
+    \item Se receptivo / misto: documentar práticas de moderação para o time
+    \item Avaliar separar número de atendimento e número de \textit{outbound} (se ambos forem necessários)
+\end{itemize}
+
+\pagebreak
+
+\section{Considerações Finais}
+
+A restrição aplicada à conta \textbf{+55 62 3190-0509} é um evento documentado e diagnosticado --- não é um problema técnico nosso, é uma classificação automática da Meta. Foi confirmado via consulta direta aos servidores da Meta e isolado por comparação com 3 outras contas no mesmo ambiente.
+
+\subsection{Os 5 Pontos Inegociáveis Para Lembrar}
+
+\begin{enumerate}
+    \item \textbf{Não é falha do InfoZAP:} a Meta consultada diretamente confirmou \textit{is\_active: true} para esta conta especificamente, e \textit{false} para as 3 demais contas no mesmo ambiente InfoZAP.
+
+    \item \textbf{A janela é determinística:} encerra em \textbf{06/maio/2026 às 17:13 BRT}, automaticamente, sem necessidade de ação técnica do nosso lado.
+
+    \item \textbf{Atendimento receptivo continua 100\%:} cada cliente que falar primeiro libera o envio para aquele contato. O time não fica sem trabalhar.
+
+    \item \textbf{Pode acontecer de novo:} se os mesmos sinais reaparecerem (envio frio em volume, conteúdo padronizado, \textit{bursts}), a Meta re-aplica --- com janelas potencialmente maiores.
+
+    \item \textbf{Solução definitiva é Cloud API:} para casos de \textit{outbound} em volume, não há mitigação possível no modelo atual. A migração é a única saída sem risco recorrente.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{center}
+\colorbox{lightGray}{%
+    \parbox{0.85\textwidth}{%
+        \centering
+        \vspace{0.3cm}
+        \textcolor{primaryColor}{\textbf{``A classificação é da Meta, não da plataforma.}}\\
+        \textcolor{primaryColor}{\textbf{O encerramento é automático em 06/maio.}}\\
+        \textcolor{primaryColor}{\textbf{O atendimento receptivo continua funcionando normalmente.}}\\
+        \textcolor{primaryColor}{\textbf{A reincidência é evitável --- desde que os sinais sejam controlados.''}}\\
+        \vspace{0.3cm}
+    }%
+}
+\end{center}
+
+\pagebreak
+
+% --- PÁGINA FINAL ---
+\thispagestyle{empty}
+\vspace*{0.5cm}
+
+\begin{center}
+    {\Huge \textcolor{primaryColor}{\textbf{MAPA DE AÇÃO RÁPIDA}}} \\
+    \vspace{1cm}
+    \rule{12cm}{1.5pt}
+    \vspace{1cm}
+
+    \colorbox{accentColor}{%
+        \parbox{0.92\textwidth}{%
+            \centering
+            \vspace{0.8cm}
+            \textcolor{white}{\Huge \textbf{O QUE FAZER AGORA}} \\
+            \vspace{0.3cm}
+            \textcolor{white}{\Large Janela ativa até 06/maio/2026 17:13 BRT} \\
+            \vspace{0.8cm}
+        }%
+    }
+
+    \vspace{1cm}
+
+    \begin{flushleft}
+    \large
+    \textbf{Hoje --- Comunicação Interna:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Alinhar Time}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Atendimento receptivo segue normal $\rightarrow$ Suspender disparos ativos $\rightarrow$ Workaround: pedir ``oi''} \\
+
+    \vspace{1cm}
+
+    \textbf{Até 06/maio --- Janela de Restrição:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Aguardar e Mitigar}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Não forçar envios $\rightarrow$ Casos urgentes pelo app no celular $\rightarrow$ Documentar volume de chamados} \\
+
+    \vspace{1cm}
+
+    \textbf{07/maio --- Verificação Automática:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Confirmar Normalidade}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Check às 16:00 BRT $\rightarrow$ Envio teste real $\rightarrow$ Reativação gradual sem \textit{burst}} \\
+
+    \vspace{1cm}
+
+    \textbf{Médio Prazo --- Decisão Estratégica:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Avaliar Cloud API}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Mapear volume de \textit{outbound} $\rightarrow$ Se relevante, planejar migração $\rightarrow$ Se não, manter modelo + práticas de moderação} \\
+    \end{flushleft}
+
+    \vspace{0.5cm}
+
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.4cm}
+            \textcolor{primaryColor}{\large \textbf{Restrição $\neq$ Falha Técnica}} \\
+            \vspace{0.2cm}
+            \textcolor{secondaryText}{\normalsize É uma classificação automática da Meta --- diagnosticada, datada e com encerramento determinístico} \\
+            \vspace{0.4cm}
+        }%
+    }
+
+    \vfill
+
+    \textcolor{secondaryText}{\footnotesize Documento técnico compilado em Abril de 2026} \\
+    \textcolor{secondaryText}{\footnotesize Diagnóstico baseado em consulta direta aos servidores da Meta e comparação com 3 contas no mesmo ambiente}
+
+\end{center}
+
+\end{document}
