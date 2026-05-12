@@ -1,0 +1,478 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{xltabular}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+% --- Definição de Cores (idêntica ao guia anterior) ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}    % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}   % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}    % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}
+\definecolor{warningOrange}{RGB}{255, 140, 0}
+
+% --- Configuração de Hyperlinks ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Briefing Cotidiano - Pre-assinatura Sebraetec},
+    pdfauthor={Info Dental}
+}
+
+% --- Layout de Página ---
+\geometry{left=2cm, right=2cm, top=3.8cm, bottom=2cm, headsep=1.2cm, headheight=50pt}
+
+% --- Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize BRIEFING DE ALINHAMENTO --- COTIDIANO ACELERADORA DE STARTUPS S/A}} & \scriptsize \textit{Info Dental} \\
+        \textcolor{secondaryText}{\scriptsize Pré-requisitos e perguntas antes da assinatura --- Proposta Sebraetec GO202604136905} & {\scriptsize \textbf{Maio 2026}}
+    \end{tabularx}%
+}
+
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Info Dental \,|\, CNPJ 48.818.166/0001-46 \,|\, Documento interno de preparação}}
+\fancyfoot[R]{\normalsize \textbf{\thepage/\pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\large\bfseries}
+{}{0em}{}[{\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\normalsize\bfseries}
+{}{0em}{}
+\titlespacing*{\subsection}{0pt}{8pt}{2pt}
+
+\setlist{nosep, leftmargin=1.4em}
+
+% --- Caixa de destaque ---
+\newcommand{\destaque}[2]{%
+    \vspace{2pt}
+    \colorbox{#1!10}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep}{%
+            \small #2%
+        }%
+    }
+    \vspace{4pt}
+}
+
+\begin{document}
+
+%==============================================================
+\section{Contexto e Objetivo Final}
+%==============================================================
+
+A Info Dental abriu chamado no SEBRAE Goiás para se capacitar e atender ao requisito alternativo da \textbf{FINEP --- Mais Inovação Brasil --- Rodada 2 --- Saúde / Empresas / Linha V --- Dispositivos Médicos} (submissão até 31/08/2026, fluxo contínuo). Em resposta, o SEBRAE-GO encaminhou a proposta \textbf{Sebraetec \texttt{GO202604136905} --- Desenvolvimento de Negócios Inovadores --- Tração e escala no mercado}, no valor total de \textbf{R\$ 20.000,00} (subsídio SEBRAE 70\% = R\$ 14.000,00; contrapartida Info Dental = R\$ 6.000,00), a ser executada pela \textbf{COTIDIANO ACELERADORA DE STARTUPS S/A} (Brasília-DF) em quatro etapas entre 04/05/2026 e 03/08/2026.
+
+\destaque{accentColor}{%
+    \textcolor{accentColor}{\textbf{Objetivo final inequívoco:}} a participação no Sebraetec é \emph{meio}, não fim. O fim é (1) gerar \textbf{documentação comprobatória} de que a Info Dental foi \textbf{selecionada como cliente em programa de inovação do SEBRAE com apoio financeiro} (requisito alternativo da FINEP ao faturamento de R\$ 1 milhão); e (2) apoiar a submissão do projeto \textbf{OralRisk.AI} ao edital FINEP até 31/08/2026, ainda dentro da janela útil do Sebraetec.%
+}
+
+%==============================================================
+\section{Análise Sintética da Proposta Recebida}
+%==============================================================
+
+\renewcommand{\arraystretch}{1.25}
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{@{} l X r @{}}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Etapa} & \textbf{Descrição} & \textbf{Valor} \\
+        \midrule
+        \textbf{1. Alinhamento da Proposta} & Reunião de abertura, nivelamento de escopo, cronograma resumido, definição de responsáveis. \textit{04/05 a 18/05/2026}. & R\$ 5.000 \\
+        \rowcolor{lightGray}
+        \textbf{2. Diagnóstico e Plano de Ação} & Diagnóstico em quatro dimensões: modelo de negócios; produtos e operações; marketing e vendas; desenvolvimento organizacional. \textit{18/05 a 01/06/2026}. & R\$ 5.000 \\
+        \textbf{3. Desenvolvimento do Negócio Inovador} & Reuniões semanais de mentoria, orientação, validação e suporte técnico/operacional nas quatro dimensões. \textit{01/06 a 29/06/2026}. & R\$ 5.000 \\
+        \rowcolor{lightGray}
+        \textbf{4. Acesso a Crédito e Investimentos} & Qualificação para participar de pelo menos um demoday, conexão com investidores e clientes. \textit{29/06 a 03/08/2026}. & R\$ 5.000 \\
+        \midrule
+        \multicolumn{2}{r}{\textbf{Total}} & \textbf{R\$ 20.000} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\destaque{warningOrange}{%
+    \textcolor{warningOrange}{\textbf{Janela crítica:}} a Etapa 4 encerra em 03/08/2026 e a submissão FINEP encerra em 31/08/2026 --- restam \textbf{28 dias úteis} para finalizar comprovantes, preencher o FAP, gravar o vídeo de 10 min e protocolar. Qualquer atraso operacional do prestador inviabiliza a janela.%
+}
+
+%==============================================================
+\section{Pré-requisitos Críticos --- a Resolver ANTES da Assinatura}
+%==============================================================
+
+Os itens abaixo são \textbf{condições materiais} sem as quais a assinatura do contrato Sebraetec é uma despesa de R\$ 6.000,00 sem retorno em relação ao objetivo FINEP.
+
+\renewcommand{\arraystretch}{1.3}
+{\small
+\begin{xltabular}{\textwidth}{@{} l X c @{}}
+    \toprule
+    \rowcolor{tableHeader} \textbf{Pré-requisito} & \textbf{Por que é crítico} & \textbf{Status} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \rowcolor{tableHeader} \textbf{Pré-requisito} & \textbf{Por que é crítico} & \textbf{Status} \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endlastfoot
+    \textbf{PR1.} Documento comprobatório nominal &
+    A FINEP exige prova formal de que a Info Dental foi \emph{selecionada como cliente em programa de inovação do SEBRAE com apoio financeiro}. O comprobatório precisa nomear a empresa, citar o subsídio (R\$ 14.000), e identificar o programa como Sebraetec --- Negócios Inovadores. &
+    \textcolor{accentColor}{\textbf{Exigir}} \\
+    \rowcolor{lightGray}
+    \textbf{PR2.} Aderência do escopo ao OralRisk.AI &
+    As 4 dimensões da proposta (negócio / produto / marketing / organizacional) precisam acomodar um SaMD em desenvolvimento --- não um \textit{pivot} forçado. O plano de ação da Etapa 2 deve ser \textbf{compatível} com a tese de produto OralRisk.AI e com o cronograma do edital Linha V. &
+    \textcolor{accentColor}{\textbf{Negociar}} \\
+    \textbf{PR3.} Confidencialidade (NDA) prévia &
+    A Etapa 2 exige acesso ao modelo de negócio, dados financeiros, roadmap tecnológico (fine-tuning Sabiá-3, RAG, corpus clínico de $\sim$1.210 documentos). O corpus clínico do Prof.\ Cláudio M.\ Pereira é \textbf{ativo proprietário irrepetível} e diferencial competitivo central. &
+    \textcolor{accentColor}{\textbf{Assinar antes}} \\
+    \rowcolor{lightGray}
+    \textbf{PR4.} Propriedade intelectual preservada &
+    Qualquer entregável do Sebraetec (planos, diagnósticos, pitch deck, materiais de demoday) deve ser de \textbf{titularidade da Info Dental}. A Cotidiano é prestadora de serviço, não cossócia da PI. &
+    \textcolor{accentColor}{\textbf{Cláusula}} \\
+    \textbf{PR5.} Cronograma garantido em contrato &
+    As datas 04/05 $\to$ 03/08/2026 precisam ser \textbf{cláusula contratual} (não estimativa). Atraso de qualquer etapa inviabiliza a submissão FINEP de 31/08/2026. &
+    \textcolor{accentColor}{\textbf{Vincular}} \\
+    \rowcolor{lightGray}
+    \textbf{PR6.} Mentor nomeado com experiência em healthtech / regulado &
+    Diagnóstico genérico de aceleradora de startups não serve para um SaMD ANVISA. O mentor precisa ter histórico em saúde digital, dispositivos médicos ou healthtech regulada. &
+    \textcolor{accentColor}{\textbf{Exigir}} \\
+    \textbf{PR7.} AFE ANVISA --- requisito independente &
+    AFE ANVISA é \textbf{eliminatório próprio da Linha V}, \emph{não} resolvido pelo Sebraetec. A Info Dental precisa verificar se já tem AFE compatível com software para saúde, ou iniciar solicitação \textbf{em paralelo} (30--90 dias úteis). &
+    \textcolor{warningOrange}{\textbf{Paralelo}} \\
+    \rowcolor{lightGray}
+    \textbf{PR8.} Cláusula de rescisão sem penalidade &
+    Se ao final da Etapa 1 ficar evidente que a Cotidiano não consegue gerar o comprobatório FINEP nos moldes exigidos, a Info Dental deve poder rescindir sem multa, pagando apenas a etapa entregue. &
+    \textcolor{accentColor}{\textbf{Cláusula}} \\
+\end{xltabular}
+}
+
+%==============================================================
+\section{Perguntas Pertinentes para a Cotidiano --- Reunião de Alinhamento}
+%==============================================================
+
+\subsection{4.1 Sobre o documento comprobatório FINEP (perguntas P1--P4)}
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{P\arabic*.}}, leftmargin=2.2em]
+    \item Ao final do contrato, qual é o \textbf{documento formal} emitido pelo SEBRAE-GO (e/ou pela Cotidiano) que comprova a participação da Info Dental como \emph{cliente selecionada em programa de inovação com apoio financeiro}? Existe modelo ou exemplo de outras empresas atendidas?
+    \item Esse comprobatório nomeia explicitamente: (a) razão social e CNPJ da Info Dental; (b) o programa (Sebraetec --- Negócios Inovadores --- Tração); (c) o valor do subsídio SEBRAE (R\$ 14.000,00); (d) o período de atendimento; (e) a assinatura do SEBRAE-GO?
+    \item Em quanto tempo após a Etapa 4 (encerramento em 03/08/2026) o comprobatório fica disponível? É possível obter \textbf{declarações parciais} ao final de cada etapa, para uso antecipado em outros editais?
+    \item A Cotidiano já atendeu empresas que usaram esse comprobatório para submissão à FINEP, MCTI, BNDES ou similares? Em caso positivo, é possível conversar com \textbf{uma referência} ou ver o documento (anonimizado) que foi aceito?
+\end{enumerate}
+
+\subsection{4.2 Sobre o escopo das 4 etapas e adequação ao OralRisk.AI (P5--P10)}
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{P\arabic*.}}, leftmargin=2.2em, start=5]
+    \item Considerando que o projeto-âncora da Info Dental é o \textbf{OralRisk.AI} --- um Software como Dispositivo Médico (SaMD) sob a RDC ANVISA 657/2022 --- o diagnóstico da Etapa 2 nas quatro dimensões (modelo de negócios / produto / marketing-vendas / desenvolvimento organizacional) será \textbf{adaptado ao contexto de healthtech regulada}, ou segue um \textit{template} genérico de aceleradora?
+    \item Quem será o(s) consultor(es) nominalmente alocado(s)? Pode-se enviar previamente o currículo / LinkedIn e histórico em projetos de software médico, healthtech ou edital FINEP?
+    \item As mentorias semanais da Etapa 3 podem incluir orientação direta ao \textbf{preenchimento do FAP da FINEP}, à composição do orçamento de R\$ 5--15 MM da Linha V e à montagem do dossiê de submissão? Ou esse trabalho está fora do escopo Sebraetec?
+    \item A Etapa 4 fala em \textit{demoday} e conexão com investidores. Para uma empresa em vias de submeter projeto FINEP, é possível \textbf{redirecionar} essa etapa para: preparação do vídeo obrigatório de 10 minutos do edital, pitch para a banca FINEP, ou pré-validação documental do FAP? Se sim, fica registrado no plano de ação da Etapa 2?
+    \item O plano de ação produzido na Etapa 2 será \textbf{validado em conjunto} com a Info Dental antes da execução? A Info Dental tem poder de \textbf{veto} sobre direcionamentos que conflitem com o roadmap do OralRisk.AI?
+    \item Há \textbf{entregáveis físicos / digitais nominados} ao final de cada etapa (relatório de diagnóstico, plano de ação, deck de pitch, ata de mentoria etc.)? Pode-se anexar essa lista ao contrato?
+\end{enumerate}
+
+\subsection{4.3 Sobre confidencialidade e propriedade intelectual (P11--P14)}
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{P\arabic*.}}, leftmargin=2.2em, start=11]
+    \item A Cotidiano aceita assinar \textbf{NDA específico} antes da Etapa 2, cobrindo: roadmap do OralRisk.AI, corpus clínico, arquitetura técnica (Sabiá-3 + LoRA + RAG), dados financeiros, lista de clientes e parceiros estratégicos (incluindo PUC Goiás)?
+    \item Como a Cotidiano trata \textbf{conflito de interesse} caso esteja acelerando, no mesmo período, outra startup do setor de saúde digital ou odontologia?
+    \item Os entregáveis (diagnóstico, plano de ação, materiais de pitch, apresentações para investidores) são de \textbf{titularidade exclusiva da Info Dental}, com cessão integral de direitos? Há cláusula contratual nesse sentido?
+    \item A Cotidiano se compromete a \textbf{não usar} cases / materiais / nome da Info Dental em marketing ou outros pitchs sem autorização prévia por escrito?
+\end{enumerate}
+
+\subsection{4.4 Sobre cronograma, atrasos e janela FINEP (P15--P17)}
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{P\arabic*.}}, leftmargin=2.2em, start=15]
+    \item As datas 04/05/2026 $\to$ 03/08/2026 são \textbf{vinculantes em contrato}? Há cláusula de penalidade ou redução de honorários em caso de atraso de etapa atribuível à Cotidiano?
+    \item Se a Etapa 1 (alinhamento) demonstrar inadequação entre o escopo Sebraetec e o objetivo FINEP, há possibilidade de \textbf{rescisão sem multa}, pagando apenas a Etapa 1 entregue?
+    \item As reuniões serão \textbf{presenciais em Goiânia} ou remotas? Qual a frequência mínima das mentorias semanais da Etapa 3? Como ficam registradas (atas, gravações)?
+\end{enumerate}
+
+\subsection{4.5 Sobre experiência da Cotidiano com healthtech e FINEP (P18--P20)}
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{P\arabic*.}}, leftmargin=2.2em, start=18]
+    \item Quantas startups de \textbf{healthtech / software médico / SaMD} a Cotidiano já acelerou? Quantas dessas submeteram editais FINEP, MCTI, BNDES ou similares? Quantas foram aprovadas?
+    \item A Cotidiano conhece o \textbf{edital Mais Inovação Brasil --- Linha V}? Já apoiou clientes na submissão de propostas para esse edital ou similar (saúde / dispositivos médicos / subvenção econômica)?
+    \item A Cotidiano tem rede de contatos relevantes para o OralRisk.AI: empresas com \textbf{AFE ANVISA vigente} (potenciais parceiras / coexecutoras), investidores em healthtech regulado, especialistas regulatórios ANVISA, NITs de outras universidades?
+\end{enumerate}
+
+\subsection{4.6 Sobre apoio adicional à documentação financeira para o FAP (P21--P24)}
+
+A documentação financeira da Info Dental (\textbf{Balanço Patrimonial, DRE, comprovação de Patrimônio Líquido positivo} do último exercício) é \textbf{critério eliminatório} de habilitação na FINEP --- mas \emph{não} é, formalmente, escopo do Sebraetec. Como healthtech \textbf{pré-breakeven} (RO negativo natural à fase de P\&D) e com \textbf{time majoritariamente PJ} (não CLT) --- perfil típico de startup tech brasileira ---, a Info Dental enfrenta três desafios estruturantes: garantir PL positivo, estruturar contrapartida sem queimar caixa, e \emph{enquadrar} o time PJ de forma aceitável pela FINEP. Faz sentido sondar a Cotidiano, que trabalha rotineiramente com manobras societárias e estruturações financeiras de startups em estágio similar.
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{P\arabic*.}}, leftmargin=2.2em, start=21]
+    \item Embora a contabilidade não seja escopo formal do Sebraetec, a Cotidiano poderia, dentro das mentorias da Etapa 3, \textbf{orientar} a Info Dental na organização do Balanço e DRE --- incluindo, se necessário, manobras pré-submissão como \textbf{aumento de capital social} (para destravar PL positivo, se atualmente negativo por prejuízos acumulados) e estruturação de \textbf{contrapartida via pessoal próprio}, considerando que o time é majoritariamente PJ?
+    \item A Cotidiano dispõe, em sua rede, de \textbf{contador ou consultor contábil} com experiência específica em empresas de base tecnológica \textbf{pré-breakeven} que apresentam balanços a editais de fomento (FINEP, BNDES, EMBRAPII), familiarizado com aumento de capital, conversão de SAFE / mútuos conversíveis em equity e Balanço Patrimonial sob regime contábil completo (não Simples)? Pode indicar profissionais?
+    \item Como apoio adicional, a Cotidiano pode \textbf{revisar} --- durante a Etapa 2 (Diagnóstico) --- a coerência entre: (a) orçamento previsto do projeto FINEP (R\$ 5--15 MM, contrapartida 5--10\%); (b) estrutura de contrapartida (folha + infraestrutura dedicada + aporte em conta exclusiva); e (c) indicadores financeiros eliminatórios da Info Dental (PL positivo, endividamento oneroso $\leq$30\% Ativo Total se RO negativo, contrapartida $\leq$50\% Ativo Total), sinalizando inconsistências bloqueantes antes da submissão?
+    \item A Cotidiano tem experiência em orientar startups quanto ao \textbf{enquadramento de colaboradores PJ vs CLT} para fins de contrapartida FINEP? Especificamente: (a) \emph{conversão seletiva} de 1--3 colaboradores-chave (tech lead, cientista de dados sênior, gerente de projeto) para CLT imediatamente antes da submissão; (b) \emph{modelagem reforçada} de contratos PJ (longa duração, vinculação explícita ao projeto, dedicação documentada, cláusulas de exclusividade parcial) com chance maior de serem aceitos como pessoal próprio; (c) eventual consulta formal escrita à FINEP (\texttt{cp\_mib\_sbv\_saude\_2@finep.gov.br}) para validar a interpretação \emph{antes} da submissão?
+\end{enumerate}
+
+%==============================================================
+\section{Cláusulas Recomendadas no Termo de Adesão / Contrato}
+%==============================================================
+
+\begin{enumerate}[label=\textcolor{primaryColor}{\textbf{C\arabic*.}}, leftmargin=2.2em]
+    \item \textbf{Objetivo declarado:} consignar expressamente que a finalidade contratada é \emph{capacitar a Info Dental para submissão de projeto de inovação à FINEP até 31/08/2026}, gerando o comprobatório de cliente Sebraetec --- e que essa finalidade é elemento essencial do contrato.
+    \item \textbf{Confidencialidade (NDA):} cláusula de sigilo com prazo mínimo de 5 anos, cobrindo informações técnicas, financeiras, comerciais, corpus clínico e roadmap.
+    \item \textbf{Propriedade intelectual:} titularidade integral dos entregáveis para a Info Dental; cessão automática e gratuita de quaisquer direitos autorais sobre relatórios, planos, decks e materiais produzidos.
+    \item \textbf{Vinculação de cronograma:} datas de início e fim de cada etapa como obrigação contratual; descontos proporcionais em caso de atraso atribuível ao prestador.
+    \item \textbf{Rescisão sem multa após Etapa 1:} faculdade unilateral da Info Dental de rescindir após a Etapa 1, sem ônus além do valor da etapa entregue, caso seja constatada inadequação ao objetivo declarado.
+    \item \textbf{Mentor nomeado:} identificação do(s) consultor(es) responsável(is) no contrato, com vedação a substituição sem aprovação prévia da Info Dental.
+    \item \textbf{Entregáveis nominados:} anexo contratual listando o produto físico/digital de cada etapa, com critérios de aceitação.
+    \item \textbf{Não-concorrência limitada:} declaração da Cotidiano de inexistência de conflito de interesse com outras aceleradas no mesmo nicho durante a execução.
+\end{enumerate}
+
+%==============================================================
+\section{Guia Operacional Info Dental --- Itens Fora do Escopo Sebraetec}
+%==============================================================
+
+O Sebraetec resolve \textbf{apenas um} dos requisitos da Linha V (o comprobatório de empresa selecionada em programa de inovação). Os \textbf{cinco itens} abaixo são \emph{responsabilidade direta da Info Dental} e devem correr em \textbf{paralelo} às 4 etapas do Sebraetec (04/05 $\to$ 03/08/2026). Cada um traz pré-requisitos, custos, prazos e responsáveis explícitos. Ignorar qualquer deles é fatal para a habilitação FINEP.
+
+%--------------------------------------------------------------
+\subsection{6.1 AFE ANVISA --- Autorização de Funcionamento de Empresa}
+
+\destaque{accentColor}{%
+    \textcolor{accentColor}{\textbf{ELIMINATÓRIO Linha V.}} Ao menos uma das beneficiárias do arranjo (proponente ou coexecutora) deve possuir AFE ANVISA \textbf{vigente} no ato da submissão. Sem AFE: a proposta é eliminada na habilitação, sem recurso.%
+}
+
+\begin{itemize}[label=\textcolor{primaryColor}{$\blacktriangleright$}, leftmargin=1.6em]
+    \item \textbf{O que é:} autorização da ANVISA para empresa fabricar, importar ou distribuir produtos para saúde --- incluindo \textit{software médico} (SaMD) sob a RDC 657/2022.
+    \item \textbf{Como obter:} portal \texttt{gov.br/anvisa} $\to$ Serviços $\to$ \emph{Empresas} $\to$ \emph{Peticionamento eletrônico de AFE}.
+    \item \textbf{Documentos necessários:}
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item Contrato social atualizado, com objeto social compatível com produto para saúde / software médico.
+        \item CNPJ ativo e regular; certidões negativas federal, estadual, municipal e FGTS.
+        \item Comprovante de endereço da sede e do local de operação.
+        \item Indicação de \textbf{Responsável Técnico} habilitado conforme RDC 16/2014 (para software médico: profissional de saúde ou engenheiro biomédico com registro de classe ativo).
+        \item Pagamento da GRU (Guia de Recolhimento da União) referente à taxa ANVISA.
+    \end{itemize}
+    \item \textbf{Prazo realista:} 30--90 dias úteis após protocolo (varia conforme demanda da ANVISA e necessidade de cumprimento de exigências).
+    \item \textbf{Custo estimado:} taxa ANVISA \emph{(GRU)} R\$ 200--R\$ 5.000 conforme porte (ME pode ter desconto ou isenção, art.\ 6º da Lei nº 11.972/2009). Consultoria regulatória especializada (recomendada): R\$ 5.000--R\$ 15.000.
+    \item \textbf{Responsável Info Dental:} sócios + consultor regulatório ANVISA (contratar se não tiver internamente).
+    \item \textcolor{accentColor}{\textbf{AÇÃO IMEDIATA (esta semana):}} verificar se a Info Dental \emph{já possui} AFE vigente. Se sim, conferir se o objeto social cobre \textit{software para saúde}. Se não, protocolar pedido em até \textbf{15 de junho de 2026} (margem para 75 dias até a submissão FINEP em 31/08).
+    \item \textbf{Plano B:} identificar \emph{empresa parceira} já com AFE vigente para entrar no arranjo como coexecutora --- via NIT/PUC Goiás (pergunta 1 da reunião com NIT) ou via rede da Cotidiano (P20).
+\end{itemize}
+
+%--------------------------------------------------------------
+\subsection{6.2 Arranjo com ICT --- NIT da PUC Goiás}
+
+\begin{itemize}[label=\textcolor{primaryColor}{$\blacktriangleright$}, leftmargin=1.6em]
+    \item \textbf{O que é:} instrumento contratual entre empresa proponente (Info Dental) e a ICT (PUC Goiás) formalizando a parceria de pesquisa, desenvolvimento e inovação --- amparo no \textbf{Marco Legal da Inovação} (Lei nº 13.243/2016) e no Decreto nº 9.283/2018.
+    \item \textbf{Como obter:} agendar reunião com o NIT (Núcleo de Inovação Tecnológica) da PUC Goiás.
+    \item \textbf{Contato:}
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item Prof.\ Dr.\ Marcos Lajovic Carneiro --- Coordenador do NIT.
+        \item WhatsApp: \textbf{(62) 98130-6931}.
+        \item E-mail: \texttt{mcarneiro@pucgoias.edu.br}.
+    \end{itemize}
+    \item \textbf{O que negociar com o NIT:}
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item Tipo de instrumento: \emph{Acordo de Parceria para PD\&I} (não convênio).
+        \item Cláusula de \textbf{Serviços de Consultoria} para remunerar o Prof.\ Cláudio Maranhão Pereira (vedação a bolsa e pró-labore no edital FINEP) --- ICT emite NF para a empresa proponente.
+        \item Percentual mínimo do orçamento para a ICT: $\geq$15\%.
+        \item Cláusula de PI compartilhada (\% a definir; titularidade dos modelos de IA e do corpus tratada explicitamente).
+        \item Cronograma de atividades exclusivas da ICT (curadoria do corpus, validação clínica IEC 62304, avaliação cega do LLM, orientação de 4 alunos IC).
+        \item Cláusula de confidencialidade.
+    \end{itemize}
+    \item \textbf{Prazo realista:} 30--60 dias entre primeira reunião e assinatura --- aprovação interna da PUC depende da reitoria.
+    \item \textbf{Custo direto:} zero (a ICT é remunerada via recursos do projeto FINEP).
+    \item \textbf{Responsável Info Dental:} representante legal + Prof.\ Cláudio M.\ Pereira (já vinculado à PUC).
+    \item \textcolor{accentColor}{\textbf{AÇÃO IMEDIATA:}} agendar reunião com o NIT esta semana, levando: ficha do edital (já elaborada), proposta OralRisk.AI v2 (já elaborada), CNPJ da Info Dental.
+\end{itemize}
+
+%--------------------------------------------------------------
+\subsection{6.3 CEP --- Comitê de Ética em Pesquisa}
+
+\begin{itemize}[label=\textcolor{primaryColor}{$\blacktriangleright$}, leftmargin=1.6em]
+    \item \textbf{O que é:} aprovação ética para uso de dados clínicos de pacientes (anonimizados, conforme LGPD) na curadoria do corpus de fine-tuning do Sabiá-3 e na validação dos modelos de IA. \textbf{Condição prévia} à curadoria de casos clínicos do banco proprietário do Prof.\ Cláudio M.\ Pereira (50+ MRONJ, 108+ anticoagulados).
+    \item \textbf{Onde submeter:} \textbf{Plataforma Brasil} --- \texttt{plataformabrasil.saude.gov.br} --- direcionando ao CEP da PUC Goiás.
+    \item \textbf{Documentos necessários:}
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item Projeto de pesquisa detalhado (uso secundário de dados clínicos para treinamento de IA).
+        \item Protocolo de \textbf{anonimização LGPD} conforme ABNT NBR ISO/IEC 29101.
+        \item TCLE (Termo de Consentimento Livre e Esclarecido) \emph{ou} pedido de \textbf{dispensa de TCLE} para uso secundário (banco já existente, anonimização irreversível).
+        \item Currículo Lattes do pesquisador principal + co-pesquisadores.
+        \item Cronograma e local de execução (Clínica Escola de Odontologia da PUC Goiás).
+    \end{itemize}
+    \item \textbf{Prazo realista:} 60--90 dias (análise inicial em $\sim$30 dias + eventuais pendências). \textbf{Curadoria do corpus não pode iniciar antes da aprovação.}
+    \item \textbf{Custo:} zero.
+    \item \textbf{Responsável Info Dental:} formalmente nenhum --- a submissão é feita pelo Prof.\ Cláudio M.\ Pereira (pesquisador principal) com apoio do NIT/PUC. Info Dental acompanha como interessada.
+    \item \textcolor{accentColor}{\textbf{AÇÃO IMEDIATA (Maio--Junho 2026):}} alinhar com o pesquisador a submissão à Plataforma Brasil em até 30 dias --- aprovação ideal antes do Mês 4 do cronograma do projeto.
+\end{itemize}
+
+%--------------------------------------------------------------
+\subsection{6.4 Cadastro FINEP --- Plataforma de Captação}
+
+\begin{itemize}[label=\textcolor{primaryColor}{$\blacktriangleright$}, leftmargin=1.6em]
+    \item \textbf{O que é:} cadastro obrigatório da empresa proponente na plataforma da FINEP, condição prévia ao preenchimento do FAP (Formulário de Apresentação de Propostas).
+    \item \textbf{Onde:} \texttt{cadastro.finep.gov.br} --- preenchimento online + envio digital de documentos.
+    \item \textbf{Documentos necessários:}
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item CNPJ ativo, contrato social atualizado, última alteração contratual.
+        \item Dados do(s) sócio(s): CPF, RG, comprovante de endereço.
+        \item Dados do representante legal (procuração se aplicável).
+        \item Dados bancários da conta da empresa (banco / agência / conta) --- para liberação futura dos recursos.
+        \item Balanço Patrimonial e DRE do último exercício (mesmos documentos da seção 6.5).
+    \end{itemize}
+    \item \textbf{Prazo realista:} 5--10 dias úteis para validação pela FINEP, podendo ser maior se houver exigências.
+    \item \textbf{Custo:} zero.
+    \item \textbf{Responsável Info Dental:} representante legal.
+    \item \textcolor{accentColor}{\textbf{AÇÃO IMEDIATA (Mês 2 do Sebraetec, $\sim$junho 2026):}} iniciar cadastro \emph{antes} de finalizar o FAP, pois a plataforma de submissão (\texttt{financiamento.finep.gov.br}) só libera o formulário após cadastro aprovado.
+\end{itemize}
+
+%--------------------------------------------------------------
+\subsection{6.5 Documentação Financeira --- Capacidade de Contrapartida}
+
+\destaque{primaryColor}{%
+    \textcolor{primaryColor}{\textbf{Dois critérios FINEP independentes --- não confundir:}} \\[2pt]
+    \textbf{(A) Entrada / elegibilidade da empresa:} faturamento $\geq$ R\$ 1 MM \emph{ou} comprobatório de seleção em programa de inovação SEBRAE com apoio financeiro. \textcolor{successGreen}{$\to$ \emph{resolvido pelo Sebraetec.}} \\
+    \textbf{(B) Capacidade financeira (habilitação):} PL positivo + regras de contrapartida vs.\ Ativo Total / RO. \textcolor{accentColor}{$\to$ \emph{NÃO resolvido pelo Sebraetec --- responsabilidade da Info Dental.}}\\[2pt]
+    Faturamento baixo é problema do critério A. PL negativo é problema do critério B. \textbf{São barreiras diferentes, com soluções diferentes.}%
+}
+
+\destaque{accentColor}{%
+    \textcolor{accentColor}{\textbf{ELIMINATÓRIO Linha V.}} A análise de capacidade financeira da empresa proponente é critério eliminatório na habilitação. Os documentos abaixo devem estar prontos e \textbf{coerentes} antes do preenchimento final do FAP.%
+}
+
+\begin{itemize}[label=\textcolor{primaryColor}{$\blacktriangleright$}, leftmargin=1.6em]
+    \item \textbf{O que é:} prova documental de que a Info Dental tem condição financeira de aportar a contrapartida exigida (5\% ME / 10\% PE sobre o valor total) e operar o projeto com saúde financeira.
+    \item \textbf{Documentos exigidos:}
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item \textbf{Balanço Patrimonial} do último exercício social encerrado, assinado por contador habilitado (CRC).
+        \item \textbf{DRE} (Demonstração de Resultado do Exercício) do último exercício, assinada por contador.
+        \item Comprovação de \textbf{Patrimônio Líquido positivo} (deriva do Balanço; eliminatório).
+        \item Declaração de faturamento ou Receita Operacional Bruta (ROB) --- enquadra a empresa no porte (ME / EPP / PE) e define o \% mínimo de contrapartida.
+        \item Certidões negativas: federal, estadual, municipal, FGTS, trabalhista.
+    \end{itemize}
+    \item \textbf{Critérios financeiros FINEP (todos eliminatórios):}
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item Patrimônio Líquido \textbf{positivo}.
+        \item Se Resultado Operacional \textbf{positivo}: contrapartida $\leq$ 20\% do RO.
+        \item Se Resultado Operacional \textbf{negativo}: endividamento oneroso $\leq$ 30\% do Ativo Total \emph{e} contrapartida $\leq$ 50\% do Ativo Total.
+    \end{itemize}
+    \item \textbf{Onde obter:} contador atual da Info Dental. Se a empresa é optante pelo Simples Nacional e só mantém escrituração simplificada, \textbf{contratar contador para emitir Balanço sob regime contábil completo} (formato exigido pela FINEP).
+    \item \textbf{Prazo realista:} 15--30 dias se o Balanço completo ainda não estiver pronto; 5--10 dias se já existe.
+    \item \textbf{Custo estimado:} R\$ 1.500--R\$ 5.000 para emissão de Balanço completo + DRE auditados (varia conforme contador e complexidade); R\$ 0 se já produzidos rotineiramente.
+    \item \textbf{Responsável Info Dental:} sócios + contador.
+    \item \textbf{Apoio Cotidiano (a confirmar com P21--P23):} eventual orientação dentro das mentorias da Etapa 3 + indicação de contador parceiro da rede da aceleradora.
+    \item \textcolor{accentColor}{\textbf{AÇÃO IMEDIATA (esta semana):}} pedir ao contador atual o \textbf{último Balanço e DRE} emitidos. Se a Info Dental \textbf{não tem Balanço completo} dos últimos 12 meses, encomendar imediatamente.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{\textcolor{primaryColor}{Caminho específico para healthtech pré-breakeven (caso Info Dental):}}
+
+\vspace{2pt}
+RO negativo é \textbf{esperado} para healthtech em fase de P\&D e \emph{não} elimina por si só --- existe regra alternativa via Ativo Total. O risco real está no \textbf{PL negativo} (prejuízos acumulados $>$ capital social $+$ reservas) e na \textbf{ausência de caixa para contrapartida em dinheiro}. Ambos têm contorno padrão:
+
+\begin{itemize}[label=\textcolor{accentColor}{$\blacktriangleright$}, leftmargin=1.6em]
+    \item \textbf{Passo 1 --- diagnóstico PL.} Olhar o último Balanço: se PL atual já é positivo (capital social $+$ aportes $-$ prejuízos acumulados $>$ 0), o critério está atendido --- prosseguir. Se negativo, executar Passo 2.
+    \item \textbf{Passo 2 --- aumento de capital social} (manobra padrão pré-edital). Sócios e/ou anjos aportam capital novo via instrumento de aumento de capital social, registrado em alteração contratual na Junta Comercial. Novo Balanço pós-aumento reflete PL positivo. Custo $\sim$R\$ 500--R\$ 1.500 (Junta + contador); prazo $\sim$30 dias.
+    \item \textbf{Passo 3 --- conversão de SAFE / mútuo conversível} em equity, se houver. Operação societária análoga ao aumento de capital, com mesmo efeito sobre o PL.
+    \item \textbf{Passo 4 --- estruturar contrapartida via pessoal próprio (atenção ao perfil CLT vs PJ).} Em proposta de R\$ 5 MM (mínimo Linha V), contrapartida ME (5\%) = R\$ 250 k em 36 meses $\approx$ R\$ 7 k/mês. As regras de enquadramento:
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item \textbf{CLT alocado em P\&D:} aceito sem ambiguidade como contrapartida. \textcolor{successGreen}{$\checkmark$ Caminho seguro.}
+        \item \textbf{PJ típico (NF mensal, prestação de serviços):} entra no orçamento como \emph{Serviços de Terceiros} --- financiável pelo recurso FINEP, \emph{mas não substitui contrapartida}. \textcolor{warningOrange}{$\triangle$ Não conta para os 5\%.}
+        \item \textbf{PJ "robusto"} (contrato longo, vinculação explícita ao projeto, dedicação documentada, exclusividade parcial): zona cinzenta --- pode ser aceito como pessoal próprio em alguns editais, com risco de reclassificação para subcontratação (que é vedada pelo art.\ 4.4 do Regulamento). \textcolor{accentColor}{$!$ Validar com consulta escrita à FINEP.}
+    \end{itemize}
+    \item \textbf{Passo 4b --- como o time da Info Dental é majoritariamente PJ}, as três rotas práticas são:
+    \begin{itemize}[label=$\circ$, leftmargin=1.4em]
+        \item \textbf{(a) Conversão seletiva CLT} de 1--3 chaves (tech lead, cientista de dados sênior, gerente de projeto). Encargos CLT $\sim$70\% sobre o salário bruto. Garantia jurídica máxima --- recomendado para os perfis nucleares.
+        \item \textbf{(b) Modelagem PJ reforçada} + consulta formal escrita à FINEP --- risco controlado se houver resposta documentada antes da submissão.
+        \item \textbf{(c) Contrapartida via infraestrutura dedicada} (servidores GPU, licenças de software, equipamentos): pode somar R\$ 100--200 k em 36 meses, complementando o pessoal e reduzindo a pressão sobre a folha.
+        \item \textbf{Estrutura recomendada Info Dental:} 2 CLT seniores ($\sim$R\$ 15 k/mês cada $\Rightarrow$ $\sim$R\$ 540 k em folha bruta em 36 meses) + restante do time como PJ na rubrica Serviços de Terceiros (paga pelo FINEP) + infra GPU complementar. Cobre folgadamente os R\$ 250 k de contrapartida.
+    \end{itemize}
+    \item \textbf{Passo 5 --- documentação de suporte.} Anexar ao FAP, além de Balanço e DRE: cap table atualizado, contratos de investimento anjo (se houver), projeção de fluxo de caixa do projeto, \textbf{minutas dos contratos CLT e PJ} dos colaboradores alocados ao projeto, carta de comprometimento de aporte futuro de sócios (opcional, mas reforça a tese de viabilidade).
+\end{itemize}
+
+\destaque{successGreen}{%
+    \textcolor{successGreen}{\textbf{Bottom line para Info Dental:}} pré-breakeven \emph{não} é impeditivo --- inúmeras healthtechs aprovam FINEP nessa condição. Os três pontos que matam são: (1) submeter com PL negativo \emph{sem} ter feito aumento de capital antes; (2) estruturar contrapartida em caixa que a empresa não tem, em vez de pessoal próprio + infraestrutura; (3) tentar usar a folha PJ inteira como contrapartida \emph{sem} converter ao menos 1--3 chaves para CLT \emph{ou} obter resposta escrita da FINEP validando o modelo PJ reforçado. Todos têm solução conhecida e barata, desde que iniciadas \emph{agora} (margem de $\sim$60 dias para aumento de capital + conversões CLT seletivas + novo Balanço).%
+}
+
+%--------------------------------------------------------------
+\subsection{6.6 Resumo: cronograma consolidado dos itens paralelos}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{@{} l X c c @{}}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Item} & \textbf{Ação Imediata} & \textbf{Prazo} & \textbf{Custo} \\
+        \midrule
+        AFE ANVISA & Verificar AFE atual; se ausente, protocolar até 15/06 & 30--90 dias & R\$ 5--20k \\
+        \rowcolor{lightGray}
+        Arranjo ICT (NIT) & Reunião com Prof.\ Marcos Lajovic esta semana & 30--60 dias & R\$ 0 \\
+        CEP (Plataforma Brasil) & Submissão até final de junho & 60--90 dias & R\$ 0 \\
+        \rowcolor{lightGray}
+        Cadastro FINEP & Iniciar em junho/2026 & 5--10 dias & R\$ 0 \\
+        Documentação financeira & Solicitar Balanço + DRE ao contador esta semana & 15--30 dias & R\$ 1,5--5k \\
+        Aumento de capital (se PL$<$0) & Diagnóstico do PL atual; se negativo, aporte + alteração contratual & $\sim$30 dias & R\$ 0,5--1,5k \\
+        \rowcolor{lightGray}
+        Conversão seletiva PJ$\to$CLT & Identificar 1--3 chaves; preparar contratos CLT e migração & 15--30 dias & Encargos $\sim$70\% s/ salário \\
+        Consulta escrita à FINEP (opcional) & Pergunta formal sobre enquadramento PJ; guardar resposta & 15--45 dias & R\$ 0 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+%==============================================================
+\section{Decisão: assinar, renegociar ou recusar}
+%==============================================================
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{@{} l X @{}}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Cenário} & \textbf{Ação recomendada} \\
+        \midrule
+        \textcolor{successGreen}{\textbf{Assinar}} & Cotidiano confirma: (a) comprobatório FINEP no formato exigido; (b) mentor com experiência em healthtech; (c) escopo adaptável ao OralRisk.AI; (d) NDA; (e) PI da Info Dental; (f) cronograma vinculante; (g) rescisão sem multa após Etapa 1. \\
+        \rowcolor{lightGray}
+        \textcolor{warningOrange}{\textbf{Renegociar}} & Cotidiano oferece escopo genérico mas aceita inclusão das cláusulas C1--C8 e aceita redirecionar a Etapa 4 (\textit{demoday}) para apoio à submissão FINEP. \\
+        \textcolor{accentColor}{\textbf{Recusar / pedir outro credenciado}} & Cotidiano não consegue (ou não quer) emitir comprobatório nominado para FINEP; ou exige escopo genérico de aceleradora sem aderência a healthtech; ou recusa NDA / PI / rescisão. Voltar ao SEBRAE-GO e solicitar novo credenciado. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\destaque{primaryColor}{%
+    \textcolor{primaryColor}{\textbf{Resumo de uma linha:}} a Info Dental deve assinar somente após a Cotidiano confirmar, por escrito, que o comprobatório emitido pelo SEBRAE-GO atende ao requisito da FINEP de \emph{empresa selecionada como cliente em programa de inovação do SEBRAE com apoio financeiro}, e após o contrato incorporar as cláusulas C1--C8 acima.%
+}
+
+\end{document}
