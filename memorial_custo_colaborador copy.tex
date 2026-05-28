@@ -1,0 +1,322 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Memorial de Cálculo - Custo Operacional de Colaborador},
+    pdfauthor={Departamento Administrativo}
+}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4.5cm, bottom=2cm, headsep=1.5cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}     % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}    % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}     % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize MEMORIAL DE CÁLCULO: CUSTO OPERACIONAL DE COLABORADOR}} & \scriptsize \textit{Dept. Administrativo} \\
+        \textcolor{secondaryText}{\scriptsize Studio Dental Comércio de Higiene Oral Ltda.} & {\scriptsize \textbf{Ref.: Janeiro/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Documento de uso interno | \textbf{Studio Dental}}}
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{MEMORIAL DE CÁLCULO}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{CUSTO OPERACIONAL DE COLABORADOR}} \\
+    \vspace{0.3cm}
+    {\large Análise Detalhada de Custos para Cessão de Mão de Obra} \\
+    \vspace{2cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{GABRYELLA DOS SANTOS SILVA}} \\
+            \vspace{0.2cm}
+            {\large Auxiliar em Saúde Bucal} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{2cm}
+
+    \begin{flushleft}
+    \textbf{COMPOSIÇÃO DO CUSTO:} \\
+    \vspace{0.2cm}
+    \textcolor{primaryColor}{\textbf{1}} - Remuneração Mensal Direta \\
+    \textcolor{primaryColor}{\textbf{2}} - Encargos Sociais e Provisões \\
+    \textcolor{primaryColor}{\textbf{3}} - Benefícios Mensais \\
+    \textcolor{primaryColor}{\textbf{4}} - Custo por Período e Valor de Repasse
+    \end{flushleft}
+
+    \vfill
+    {\small Documento elaborado pelo Departamento Administrativo para fins de apuração do custo real da colaboradora, visando a definição de valor justo para cessão/empréstimo de mão de obra entre profissionais ou clínicas parceiras.} \\
+    \vspace{1.5cm}
+
+    \colorbox{accentColor}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.6cm}
+            \textcolor{white}{\Large \textbf{STUDIO DENTAL}} \\
+            \vspace{0.2cm}
+            \textcolor{white}{\normalsize Comércio de Higiene Oral Ltda.} \\
+            \vspace{0.6cm}
+        }%
+    }
+
+    \vspace{0.2cm}
+    \textbf{Data de Referência:} Janeiro de 2026
+\end{titlepage}
+
+% --- CONTEÚDO ---
+
+\section{Identificação}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Campo} & \textbf{Informação} \\
+        \midrule
+        Empresa & Studio Dental Comércio de Higiene Oral Ltda. \\
+        \rowcolor{lightGray}
+        Colaboradora & Gabryella dos Santos Silva \\
+        Cargo & Auxiliar em Saúde Bucal \\
+        \rowcolor{lightGray}
+        Data de Referência & Janeiro/2026 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Remuneração Mensal Direta}
+
+Valores extraídos do demonstrativo de pagamento, considerando o saldo base integral para fins de cálculo de custo.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Descrição} & \textbf{Valor (R\$)} \\
+        \midrule
+        Salário Base (Saldo Base) & 1.591,84 \\
+        \rowcolor{lightGray}
+        Insalubridade & 270,90 \\
+        Assiduidade (5\%) & 68,98 \\
+        \rowcolor{lightGray}
+        Ajuda de Custo & 454,00 \\
+        \midrule
+        \rowcolor{accentColor!10} \textbf{Total Remuneração Mensal} & \textbf{2.385,72} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Encargos Sociais e Provisões}
+
+Cálculo dos custos ``invisíveis'' --- provisões legais e encargos patronais estimados para garantir a cobertura de férias, 13º salário e demais obrigações trabalhistas.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X c r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Descrição} & \textbf{Base/Alíquota} & \textbf{Valor (R\$)} \\
+        \midrule
+        FGTS & 8\% & 154,53 \\
+        \rowcolor{lightGray}
+        Provisão de 13º Salário & 1/12 & 160,91 \\
+        Provisão de Férias + 1/3 & 11,11\% & 214,60 \\
+        \rowcolor{lightGray}
+        Encargos Patronais (INSS/RAT)* & 28\% & 540,88 \\
+        \midrule
+        \rowcolor{accentColor!10} \textbf{Total de Encargos/Provisões} & & \textbf{1.070,92} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{secondaryText}{\footnotesize{*Nota: O valor de INSS Patronal pode variar conforme o enquadramento tributário (Simples Nacional). Alíquota estimada para fins de planejamento.}}
+
+\section{Benefícios Mensais}
+
+Considerando a premissa de \textbf{22 dias úteis} por mês para cálculo de vale transporte.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X c r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Descrição} & \textbf{Cálculo} & \textbf{Valor (R\$)} \\
+        \midrule
+        Vale Alimentação (VA) & Média Mensal & 300,00 \\
+        \rowcolor{lightGray}
+        Vale Transporte (VT) & R\$ 8,60/dia $\times$ 22 dias & 189,20 \\
+        \midrule
+        \rowcolor{accentColor!10} \textbf{Total de Benefícios} & & \textbf{489,20} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Resumo do Custo Total}
+
+Consolidação de todos os componentes do custo operacional mensal da colaboradora.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabularx}{\textwidth}{X r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Componente} & \textbf{Valor Mensal (R\$)} \\
+        \midrule
+        Remuneração Direta & 2.385,72 \\
+        \rowcolor{lightGray}
+        Encargos Sociais e Provisões & 1.070,92 \\
+        Benefícios Mensais & 489,20 \\
+        \midrule
+        \rowcolor{primaryColor!15} \textbf{CUSTO TOTAL MENSAL} & \textbf{3.945,84} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Cálculo do Custo por Período}
+
+Para definir o valor de cessão/empréstimo da colaboradora, dividimos o custo total pelo número de dias úteis e, posteriormente, pelo número de períodos disponíveis por dia.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Parâmetro} & \textbf{Valor} \\
+        \midrule
+        Custo Total Mensal & \reais{3.945,84} \\
+        \rowcolor{lightGray}
+        Dias Úteis Considerados & 22 dias (seg. a sex.) \\
+        Períodos por Dia & 2 (manhã e tarde) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\vspace{0.5cm}
+
+\colorbox{lightGray}{%
+    \parbox{\textwidth}{%
+        \vspace{0.5cm}
+        \centering
+        {\large \textbf{Fórmulas de Rateio}} \\
+        \vspace{0.5cm}
+        \[ \text{Custo por Dia} = \frac{\reais{3.945,84}}{22} = \reais{179,36} \]
+        \vspace{0.3cm}
+        \[ \boxed{\textbf{Custo por Período} = \frac{\reais{179,36}}{2} = \mathbf{\reais{89,68}}} \]
+        \vspace{0.3cm}
+    }%
+}
+
+\section{Considerações para Cobrança}
+
+O valor de \textbf{\reais{89,68}} representa o \textbf{custo real} da colaboradora para a empresa por período trabalhado. Para fins de cessão ou empréstimo de mão de obra entre profissionais ou clínicas, recomenda-se:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{X c r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Cenário} & \textbf{Margem} & \textbf{Valor por Período (R\$)} \\
+        \midrule
+        Custo Real (base) & 0\% & 89,68 \\
+        \rowcolor{lightGray}
+        Com Margem de Risco Mínima & 15\% & 103,13 \\
+        \textcolor{successGreen}{\textbf{Valor Sugerido para Repasse}} & \textcolor{successGreen}{\textbf{20\%}} & \textcolor{successGreen}{\textbf{107,62}} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\newpage
+\textcolor{accentColor}{\textbf{Recomendação:}} Adotar margem de \textbf{15\% a 20\%} sobre o custo real, resultando em valor de repasse entre \textbf{\reais{105,00} e \reais{110,00}} por período, cobrindo:
+
+\begin{itemize}
+    \item Riscos trabalhistas e eventuais passivos
+    \item Custos administrativos de gestão
+    \item Desgaste de equipamentos e insumos
+    \item Margem de segurança para variações sazonais
+\end{itemize}
+
+\vspace{2cm}
+
+\begin{center}
+    \rule{8cm}{0.5pt} \\
+    \vspace{0.3cm}
+    \textbf{Responsável pelo Cálculo} \\
+    \textcolor{secondaryText}{\small Departamento Administrativo --- Studio Dental}
+\end{center}
+
+\end{document}

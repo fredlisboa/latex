@@ -1,0 +1,394 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{multirow}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 70, 120}       % Azul Petróleo
+\definecolor{secondaryText}{RGB}{80, 80, 80}       % Cinza Escuro
+\definecolor{accentColor}{RGB}{0, 150, 136}        % Verde Teal
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{0, 70, 120}         % Azul Petróleo (cabeçalho)
+\definecolor{tableHeaderLight}{RGB}{220, 235, 245} % Azul Claro
+\definecolor{portActive}{RGB}{39, 174, 96}         % Verde Ativo
+\definecolor{portFree}{RGB}{189, 195, 199}         % Cinza Livre
+\definecolor{warmAccent}{RGB}{230, 126, 34}        % Laranja Destaque
+\definecolor{rackColor}{RGB}{52, 73, 94}           % Cinza Azulado Escuro
+
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Mapa de Pontos Lógicos - Buriti Center},
+    pdfauthor={Departamento de TI}
+}
+
+% --- Configurações de Layout ---
+\geometry{left=2cm, right=2cm, top=4.5cm, bottom=2cm, headsep=1.5cm, headheight=60pt}
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize MAPA DE PONTOS LÓGICOS --- CABEAMENTO ESTRUTURADO}} & \scriptsize \textit{Infraestrutura de TI} \\
+        \textcolor{secondaryText}{\scriptsize Buriti Center} & {\scriptsize \textbf{Ref.: Fevereiro/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Documento de uso interno | \textbf{Buriti Center}}}
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para indicador de status ---
+\newcommand{\portStatus}[1]{%
+    \ifx&#1&%
+        \textcolor{portFree}{\rule{8pt}{8pt}}%
+    \else%
+        \textcolor{portActive}{\rule{8pt}{8pt}}%
+    \fi%
+}
+
+% --- Tipo de coluna centralizada com largura fixa ---
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    % Ícone estilizado do rack
+    \begin{tikzpicture}
+        \fill[rackColor, rounded corners=4pt] (0,0) rectangle (3,4);
+        \foreach \y in {0.3, 0.8, 1.3, 1.8, 2.3, 2.8, 3.3} {
+            \fill[primaryColor!60] (0.3,\y) rectangle (2.7,\y+0.3);
+            \foreach \x in {0.5, 0.9, 1.3, 1.7, 2.1, 2.5} {
+                \fill[accentColor!80] (\x,\y+0.05) circle (0.06);
+            }
+        }
+        \draw[white, thick, rounded corners=4pt] (0,0) rectangle (3,4);
+    \end{tikzpicture}
+
+    \vspace{1.5cm}
+    {\Huge \textbf{\textcolor{primaryColor}{MAPA DE PONTOS LÓGICOS}}} \\
+    \vspace{0.4cm}
+    {\Large \textbf{CABEAMENTO ESTRUTURADO DE DADOS}} \\
+    \vspace{0.3cm}
+    {\large Documentação de Infraestrutura de Rede} \\
+    \vspace{2cm}
+    \rule{12cm}{1.5pt} \\
+    \vspace{0.8cm}
+
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.5cm}
+            {\Large \textbf{BURITI CENTER}} \\
+            \vspace{0.3cm}
+            {\large Rack Principal --- 2 Patch Panels (24 portas cada)} \\
+            \vspace{0.2cm}
+            {\normalsize Total: \textbf{48 pontos lógicos}} \\
+            \vspace{0.5cm}
+        }%
+    }
+
+    \vspace{2cm}
+
+    \begin{flushleft}
+    \textbf{CONTEÚDO DO DOCUMENTO:} \\
+    \vspace{0.3cm}
+    \textcolor{primaryColor}{\textbf{1}} --- Resumo da Infraestrutura \\
+    \textcolor{primaryColor}{\textbf{2}} --- Patch Panel 01 (Portas 01--24) \\
+    \textcolor{primaryColor}{\textbf{3}} --- Patch Panel 02 (Portas 01--24) \\
+    \textcolor{primaryColor}{\textbf{4}} --- Legenda e Observações
+    \end{flushleft}
+
+    \vfill
+
+    \colorbox{primaryColor}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.6cm}
+            \textcolor{white}{\Large \textbf{BURITI CENTER}} \\
+            \vspace{0.2cm}
+            \textcolor{white}{\normalsize Infraestrutura de Tecnologia da Informação} \\
+            \vspace{0.6cm}
+        }%
+    }
+
+    \vspace{0.3cm}
+    \textbf{Data:} 16 de Fevereiro de 2026
+\end{titlepage}
+
+% =====================================================================
+% SEÇÃO 1 - RESUMO
+% =====================================================================
+\section{Resumo da Infraestrutura}
+
+Documentação dos pontos lógicos de cabeamento estruturado (dados) instalados no \textbf{Buriti Center}. O rack principal conta com \textbf{2 patch panels de 24 portas} cada, totalizando \textbf{48 pontos lógicos} disponíveis.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.6}
+    \Large
+    \begin{tabularx}{\textwidth}{X r}
+        \toprule
+        \rowcolor{tableHeaderLight} \textbf{Parâmetro} & \textbf{Informação} \\
+        \midrule
+        Localidade & Buriti Center \\
+        \rowcolor{lightGray}
+        Quantidade de Patch Panels & 2 unidades \\
+        Portas por Patch Panel & 24 portas \\
+        \rowcolor{lightGray}
+        Total de Pontos Lógicos & 48 pontos \\
+        Pontos Ativos (em uso) & \textcolor{portActive}{\textbf{20 pontos}} \\
+        \rowcolor{lightGray}
+        Pontos Livres (disponíveis) & \textcolor{secondaryText}{\textbf{28 pontos}} \\
+        \midrule
+        \rowcolor{accentColor!10} \textbf{Taxa de Ocupação} & \textbf{41,7\%} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+% =====================================================================
+% SEÇÃO 2 - PATCH PANEL 01
+% =====================================================================
+\section{Patch Panel 01 --- Portas 01 a 24}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{4pt}
+    \large
+    \begin{tabularx}{\textwidth}{
+        C{1cm}       % Porta
+        c            % Status
+        >{\raggedright\arraybackslash}p{3.8cm} % Local
+        X            % Descrição
+    }
+        \toprule
+        \rowcolor{tableHeader}
+        \textcolor{white}{\textbf{Porta}} &
+        \textcolor{white}{\textbf{Status}} &
+        \textcolor{white}{\textbf{Local}} &
+        \textcolor{white}{\textbf{Descrição}} \\
+        \midrule
+        %
+        01 & \textcolor{portActive}{\rule{8pt}{8pt}} & Corredor Direita & WiFi TP Link Deco \\
+        \rowcolor{lightGray}
+        02 & \textcolor{portActive}{\rule{8pt}{8pt}} & Consultório 02 & Dr.\ Kroner (Bancada) \\
+        03 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        04 & \textcolor{portActive}{\rule{8pt}{8pt}} & Consultório 01 & Dra.\ Gabriella (Carrinho) \\
+        05 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        06 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        07 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        08 & \textcolor{portActive}{\rule{8pt}{8pt}} & Consultório 02 & Dr.\ Kroner (Carrinho) \\
+        09 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        10 & \textcolor{portActive}{\rule{8pt}{8pt}} & Consultório 03 & Dr.\ Erich (Carrinho) \\
+        11 & \textcolor{portActive}{\rule{8pt}{8pt}} & Salão Principal & WiFi TP Link Deco \\
+        \rowcolor{lightGray}
+        12 & \textcolor{portActive}{\rule{8pt}{8pt}} & Consultório 03 & Dr.\ Erich (Balcão) \\
+        13 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        14 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        15 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        16 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        17 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 03 Superior Direita \\
+        \rowcolor{lightGray}
+        18 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        19 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 02 Inferior Esquerda \\
+        \rowcolor{lightGray}
+        20 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        21 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 01 Superior Esquerda \\
+        \rowcolor{lightGray}
+        22 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        23 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Info Dev & Ponto 04 Inferior Direita \\
+        \rowcolor{lightGray}
+        24 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \bottomrule
+    \end{tabularx}
+    \vspace{0.3cm}
+    \noindent
+    \colorbox{accentColor!10}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep}{%
+            \vspace{0.3cm}
+            \centering
+            \textbf{Patch Panel 01:} \textcolor{portActive}{\rule{8pt}{8pt}} \textbf{11} portas em uso \quad | \quad \textcolor{portFree}{\rule{8pt}{8pt}} \textbf{13} portas livres
+            \vspace{0.3cm}
+        }%
+    }
+\end{table}
+
+% =====================================================================
+% SEÇÃO 3 - PATCH PANEL 02
+% =====================================================================
+\newpage
+\section{Patch Panel 02 --- Portas 01 a 24}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{4pt}
+    \large
+    \begin{tabularx}{\textwidth}{
+        C{1cm}       % Porta
+        c            % Status
+        >{\raggedright\arraybackslash}p{3.8cm} % Local
+        X            % Descrição
+    }
+        \toprule
+        \rowcolor{tableHeader}
+        \textcolor{white}{\textbf{Porta}} &
+        \textcolor{white}{\textbf{Status}} &
+        \textcolor{white}{\textbf{Local}} &
+        \textcolor{white}{\textbf{Descrição}} \\
+        \midrule
+        %
+        01 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        02 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        03 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        04 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        05 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \rowcolor{lightGray}
+        06 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        07 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 03 Superior Direita \\
+        \rowcolor{lightGray}
+        08 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        09 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 04 Inferior Direita \\
+        \rowcolor{lightGray}
+        10 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        11 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 03 Superior Direita \\
+        \rowcolor{lightGray}
+        12 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        13 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 02 Inferior Esquerda \\
+        \rowcolor{lightGray}
+        14 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        15 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 01 Superior Esquerda \\
+        \rowcolor{lightGray}
+        16 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        17 & \textcolor{portActive}{\rule{8pt}{8pt}} & Corredor Esquerda & WiFi TP Link Deco \\
+        \rowcolor{lightGray}
+        18 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        19 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Fotografia & Ponto 04 Inferior Direita \\
+        \rowcolor{lightGray}
+        20 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        21 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 01 Superior Esquerda \\
+        \rowcolor{lightGray}
+        22 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        23 & \textcolor{portActive}{\rule{8pt}{8pt}} & Sala Reunião 01 & Ponto 02 Inferior Esquerda \\
+        \rowcolor{lightGray}
+        24 & \textcolor{portFree}{\rule{8pt}{8pt}} & --- & --- \\
+        \bottomrule
+    \end{tabularx}
+    \vspace{0.3cm}
+    \noindent
+    \colorbox{warmAccent!10}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep}{%
+            \vspace{0.3cm}
+            \centering
+            \textbf{Patch Panel 02:} \textcolor{portActive}{\rule{8pt}{8pt}} \textbf{9} portas em uso \quad | \quad \textcolor{portFree}{\rule{8pt}{8pt}} \textbf{15} portas livres
+            \vspace{0.3cm}
+        }%
+    }
+\end{table}
+
+% =====================================================================
+% SEÇÃO 4 - LEGENDA
+% =====================================================================
+\newpage
+\section{Legenda e Observações}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{2.2}
+    \Large
+    \begin{tabularx}{\textwidth}{c X}
+        \toprule
+        \rowcolor{tableHeaderLight} \textbf{Símbolo} & \textbf{Significado} \\
+        \midrule
+        \textcolor{portActive}{\rule{14pt}{14pt}} & Porta ativa --- ponto lógico em uso, com cabo conectado ao destino \\
+        \rowcolor{lightGray}
+        \textcolor{portFree}{\rule{14pt}{14pt}} & Porta livre --- ponto lógico disponível para nova conexão \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\vspace{0.5cm}
+
+\noindent\textbf{Observações:}
+\begin{itemize}
+    \item Cada patch panel possui \textbf{24 portas RJ-45} para cabeamento estruturado Cat5e/Cat6.
+    \item Os pontos marcados como ``Carrinho'' referem-se a conexões em \textbf{estações móveis} dentro dos consultórios.
+    \item Os pontos marcados como ``Bancada'' ou ``Balcão'' referem-se a conexões \textbf{fixas} em mobiliário.
+    \item Os pontos marcados como ``WiFi TP Link Deco'' referem-se a \textbf{access points} da rede mesh sem fio.
+    \item A descrição ``Ponto XX'' indica a \textbf{posição física} da tomada na parede (Superior/Inferior, Esquerda/Direita).
+    \item A numeração das portas segue a ordem física de cima para baixo no patch panel.
+    \item Recomenda-se manter registro atualizado sempre que novos pontos forem ativados ou desativados.
+\end{itemize}
+
+\vfill
+
+\begin{center}
+    \rule{8cm}{0.5pt} \\
+    \vspace{0.3cm}
+    {\large \textbf{Responsável pela Documentação}} \\
+    \vspace{0.2cm}
+    \textcolor{secondaryText}{Infraestrutura de TI --- Buriti Center}
+\end{center}
+
+\end{document}

@@ -1,0 +1,156 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4cm, bottom=2.5cm, headsep=1cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}  % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}   % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize STUDIO DENTAL COMÉRCIO DE HIGIENE ORAL LTDA}} & \scriptsize \textit{Proposta de Permuta -- Laboratório Eduardo} \\
+        \textcolor{secondaryText}{\scriptsize CNPJ: 46.125.234/0001-66} & {\scriptsize \textbf{Data Base: 20/02/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{PROPOSTA DE PERMUTA}}} \\
+    \vspace{0.5cm}
+    {\Huge \textbf{\textcolor{primaryColor}{DE EQUIPAMENTOS}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{LABORATÓRIO -- EDUARDO BORGES NUNES}} \\
+    \vspace{2cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{STUDIO DENTAL COMÉRCIO DE HIGIENE ORAL LTDA}} \\
+            \vspace{0.3cm}
+            {\large CNPJ: 46.125.234/0001-66} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{3cm}
+
+    {\Large \textit{Relação de equipamentos do laboratório de prótese}} \\
+    \vspace{0.3cm}
+    {\Large \textit{destinados ao sócio Eduardo Borges Nunes}} \\
+    \vspace{0.3cm}
+    {\large \textcolor{accentColor}{\textbf{MODALIDADE: PERMUTA DE SERVIÇOS}}} \\
+
+    \vfill
+    {\small Valores base de aquisição e valores finais com depreciação de 20\%, na modalidade de permuta de serviços.} \\
+    \vspace{1cm}
+    \textbf{Data Base:} 20 de Fevereiro de 2026
+\end{titlepage}
+
+% --- CONTEÚDO ---
+\section{Equipamentos do Laboratório}
+
+A tabela abaixo apresenta os equipamentos do laboratório de prótese destinados ao sócio \textbf{Eduardo Borges Nunes}, com os respectivos valores de aquisição (base) e valores finais ajustados com \textbf{depreciação de 20\%}, considerando a modalidade de permuta de serviços.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{5.5cm} r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Item} & \textbf{Referência / Descrição} & \textbf{Valor Base (R\$)} & \textbf{Valor Permuta (R\$)} \\
+        \midrule
+        Forno Ivoclar P310 & Programat P310 200-240v/50-60HZ & 24.611,00 & 19.688,80 \\
+        Impressora Phrozen 8k mini & Sonic Mini 8K S Bivolt -- OdontoMega & 4.499,90 & 3.599,92 \\
+        Lava e cura & Sistema Anycubic Wash \& Cure 2.0 & 1.750,00 & 1.400,00 \\
+        Uma cadeira & Cadeira De Escritório Presidente (Lab) & 949,99 & 759,99 \\
+        Motor & Micromotores Marathon 3 Champion (Lab) & 1.217,99 & 974,39 \\
+        Luminária kota & Luminárias Lumiled Caltini Kota & 789,00 & 631,20 \\
+        \midrule
+        \rowcolor{lightGray} \textbf{TOTAL} & & \textbf{33.817,88} & \textbf{27.054,30} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores de permuta calculados com depreciação uniforme de 20\% sobre o valor de aquisição, na modalidade de permuta de serviços.}
+\end{table}
+
+\section{Resumo}
+
+\begin{table}[H]
+    \centering
+    \large
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{0.85\textwidth}{X r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Métrica} & \textbf{Valor} \\
+        \midrule
+        \textbf{Quantidade de Itens} & \textbf{6 equipamentos} \\
+        \textbf{Valor Total de Aquisição} & \textbf{\reais{33.817,88}} \\
+        \textbf{Valor Total de Permuta} & \textbf{\reais{27.054,30}} \\
+        \textbf{Depreciação Aplicada} & \textbf{20,0\%} \\
+        \textbf{Modalidade} & \textbf{Permuta de Serviços} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\end{document}

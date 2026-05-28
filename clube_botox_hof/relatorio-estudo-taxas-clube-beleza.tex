@@ -1,0 +1,790 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\usepackage{needspace}
+\usepackage{hyperref}
+\pgfplotsset{compat=1.18}
+
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Estudo de Taxas — Clube da Beleza},
+    pdfauthor={Dra. Gabriella Lisboa — CRO/GO-CD 11836}
+}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4.5cm, bottom=2cm, headsep=1.5cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{102, 51, 102}   % Roxo Elegante
+\definecolor{secondaryText}{RGB}{80, 80, 80}     % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 102, 140}    % Rosa Antigo
+\definecolor{lightGray}{RGB}{248, 245, 250}
+\definecolor{tableHeader}{RGB}{240, 230, 245}
+\definecolor{successGreen}{RGB}{34, 139, 34}     % Verde para cenário viável
+\definecolor{warningOrange}{RGB}{255, 140, 0}    % Laranja para cenário marginal
+\definecolor{dangerRed}{RGB}{178, 34, 34}        % Vermelho para cenário inviável
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize ESTUDO DE VIABILIDADE FINANCEIRA — CLUBE DA BELEZA}} & \scriptsize \textit{Planos de Assinatura} \\
+        \textcolor{secondaryText}{\scriptsize Análise de Taxas, Parcelamento e Antecipação de Recebíveis} & {\scriptsize \textbf{Data Base: 09/03/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{\textbf{Dra.\ Gabriella Lisboa} | CRO/GO-CD 11836 | Especialista em HOF}}
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{\textcolor{primaryColor}{ESTUDO DE TAXAS}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{CLUBE DA BELEZA}} \\
+    \vspace{0.3cm}
+    {\large Viabilidade Financeira dos Planos de Assinatura com Botox} \\
+    \vspace{2cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{RELATÓRIO ESTRATÉGICO}} \\
+            \vspace{0.3cm}
+            {\large Precificação, Taxas de Maquininha e Antecipação de Recebíveis} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{2cm}
+
+    \begin{flushleft}
+    \textbf{PILARES DA ANÁLISE:} \\
+    \vspace{0.2cm}
+    \textcolor{primaryColor}{\textbf{1}} - Taxas de Maquininha (MDR) por Bandeira e Modalidade \\
+    \textcolor{primaryColor}{\textbf{2}} - Cálculo de Preço Parcelado que Preserve a Margem \\
+    \textcolor{primaryColor}{\textbf{3}} - Cenários de Antecipação de Recebíveis e Impacto no Caixa
+    \end{flushleft}
+
+    \vfill
+    {\small Relatório prático para definição da tabela de preços do Clube da Beleza, contemplando três planos anuais com tratamentos estéticos (Botox, Bioestimulador, Preenchimento), taxas reais de maquininha e simulações de antecipação de recebíveis.} \\
+    \vspace{1.5cm}
+
+    % Box de Créditos
+    \colorbox{accentColor}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.6cm}
+            \textcolor{white}{\Large \textbf{DRA.\ GABRIELLA LISBOA}} \\
+            \vspace{0.2cm}
+            \textcolor{white}{\normalsize CRO/GO-CD 11836 | Especialista em Harmonização Orofacial} \\
+            \vspace{0.6cm}
+        }%
+    }
+
+    \vspace{0.2cm}
+    \textbf{Data Base:} 09 de Março de 2026
+\end{titlepage}
+
+% --- CONTEÚDO ---
+\section{Contexto}
+
+Este estudo calcula o \textbf{preço parcelado} dos planos do Clube da Beleza, partindo do \textbf{preço à vista} de cada tratamento e embutindo a taxa da maquininha de cartão. Inclui também a análise do \textbf{custo de antecipação de recebíveis} e sua viabilidade para o fluxo de caixa.
+
+A abordagem é \textbf{conservadora}: utiliza-se a \textbf{maior taxa cobrada entre todas as bandeiras} em cada modalidade, garantindo que o pior cenário de custos esteja contemplado na precificação.
+
+\subsection{Premissa Fundamental}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``O preço à vista é o que a clínica precisa receber líquido. O preço parcelado deve proteger essa margem.''}}
+\end{quote}
+
+\needspace{8cm}
+
+\section{Taxas da Maquininha — Referência Conservadora}
+
+A tabela abaixo apresenta as taxas MDR (Merchant Discount Rate) por bandeira e modalidade, destacando a \textbf{maior taxa} que serve como referência para toda a precificação.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c c c c c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Modalidade} & \textbf{Master} & \textbf{Visa} & \textbf{Elo} & \textbf{4ª Band.} & \textbf{Referência} \\
+        \midrule
+        Débito & 0,79\% & 0,79\% & 0,99\% & — & \textbf{0,99\%} \\
+        \rowcolor{lightGray}
+        Crédito à vista & 1,65\% & 1,65\% & 1,73\% & 2,99\% & \textbf{2,99\%} \\
+        2$\times$ a 6$\times$ & 1,99\% & 1,99\% & 1,99\% & 2,99\% & \textbf{2,99\%} \\
+        \rowcolor{lightGray}
+        7$\times$ a 12$\times$ & 2,23\% & 2,52\% & 2,23\% & 3,00\% & \textbf{3,00\%} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Taxa MDR de referência para 12$\times$: 3,00\%} sobre o valor total da transação.}
+\end{table}
+
+\subsection{Taxa de Antecipação de Recebíveis}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c c c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Opção} & \textbf{Taxa/mês} & \textbf{Prazo Médio} & \textbf{Taxa no Período} \\
+        \midrule
+        Depósito hoje (D+0) & \textbf{3,36\%} & 22,17 dias & 2,48\% \\
+        \rowcolor{lightGray}
+        Depósito próximo dia útil (D+1) & 3,33\% & 21,17 dias & 2,35\% \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Taxa de antecipação conservadora: 3,36\% ao mês}, aplicada proporcionalmente ao número de dias antecipados de cada parcela.}
+\end{table}
+
+\needspace{8cm}
+
+\section{Planos do Clube da Beleza — Preço à Vista}
+
+Estes são os valores que a clínica \textbf{precisa receber líquido} para que cada tratamento seja viável:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{Inclui} & \textbf{Bônus} & \textbf{Preço à Vista} \\
+        \midrule
+        \textbf{1} & 2 botox anuais & Peeling & \reais{2.160,00} \\
+        \rowcolor{lightGray}
+        \textbf{2} & 3 botox anuais & Microagulhamento c/ vitaminas & \reais{3.180,00} \\
+        \textbf{3} & 2 botox + 1 bioestimulador + 2 ml preenchimento & Microagulhamento c/ vitaminas \textbf{ou} 1 sessão Red Touch & \reais{7.080,00} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\needspace{10cm}
+
+\section{Cálculo do Preço Parcelado (12$\times$)}
+
+\subsection{Lógica de Precificação}
+
+O cliente que parcela em 12$\times$ gera um custo de \textbf{3,00\%} na maquininha. Para que a clínica receba o preço à vista líquido, o valor cobrado no cartão precisa ser maior:
+
+\begin{center}
+\colorbox{lightGray}{%
+    \parbox{0.85\textwidth}{%
+        \centering
+        \vspace{0.3cm}
+        \texttt{Valor Parcelado = Preço à Vista $\div$ (1 $-$ taxa\_MDR)} \\
+        \vspace{0.1cm}
+        \texttt{Valor Parcelado = Preço à Vista $\div$ 0,97} \\
+        \vspace{0.3cm}
+    }%
+}
+\end{center}
+
+\subsection{Resultado da Precificação}
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c r r r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{À Vista} & \textbf{Parc. Exato} & \textbf{Parcela} & \textbf{Parc. Arred.} & \textbf{Total 12$\times$} & \textbf{Líquido} \\
+        \midrule
+        \textbf{1} & 2.160 & 2.226,80 & 185,57 & \textbf{186,00} & 2.232,00 & 2.165,04 \\
+        \rowcolor{lightGray}
+        \textbf{2} & 3.180 & 3.278,35 & 273,20 & \textbf{274,00} & 3.288,00 & 3.189,36 \\
+        \textbf{3} & 7.080 & 7.298,97 & 608,25 & \textbf{609,00} & 7.308,00 & 7.088,76 \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores em R\$. Líquido = Total 12$\times$ $\times$ 0,97 (após MDR de 3\%).}
+\end{table}
+
+\needspace{8cm}
+
+\section{Tabela de Preços Comerciais — À Vista vs.\ Parcelado}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{À Vista / Pix} & \textbf{Parcelado 12$\times$} & \textbf{Diferença} \\
+        \midrule
+        \textbf{1} & \reais{2.160,00} & 12$\times$ \reais{190,00} (\reais{2.280,00}) & +\reais{120,00} (+5,6\%) \\
+        \rowcolor{lightGray}
+        \textbf{2} & \reais{3.180,00} & 12$\times$ \reais{275,00} (\reais{3.300,00}) & +\reais{120,00} (+3,8\%) \\
+        \textbf{3} & \reais{7.080,00} & 12$\times$ \reais{610,00} (\reais{7.320,00}) & +\reais{240,00} (+3,4\%) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Margem Líquida Sem Antecipação}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{Total Parcelado} & \textbf{Líquido ($-$3\%)} & \textbf{vs.\ Preço à Vista} \\
+        \midrule
+        \textbf{1} & \reais{2.280,00} & \reais{2.211,60} & \textcolor{successGreen}{\textbf{+R\$ 51,60}} \\
+        \rowcolor{lightGray}
+        \textbf{2} & \reais{3.300,00} & \reais{3.201,00} & \textcolor{successGreen}{\textbf{+R\$ 21,00}} \\
+        \textbf{3} & \reais{7.320,00} & \reais{7.100,40} & \textcolor{successGreen}{\textbf{+R\$ 20,40}} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize \textbf{Sem antecipação}, todos os planos geram margem positiva. A clínica recebe cada parcela líquida a cada $\sim$31 dias ao longo de 12 meses.}
+\end{table}
+
+\needspace{10cm}
+
+\section{Custo da Antecipação Total (12 Parcelas)}
+
+\subsection{Como Funciona}
+
+Sem antecipação, a clínica recebe cada parcela líquida (após MDR) a cada $\sim$31 dias. Se optar por \textbf{antecipar todos os recebíveis}, a operadora cobra \textbf{3,36\% ao mês}, proporcional ao número de dias antecipados de cada parcela.
+
+\begin{center}
+\colorbox{lightGray}{%
+    \parbox{0.85\textwidth}{%
+        \vspace{0.3cm}
+        \texttt{Parcela líquida (após MDR) = Parcela $\times$ 0,97} \\
+        \vspace{0.1cm}
+        \texttt{Custo antecipação parcela N = Parcela\_líquida $\times$ 3,36\% $\times$ (31 $\times$ N $\div$ 30)} \\
+        \vspace{0.1cm}
+        \texttt{Custo total = soma do custo de todas as 12 parcelas} \\
+        \vspace{0.3cm}
+    }%
+}
+\end{center}
+
+\subsection{Detalhamento — Plano 1 (12$\times$ R\$ 190,00)}
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{c c r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Parcela} & \textbf{Dias} & \textbf{Líquida (MDR)} & \textbf{Custo Antecip.} & \textbf{Recebe Hoje} \\
+        \midrule
+        1 & 31 & 184,30 & 6,40 & 177,90 \\
+        \rowcolor{lightGray}
+        2 & 62 & 184,30 & 12,80 & 171,50 \\
+        3 & 93 & 184,30 & 19,20 & 165,10 \\
+        \rowcolor{lightGray}
+        4 & 124 & 184,30 & 25,59 & 158,71 \\
+        5 & 155 & 184,30 & 31,99 & 152,31 \\
+        \rowcolor{lightGray}
+        6 & 186 & 184,30 & 38,39 & 145,91 \\
+        7 & 217 & 184,30 & 44,79 & 139,51 \\
+        \rowcolor{lightGray}
+        8 & 248 & 184,30 & 51,19 & 133,11 \\
+        9 & 279 & 184,30 & 57,59 & 126,71 \\
+        \rowcolor{lightGray}
+        10 & 310 & 184,30 & 63,99 & 120,31 \\
+        11 & 341 & 184,30 & 70,39 & 113,91 \\
+        \rowcolor{lightGray}
+        12 & 372 & 184,30 & 76,79 & 107,51 \\
+        \midrule
+        \rowcolor{dangerRed!10}
+        \textbf{TOTAL} & & \textbf{2.211,60} & \textbf{499,11} & \textbf{1.712,49} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores em R\$.}
+\end{table}
+
+\needspace{8cm}
+
+\subsection{Resumo — Antecipação Total dos 3 Planos}
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c r r r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{Bruto} & \textbf{Líq. MDR} & \textbf{Antecip.} & \textbf{Líq. Final} & \textbf{vs.\ à Vista} & \textbf{Perda} \\
+        \midrule
+        \textbf{1} & 2.280 & 2.211,60 & $-$499,11 & \textbf{1.712,49} & \textcolor{dangerRed}{\textbf{$-$447,51}} & $-$20,7\% \\
+        \rowcolor{lightGray}
+        \textbf{2} & 3.300 & 3.201,00 & $-$722,27 & \textbf{2.478,73} & \textcolor{dangerRed}{\textbf{$-$701,27}} & $-$22,1\% \\
+        \textbf{3} & 7.320 & 7.100,40 & $-$1.602,64 & \textbf{5.497,76} & \textcolor{dangerRed}{\textbf{$-$1.582,24}} & $-$22,3\% \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{dangerRed}{\textbf{CONCLUSÃO:}} A antecipação total de 12 parcelas é \textbf{INVIÁVEL}. O custo combinado (MDR + antecipação) consome de \textbf{20,7\% a 22,3\%} do preço à vista — um prejuízo severo que inviabiliza a operação.
+
+\needspace{8cm}
+
+\section{Repasse Integral ao Cliente — Simulação}
+
+Se a clínica quisesse antecipar \textbf{todas} as parcelas e ainda receber o preço à vista líquido, a parcela precisaria absorver o custo integral:
+
+\begin{center}
+\colorbox{lightGray}{%
+    \parbox{0.85\textwidth}{%
+        \vspace{0.3cm}
+        \texttt{Taxa efetiva combinada = 1 $-$ [0,97 $\times$ (1 $-$ 22,57\%)] = 24,89\%} \\
+        \vspace{0.1cm}
+        \texttt{Parcela necessária = (Preço à Vista $\div$ 0,7511) $\div$ 12} \\
+        \vspace{0.3cm}
+    }%
+}
+\end{center}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{À Vista} & \textbf{Total Neces.} & \textbf{Parcela 12$\times$} & \textbf{Acréscimo} \\
+        \midrule
+        \textbf{1} & \reais{2.160,00} & \reais{2.876,21} & \textbf{\reais{240,00}} & +33,2\% \\
+        \rowcolor{lightGray}
+        \textbf{2} & \reais{3.180,00} & \reais{4.234,02} & \textbf{\reais{353,00}} & +33,1\% \\
+        \textbf{3} & \reais{7.080,00} & \reais{9.426,35} & \textbf{\reais{786,00}} & +33,1\% \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Repassar o custo integral elevaria as parcelas em $\sim$33\% — \textbf{comercialmente inaceitável} para um programa de assinatura de estética.}
+\end{table}
+
+\needspace{10cm}
+
+\section{Cenários de Antecipação Parcial}
+
+A solução prática é \textbf{antecipar apenas parte das parcelas}, equilibrando fluxo de caixa e custo financeiro.
+
+\subsection{Cenário A — Antecipar Somente as 3 Primeiras Parcelas}
+
+Recebe as parcelas 1--3 imediatamente; parcelas 4--12 chegam normalmente (31 dias cada).
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c r r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{Recebe Agora} & \textbf{Custo Ant.} & \textbf{Líq. Agora} & \textbf{Recebe Depois} & \textbf{vs.\ à Vista} \\
+        \midrule
+        \textbf{1} & 552,90 & $-$38,39 & 514,51 & 1.658,70 & \textcolor{successGreen}{\textbf{+13,21}} \\
+        \rowcolor{lightGray}
+        \textbf{2} & 800,25 & $-$55,57 & 744,68 & 2.400,75 & \textcolor{warningOrange}{\textbf{$-$34,57}} \\
+        \textbf{3} & 1.775,10 & $-$123,26 & 1.651,84 & 5.325,30 & \textcolor{warningOrange}{\textbf{$-$102,86}} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores em R\$. Total líquido = Líquido agora + Recebe depois.}
+\end{table}
+
+\textcolor{successGreen}{\textbf{Cenário viável.}} O Plano 1 mantém margem positiva. Os Planos 2 e 3 têm prejuízo de apenas 1,1\% a 1,5\% — absorvível ou compensável com ajuste mínimo na parcela.
+
+\subsection{Cenário B — Antecipar as 6 Primeiras Parcelas}
+
+Recebe as parcelas 1--6 imediatamente; parcelas 7--12 chegam normalmente.
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c r r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{Recebe Agora} & \textbf{Custo Ant.} & \textbf{Líq. Agora} & \textbf{Recebe Depois} & \textbf{vs.\ à Vista} \\
+        \midrule
+        \textbf{1} & 1.105,80 & $-$134,36 & 971,44 & 1.105,80 & \textcolor{warningOrange}{\textbf{$-$82,76}} \\
+        \rowcolor{lightGray}
+        \textbf{2} & 1.600,50 & $-$194,46 & 1.406,04 & 1.600,50 & \textcolor{warningOrange}{\textbf{$-$173,46}} \\
+        \textbf{3} & 3.550,20 & $-$431,30 & 3.118,90 & 3.550,20 & \textcolor{dangerRed}{\textbf{$-$410,90}} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores em R\$. Prejuízo de 3,8\% a 5,8\% do preço à vista.}
+\end{table}
+
+\textcolor{warningOrange}{\textbf{Cenário caro.}} Prejuízo entre 3,8\% e 5,8\% — significativo, mas pode ser parcialmente compensado se a parcela comercial absorver esse custo. Reservar apenas para situações emergenciais de caixa.
+
+\needspace{8cm}
+
+\subsection{Cenário C — Antecipação Automática (D+1)}
+
+Cenário onde a clínica ativa antecipação automática, recebendo no próximo dia útil (taxa de 3,33\%/mês).
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{c r r r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Plano} & \textbf{Líq. MDR} & \textbf{Custo Ant.} & \textbf{Líq. Final} & \textbf{vs.\ à Vista} & \textbf{Perda} \\
+        \midrule
+        \textbf{1} & 2.211,60 & $-$493,88 & \textbf{1.717,72} & \textcolor{dangerRed}{$-$442,28} & $-$20,5\% \\
+        \rowcolor{lightGray}
+        \textbf{2} & 3.201,00 & $-$714,72 & \textbf{2.486,28} & \textcolor{dangerRed}{$-$693,72} & $-$21,8\% \\
+        \textbf{3} & 7.100,40 & $-$1.585,90 & \textbf{5.514,50} & \textcolor{dangerRed}{$-$1.565,50} & $-$22,1\% \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize A diferença entre D+0 (3,36\%) e D+1 (3,33\%) é insignificante — economia de R\$ 5 a R\$ 17 por plano. Não altera a conclusão de inviabilidade.}
+\end{table}
+
+\needspace{10cm}
+
+\pagebreak
+
+\section{Comparativo Consolidado — Todos os Cenários}
+
+\subsection{Visualização Gráfica — Impacto da Antecipação}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=14cm,
+        height=8cm,
+        xlabel={Cenário de Antecipação},
+        ylabel={Líquido Recebido (R\$)},
+        xmin=0.5, xmax=4.5,
+        ymin=1500, ymax=2400,
+        xtick={1,2,3,4},
+        xticklabels={Sem Antecip.,3 Parcelas,6 Parcelas,Total},
+        legend pos=north east,
+        ymajorgrids=true,
+        grid style=dashed,
+        title={\textbf{Plano 1 — Evolução do Líquido por Cenário}},
+    ]
+
+    \addplot[
+        color=primaryColor,
+        mark=*,
+        ultra thick
+        ]
+        coordinates {
+        (1,2211.60)(2,2173.21)(3,2077.24)(4,1712.49)
+        };
+        \addlegendentry{Líquido recebido}
+
+    \addplot[
+        color=dangerRed,
+        dashed,
+        thick,
+        domain=0.5:4.5
+        ]
+        {2160};
+        \addlegendentry{Preço à vista (meta)}
+
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Plano 1 (à vista R\$ 2.160 / parcelado 12$\times$ R\$ 190)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Cenário} & \textbf{Líquido Total} & \textbf{vs.\ à Vista} & \textbf{Viabilidade} \\
+        \midrule
+        Sem antecipação & \reais{2.211,60} & \textcolor{successGreen}{\textbf{+51,60}} & \textcolor{successGreen}{IDEAL} \\
+        \rowcolor{lightGray}
+        Antecipa 3 parcelas & \reais{2.173,21} & \textcolor{successGreen}{\textbf{+13,21}} & \textcolor{successGreen}{VIÁVEL} \\
+        Antecipa 6 parcelas & \reais{2.077,24} & \textcolor{warningOrange}{\textbf{$-$82,76}} & \textcolor{warningOrange}{MARGINAL} \\
+        \rowcolor{lightGray}
+        Antecipa tudo (D+0) & \reais{1.712,49} & \textcolor{dangerRed}{\textbf{$-$447,51}} & \textcolor{dangerRed}{INVIÁVEL} \\
+        Antecipa tudo (D+1) & \reais{1.717,72} & \textcolor{dangerRed}{\textbf{$-$442,28}} & \textcolor{dangerRed}{INVIÁVEL} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Plano 2 (à vista R\$ 3.180 / parcelado 12$\times$ R\$ 275)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Cenário} & \textbf{Líquido Total} & \textbf{vs.\ à Vista} & \textbf{Viabilidade} \\
+        \midrule
+        Sem antecipação & \reais{3.201,00} & \textcolor{successGreen}{\textbf{+21,00}} & \textcolor{successGreen}{IDEAL} \\
+        \rowcolor{lightGray}
+        Antecipa 3 parcelas & \reais{3.145,43} & \textcolor{warningOrange}{\textbf{$-$34,57}} & \textcolor{successGreen}{VIÁVEL ($-$1,1\%)} \\
+        Antecipa 6 parcelas & \reais{3.006,54} & \textcolor{warningOrange}{\textbf{$-$173,46}} & \textcolor{warningOrange}{MARGINAL ($-$5,5\%)} \\
+        \rowcolor{lightGray}
+        Antecipa tudo (D+0) & \reais{2.478,73} & \textcolor{dangerRed}{\textbf{$-$701,27}} & \textcolor{dangerRed}{INVIÁVEL} \\
+        Antecipa tudo (D+1) & \reais{2.486,28} & \textcolor{dangerRed}{\textbf{$-$693,72}} & \textcolor{dangerRed}{INVIÁVEL} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\needspace{8cm}
+
+\subsection{Plano 3 (à vista R\$ 7.080 / parcelado 12$\times$ R\$ 610)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X r r c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Cenário} & \textbf{Líquido Total} & \textbf{vs.\ à Vista} & \textbf{Viabilidade} \\
+        \midrule
+        Sem antecipação & \reais{7.100,40} & \textcolor{successGreen}{\textbf{+20,40}} & \textcolor{successGreen}{IDEAL} \\
+        \rowcolor{lightGray}
+        Antecipa 3 parcelas & \reais{6.977,14} & \textcolor{warningOrange}{\textbf{$-$102,86}} & \textcolor{successGreen}{VIÁVEL ($-$1,5\%)} \\
+        Antecipa 6 parcelas & \reais{6.669,10} & \textcolor{warningOrange}{\textbf{$-$410,90}} & \textcolor{warningOrange}{MARGINAL ($-$5,8\%)} \\
+        \rowcolor{lightGray}
+        Antecipa tudo (D+0) & \reais{5.497,76} & \textcolor{dangerRed}{\textbf{$-$1.582,24}} & \textcolor{dangerRed}{INVIÁVEL} \\
+        Antecipa tudo (D+1) & \reais{5.514,50} & \textcolor{dangerRed}{\textbf{$-$1.565,50}} & \textcolor{dangerRed}{INVIÁVEL} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\needspace{10cm}
+
+\section{Ganho Extra em Outras Modalidades de Pagamento}
+
+Se o valor cobrado for o \textbf{parcelado} (já com taxa embutida) e o cliente optar por pagar de forma mais barata para a clínica:
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c r r r}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Modalidade} & \textbf{Taxa} & \textbf{Plano 1} & \textbf{Plano 2} & \textbf{Plano 3} \\
+        \midrule
+        Pix / Débito & 0,99\% & \textcolor{successGreen}{\textbf{+97,43}} & \textcolor{successGreen}{\textbf{+87,33}} & \textcolor{successGreen}{\textbf{+167,53}} \\
+        \rowcolor{lightGray}
+        Crédito à vista & 2,99\% & \textcolor{successGreen}{\textbf{+51,83}} & \textcolor{successGreen}{\textbf{+21,33}} & \textcolor{successGreen}{\textbf{+21,13}} \\
+        12$\times$ (pior caso) & 3,00\% & \textcolor{successGreen}{\textbf{+51,60}} & \textcolor{successGreen}{\textbf{+21,00}} & \textcolor{successGreen}{\textbf{+20,40}} \\
+        \bottomrule
+    \end{tabularx}
+    \caption*{\footnotesize Valores em R\$. ``Sobra'' = líquido recebido $-$ preço à vista.}
+\end{table}
+
+\textcolor{primaryColor}{\textbf{Oportunidade comercial:}} Oferecer o preço à vista como ``desconto'' para pagamento via Pix — o cliente economiza de 3,4\% a 5,6\%, a clínica não perde nada.
+
+\needspace{10cm}
+
+\pagebreak
+
+\section{Recomendação Final}
+
+\subsection{Tabela de Preços Definitiva}
+
+\begin{table}[H]
+    \centering
+    \Large
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{tableHeader} & \textbf{Preço à Vista / Pix} & \textbf{Preço Parcelado 12$\times$} \\
+        \midrule
+        \textbf{Plano 1} & \reais{2.160,00} & 12$\times$ \textbf{\reais{190,00}} \\
+        \rowcolor{lightGray}
+        \textbf{Plano 2} & \reais{3.180,00} & 12$\times$ \textbf{\reais{275,00}} \\
+        \textbf{Plano 3} & \reais{7.080,00} & 12$\times$ \textbf{\reais{610,00}} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Estratégia de Antecipação}
+
+\begin{enumerate}
+    \item \textcolor{dangerRed}{\textbf{Não ativar antecipação automática.}} O custo de $\sim$22\% sobre os recebíveis é destrutivo para a margem.
+
+    \item \textcolor{successGreen}{\textbf{Se precisar de fôlego no caixa}}, antecipar no máximo as \textbf{3 primeiras parcelas} de cada venda — o custo é controlável (1,1\% a 1,5\% de perda sobre o preço à vista) e a clínica recebe um aporte imediato sem comprometer a rentabilidade do plano.
+
+    \item \textcolor{successGreen}{\textbf{Priorizar pagamento à vista / Pix}} na abordagem comercial: a clínica elimina 100\% do custo financeiro e recebe imediatamente. O ``desconto'' de 3--5\% para Pix é custeado pela margem que já estava embutida no parcelado.
+
+    \item \textcolor{warningOrange}{\textbf{Reservar a antecipação de 6+ parcelas}} apenas para situações emergenciais de caixa, com consciência de que o custo é relevante (3,8\% a 5,8\%).
+\end{enumerate}
+
+\subsection{Resumo Visual de Decisão}
+
+\begin{center}
+\begin{tikzpicture}[
+    box/.style={rectangle, draw=primaryColor, thick, rounded corners,
+        text width=5.5cm, minimum height=1.6cm, text centered, font=\small,
+        inner sep=8pt},
+    greenbox/.style={box, fill=successGreen!12, draw=successGreen!60!black},
+    orangebox/.style={box, fill=warningOrange!12, draw=warningOrange!60!black},
+    redbox/.style={box, fill=dangerRed!12, draw=dangerRed!60!black},
+    arrow/.style={->, very thick, primaryColor, >=stealth},
+    label/.style={font=\footnotesize\bfseries}
+]
+    % Nível 1 — Pix (topo)
+    \node[greenbox] (pix) at (0,0) {
+        \textbf{Pix / À Vista}\\[2pt]
+        \footnotesize Custo: 0\% a 0,99\%
+    };
+    \node[label, text=successGreen] at (0,-1.2) {PRIORIDADE};
+
+    % Nível 2 — 3 parcelas
+    \node[greenbox] (ant3) at (0,-2.8) {
+        \textbf{Antecipa 3 parcelas}\\[2pt]
+        \footnotesize Custo: 1,1\% a 1,5\%
+    };
+    \node[label, text=successGreen] at (0,-4.0) {ACEITÁVEL};
+
+    % Nível 3 — 6 parcelas
+    \node[orangebox] (ant6) at (0,-5.6) {
+        \textbf{Antecipa 6 parcelas}\\[2pt]
+        \footnotesize Custo: 3,8\% a 5,8\%
+    };
+    \node[label, text=warningOrange] at (0,-6.8) {SOMENTE EMERGÊNCIA};
+
+    % Nível 4 — Total (bloqueado)
+    \node[redbox] (total) at (0,-8.4) {
+        \textbf{Antecipação total}\\[2pt]
+        \footnotesize Custo: 20,5\% a 22,3\%
+    };
+    \node[label, text=dangerRed] at (0,-9.6) {INVIÁVEL};
+
+    % Setas com rótulos
+    \draw[arrow] (pix) -- node[right, font=\scriptsize, xshift=2pt] {se precisar de caixa} (ant3);
+    \draw[arrow] (ant3) -- node[right, font=\scriptsize, xshift=2pt] {somente emergência} (ant6);
+    \draw[arrow, dangerRed] (ant6) -- node[right, font=\scriptsize\bfseries, xshift=2pt, text=dangerRed] {EVITAR} (total);
+
+    % X de bloqueio
+    \draw[dangerRed, line width=2pt] (-3.2,-7.7) -- (3.2,-9.1);
+    \draw[dangerRed, line width=2pt] (-3.2,-9.1) -- (3.2,-7.7);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{center}
+\colorbox{lightGray}{%
+    \parbox{0.85\textwidth}{%
+        \centering
+        \vspace{0.3cm}
+        \textcolor{primaryColor}{\textbf{``Priorize o Pix, embuta a taxa no parcelado,}}\\
+        \textcolor{primaryColor}{\textbf{e jamais ative antecipação automática.}}\\
+        \textcolor{primaryColor}{\textbf{A margem é o que sustenta o negócio.''}}\\
+        \vspace{0.3cm}
+    }%
+}
+\end{center}
+
+\pagebreak
+
+% --- PÁGINA FINAL DE CRÉDITOS ---
+\thispagestyle{empty}
+\vspace*{0.5cm}
+
+\begin{center}
+    {\Huge \textcolor{primaryColor}{\textbf{SOBRE A PROFISSIONAL}}} \\
+    \vspace{1cm}
+    \rule{12cm}{1.5pt}
+    \vspace{1cm}
+
+    \colorbox{accentColor}{%
+        \parbox{0.92\textwidth}{%
+            \centering
+            \vspace{0.8cm}
+            \textcolor{white}{\Huge \textbf{DRA.\ GABRIELLA LISBOA}} \\
+            \vspace{0.3cm}
+            \textcolor{white}{\Large CRO/GO-CD 11836} \\
+            \vspace{0.2cm}
+            \textcolor{white}{\large Especialista em Harmonização Orofacial} \\
+            \vspace{0.8cm}
+        }%
+    }
+
+    \vspace{1cm}
+
+    \begin{flushleft}
+    \large
+    \textbf{Especialidades:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{primaryColor}{\Large \textbf{Harmonização Orofacial (HOF)}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Toxina Botulínica | Preenchimento com Ácido Hialurônico} \\
+    \hspace{1cm} \textcolor{secondaryText}{Bioestimuladores de Colágeno | Microagulhamento} \\
+
+    \vspace{1cm}
+
+    \textbf{Clube da Beleza:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{secondaryText}{Planos anuais de assinatura em estética facial} \\
+    \hspace{1cm} \textcolor{secondaryText}{Botox, Bioestimuladores, Preenchimento e tratamentos complementares} \\
+    \hspace{1cm} \textcolor{secondaryText}{Atendimento personalizado e acompanhamento contínuo} \\
+    \end{flushleft}
+
+    \vspace{0.5cm}
+
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.4cm}
+            \textcolor{primaryColor}{\large \textbf{``Cristã, Esposa do Fred, Mãe do João e do Lucas''}} \\
+            \vspace{0.2cm}
+            \textcolor{secondaryText}{\normalsize Cuidando da beleza e autoestima com excelência e dedicação} \\
+            \vspace{0.4cm}
+        }%
+    }
+
+    \vfill
+
+    \textcolor{secondaryText}{\footnotesize Relatório compilado em 09 de Março de 2026} \\
+    \textcolor{secondaryText}{\footnotesize Estudo de viabilidade financeira para o Clube da Beleza}
+
+\end{center}
+
+\end{document}
