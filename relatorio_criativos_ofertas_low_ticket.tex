@@ -1,0 +1,808 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Fundamentais ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\usepackage{needspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\pgfplotsset{compat=1.18}
+
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    urlcolor=accentColor,
+    pdftitle={Processo Completo: Teste de Criativos, Ofertas e Funis Low Ticket},
+    pdfauthor={Operação Low Ticket}
+}
+
+% --- Configurações de Layout ---
+\geometry{left=2.5cm, right=2.5cm, top=4.5cm, bottom=2cm, headsep=1.5cm, headheight=60pt}
+
+% --- Definição de Cores ---
+\definecolor{primaryColor}{RGB}{0, 51, 102}   % Azul Marinho
+\definecolor{secondaryText}{RGB}{80, 80, 80}  % Cinza Escuro
+\definecolor{accentColor}{RGB}{178, 34, 34}   % Vermelho Tijolo
+\definecolor{lightGray}{RGB}{245, 245, 245}
+\definecolor{tableHeader}{RGB}{230, 230, 250}
+\definecolor{successGreen}{RGB}{34, 139, 34}  % Verde para sucesso
+\definecolor{warningOrange}{RGB}{255, 140, 0} % Laranja para atenção
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Cabeçalho
+\fancyhead[C]{%
+    \begin{tabularx}{\textwidth}{@{} X r @{}}
+        \textcolor{primaryColor}{\textbf{\footnotesize PROCESSO COMPLETO: CRIATIVOS, OFERTAS E FUNIS LOW TICKET}} & \scriptsize \textit{Guia Operacional} \\
+        \textcolor{secondaryText}{\scriptsize Teste $\rightarrow$ Validação $\rightarrow$ Escala} & {\scriptsize \textbf{Data Base: Março/2026}}
+    \end{tabularx}%
+}
+
+% Rodapé
+\fancyfoot[L]{\scriptsize \textcolor{secondaryText}{Referência: \textbf{Victor Xisto} | Operação Low Ticket}}
+\fancyfoot[R]{\normalsize Página \textbf{\thepage} de \textbf{\pageref{LastPage}}}
+
+% --- Linha separadora do CABEÇALHO ---
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{%
+    \vspace{0.1cm}
+    \hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}%
+}
+
+% --- Linha separadora do RODAPÉ ---
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\footrule}{%
+    \color{primaryColor}%
+    \hbox to\headwidth{\leaders\hrule height \footrulewidth\hfill}%
+    \vspace{0.2cm}
+}
+
+% --- Formatação de Títulos ---
+\titleformat{\section}
+{\color{primaryColor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+{\color{primaryColor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% --- Macro para Moeda ---
+\newcommand{\reais}[1]{R\$ #1}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- CAPA ---
+\begin{titlepage}
+    \centering
+    \vspace*{2.5cm}
+    {\Huge \textbf{\textcolor{primaryColor}{PROCESSO COMPLETO}}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{TESTE DE CRIATIVOS, OFERTAS E FUNIS LOW TICKET}} \\
+    \vspace{0.3cm}
+    {\large Da concepção da oferta à escala com lucro no front-end} \\
+    \vspace{1.5cm}
+    \rule{10cm}{1.5pt} \\
+    \vspace{0.5cm}
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.3cm}
+            {\Large \textbf{GUIA OPERACIONAL PARA APLICAÇÃO IMEDIATA}} \\
+            \vspace{0.3cm}
+            {\large Mentalizar o processo, validar ofertas e escalar com previsibilidade} \\
+            \vspace{0.3cm}
+        }%
+    }
+    \vspace{1.5cm}
+
+    \begin{flushleft}
+    \textbf{PILARES DO PROCESSO:} \\
+    \vspace{0.2cm}
+    \textcolor{primaryColor}{\textbf{1}} - Concepção e Modelagem de Ofertas (Quiz + App) \\
+    \textcolor{primaryColor}{\textbf{2}} - Criação e Teste de Criativos (Orgânico + TikTok) \\
+    \textcolor{primaryColor}{\textbf{3}} - Estrutura de Tráfego (ABO/CBO + Teste de Orçamento) \\
+    \textcolor{primaryColor}{\textbf{4}} - Validação e Escala (Conta, Estrutura, Budget)
+    \end{flushleft}
+
+    \vfill
+    {\small Documento operacional compilado a partir de metodologia validada em operações reais de low ticket, com foco em funis de quiz, aplicativos como entregável, criativos estilo orgânico/TikTok e estratégias de tráfego pago com taxa de assertividade de 80\% em novas ofertas.} \\
+    \vspace{1.5cm}
+
+    % Box de Créditos
+    \colorbox{accentColor}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.6cm}
+            \textcolor{white}{\Large \textbf{REFERÊNCIA: VICTOR XISTO}} \\
+            \vspace{0.2cm}
+            \textcolor{white}{\normalsize Operação Low Ticket | 140K+ alunos | Escala 100K+/dia} \\
+            \vspace{0.6cm}
+        }%
+    }
+
+    \vspace{0.2cm}
+    \textbf{Data Base:} Março de 2026
+\end{titlepage}
+
+% --- CONTEÚDO ---
+\section{Visão de Mercado: Por Que Low Ticket com Recorrência}
+
+O modelo mais valorizado do mercado digital atual combina \textbf{low ticket + recorrência + aplicativo}. Operações neste formato possuem valuation até \textbf{7 vezes maior} que modelos tradicionais de infoproduto.
+
+\subsection{Por Que Aplicativos e Recorrência}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Modelo Tradicional} & \textbf{Modelo App + Recorrência} \\
+        \midrule
+        Venda única (ticket R\$27-R\$97) & Assinatura mensal + upsells internos \\
+        \rowcolor{lightGray}
+        LTV limitado ao front-end & LTV alto (meses de recorrência) \\
+        Sem equity real & Valuation 7x superior \\
+        \rowcolor{lightGray}
+        Entregável genérico (e-book/PDF) & Aplicativo personalizado com IA \\
+        Difícil de vender a operação & Propostas reais de aquisição \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{A Oportunidade com IA}
+
+Antigamente, criar um aplicativo exigia equipe de programação e meses de desenvolvimento. Hoje, com ferramentas como \textbf{Replit} e \textbf{Lovable}, é possível criar um MVP funcional em \textbf{2 a 3 dias}.
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Toda vez que a gente cria um produto novo, a gente já cria na intenção dele virar um app, um negócio que tem recorrência.''}}
+\end{quote}
+
+\textcolor{accentColor}{\textbf{Modelo de Holding:}} Crie múltiplos produtos do mesmo nicho sob a mesma empresa. Exemplo: uma holding de saúde com 3 ofertas (emagrecimento feminino, masculino e saúde geral), acumulando público e alunos. Um dia essa empresa pode ser vendida com valuation significativo.
+
+\needspace{8cm}
+
+\section{O Funil de Quiz: A Estrutura que Converte}
+
+O quiz é o formato de funil mais validado para low ticket. A regra fundamental é: \textbf{80/20 é personalização}.
+
+\subsection{Estrutura do Quiz em 3 Blocos}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Bloco} & \textbf{Objetivo} & \textbf{Conteúdo} \\
+        \midrule
+        \textbf{Início} & Pesquisa / Coleta de dados & Perguntas sobre perfil, objetivos, situação atual do lead \\
+        \rowcolor{lightGray}
+        \textbf{Meio} & Projeção de resultado & Mostrar como o lead vai ficar, resultados possíveis, antes e depois \\
+        \textbf{Final} & Entrega personalizada + Oferta & Plano/resultado com base nas respostas + preço baixo por impulso \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Por Que o Quiz Funciona para Low Ticket}
+
+\begin{itemize}
+    \item \textbf{O lead se enxerga no futuro:} A personalização faz ele visualizar o resultado antes de comprar
+    \item \textbf{Percepção de valor alto:} O quiz entrega algo que parece valer muito mais do que o preço cobrado
+    \item \textbf{Compra por impulso:} No final do quiz, o lead já está emocionalmente investido e o preço é baixo
+    \item \textbf{Volume:} O quiz permite trazer muito tráfego barato (``teste grátis'') e converter no funil
+\end{itemize}
+
+\textcolor{accentColor}{\textbf{Regra de Ouro:}} O quiz de personalização supera consistentemente quizzes baseados apenas em depoimentos ou mini-VSL. Sempre maximize o benefício com base no que a pessoa respondeu.
+
+\needspace{10cm}
+
+\section{Concepção e Modelagem de Ofertas}
+
+A tomada de decisão sobre qual oferta criar segue dois eixos: \textbf{timing (sazonalidade)} e \textbf{modelagem de ofertas validadas}.
+
+\subsection{Eixo 1: Timing e Sazonalidade}
+
+Ofertas sazonais são ouro para low ticket porque você entra no leilão barato --- poucos anunciantes competem fora da temporada.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Evento Sazonal} & \textbf{Tipo de Produto} & \textbf{Vantagem} \\
+        \midrule
+        ENEM / Vestibular & App com resumos + comunidade & Vende todo ano, acumula público \\
+        \rowcolor{lightGray}
+        Páscoa & Receitas de ovos / renda extra & Leilão barato, demanda garantida \\
+        Natal / Fim de Ano & Renda extra, presentes DIY & Pico de consumo \\
+        \rowcolor{lightGray}
+        Verão / Janeiro & Emagrecimento, treinos & Demanda sazonal forte \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{primaryColor}{\textbf{Conceito de ``Sazonal Infinito'':}} Um produto de ENEM, por exemplo, vende durante a temporada, acumula seguidores e alunos, e no ano seguinte vende mais --- com app mais sofisticado e base de público maior. Suba antes da concorrência, com oferta validada e produto bem feito.
+
+\subsection{Eixo 2: Modelagem de Ofertas Validadas}
+
+O processo não é copiar --- é \textbf{entender princípios e adaptar}:
+
+\begin{enumerate}
+    \item \textbf{Pesquise mercados externos:} Faça spy em outros países (EUA, Latam) e identifique ofertas escalando
+    \item \textbf{Identifique o mecanismo validado:} Qual o gatilho, a promessa, a estrutura que funciona
+    \item \textbf{Transforme o entregável:} Converta de produto físico/VSL/Nutra para \textbf{aplicativo low ticket}
+    \item \textbf{Mude o Nome Chiclete:} Crie um nome novo que pareça inovador (mesmo mecanismo por trás)
+    \item \textbf{Monte o quiz de personalização:} Adapte o funil para o formato quiz com a estrutura de 3 blocos
+\end{enumerate}
+
+\needspace{8cm}
+
+\subsection{Conversão de VSL/Nutra para Low Ticket}
+
+Este é o processo de maior valor: pegar uma oferta validada em outro formato e transformá-la em low ticket.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Etapa} & \textbf{Oferta Original (VSL/Nutra)} & \textbf{Adaptação Low Ticket} \\
+        \midrule
+        \textbf{1} & Mecanismo de conversão (ex: Pink Salt, diabetes) & Manter o mecanismo, mudar o nome chiclete \\
+        \rowcolor{lightGray}
+        \textbf{2} & Página de VSL longa (15-40 min) & Quiz de personalização (2-4 min) \\
+        \textbf{3} & Produto físico (cápsula, suplemento) & Aplicativo/plano digital personalizado \\
+        \rowcolor{lightGray}
+        \textbf{4} & Ticket alto (R\$150-R\$400) & Ticket baixo (R\$17-R\$47) + recorrência \\
+        \textbf{5} & Funil de consciência longo & Funil de impulso curto (quiz $\rightarrow$ oferta) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{accentColor}{\textbf{Atenção:}} Não basta trocar o formato --- o entregável precisa ser bom. Não adianta pegar uma oferta de Nutra e entregar um e-book. O formato validado é \textbf{aplicativo, plano personalizado ou desafio}.
+
+\subsection{O Poder do Nome Chiclete}
+
+O nome chiclete é 80/20 na percepção de novidade da oferta:
+
+\begin{itemize}
+    \item Mesmo mecanismo validado + nome chiclete novo = \textbf{oferta que parece inovadora}
+    \item Múltiplos nomes chiclete validados permitem atingir \textbf{fatias de público diferentes}
+    \item Monte um banco de \textbf{10 nomes chiclete} e teste sistematicamente
+    \item O nome chiclete no criativo + no quiz = melhor performance
+\end{itemize}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Por que a gente consegue escalar 100K/dia? Porque a gente tem vários nomes chiclete validados que pegam fatias de público diferentes. A pessoa vê o quiz de diferentes anunciantes e nem percebe que é o mesmo quiz.''}}
+\end{quote}
+
+\needspace{10cm}
+
+\section{Criativo para Low Ticket: O Formato que Escala}
+
+O criativo é o 80/20 da operação. Após ter oferta validada, o jogo é \textbf{criativo e tráfego}.
+
+\subsection{Diferenças Fundamentais: Low Ticket vs. Nutra/VSL}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Criativo Nutra/VSL} & \textbf{Criativo Low Ticket} \\
+        \midrule
+        Longo (1-3 min ou mais) & Curto (até 50 segundos) \\
+        \rowcolor{lightGray}
+        Conscientiza e prova no criativo & Gera curiosidade e joga pro quiz \\
+        Mostra produto físico & Mostra a pessoa usando o app \\
+        \rowcolor{lightGray}
+        Formato mais produzido & Formato 100\% orgânico (estilo TikTok) \\
+        Objetivo: vender no criativo & Objetivo: gerar clique para o quiz \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Anatomia do Criativo Low Ticket Validado}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Elemento} & \textbf{Descrição} & \textbf{Duração} \\
+        \midrule
+        \textbf{Hook} & Gancho viral do TikTok + antes/depois explícito & 0-5s \\
+        \rowcolor{lightGray}
+        \textbf{Body} & UGC natural: pessoa usando o app / fazendo ação + antes/depois no meio & 5-35s \\
+        \textbf{CTA} & ``Teste grátis'' / ``Preencha o quiz e ganhe um presente'' + antes/depois final & 35-50s \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{A Técnica do Antes e Depois Repetido}
+
+Essa técnica é o que faz o criativo low ticket converter em volume:
+
+\begin{enumerate}
+    \item Coloque um \textbf{antes e depois no início} (logo nos primeiros segundos)
+    \item Coloque outro \textbf{antes e depois no meio} (após mostrar o body)
+    \item Coloque um terceiro \textbf{antes e depois no final} (antes do CTA)
+\end{enumerate}
+
+\textcolor{accentColor}{\textbf{Regra Crítica:}} O antes e depois deve ser \textbf{da mesma pessoa} em todas as 3 aparições. Erro fatal: usar uma mulher loira no início e uma morena no final --- o lead perde a conexão e não converte.
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``O antes e depois não é um atrás do outro em sequência longa. É um antes e depois que fica aparecendo toda hora em duração curta. Gruda na mente da pessoa --- ela viu 3 provas.''}}
+\end{quote}
+
+\needspace{8cm}
+
+\subsection{Regras de Produção de Criativos}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Elemento} & \textbf{Padrão Validado} \\
+        \midrule
+        Duração máxima & 50 segundos \\
+        \rowcolor{lightGray}
+        Estilo visual & 100\% orgânico / UGC (User Generated Content) / TikTok \\
+        Cortes / Transições & A cada 3 segundos \\
+        \rowcolor{lightGray}
+        Música & Viral do momento (trending) \\
+        Hooks & Banco de dados com ganchos do TikTok \\
+        \rowcolor{lightGray}
+        Antes e Depois & 3x por criativo (início, meio, fim) \\
+        Demonstração do App & Pessoa usando fisicamente (não tela estática) \\
+        \rowcolor{lightGray}
+        CTA principal & ``Teste grátis'' / ``Quiz gratuito'' / ``Presente no final'' \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Processo de Criação de Hooks}
+
+\begin{enumerate}
+    \item Mantenha \textbf{2 pessoas dedicadas} a carregar o banco de dados de ganchos do TikTok
+    \item Identifique hooks virais e \textbf{replique o gancho} em um body que já deu certo
+    \item Combine hooks novos + body validado = criativos com alta taxa de acerto
+    \item Exemplo de hook: \textit{``Oi meninas, hoje vocês vão ver como eu sequei minha barriga fazendo esse treino de 7 dias em casa''}
+\end{enumerate}
+
+\textcolor{warningOrange}{\textbf{Sobre o CTR:}} Quando o CTR é alto, as métricas secundárias melhoram automaticamente --- CPC cai, CPM cai. O Facebook entrega mais porque vê engajamento. Criativos que mencionam ``teste grátis'' ou ``presente no final'' aumentam significativamente o CTR.
+
+\needspace{10cm}
+
+\section{Estrutura de Tráfego: O Tripé de Testes}
+
+A estratégia de tráfego não é ``usar a estrutura que funciona pro mercado''. Cada conta de anúncio performa de um jeito diferente. O processo exige \textbf{3 testes obrigatórios} em toda nova oferta.
+
+\subsection{Os 3 Testes Obrigatórios}
+
+\noindent
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+    box/.style={
+        rounded corners=8pt,
+        minimum width=5cm,
+        minimum height=4cm,
+        inner sep=6pt,
+    },
+    boxtitle/.style={
+        font=\Large\bfseries,
+    },
+    boxsubtitle/.style={
+        font=\large\bfseries,
+    },
+    boxcontent/.style={
+        font=\normalsize,
+        text width=4.2cm,
+        align=center,
+    },
+    arrow/.style={
+        ->,
+        line width=2pt,
+        primaryColor,
+        >=stealth,
+        shorten <=3pt,
+        shorten >=3pt,
+    },
+]
+    % Teste 1
+    \node[box, fill=primaryColor!12, draw=primaryColor!50, line width=1pt] (t1) at (0,0) {};
+    \node[boxtitle, text=primaryColor] at (0, 1.2) {TESTE 1};
+    \node[boxsubtitle] at (0, 0.4) {Estrutura};
+    \draw[primaryColor!40, line width=0.5pt] (-1.8, 0) -- (1.8, 0);
+    \node[boxcontent] at (0, -0.8) {ABO 1-1-1\\[3pt]ABO 1-3-1\\[3pt]CBO 1-3-3};
+
+    % Teste 2
+    \node[box, fill=accentColor!10, draw=accentColor!50, line width=1pt] (t2) at (7,0) {};
+    \node[boxtitle, text=accentColor] at (7, 1.2) {TESTE 2};
+    \node[boxsubtitle] at (7, 0.4) {Orçamento};
+    \draw[accentColor!40, line width=0.5pt] (5.2, 0) -- (8.8, 0);
+    \node[boxcontent] at (7, -0.8) {R\$17 (baixo)\\[3pt]Valor do ticket\\[3pt]3x o ticket};
+
+    % Teste 3
+    \node[box, fill=successGreen!10, draw=successGreen!50, line width=1pt] (t3) at (14,0) {};
+    \node[boxtitle, text=successGreen] at (14, 1.2) {TESTE 3};
+    \node[boxsubtitle] at (14, 0.4) {Conta de Anúncio};
+    \draw[successGreen!40, line width=0.5pt] (12.2, 0) -- (15.8, 0);
+    \node[boxcontent] at (14, -0.8) {Conta A\\[3pt]Conta B\\[3pt]\textit{(mesmo criativo)}};
+
+    % Setas
+    \draw[arrow] (t1.east) -- (t2.west);
+    \draw[arrow] (t2.east) -- (t3.west);
+\end{tikzpicture}%
+}
+\end{center}
+
+\vspace{0.3cm}
+
+\textcolor{accentColor}{\textbf{Por que isso importa:}} Existem operações que foram salvas apenas com mudança de estrutura. Mesmo criativo, mesma copy, mesmo título --- trocou de CBO para ABO (ou vice-versa) e começou a vender. Cada conta performa diferente.
+
+\subsection{Teste de Estrutura}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X X c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Estrutura} & \textbf{Quando Usar} & \textbf{Prioridade} \\
+        \midrule
+        \textbf{ABO 1-1-1} & Teste inicial com orçamento baixo & Alta \\
+        \rowcolor{lightGray}
+        \textbf{ABO 1-3-1} & Validação de criativo (3 fatias de público) & Alta \\
+        \textbf{ABO Multi-Criativo} & 3-4 criativos validados agrupados & Média \\
+        \rowcolor{lightGray}
+        \textbf{CBO 1-3-1} & Escala com criativo de constância validada & Alta \\
+        \textbf{CBO 1-3-3} & Teste de múltiplos criativos em escala & Média \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\needspace{8cm}
+
+\subsection{Teste de Orçamento: A Estratégia do R\$17}
+
+Esta é a estratégia mais contraintuitiva e mais poderosa validada na operação:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{c X X}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Orçamento} & \textbf{Lógica} & \textbf{Resultado Esperado} \\
+        \midrule
+        \textcolor{successGreen}{\textbf{R\$17/conjunto}} & Facebook tem o dia todo para gastar pouco. Entrega vendas com CPA mínimo & CPA absurdamente baixo, ROI de 5-7x por conjunto \\
+        \rowcolor{lightGray}
+        \textbf{Valor do ticket} & Orçamento padrão, permite validação equilibrada & CPA moderado, ROI médio \\
+        \textbf{3x o ticket} & Orçamento de escala, mais verba por conjunto & CPA mais alto, volume maior \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Com R\$17 por conjunto, o Facebook não pode desperdiçar. Ele vai gastar esses R\$17 da forma mais inteligente possível. Ele precisa entregar venda porque precisa que o cliente continue investindo.''}}
+\end{quote}
+
+\subsection{Como Aplicar a Estratégia R\$17}
+
+\begin{enumerate}
+    \item Pegue um \textbf{criativo validado} (que já vendeu em outra estrutura)
+    \item Crie múltiplas campanhas ABO 3:1 com orçamento de R\$17 por conjunto
+    \item \textbf{Duplique dezenas de campanhas} com essa estrutura
+    \item Resultado: 90\% dos conjuntos vendem, com CPA muito inferior ao da escala com orçamento alto
+    \item O faturamento total se iguala ou supera o modelo de ``poucos conjuntos com muito orçamento''
+\end{enumerate}
+
+\textcolor{warningOrange}{\textbf{Pré-requisito:}} Funciona melhor com pixel já aquecido. Para quem já roda uma oferta, pegar o criativo campeão e aplicar essa estrutura é o teste mais rápido de implementar.
+
+\subsection{Teste de Conta de Anúncio}
+
+\begin{itemize}
+    \item Sempre teste a \textbf{mesma oferta em pelo menos 2 contas} de anúncio diferentes
+    \item Existe conta que performa melhor ABO e conta que performa melhor CBO
+    \item Contas novas tendem a entregar melhor no início (Facebook quer fidelizar o anunciante)
+    \item Se a oferta não valida em uma conta, \textbf{teste em outra} antes de descartar
+\end{itemize}
+
+\needspace{8cm}
+
+\section{Fluxo Completo: Da Ideia à Escala}
+
+Este é o mapa mental completo do processo, da concepção da oferta até a escala consolidada.
+
+\subsection{Fase 1: Concepção da Oferta (2-3 dias)}
+
+\begin{enumerate}
+    \item Escolha o eixo: \textbf{Timing} (sazonal) ou \textbf{Modelagem} (spy de mercado)
+    \item Identifique o mecanismo validado (VSL, Nutra, oferta gringa)
+    \item Transforme o entregável em \textbf{aplicativo} (Replit/Lovable, 2-3 dias)
+    \item Crie o \textbf{nome chiclete} (banco de 10 nomes, testar progressivamente)
+    \item Monte o \textbf{quiz de personalização} (3 blocos: pesquisa $\rightarrow$ projeção $\rightarrow$ oferta)
+\end{enumerate}
+
+\subsection{Fase 2: Produção de Criativos (1-2 dias)}
+
+\begin{enumerate}
+    \item Selecione 5-10 hooks do banco de dados TikTok
+    \item Produza 3-5 criativos de até 50 segundos (orgânico/UGC)
+    \item Aplique a técnica do antes/depois repetido (3x, mesma pessoa)
+    \item Demonstre o app sendo usado fisicamente (não tela estática)
+    \item CTA: ``teste grátis'' / ``quiz gratuito'' / ``presente no final''
+\end{enumerate}
+
+\subsection{Fase 3: Testes de Tráfego (3-5 dias)}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{c X X c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Dia} & \textbf{Ação} & \textbf{O Que Observar} & \textbf{Decisão} \\
+        \midrule
+        \textbf{Sex} & Subir criativos (ABO + CBO, 2 contas, 3 orçamentos) & --- & Deixar rodar \\
+        \rowcolor{lightGray}
+        \textbf{Sáb} & Monitorar métricas iniciais & CTR, CPM, primeiras vendas & Não mexer \\
+        \textbf{Dom} & Continuação do teste & ROAS parcial, CPA por conjunto & Não mexer \\
+        \rowcolor{lightGray}
+        \textbf{Seg} & Primeira análise completa & ROAS acumulado, métricas 2rias & Pausar perdedores \\
+        \textbf{Ter-Qua} & Confirmação de constância & ROAS estável? CPA sustentável? & Escalar vencedores \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textcolor{accentColor}{\textbf{Regra:}} Sempre suba criativos na \textbf{sexta-feira} e deixe rodar até \textbf{segunda de manhã}. Muitos criativos campeões só aparecem no 4º dia --- testar por apenas 2 dias é desperdiçar potencial.
+
+\needspace{8cm}
+
+\subsection{Fase 4: Validação e Escala}
+
+Após os testes, você terá dados sobre qual combinação funciona:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{X c}
+        \toprule
+        \rowcolor{tableHeader} \textbf{Resultado do Teste} & \textbf{Ação} \\
+        \midrule
+        Estrutura ABO melhor na Conta A & Escalar ABO na Conta A \\
+        \rowcolor{lightGray}
+        Orçamento R\$17 com ROI 5-7x & Duplicar dezenas de campanhas R\$17 \\
+        CBO melhor na Conta B & Escalar CBO na Conta B \\
+        \rowcolor{lightGray}
+        Criativo X com ROAS $\geq$ 1.8 & Escalar com estrutura + conta vencedoras \\
+        Nenhum criativo validou & Novos criativos (hooks diferentes) + nova conta \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{quote}
+\textcolor{primaryColor}{\textbf{``Você está diminuindo a quantidade de risco e erro. Testou orçamento, deu essa estrutura, deu bom nessa conta. O que vai fazer? Pegar a estrutura certa, o orçamento certo, na conta certa e rodar. A chance de errar cai drasticamente.''}}
+\end{quote}
+
+\needspace{10cm}
+
+\section{Resumo Operacional: Checklist de Implementação}
+
+\subsection{Semana 1: Concepção e Setup}
+
+\begin{itemize}[label=$\square$]
+    \item Definir eixo da oferta (timing sazonal ou modelagem de mercado)
+    \item Fazer spy e identificar mecanismo validado
+    \item Criar aplicativo MVP (Replit/Lovable)
+    \item Definir nome chiclete (banco de 10 opções)
+    \item Montar quiz de personalização (3 blocos)
+    \item Configurar 2 contas de anúncio
+    \item Produzir 3-5 criativos (estilo orgânico, até 50s)
+\end{itemize}
+
+\subsection{Semana 2: Testes}
+
+\begin{itemize}[label=$\square$]
+    \item Sexta: subir todos os testes (estrutura + orçamento + conta)
+    \item Segunda: primeira análise --- pausar perdedores claros
+    \item Terça-Quarta: confirmação de constância
+    \item Identificar: melhor estrutura, melhor orçamento, melhor conta
+    \item Produzir novos criativos com hooks diferentes (se necessário)
+\end{itemize}
+
+\subsection{Semana 3: Escala Inicial}
+
+\begin{itemize}[label=$\square$]
+    \item Escalar criativos validados na estrutura + conta + orçamento vencedores
+    \item Testar estratégia R\$17 com duplicação em massa
+    \item Testar novos nomes chiclete para atingir novas fatias de público
+    \item Monitorar CPA e ROAS diário
+\end{itemize}
+
+\subsection{Semana 4+: Escala Consolidada}
+
+\begin{itemize}[label=$\square$]
+    \item Manter campanhas lucrativas rodando sem intervenção excessiva
+    \item Teste semanal de novos criativos (hooks do TikTok)
+    \item Rodar múltiplos nomes chiclete em paralelo
+    \item Avaliar criação de novos produtos no mesmo nicho (holding)
+    \item Considerar transformar o produto em recorrência/SaaS
+\end{itemize}
+
+\pagebreak
+
+\section{Erros Fatais Específicos do Low Ticket}
+
+\subsection{1. Entregar E-book como Produto}
+
+\textbf{Erro:} Modelar uma oferta validada de Nutra/VSL e entregar um e-book.
+
+\textbf{Por que é fatal:} O lead percebe valor baixo. Não há recorrência, não há LTV, não há retenção. O quiz promete personalização e o e-book não entrega.
+
+\textbf{Correção:} Sempre entregar \textbf{aplicativo, plano personalizado ou desafio}. É o formato validado.
+
+\subsection{2. Usar o Mesmo Nome Chiclete da Oferta Modelada}
+
+\textbf{Erro:} Copiar a oferta e manter o nome original.
+
+\textbf{Por que é fatal:} Você compete diretamente com o original. O público já viu. Não há percepção de novidade.
+
+\textbf{Correção:} Mude o nome chiclete. Mesmo mecanismo + nome novo = oferta que parece inovadora.
+
+\subsection{3. Criativo com Pessoas Diferentes}
+
+\textbf{Erro:} Usar uma mulher loira no início do criativo e uma morena no antes/depois final.
+
+\textbf{Por que é fatal:} Quebra a conexão e credibilidade. O lead não associa o resultado à pessoa.
+
+\textbf{Correção:} Sempre a mesma pessoa em todo o criativo. Consistência visual gera confiança.
+
+\subsection{4. Apostar em Uma Única Estrutura/Conta}
+
+\textbf{Erro:} ``O mercado disse que CBO 1-3-3 é o melhor, vou usar só isso.''
+
+\textbf{Por que é fatal:} Cada conta performa diferente. Você pode estar descartando uma oferta lucrativa por testar na estrutura errada.
+
+\textbf{Correção:} Sempre fazer o tripé de testes (estrutura + orçamento + conta).
+
+\subsection{5. Testar Criativos por Apenas 2 Dias}
+
+\textbf{Erro:} Criativo não vendeu em 2 dias, pausar imediatamente.
+
+\textbf{Por que é fatal:} Muitos criativos campeões só performam a partir do 4º dia. Fatias de público ruins nos primeiros dias não significam que o criativo é ruim.
+
+\textbf{Correção:} Suba na sexta, deixe rodar até segunda (mínimo). Ideal: 4+ dias de teste.
+
+\pagebreak
+
+\section{Considerações Finais}
+
+O processo de low ticket não é complexo --- é \textbf{metódico}. A taxa de assertividade de 80\% em novas ofertas vem da disciplina em seguir cada etapa sem pular passos.
+
+\subsection{Os 5 Princípios Inegociáveis}
+
+\begin{enumerate}
+    \item \textbf{Personalização é 80/20:} O quiz de personalização supera qualquer outro formato. Faça o lead se enxergar no futuro.
+
+    \item \textbf{Entregável em Aplicativo:} E-book não sustenta operação. App gera recorrência, LTV e valuation.
+
+    \item \textbf{Nome Chiclete Novo:} Mesmo mecanismo validado, nome diferente. Múltiplos nomes = múltiplas fatias de público.
+
+    \item \textbf{Criativo Orgânico de 50s:} TikTok style, antes/depois 3x, mesma pessoa, hook viral, CTA de teste grátis.
+
+    \item \textbf{Tripé de Testes:} Estrutura + orçamento + conta. Nunca aposte em uma única configuração.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{center}
+\colorbox{lightGray}{%
+    \parbox{0.85\textwidth}{%
+        \centering
+        \vspace{0.3cm}
+        \textcolor{primaryColor}{\textbf{``Depois que você tem uma oferta validada,}}\\
+        \textcolor{primaryColor}{\textbf{o jogo é criativo e tráfego.}}\\
+        \textcolor{primaryColor}{\textbf{E o segredo do tráfego é testar o que funciona pra SUA conta,}}\\
+        \textcolor{primaryColor}{\textbf{não o que funciona pro mercado.''}}\\
+        \vspace{0.3cm}
+    }%
+}
+\end{center}
+
+\pagebreak
+
+% --- PÁGINA FINAL ---
+\thispagestyle{empty}
+\vspace*{0.5cm}
+
+\begin{center}
+    {\Huge \textcolor{primaryColor}{\textbf{MAPA DE AÇÃO RÁPIDA}}} \\
+    \vspace{1cm}
+    \rule{12cm}{1.5pt}
+    \vspace{1cm}
+
+    \colorbox{accentColor}{%
+        \parbox{0.92\textwidth}{%
+            \centering
+            \vspace{0.8cm}
+            \textcolor{white}{\Huge \textbf{APLICAÇÃO IMEDIATA}} \\
+            \vspace{0.3cm}
+            \textcolor{white}{\Large 4 Semanas para Oferta Validada e Escalando} \\
+            \vspace{0.8cm}
+        }%
+    }
+
+    \vspace{1cm}
+
+    \begin{flushleft}
+    \large
+    \textbf{Semana 1 --- Concepção:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Oferta + App + Quiz}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Spy $\rightarrow$ Mecanismo $\rightarrow$ Nome Chiclete $\rightarrow$ App MVP $\rightarrow$ Quiz 3 Blocos} \\
+
+    \vspace{1cm}
+
+    \textbf{Semana 2 --- Criativos + Testes:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Produção + Tripé de Testes}} \\
+    \hspace{1cm} \textcolor{secondaryText}{3-5 criativos orgânicos $\rightarrow$ Subir sexta $\rightarrow$ Testar estrutura/orçamento/conta} \\
+
+    \vspace{1cm}
+
+    \textbf{Semana 3 --- Validação:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Identificar Vencedores}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Melhor estrutura + melhor orçamento + melhor conta = configuração vencedora} \\
+
+    \vspace{1cm}
+
+    \textbf{Semana 4 --- Escala:} \\
+    \vspace{0.3cm}
+    \hspace{1cm} \textcolor{accentColor}{\Large \textbf{Duplicar e Escalar}} \\
+    \hspace{1cm} \textcolor{secondaryText}{Estratégia R\$17 em massa + múltiplos nomes chiclete + novos hooks semanais} \\
+    \end{flushleft}
+
+    \vspace{0.5cm}
+
+    \colorbox{lightGray}{%
+        \parbox{0.9\textwidth}{%
+            \centering
+            \vspace{0.4cm}
+            \textcolor{primaryColor}{\large \textbf{Processo $>$ Talento}} \\
+            \vspace{0.2cm}
+            \textcolor{secondaryText}{\normalsize 80\% de assertividade vem de seguir o processo, não de intuição} \\
+            \vspace{0.4cm}
+        }%
+    }
+
+    \vfill
+
+    \textcolor{secondaryText}{\footnotesize Documento compilado em Março de 2026} \\
+    \textcolor{secondaryText}{\footnotesize Baseado em metodologia de operação real com 140K+ alunos e escala de 100K+/dia}
+
+\end{center}
+
+\end{document}
