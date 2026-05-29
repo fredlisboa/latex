@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.6",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))})),document.addEventListener("DOMContentLoaded",(()=>{this.k()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}p(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.S(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.M()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.M()}O(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerWPRocketBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerWPRocketBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}D(){return new Promise((t=>{this.P?this.M=t:t()}))}C(){this.P=!0}M(){this.P=!1}S(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}k(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.T(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.j(this),this.F(this),this.I(),this.W(),this.q(),await this.A(this.delayedScripts.normal),await this.A(this.delayedScripts.defer),await this.A(this.delayedScripts.async);try{await this.U(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.D().then((()=>{this.O()})),this.N()}W(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed-network"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: data-uri blocked by CSP -> fallback"),t.removeAttribute("src"),this.B(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())})),s?(t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async A(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.A(t)):Promise.resolve()}q(){this.T([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}T(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o&&!o.startsWith("data:")){const s=document.createElement("link");s.href=o,s.rel=e,"preconnect"!==e&&(s.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(s.crossOrigin=!0),t.crossOrigin&&(s.crossOrigin=t.crossOrigin),t.integrity&&(s.integrity=t.integrity),i.appendChild(s),this.trash.push(s)}})),document.head.appendChild(i)}j(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function s(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),s(document,"onreadystatechange"),s(window,"onload"),s(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(t){const e=o.fn[t];o.fn[t]=o.fn.init.prototype[t]=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this}}o&&o.fn&&!t.allJQueries.includes(o)&&(o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])},s("on"),s("one"),t.allJQueries.push(o)),e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async U(){this.domReadyFired=!0;try{document.readyState="interactive"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){try{document.readyState="complete"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}I(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.p(t)}}RocketLazyLoadScripts.run()})();</script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    
+
+            <script type="rocketlazyloadscript" charset="utf-8" data-rocket-type="text/javascript" data-rocket-src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PN4CK5D');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-8EW587KYRK"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8EW587KYRK');
+</script>    
+    
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+            <script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+                var ctPublicFunctions = {"_ajax_nonce":"39a0bbf9d7","_rest_nonce":"96b1a3e41b","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/www.dentaloffice.com.br\/wp-json\/","data__cookies_type":"none","data__ajax_type":"rest","data__bot_detector_enabled":"1","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk","cookiePrefix":"","wprocket_detected":true,"host_url":"www.dentaloffice.com.br"}
+            </script>
+        
+            <script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+                var ctPublic = {"_ajax_nonce":"39a0bbf9d7","settings__forms__check_internal":"0","settings__forms__check_external":"0","settings__forms__search_test":"1","settings__data__bot_detector_enabled":"1","settings__comments__form_decoration":"0","blog_home":"https:\/\/www.dentaloffice.com.br\/","pixel__setting":"3","pixel__enabled":true,"pixel__url":"https:\/\/moderate2-v4.cleantalk.org\/pixel\/d8df4eef72b0cd72da3947422249925c.gif","data__email_check_before_post":"1","data__email_check_exist_post":"1","data__cookies_type":"none","data__key_is_ok":true,"data__visible_fields_required":true,"wl_brandname":"Anti-Spam by CleanTalk","wl_brandname_short":"CleanTalk","ct_checkjs_key":"71ff96841945ea9e51e9fb709df92c5efa8fccc225a9d4cd3e2a668ffbb5ea4c","emailEncoderPassKey":"e6a4edba496bf855e6523a3d663d6e13","bot_detector_forms_excluded":"W10=","advancedCacheExists":true,"varnishCacheExists":false,"wc_ajax_add_to_cart":false}
+            </script>
+        
+	<!-- This site is optimized with the Yoast SEO plugin v24.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Dental Escola - Dental Office</title><link rel="preload" data-rocket-preload as="font" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Citrine-Medium.woff2" crossorigin><link rel="preload" data-rocket-preload as="font" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Citrine-Bold.woff2" crossorigin><link rel="preload" data-rocket-preload as="font" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Figtree-Regular.woff2" crossorigin><link rel="preload" data-rocket-preload as="font" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Figtree-Bold.woff2" crossorigin><style id="wpr-usedcss">img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}input[class*=apbct].apbct_special_field,label.apbct_special_field{display:none!important}.apbct-tooltip{border-radius:5px;background:#d3d3d3}.apbct-tooltip{display:none;position:inherit;margin-top:5px;left:5px;opacity:.9}.apbct-popup-fade:before{content:'';background:#000;position:fixed;left:0;top:0;width:100%;height:100%;opacity:.7;z-index:9999}.apbct-popup{position:fixed;top:20%;left:50%;padding:20px;width:360px;margin-left:-200px;background:#fff;border:1px solid;border-radius:4px;z-index:99999;opacity:1}.apbct-iframe-preloader{width:48px;height:48px;border-radius:50%;position:relative;animation:1s linear infinite apbctIframePreloaderRotate}.apbct-iframe-preloader::before{content:"";box-sizing:border-box;position:absolute;inset:0;border-radius:50%;border:5px solid #fff;animation:2s linear infinite apbctIframePreloaderPrixClipFix}@keyframes apbctIframePreloaderRotate{100%{transform:rotate(360deg)}}@keyframes apbctIframePreloaderPrixClipFix{0%{clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}25%{clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}50%{clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}75%{clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}100%{clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}}.apbct-check_email_exist-bad_email,.apbct-check_email_exist-good_email,.apbct-check_email_exist-load{z-index:9999;margin:0 6px;transition:none!important;background-size:contain;background-repeat:no-repeat;background-position-x:right;background-position-y:center;cursor:pointer}.apbct-check_email_exist-load{background-size:contain;background-image:var(--wpr-bg-bb8ea113-9f12-41df-8838-2429ea4a20a4)}.apbct-check_email_exist-block{position:fixed;display:block}.apbct-check_email_exist-good_email{background-image:var(--wpr-bg-27e6810e-fe45-467e-9afe-0e665e83e5c0)}.apbct-check_email_exist-bad_email{background-image:var(--wpr-bg-5613291a-f7bf-420e-ae31-a52c3c99a2bd)}.apbct-check_email_exist-popup_description{display:none;position:fixed;padding:2px;border:1px solid #e5e8ed;border-radius:16px 16px 0;background:#fff;background-position-x:right;font-size:14px;text-align:center;transition:all 1s ease-out}@media screen and (max-width:782px){.apbct-check_email_exist-popup_description{width:100%}}.apbct_dog_one,.apbct_dog_three,.apbct_dog_two{animation-duration:1.5s;animation-iteration-count:infinite;animation-name:apbct_dog}.apbct-email-encoder-popup{width:30vw;min-width:400px;font-size:16px}.apbct-email-encoder--popup-header{font-size:16px;color:#333}.apbct-email-encoder-elements_center{display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:16px!important;color:#000!important}.top-margin-long{margin-top:5px}.apbct-tooltip{display:none}.apbct-email-encoder-select-whole-email{-webkit-user-select:all;user-select:all}.apbct-email-encoder-got-it-button{all:unset;margin-top:10px;padding:5px 10px;border-radius:5px;background-color:#333;color:#fff;cursor:pointer;transition:background-color .3s}.apbct-ee-animation-wrapper{display:flex;height:60px;justify-content:center;font-size:16px;align-items:center}.apbct_dog{margin:0 5px;color:transparent;text-shadow:0 0 2px #aaa}.apbct_dog_one{animation-delay:0s}.apbct_dog_two{animation-delay:.5s}.apbct_dog_three{animation-delay:1s}@keyframes apbct_dog{0%,100%,75%{scale:100%;color:transparent;text-shadow:0 0 2px #aaa}25%{scale:200%;color:unset;text-shadow:unset}}:root{--primary-color:#743bbc;--secundary-color:#ef4e72;--bg-white-color:#f3f3f3;--bg-gray-color:#ececec;--primary-light-color:rgba(116, 59, 188, .06);--primary-border-color:rgba(116, 59, 188, .2);--type-gray-color:#332d2f;--type-white-color:#fff;--type-purple-color:#743bbc;--btn-primary-color:#743bbc}[data-theme=dark]{--primary-color:#1b1b1b;--secundary-color:#ef4e72;--bg-white-color:#282828;--bg-gray-color:#212121;--primary-light-color:rgba(0, 0, 0, .16);--primary-border-color:rgba(255, 255, 255, .1);--type-gray-color:#fff;--type-white-color:#fff;--type-purple-color:#fff;--btn-primary-color:#743bbc}@font-face{font-family:Citrine;src:url("https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Citrine-Medium.woff2") format("woff2");font-weight:400;font-display:swap;ascent-override:100%}@font-face{font-family:Citrine;src:url("https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Citrine-Bold.woff2") format("woff2");font-weight:700;font-display:swap;ascent-override:100%}@font-face{font-family:Figtree;src:url("https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Figtree-Regular.woff2") format("woff2");font-weight:400;font-display:swap}@font-face{font-family:Figtree;src:url("https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Figtree-Bold.woff2") format("woff2");font-weight:700;font-display:swap}a,abbr,address,b,big,blockquote,body,caption,center,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,kbd,label,legend,li,object,ol,p,pre,s,samp,small,span,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul,var{border:0;margin:0;padding:0;vertical-align:baseline}[id],[name]{scroll-margin-top:calc($(".header") .height() + 10px)}h1,h2,h3,h4,h5,h6{clear:both}ol,ul{list-style:none;margin:0;padding:0}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0;width:100%}table tr{border-top:1px solid rgba(0,0,0,.1)}table tr:last-child{border-bottom:1px solid rgba(0,0,0,.1)}table td{padding:20px;border-left:1px solid rgba(0,0,0,.1)}table td:last-child{border-right:1px solid rgba(0,0,0,.1)}*,::after,::before{margin:0;padding:0;box-sizing:border-box}body,html{width:100%;margin:0}body{margin:0;padding:0;font-family:Figtree;line-height:1;overflow-x:hidden;background-color:var(--bg-gray-color)}button,input,select,textarea{font-family:Figtree;-webkit-appearance:none;-moz-appearance:none;border-radius:0}a[href^=tel]{color:inherit;text-decoration:none}img,svg{width:100%;max-width:100%;height:auto;border:none}div.image,span.image{display:block;position:relative;background-color:rgba(0,0,0,0)}div.image img,span.image img{width:100%;display:block}div.image img{width:100%;display:block}div.image.filter{overflow:hidden;border-radius:10px}div.image.filter::before{content:"";display:block;width:100%;height:100%;position:absolute;left:0;background:#743bbc;background:linear-gradient(290deg,rgba(116,59,188,0) 40%,rgba(116,59,188,.3) 60%),linear-gradient(114deg,rgba(240,77,113,0) 40%,rgba(240,77,113,.2) 60%)}div.image.filter img{height:100%;object-fit:cover}div.icon,span.icon{min-width:60px;max-width:60px;min-height:60px;max-height:60px;display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%;margin:0;background-color:rgba(116,59,188,.9);transition:ease .3s}div.icon-s,span.icon-s{background:linear-gradient(90deg,#8e49fc 0,#ff4355 100%)}div.icon-s img,span.icon-s img{filter:brightness(0) invert(1)}.main-e div.icon-s,.main-e span.icon-s{background:linear-gradient(90deg,#ffc34d 0,#743bbc 100%)}div.icon img,span.icon img{width:26px;display:block}.line::before{content:"";position:absolute;display:block;top:0;left:50%;width:90%;max-width:1216px;height:1px;background-color:rgba(0,0,0,.1);transform:translateX(-50%)}[data-theme=dark] .line::before{background-color:rgba(255,255,255,.1)}.bg-s{background:linear-gradient(90deg,#8e49fc 0,#ff4355 100%)}.main-e .bg-s{background:linear-gradient(90deg,#ffc34d 0,#743bbc 100%)}[data-theme=dark] .bg-s{border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}.font-w .title-common,.font-w h1,.font-w h2,.font-w h3,.font-w p{color:var(--type-white-color)}a.play-modal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;overflow:hidden;text-indent:-999px;border-radius:50%;background-color:var(--btn-primary-color);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M8 17.175V6.825q0-.425.3-.713t.7-.287q.125 0 .263.037t.262.113l8.15 5.175q.225.15.338.375t.112.475t-.112.475t-.338.375l-8.15 5.175q-.125.075-.262.113T9 18.175q-.4 0-.7-.288t-.3-.712'/%3E%3C/svg%3E");background-size:30px auto;background-position:center;background-repeat:no-repeat;transition:ease .4s;z-index:2}a.play-modal:hover{box-shadow:0 0 0 15px var(--primary-border-color);transform:translate(-50%,-50%) scale(1.02)}a{text-decoration:none}::-moz-selection{color:var(--type-white-color);background:#3a3b3b}::selection{color:var(--type-white-color);background:#3a3b3b}.clearfix::after,.clearfix::before{content:"";display:table}.clearfix::after{clear:both}.col-af{width:100%;height:auto;position:relative;padding:80px 0;background-color:var(--bg-white-color)}.col-af-content{width:90%;max-width:1216px;margin:0 auto}@media screen and (max-width:991px){.col-af-slide{width:95%;margin-left:5%}}.btn,input[type=submit]{font-family:Citrine;display:inline-flex;position:relative;align-items:center;justify-content:center;font-size:14px;font-weight:700;min-width:200px;line-height:1;color:var(--type-white-color);border:0;text-align:center;margin:0;background:var(--btn-primary-color);padding:18px 20px;transition:all .3s;border-radius:40px}.btn-white{color:var(--btn-primary-color);background:#fff}.btn-outline{color:var(--btn-primary-color);border:1.5pt solid var(--btn-primary-color);background:0 0}[data-theme=dark] .btn-outline{color:var(--type-white-color);border:1.5pt solid #fff;background:0 0}.btn-outline.btn-white{color:var(--type-white-color);border:1.5pt solid #fff;background:0 0}.btn-escola{background:linear-gradient(90deg,#ffc34d 0,#743bbc 100%)}.btn svg{width:16px;display:inline-block;margin:0 10px 0 0;fill:var(--type-purple-color)}.btn img{width:20px;display:inline-block;margin:0 10px 0 0}[data-theme=dark] .btn img{filter:brightness(0) invert(1)}.btn span{position:absolute;right:20px;top:-7px;font-family:Citrine;color:var(--type-white-color);font-size:10px;padding:3px 8px;border-radius:15px;background-color:var(--btn-primary-color)}.btn.secundary span{background-color:var(--secundary-color)}a.btn:hover,input.btn:hover,input[type=submit]:hover{cursor:pointer;box-shadow:0 0 0 6px var(--primary-border-color);transform:scale(1.02)}.btn.btn-white:hover{box-shadow:0 0 0 6px rgba(255,255,255,.2)}span.title-common{display:block;font-size:.919em;font-weight:400;color:var(--type-purple-color);margin:0 0 30px}.title-common,h1,h2,h3,h4,h5{font-family:Citrine;font-size:36px;font-weight:700;color:var(--type-purple-color);line-height:1.3;margin:0 0 30px}.hero h2,h1{font-size:48px;line-height:.95}h3{font-size:18px}h4{font-size:20px}h5{font-size:14px}p{font-size:1.031em;font-weight:400;color:var(--type-gray-color);opacity:.85;line-height:1.5;margin:0}.wpp-btn{position:fixed;bottom:20px;right:20px;border-radius:50%;width:60px;height:60px;overflow:hidden;z-index:99;background-color:#01d14f;transition:ease .4s;border:4px solid rgba(255,255,255,.3);box-shadow:0 15px 60px 0 rgba(0,0,0,.3)}.wpp-btn:hover{transform:scale(1.05)}.wpp-btn img{display:block;width:100%;height:100%;object-fit:cover}.header{width:100%;height:auto;position:sticky;top:0;left:0;z-index:9;background-color:var(--bg-gray-color);transition:ease .3s;border-bottom:1px solid rgba(0,0,0,.1)}.header.header-is-visible{box-shadow:0 15px 60px 0 rgba(0,0,0,.1)}.header .col-af-content{height:90px;display:flex;align-items:center;justify-content:center;position:relative}.buttons{display:flex}.buttons .btn{flex:none;width:auto;min-width:160px;padding:12px 16px;margin:0 0 0 10px}.buttons.mobile{display:none}.logo{display:block;width:210px;min-width:210px;max-width:210px}.logo img{display:block;width:100%;margin:0}[data-theme=dark] .logo img{filter:brightness(0) invert(1)}@media screen and (max-width:991px){.col-af{padding:60px 0}a.btn{display:block;width:100%;min-width:100px}.hero h2,.title-common,h1{font-size:34px}h2{font-size:28px}h3,h4{font-size:15px}.buttons:not(.mobile) .btn-outline{display:none}.header .col-af-content{height:65px}.buttons:not(.mobile) .btn{min-width:auto;padding:10px 15px;font-size:10px}.logo{width:160px;min-width:160px;max-width:160px}}.nav{width:100%;float:right;margin:0;text-align:center}.nav ul{margin:0 auto;padding:0}.nav li{display:inline-block;line-height:90px;text-align:left}.nav li a:not(.btn){font-family:Citrine;display:block;font-size:.919em;text-align:center;font-weight:400;color:var(--type-gray-color);padding:0 12px;margin:0;opacity:.8;transition:ease .3s}.nav a:not(.btn).nav-link{position:relative;padding-right:25px}.nav a.nav-link::after{display:block;content:"";position:absolute;top:50%;right:3px;margin:-10px 0 0;width:20px;height:20px;background-size:20px auto;background-repeat:no-repeat;background-position:center;background-color:transparent;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23743bbc' d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/%3E%3C/svg%3E")}[data-theme=dark] .nav a.nav-link::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/%3E%3C/svg%3E")}.nav li .nav-link.active::after{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.nav li ul.submenu{opacity:0;width:100%;height:calc(100vh - 90px);visibility:hidden;overflow-x:hidden;overflow-y:auto;left:0;top:90px;position:fixed;z-index:9;background-color:rgba(116,59,188,.9);transition:ease .3s}[data-theme=dark] .nav li ul.submenu{background-color:rgba(0,0,0,.9)}.nav li ul .menu{position:relative;border-top:1px solid rgba(0,0,0,.15);width:100%;background-color:var(--bg-white-color)}.nav li .nav-link.active+ul{opacity:1;visibility:visible}.nav li .col-af-content{height:auto;display:flex;flex-wrap:wrap;position:relative;align-items:inherit;justify-content:inherit}.nav li .col-af-content div.item{width:33.3333333%;float:left;padding:60px 20px 60px 60px;position:relative;z-index:2}.nav li .col-af-content div.item:first-of-type{padding-left:0}.nav li .col-af-content div.item:nth-of-type(2){background-color:var(--bg-gray-color)}.nav li .col-af-content div.item a:not(.btn){display:block;position:relative;text-align:left;line-height:1.2;display:flex;align-items:center;padding:0;margin:12px 0}.nav li .col-af-content div.item .title-common a:not(.btn){display:block;font-weight:700!important;margin:0 0 40px;font-size:.919em;font-weight:400;color:var(--type-purple-color);opacity:1}.nav li .col-af-content div.item a span{display:block;width:30px;height:30px;border-radius:50%;background-color:var(--primary-light-color);position:relative;margin:0 15px 0 0}[data-theme=dark] .nav li .col-af-content div.item a span{background-color:#fff}.nav li .col-af-content div.item a img{display:block;position:absolute;width:16px;top:50%;left:50%;transform:translate(-50%,-50%)}.nav li .col-af-content div.item a.btn{margin:30px 0 0}.nav li a:hover{color:var(--type-purple-color);opacity:1;text-decoration:underline}input#toggle-menu,label.toggle-menu{display:none}@media screen and (max-width:1268px){.logo{position:absolute;left:0}.buttons:not(.mobile){position:absolute;right:50px}label.toggle-menu{position:absolute;right:0;top:15px;display:block;z-index:11;height:60px;width:50px;outline:0;border:0;cursor:pointer}label.toggle-menu div{position:absolute;top:20px;left:20px}label.toggle-menu span{display:block;height:2pt;width:27px;background-color:var(--type-purple-color);position:absolute;opacity:1;left:0;border-radius:15px;-webkit-transform:rotate(0);transform:rotate(0);transition:all .3s}label.toggle-menu span:first-child{top:0}label.toggle-menu span:nth-child(2){top:8px}label.toggle-menu span:nth-child(3){top:16px}input#toggle-menu:checked~label.toggle-menu span:first-child{top:8px;-webkit-transform:rotate(135deg);transform:rotate(135deg)}input#toggle-menu:checked~label.toggle-menu span:nth-child(2){opacity:0}input#toggle-menu:checked~label.toggle-menu span:nth-child(3){top:8px;-webkit-transform:rotate(-135deg);transform:rotate(-135deg)}.nav{float:none;height:calc(100vh - 90px);width:100%;position:fixed;top:90px;right:0;margin:0;z-index:10;padding:30px;background-color:var(--bg-gray-color);transition:all .3s;-webkit-transform:translateY(150%);transform:translateY(150%)}input#toggle-menu:checked~.nav{-webkit-transform:translateY(0);transform:translateY(0)}.nav ul{width:100%;line-height:60px;padding:0}.nav li{width:100%;line-height:60px;float:left}.nav li a:not(.btn){font-size:14px;text-align:left;padding:0;border-bottom:1px solid rgba(0,0,0,.15);position:relative}[data-theme=dark] .nav li a:not(.btn){border-bottom:1px solid rgba(255,255,255,.15)}.nav li ul.submenu{display:block;position:relative;width:100%;box-shadow:none;height:auto;max-height:0;top:auto;left:auto;overflow:hidden;padding:0;background-color:transparent;transition:all .3s}.nav li .col-af-content div.item .title-common a:not(.btn){margin:0 0 20px}.nav li .col-af-content div.item .title-common span.title-common{margin:0}.nav li ul .menu{border-top:0;width:100%;background-color:var(--bg-gray-color)}.nav li .col-af-content{width:100%}.nav li .nav-link.active+ul{max-height:1500px;padding:0}.nav li .col-af-content div.item{width:100%;padding:20px 0}.nav li .col-af-content div.item:nth-of-type(2){background-color:transparent}.nav li div.item a:not(.btn){border-bottom:0}.buttons.mobile{display:block;margin:30px 0 0}.buttons.mobile .btn{margin:10px 0 0}}@media screen and (max-width:991px){label.toggle-menu{right:0;top:2px}.nav{height:calc(100vh - 65px);top:65px;overflow:auto}}.hero{height:calc(100vh - 90px);max-height:650px;min-height:650px;position:relative;overflow:hidden;background-color:var(--bg-gray-color);background-repeat:no-repeat;background-size:cover;background-position:center;padding:0}.hero.font-w{background-color:var(--primary-color)}.hero .col-af-content{position:absolute;z-index:2;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.hero .info{width:45%}.hero .info h1{margin:0 0 20px}.hero .info p{margin:0 0 10px}.hero .col-af-content .btn{margin:15px 15px 0 0}.hero div.image{height:100%;width:70%;max-width:800px;left:50%;bottom:0;display:block;position:absolute}.hero div.image img{height:auto;width:100%;object-fit:contain;position:absolute;bottom:0;left:0}.hero-slider{position:relative;overflow:visible;background-color:var(--bg-gray-color)}.hero-slider li.hero:not(.hero-page){width:100%;height:calc(100vh - 90px);position:relative;background-size:cover;background-position:center}.hero-slider .form{position:absolute;max-width:540px;width:40%;left:55%;top:120px;z-index:2;padding:10px;border-radius:15px;background-color:var(--bg-white-color);box-shadow:0 25px 50px 0 rgba(0,0,0,.15)}.hero-slider .form .form-af{padding:40px;width:100%;max-height:550px;overflow-y:auto}.hero-slider .form .form-af::-webkit-scrollbar-track{border-radius:10px;background-color:rgba(116,59,188,.1)}.hero-slider .form .form-af::-webkit-scrollbar{width:5px;background-color:rgba(116,59,188,.1)}.hero-slider .form .form-af::-webkit-scrollbar-thumb{border-radius:10px;background-color:rgba(116,59,188,.5)}.hero-slider .form h3{margin:0 0 10px}.hero-slider .filter{position:absolute;width:33.3333333%;max-width:400px;left:60%;top:50%;z-index:2;transform:translateY(-50%)}@media screen and (max-width:1198px){.hero{max-height:550px;min-height:550px}.hero div.image{left:43%}}@media screen and (max-width:991px){.hero{height:100vh;max-height:2000px;min-height:10px}.hero-slider li.hero:not(.hero-page){width:100%;height:auto;min-height:auto}.hero .col-af-content{top:auto;left:auto;position:relative;margin:60px auto 30px;-webkit-transform:none;transform:none}.hero .info{width:100%}.hero .info p{margin:0 0 30px}.hero .info .btn{margin:10px 0}.hero div.image{height:auto;width:100%;max-width:100%;left:0}.hero div.image img{position:relative}.hero-slider .form{position:relative;max-width:90%;width:90%;left:auto;top:auto;margin:-80px 5% -40px}.hero-slider .form .form-af{padding:30px;max-height:5050px}.hero-slider .filter{position:relative;max-width:90%;width:90%;left:auto;top:auto;margin:0 5%;transform:translateY(-100px)}}.company{background-color:var(--primary-color);overflow:hidden}.company img.pattern{display:block;position:absolute;left:50%;bottom:0;transform:translateY(40%);width:52%;max-width:800px}.company .col-af-content{position:relative}.company .info{float:left;width:33.3333333%}.company .image{position:absolute;width:30%;height:100%;left:50%;top:50%;transform:translate(-50%,-50%)}.company .info p{margin:0 0 30px}.company ul{float:right;width:33.3333333%;padding:10px 20px 10px 60px;border-radius:10px}.company ul li{display:flex;align-items:center;margin:30px 0}.company ul li .icon{background-color:var(--type-white-color);margin:0 20px 0 0}.company ul li h2{margin:0 0 10px}@media screen and (max-width:991px){.company .info{width:100%}.company img.pattern{left:50%;bottom:auto;top:60%;transform:translate(-50%,-50%);width:120%;max-width:120%}.company .image{position:relative;width:100%;height:auto;left:auto;top:auto;transform:none;float:left;margin:40px 0}.company .image:not(.filter) img{display:block;width:70%;margin:0 auto}.company .image.filter{aspect-ratio:4/3}.company ul{width:100%;padding:10px 40px}}.software{background-color:var(--bg-white-color)}.software .col-af-content{position:relative}.software .info{float:left;width:40%}.software .info.full{width:100%}.software .image{position:absolute;width:50%;height:100%;top:0;right:0}.software .image img{object-fit:contain;height:auto}.solucoes{background-color:var(--bg-white-color);text-align:center;padding-top:0}.solucoes ul.owl-carousel{position:relative;padding:30px;border-radius:15px;background-color:var(--primary-light-color);margin:0 0 40px}.solucoes ul.owl-carousel li{display:block;text-align:left;width:calc(100% - 6px);height:100%;border-radius:10px;padding:30px 20px 30px 30px;margin:0 3px;transition:ease .5s}.solucoes .owl-item li{border-left:1px solid rgba(0,0,0,.05)}.solucoes ul.owl-carousel .owl-item:first-of-type li{border-left:0}.solucoes ul.owl-carousel li a{display:block;width:100%;height:100%}.solucoes ul.owl-carousel li .icon{margin:0 0 25px}.solucoes ul.owl-carousel li h3{margin:0}.solucoes ul.owl-carousel li p{margin:20px 0 0}.solucoes ul.owl-carousel li:hover{background-color:var(--primary-color)}.solucoes ul.owl-carousel li:hover h3,.solucoes ul.owl-carousel li:hover p{color:var(--type-white-color)}.solucoes ul.owl-carousel li:hover .icon{background:rgba(255,255,255,.3)}.solucoes .owl-item{align-items:flex-start!important}.solucoes ul.owl-carousel li{height:auto!important}@media screen and (max-width:991px){.software .info{width:100%;margin:0 0 40px}.software .image{position:relative;width:100%;height:auto;top:auto;right:auto}.solucoes ul.owl-carousel{padding:30px 0 30px 30px}.solucoes ul.owl-carousel li{width:calc(100% - 10px);height:auto;margin:0 10px 0 0;box-sizing:border-box}.solucoes .owl-item{align-items:flex-start}}.chamada{position:relative;overflow:hidden}.chamada img.pattern{display:block;position:absolute;right:-12%;top:50%;transform:translateY(-50%);width:55%;opacity:.3}.chamada img.pattern.full{right:auto;left:50%}.chamada .col-af-content{position:relative}.chamada .info{float:left;width:50%;padding:0 40px 0 0}.chamada .info h2{margin:0}.chamada .info .btn,.chamada .info p{margin:30px 0 0}.chamada .info:nth-of-type(2){position:absolute;width:40%;height:100%;display:flex;align-items:center;justify-content:center;right:0}.chamada .info:nth-of-type(2) .btn{margin:0}.chamada .image{position:absolute;width:50%;height:calc(100% + 160px);top:-80px;right:0;display:flex;align-items:flex-end;justify-content:center}.chamada .image img{height:auto;object-fit:contain;position:relative;z-index:2}.chamada div.pattern{position:absolute;width:100%;height:240px;top:50%;left:50%;transform:translate(-50%,-50%);background-color:var(--type-white-color);background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:200px;z-index:1}.chamada div.pattern img{height:100%;object-fit:cover}@media screen and (max-width:991px){.chamada .info{width:100%;margin:0 0 40px;padding:0}.chamada .info:nth-of-type(2){position:relative;width:100%;height:auto;text-align:center;display:flex;align-items:center;justify-content:center;right:auto}.chamada .image{position:relative;width:100%;height:auto;top:auto;right:auto}.chamada .image img{margin:0 0 -60px}.chamada div.pattern{position:relative;width:100%;height:auto;top:auto;left:auto;transform:none;aspect-ratio:4/3;border-radius:40px;z-index:1}.chamada img.pattern{right:auto;left:50%;top:auto;bottom:0;transform:translate(-50%,50%);width:140%;max-width:140%;height:auto}.chamada img.pattern.full{height:auto;transform:translate(-70%,64%)}}.cases{background-color:var(--bg-gray-color)}.cases .info{width:33.3333333%;min-height:1px;float:left}.cases .info:nth-of-type(3){width:33.3333333%;text-align:right}@media screen and (max-width:991px){.cases .info{width:95%}.cases .info:nth-of-type(3){width:95%;text-align:center;margin:20px 0 0}}.quem-somos{background-color:var(--bg-white-color)}.quem-somos.font-w{background-color:var(--primary-color)}.quem-somos .col-af-content{position:relative}.quem-somos .info{float:right;width:40%}.quem-somos .icon{margin:0 0 30px}.quem-somos .info p{margin:0 0 30px}.quem-somos .info .btn{margin:0 10px 0 0}.quem-somos .image{position:absolute;width:50%;height:100%;top:0;left:0;border-radius:10px}.quem-somos div.image:not(.filter){align-items:center;display:flex}@media screen and (max-width:991px){.quem-somos .info{width:100%;margin:0 0 40px}.quem-somos .image{position:relative;width:100%;height:auto;top:auto;left:auto;right:auto}.quem-somos .image.filter{aspect-ratio:4/3}.quem-somos .info .btn{margin:10px 0 0}}.numbers{background-color:var(--bg-white-color);text-align:center}.numbers ul{position:relative;display:flex;padding:60px 30px;border-radius:15px;margin:40px 0 0}.numbers ul li{float:left;width:25%;margin:0;text-align:left}.numbers ul li .icon{max-height:30px;max-width:30px;min-height:30px;min-width:30px;background:0 0;margin:0 0 20px}.numbers ul li h2{margin:0 0 10px}.numbers .btn{margin:50px 0 0}@media screen and (max-width:991px){.numbers ul{flex-wrap:wrap;padding:30px 20px 30px 30px}.numbers ul li{width:100%;margin:0;padding:20px 10px;text-align:center}.numbers ul li .icon{margin:0 auto 10px}}.integracoes{background-color:var(--bg-white-color);text-align:center}.font-w.integracoes{background-color:var(--primary-color)}.integracoes ul{display:flex;position:relative;width:100%;margin:80px 0}.integracoes ul::before{content:"";width:95%;height:1px;position:absolute;left:10px;top:34px;z-index:1;background-color:rgba(0,0,0,.1)}.font-w.integracoes ul::before{background-color:rgba(255,255,255,.1)}[data-theme=dark] .integracoes:not(.font-w) ul::before{background-color:rgba(255,255,255,.1)}.integracoes ul li{text-align:left;padding:5px 30px 0 10px;position:relative;z-index:4}.integracoes ul li h3{margin:30px 0 0}.integracoes ul li p{margin:20px 0 0}.integracoes ul li a:hover .icon{box-shadow:0 0 0 6px var(--primary-border-color)}.vantagens{text-align:center;background-color:var(--bg-gray-color)}.vantagens.font-w{background-color:var(--primary-color)}.vantagens .col-af-content{position:relative;min-height:500px}.vantagens:not(.sticky) .info{width:66.6666667%;position:absolute;text-align:left;height:100%;left:0;display:flex;flex-direction:column;padding:0 100px 0 0}.vantagens.sticky .info{width:50%;float:left;text-align:left}.vantagens .info .image{width:100%;height:100%;margin:40px 0 0;border-radius:10px}.vantagens.sticky .image{position:sticky;right:0;float:right;top:160px;width:40%;height:70vh;border-radius:10px}.vantagens ul{width:33.3333333%;text-align:left;float:right;margin:0}.vantagens.sticky .info ul{width:100%;margin:50px 0 0}.vantagens ul li{display:block;margin:0;padding:30px 0 35px;border-top:1px solid rgba(0,0,0,.15)}.vantagens.font-w ul li{border-top:1px solid rgba(255,255,255,.25)}.vantagens:not(.sticky) ul li:first-of-type{padding-top:0;border-top:0}.vantagens ul li:last-child{padding-bottom:0}.vantagens ul li div{display:flex;align-items:center}.vantagens ul li h3{margin:0}.vantagens ul li p{margin:15px 0 0}.vantagens ul li .icon{margin:0 15px 0 0}.vantagens .btn{margin:60px 0 0;clear:both}@media screen and (max-width:991px){.vantagens .col-af-content{min-height:5px}.vantagens .info,.vantagens:not(.sticky) .info{width:100%;position:relative;left:auto;height:auto;padding:0}.vantagens.sticky .info{width:100%}.vantagens.sticky .image{position:relative;right:auto;top:auto;width:100%;height:auto;aspect-ratio:4/3;margin:40px 0 0}.vantagens ul{width:100%;margin:40px 0 0}.vantagens .info .image{height:auto;aspect-ratio:4/3}.vantagens .btn{width:90%;margin:40px auto 0}.vantagens .info .btn{width:100%;float:left}}.funcionalidade{background-color:var(--bg-white-color);text-align:center}.funcionalidade .info{width:80%;margin:0 0 30px;text-align:left}.funcionalidade ul.clearfix{float:left;display:flex;width:calc(100% + 30px);margin:0 0 40px -15px;text-align:left}.funcionalidade ul li.item{position:relative;width:calc(100% - 30px);margin:15px;padding:40px;background-color:var(--primary-light-color);border-radius:10px;overflow:hidden;transition:.4s ease}.funcionalidade ul li.item div{display:flex;align-items:center;margin:0 0 30px;padding:0 0 30px;border-bottom:1px solid var(--primary-light-color);transition:.4s ease}.funcionalidade ul li.item div .icon{max-height:30px;max-width:30px;min-height:30px;min-width:30px;background:0 0;margin:0 15px 0 0}.funcionalidade ul li.item div h3{margin:0;transition:.4s ease}.funcionalidade ul li.item ul{display:block;margin:40px 0 0;padding:0 0 0 15px}.funcionalidade ul li.item ul li{display:list-item;list-style-type:disc;font-size:1.031em;font-weight:400;color:var(--type-gray-color);opacity:.85;margin:20px 0 0;transition:.4s ease}.funcionalidade ul li.item:hover{background-color:var(--primary-color)}.funcionalidade ul li.item .icon img,.funcionalidade ul li.item p{transition:.4s ease}.funcionalidade ul li.item:hover h3,.funcionalidade ul li.item:hover li,.funcionalidade ul li.item:hover p{color:var(--type-white-color)}.funcionalidade ul li.item:hover div{border-bottom:1px solid rgba(255,255,255,.15)}.funcionalidade ul li.item:hover div .icon img{filter:brightness(0) invert(1)}.funcionalidade ul li.item div h3{margin:0}.funcionalidade .btn{margin:0;clear:both}.instituicoes{background-color:var(--bg-white-color);text-align:center}.instituicoes ul{display:flex;flex-wrap:wrap;padding:20px 0 50px}.instituicoes ul li{width:16.6666667%;display:flex;align-items:center;justify-content:center;padding:30px 35px}.instituicoes ul li img{display:block;width:100%;filter:grayscale(100%);opacity:.5;transition:ease .4s}[data-theme=dark] .instituicoes ul li img{filter:brightness(0) invert(1)}.instituicoes ul li:hover img{filter:grayscale(0%);opacity:1}[data-theme=dark] .instituicoes ul li:hover img{filter:brightness(0) invert(1);opacity:1}@media screen and (max-width:991px){.funcionalidade .info{width:95%}.funcionalidade ul.clearfix{width:100%;margin:0}.funcionalidade ul li.item{width:calc(100% - 20px);margin:15px 20px 15px 0}.funcionalidade .btn{display:none}.instituicoes ul{padding:30px 0 40px}.instituicoes ul li{width:50%;padding:20px}}.planos{background-color:var(--bg-gray-color);text-align:center}.planos .info{margin:0 0 60px}.planos .info.details{text-align:left;margin:30px 0 0}.planos .info.details p{color:var(--type-purple-color)}.planos ul{width:100%;margin:0;position:relative;text-align:left}.planos ul li{width:100%;display:flex;padding:0 10px;margin:0;border-radius:7px;background-color:var(--primary-light-color)}.planos ul li:nth-child(odd){background-color:rgba(116,59,188,0)}.planos ul li.title{background-color:rgba(116,59,188,.25)}[data-theme=dark] .planos ul li.title{background-color:rgba(0,0,0,.25)}.planos ul li div{width:25%;flex:1;float:left;text-align:center;align-items:center;min-height:1px;margin:0;padding:15px 10px;transition:all .3s;font-size:1.031em;font-weight:400;color:var(--type-gray-color);opacity:.85;line-height:1.25}.planos ul li div svg{width:24px;display:block;margin:0 auto;fill:var(--btn-primary-color)}.planos ul li:first-of-type{background-color:var(--bg-gray-color);position:sticky;top:120px;left:0;z-index:1}.planos ul li:first-of-type div{padding:25px 10px;position:relative;border-top:1px solid var(--primary-border-color)}.planos ul li:first-of-type div:nth-of-type(1){border-top:1px solid rgba(116,59,188,0)}.planos ul li:nth-of-type(3) div,.planos ul li:nth-of-type(4) div{color:var(--type-purple-color)}.planos ul li div:first-of-type{text-align:left;font-family:Citrine;font-size:15px;color:var(--type-purple-color)}.planos ul li.title div:first-of-type{font-weight:700}.planos ul li:nth-of-type(2) div:first-of-type,.planos ul li:nth-of-type(3) div:first-of-type{font-weight:700}.planos ul li:nth-of-type(2){position:sticky;top:188px;z-index:3;background-color:var(--bg-gray-color)}.planos ul li:nth-of-type(3){position:sticky;top:272px;z-index:3;background-color:var(--bg-gray-color)}.planos ul li:nth-of-type(4){position:sticky;top:322px;z-index:3;background-color:var(--bg-gray-color)}.planos ul li div h3{margin:0}.planos ul li div:nth-of-type(2){background-color:var(--primary-light-color)}.planos ul li:first-of-type div:nth-of-type(2)::after{content:"Recomendado";display:block;width:100%;position:absolute;top:-30px;left:0;font-family:Citrine;font-size:12px;font-weight:700;height:30px;line-height:30px;color:var(--type-white-color);padding:0 10px;border-radius:5px 5px 0 0;background-color:var(--btn-primary-color)}.planos ul li div .btn{margin:0}.planos ul li div:nth-of-type(2) .btn{color:var(--type-white-color);background-color:var(--btn-primary-color)}.planos .btn{margin:60px 0 0}@media screen and (max-width:991px){.planos .info{width:95%}.planos ul{overflow-x:scroll;padding:30px 0}.planos ul li{width:800px}.planos ul li:first-of-type,.planos ul li:nth-of-type(2),.planos ul li:nth-of-type(3){position:relative;top:auto;left:auto}.planos .btn{width:95%}.planos ul li:nth-of-type(4){top:222px}}.cta{background-color:var(--primary-color);position:relative;overflow:hidden;padding:30px 0}.cta img{display:block;position:absolute;right:45%;top:50%;transform:translateY(-50%);width:auto;max-width:4000px;height:165%}.cta .col-af-content{position:relative}.cta .info{position:absolute;width:40%;max-width:450px;left:0;top:50%;transform:translateY(-50%)}.cta .form{width:33.3333333%;float:right;min-height:430px}.footer{background-color:var(--bg-white-color);padding:40px 0 0}.footer .col-af-content div{width:25%;float:left}.footer .col-af-content div.info{width:50%}.footer .col-af-content div.social{float:right;position:relative;width:auto;text-align:right;display:flex}.footer .col-af-content div.social .title-common{position:absolute;top:50%;transform:translate(-140%,-50%);margin:0}.footer .col-af-content div img{display:block;width:210px;margin:10px 0 0}[data-theme=dark] .footer .col-af-content div img{filter:brightness(0) invert(1)}.footer .col-af-content hr{display:block;width:100%;height:1px;border:0;outline:0;margin:40px 0 60px;float:left;background-color:rgba(0,0,0,.1)}[data-theme=dark] .footer .col-af-content hr{background-color:rgba(255,255,255,.1)}.footer .col-af-content div .title-common{margin:0 0 30px}.footer .col-af-content div .title-common,.footer .col-af-content div .title-common a{display:block;font-weight:700!important;font-size:.919em;font-weight:400;color:var(--type-purple-color);opacity:1}.footer .col-af-content div a,.footer .col-af-content div p{font-family:Citrine;display:block;position:relative;font-size:.919em;font-weight:400;color:var(--type-gray-color);line-height:1.5;opacity:.85;margin:5px 0 0}.footer .col-af-content div .icon{font-size:.844em;margin:20px 0 0}.footer .col-af-content div .icon svg{display:inline-block;width:18px;margin:0 10px -5px 0;fill:var(--type-purple-color)}.footer .col-af-content div a:hover{color:var(--type-purple-color);opacity:1}.footer .col-af-content div a.social{display:inline-block;position:relative;margin:0 0 0 5px;padding:0;width:50px;height:50px;opacity:1;border-radius:50%;transition:ease .4s}a.social svg{display:block;position:absolute;top:50%;left:50%;width:25px;transform:translate(-50%,-50%);fill:#fff;transition:ease .4s}.footer .col-af-content div a.social:hover{box-shadow:0 0 0 6px var(--primary-border-color)}@media screen and (max-width:991px){.cta .info{position:relative;width:100%;left:auto;top:auto;transform:none;margin:30px 0}.cta .form{width:100%;min-height:300px}.cta img{right:auto;top:-15%;left:40%;transform:translateX(-50%);width:200%;max-width:200%;height:auto}.footer .col-af-content div,.footer .col-af-content div.info{width:100%;text-align:center}.footer .col-af-content div.social{text-align:center;display:block}.footer .col-af-content div.social .title-common{position:relative;display:block;top:auto;width:100%;transform:none}.footer .col-af-content hr{margin:40px 0 0}.footer .col-af-content div img{margin:0 auto 10px}.footer .col-af-content div span.title-common{margin:60px 0 30px!important}.footer .col-af-content div a.social{margin:0 2px}}.footer .col-af-content .end{width:100%;margin:60px 0 0;padding:15px 0}.footer .col-af-content .end div{width:80%;float:left;text-align:left}.footer .col-af-content .end div:nth-child(2){text-align:right;width:20%}.footer .col-af-content .end div a,.footer .col-af-content .end div p{display:inline-block;font-size:.594em;font-weight:400;line-height:1.2;color:var(--type-gray-color);margin:0}.footer .col-af-content .end div a:not(.dev)::before{content:"/";display:inline-block;font-size:9px;font-weight:400;line-height:1.2;color:var(--type-gray-color);margin:0 7px 0 5px}.footer .col-af-content .end div img{display:block;width:60px;max-width:60px;margin:0 0 -3px 5px}@media screen and (max-width:991px){.footer .col-af-content .end{padding:20px 20px 40px}.footer .col-af-content .end div,.footer .col-af-content .end div:nth-child(2){width:100%;text-align:center}.footer .col-af-content .end div p{line-height:1.5;margin:10px 10px 10px 0}}.anime{opacity:0;transition:ease .8s;transition-delay:0.3s}.come-in{opacity:1}.anime.already-visible{opacity:1;-webkit-transform:none!important;transform:none!important}.anime.fadeInUp{-webkit-transform:translateY(50px);transform:translateY(50px)}.anime.fadeInUp.come-in{-webkit-transform:translateY(0);transform:translateY(0)}.anime.delay{transition-delay:0.6s}.owl-carousel{display:none;width:100%;-webkit-tap-highlight-color:transparent;touch-action:manipulation;position:relative;z-index:1}.owl-carousel .owl-stage{position:relative;display:flex;padding-left:0!important;-ms-touch-action:pan-Y}.owl-carousel.owl-hero .owl-stage{display:block}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;z-index:2;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{position:relative;display:flex;min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;cursor:hand;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-loaded{display:block}.owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{display:none}.owl-carousel.owl-drag .owl-item{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-grab{cursor:move;cursor:-webkit-grab;cursor:-o-grab;cursor:-ms-grab;cursor:grab}.owl-carousel.owl-rtl{direction:rtl}.owl-carousel.owl-rtl .owl-item{float:right}.owl-nav{display:block;width:100%;max-width:1216px;margin:0;position:absolute;top:-50px;left:50%;text-align:right;transform:translateX(-50%);z-index:3}.owl-nav button{z-index:10;display:inline-block;position:relative;cursor:pointer;border:0;margin:0 5px;outline:0;padding:0;width:40px;height:40px;background-color:var(--btn-primary-color);transition:all .3s;border-radius:50%}.owl-categorias .owl-nav,.owl-funcionalidades .owl-funcionalidades2 .owl-nav,.owl-integracoes .owl-nav,.owl-professores .owl-nav{top:auto;transform:none;position:initial;left:auto}.owl-professores .owl-nav button{position:absolute;top:50%;transform:translateY(-50%);background-color:rgba(255,255,255,.2)}.font-w .owl-integracoes .owl-nav button{background-color:rgba(255,255,255,.2)}.owl-funcionalidades .owl-funcionalidades2 .owl-nav button,.owl-integracoes .owl-nav button{position:absolute;top:16px;right:0}.owl-categorias .owl-nav button{position:absolute;top:50%;transform:translateY(-50%)}.owl-integracoes .owl-nav button.owl-prev{right:auto;left:-60px}.owl-funcionalidades .owl-funcionalidades2 .owl-nav button{top:50%;transform:translateY(-50%)}.owl-funcionalidades .owl-funcionalidades2 .owl-nav button.owl-prev{left:-20px}.owl-funcionalidades .owl-funcionalidades2 .owl-nav button.owl-next{right:-20px}.owl-carousel,.owl-carousel *{box-sizing:border-box!important}.owl-professores .owl-nav button.owl-prev{left:-60px}.owl-professores .owl-nav button.owl-next{right:-60px}.owl-nav button.disabled{opacity:.2}.owl-nav button svg{z-index:10;display:block;width:20px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);fill:#fff}.owl-dots{display:inline-block;width:95%;max-width:1216px;position:absolute;text-align:center;left:50%;transform:translateX(-50%);z-index:2;bottom:-35px}.owl-solucoes .owl-dots{bottom:40px}.col-af-slide .owl-dots{left:0;transform:none}.owl-hero .owl-dots{text-align:left;bottom:20px}.owl-dots .owl-dot{display:inline-block;border:0;width:20px;height:6px;padding:0;margin:6px 8px;outline:0;transition:all .3s;background-color:var(--btn-primary-color);opacity:.4;border-radius:10px}.owl-hero .owl-dots .owl-dot,.owl-professores .owl-dots .owl-dot{background-color:var(--type-white-color)}.owl-dots .owl-dot.active{opacity:1}.no-js .owl-carousel{display:block}.YouTubePopUp-Wrap{position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,.95);top:0;left:0;z-index:99}.YouTubePopUp-animation{opacity:0;animation-duration:.5s;animation-fill-mode:both;animation-name:YouTubePopUp}@keyframes YouTubePopUp{0%{opacity:0}100%{opacity:1}}.YouTubePopUp-Hide{animation-duration:.5s;animation-fill-mode:both;animation-name:YouTubePopUpHide}@keyframes YouTubePopUpHide{0%{opacity:1}100%{opacity:0}}.YouTubePopUp-Close{cursor:pointer;display:block;width:60px;height:60px;margin:20px auto 0;border-radius:50%;background-color:var(--type-white-color);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0.4 8C1 1.6 9.6-2.3 14.4 2.4 29.7 17.5 44.8 32.8 60.1 48 75.4 33 90.4 17.7 105.6 2.6 108.1 0.6 111.8-0.7 114.8 1.2 120 3.2 121.6 10.7 117.7 14.7 102.6 29.8 87.5 45 72.3 60.1 87.4 75.5 102.8 90.6 118 106 120.3 108.8 120.5 113.2 118.4 116.2 116.1 119.8 110.9 120.9 107.2 118.8 105.5 117.9 104.3 116.3 103 115 88.7 100.8 74.5 86.4 60.1 72.3 45.1 87.3 30.2 102.3 15.2 117.2 11.5 121.4 4 120.4 1.5 115.4 -0.8 112.2 0.5 107.8 3.1 105.1 18.1 90.1 33.1 75.1 48.1 60.1 33.2 45.3 18.3 30.4 3.5 15.5 1.4 13.7 0 10.8 0.4 8Z' fill='%23743bbc'/%3E%3C/svg%3E");background-position:center center;background-repeat:no-repeat;background-size:18px auto}ul.postagens{width:calc(100% + 30px);display:flex;flex-wrap:wrap;float:left;margin:30px 0 0 -15px}ul.postagens li{width:33.3333333%;margin:0;padding:15px;text-align:left;position:relative}ul.postagens.owl-carousel li{width:100%}ul.postagens li a:not(.btn){display:block;position:relative;width:100%;border-radius:10px;transition:ease .4s}.cases ul.postagens li a:not(.btn){background-color:var(--type-gray-color)}.cases ul.postagens li a:not(.btn){overflow:hidden}.cases ul.postagens li a:not(.btn):hover{box-shadow:0 0 0 10px var(--primary-border-color)}.cases ul.postagens li a:not(.btn)::before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:#000;background:linear-gradient(0deg,rgba(0,0,0,.8) 20%,rgba(0,0,0,0) 80%)}.cases ul.postagens li a:not(.btn)::after{content:"";display:block;opacity:0;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;transition:ease .4s;background:#743bbc;background:linear-gradient(0deg,rgba(116,59,188,.9) 25%,rgba(116,59,188,0) 100%)}[data-theme=dark] .cases ul.postagens li a:not(.btn)::after{background:#000;background:linear-gradient(0deg,rgba(0,0,0,.9) 25%,rgba(0,0,0,0) 100%)}ul.postagens li a:not(.btn):hover::after{opacity:1}ul.postagens li .image{display:block;position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;transition:ease .4s}.cases ul.postagens li .image{aspect-ratio:1/1}ul.postagens li .image img{display:block;width:100%;height:100%;object-fit:cover;transition:ease .4s}ul.postagens li .image a{display:block;width:100%;height:100%}ul.postagens li:hover .image img{transform:scale(1.1)}.cases ul.postagens li .info{position:absolute;width:80%;bottom:40px;left:40px;text-align:left;z-index:3}.cases ul.postagens li .btn{padding:6px 10px;font-size:10px;min-width:20px;margin:0 0 20px}.cases ul.postagens li .info h3{margin:0}ul.postagens li p.date{font-family:Citrine;font-size:15px;display:flex;align-items:center;justify-content:start}ul.postagens li p.date svg{width:18px;display:inline-block;margin:0 15px 0 0;fill:var(--btn-primary-color)}@media screen and (max-width:991px){ul.postagens{width:100%;margin:30px 0 0}ul.postagens li{width:100%;padding:10px}ul.postagens.owl-carousel li{padding:10px 20px 10px 0}}.form-af{display:block;margin:0;position:relative}.form-af div{width:100%;padding:6px 0 0;margin:0;float:left;position:relative}.form-af label span{display:none}.form-af label{font-family:Citrine;font-size:10px;font-weight:400;color:var(--btn-primary-color);line-height:1.4;margin:0;transition:ease .3s}.form-af input:not([type=submit]),.form-af select,.form-af textarea{display:block;font-size:16px;font-weight:400;color:#332d2f;width:100%;height:55px;line-height:55px;margin:0;outline:0;border:1.4pt solid var(--btn-primary-color);background-color:var(--type-white-color);background-size:11px auto;background-position:right 12px center;background-repeat:no-repeat;resize:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0 10px 0 20px;border-radius:4px;transition:all .3s}.form-af input:not([type=submit])::placeholder,.form-af textarea::placeholder{font-family:Citrine;font-size:14px;font-weight:400;color:var(--btn-primary-color);line-height:1.4}.form-af select{line-height:52px;padding:0 20px 2px;background-size:22px auto;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23743bbc'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z'/%3E%3C/svg%3E");font-family:Citrine;font-size:14px;font-weight:400;color:var(--btn-primary-color)}.form-af textarea{height:110px;line-height:1.5;resize:none;padding:20px}.form-af select:required:invalid{font-family:Citrine;display:block;font-size:14px;font-weight:400;color:var(--primary-color)}.form-af select option[value=""][disabled]{display:none}.form-af select option{color:var(--type-gray-color)}.form-af input:not([type=submit]):focus,.form-af select:focus,.form-af textarea:focus{box-shadow:0 0 0 6px var(--primary-border-color)}.cta .form-af input:not([type=submit]):focus,.cta .form-af select:focus,.cta .form-af textarea:focus{box-shadow:0 0 0 6px rgba(255,255,255,.25)}.form-af input:not([type=submit]).invalidPattern{border:1.4pt solid #e50202}.form-af input[type=submit]{cursor:pointer;border:1.5pt solid #fff;outline:0;background-image:none;min-width:1px;width:100%}.form-af span{display:block;width:100%;float:left;font-size:12px;padding:0;font-weight:400;color:var(--type-purple-color);line-height:1.4;margin:0;opacity:.95}.form-af span a{display:inline-block;color:var(--type-purple-color);text-decoration:underline}.cta .form-af label,.cta .form-af span,.cta .form-af span a{color:var(--type-white-color)}.form-af p{width:100%;font-size:14px;font-weight:400;color:var(--type-purple-color);line-height:1.4;margin:20px 0 0!important;opacity:.95;text-align:left}.form-af div.hs-richtext{padding:0}.form-af div.hs-richtext p{margin:10px 0 0!important}.form-af p a{color:var(--type-purple-color);display:inline-block;text-decoration:underline}.form-af p.seguro{display:flex;width:100%;font-size:14px;font-weight:400;color:var(--type-purple-color);line-height:1.4;padding:20px 0 0;opacity:.95;text-align:center;align-items:center;justify-content:center}.form-af p.seguro svg{display:inline-block;width:16px;fill:var(--type-purple-color);margin:0 10px 0 0}.cta .form-af p,.cta .form-af p a,.cta .form-af p.seguro{color:var(--type-white-color)}.cta .form-af p.seguro svg{fill:#fff}figure{max-width:700px;width:100%;height:auto;margin:0 auto}.acessibilidade{position:fixed;top:200px;right:0;z-index:2;padding:10px 20px 20px;background-color:var(--type-white-color);border-radius:10px 0 0 10px;box-shadow:0 15px 60px 0 rgba(0,0,0,.1)}@media screen and (max-width:768px){.acessibilidade{display:none}}.acessibilidade.active{padding:10px 20px 20px 60px}.acessibilidade .info{width:0;height:0;overflow:hidden;min-height:150px}.acessibilidade.active .info{width:auto;height:auto}.acessibilidade .title-common{margin:20px 0 10px;display:block}.acessibilidade button.ativar{font-family:Citrine;cursor:pointer;position:absolute;left:-47px;top:50%;display:block;font-size:14px;text-align:center;font-weight:400;color:var(--btn-primary-color);padding:0 25px 0 0;margin:0;opacity:.8;transition:ease .3s;transform:translateY(-50%) rotate(-90deg);background-color:transparent;border:0;outline:0}.acessibilidade button.ativar::after{display:block;content:"";position:absolute;top:50%;right:0;margin:-9px 0 0;width:20px;height:20px;background-size:20px auto;background-repeat:no-repeat;background-position:center;background-color:transparent;transform:rotate(-180deg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23743bbc' d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/%3E%3C/svg%3E")}.acessibilidade.active button.ativar::after{transform:rotate(0)}.theme-switch-wrapper{display:flex;padding:0!important;width:100%!important}[data-theme=dark] .acessibilidade span.title-common{color:var(--btn-primary-color)}.theme-switch{display:inline-block;height:20px;position:relative;width:35px;margin:0;float:left}.theme-switch input{display:none}.theme-slider{background-color:#ccc;width:100%!important;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0;transition:.4s}.theme-slider:before{background-color:var(--type-white-color);bottom:4px;content:"";height:12px;left:4px;position:absolute;transition:.4s;width:12px}input:checked+.theme-slider{background-color:var(--primary-color)}input:checked+.theme-slider:before{transform:translateX(14px)}.theme-slider.round{border-radius:320px}.theme-slider.round:before{border-radius:50%}@media screen and (max-width:991px){.theme-switch-wrapper{left:120px}}.font-acess button{cursor:pointer;font-family:Citrine;display:inline-block;font-size:13px;text-align:center;font-weight:400;color:#332d2f;padding:4px 10px;margin:0;opacity:1;transition:ease .3s;background-color:#ccc;border:0;outline:0;border-radius:5px}.font-acess button:hover{color:var(--type-white-color);background-color:var(--btn-primary-color)}.panel-md{width:100%;height:100%;position:fixed;opacity:0;visibility:hidden;z-index:99;left:0;top:0;right:0;bottom:0;transition:all .3s;-webkit-transform:translateY(8px);transform:translateY(8px)}.panel-md-hover{display:block;width:100%;height:100%;position:absolute;z-index:1;left:0;top:0;right:0;bottom:0;background-color:rgba(116,59,188,.9);cursor:default;text-indent:-999px}.panel-md:target{opacity:1;visibility:visible;z-index:101;-webkit-transform:translateY(0);transform:translateY(0)}.content-md{position:relative;top:50%;left:50%;height:auto;max-height:calc(100vh - 40px);margin:20px 0 0;max-width:550px;width:90%;padding:50px 60px 30px;background:var(--bg-white-color);z-index:2;border:0;text-align:center;overflow-y:auto;border-radius:4px;box-shadow:0 10px 30px 0 rgba(0,0,0,.15);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.content-md .btn{width:100%}.content-md h3{margin:0 0 15px}.content-md p{width:100%;text-align:center;margin:10px 0}.content-md a.md-close{position:absolute;top:5px;right:10px;cursor:pointer;text-indent:-999px;overflow-x:hidden;z-index:2;width:50px;height:50px;background-color:transparent;background-image:url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle/%3E%3Cpath d='M18.83,16l8.59-8.59a2,2,0,0,0-2.83-2.83L16,13.17,7.41,4.59A2,2,0,0,0,4.59,7.41L13.17,16,4.59,24.59a2,2,0,1,0,2.83,2.83L16,18.83l8.59,8.59a2,2,0,0,0,2.83-2.83Z' fill='%23743bbc'/%3E%3C/svg%3E");background-position:center;background-repeat:no-repeat;background-size:25px auto}@media screen and (max-width:768px){.content-md{padding:35px}}.postagens li a .info h3+p{margin-bottom:20px}.postagens li{transition:all .3s ease}dental-escola-texto{border-radius:7px!important;background:linear-gradient(90deg,#ffc34d 0,#743bbc 100%)!important;background-size:cover!important;padding:15px 25px;display:inline-block;min-width:100%;box-sizing:border-box;color:#fff;font-weight:600;text-align:left;box-shadow:0 2px 8px rgba(0,0,0,.15);transition:transform .2s ease,box-shadow .2s ease}dental-escola-texto:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.2)}.texto-padrao,p.texto-padrao{font-size:16.5px;font-style:normal;font-weight:400;line-height:24.74px}.quem-somos.info p.texto-padrao{font-size:16.5px;font-style:normal;font-weight:400;line-height:24.74px}.page-id-16350 .form-af input[type=email],.page-id-16350 .form-af input[type=tel],.page-id-16350 .form-af input[type=text],.page-id-16350 .form-af select,.page-id-16350 .hbspt-form input[type=email],.page-id-16350 .hbspt-form input[type=tel],.page-id-16350 .hbspt-form input[type=text],.page-id-16350 .hbspt-form select,.page-id-16350 .hs-input{border-radius:69.5px!important;border:1px solid #f3f3f3!important;background:#fff!important;padding:0 20px!important}.page-id-16350 .form-af input[type=submit],.page-id-16350 .hbspt-form input[type=submit],.page-id-16350 .hs-button,.page-id-16350 .hs-button.primary.large{border-radius:33px!important;background:linear-gradient(90deg,#ffc34d 0,#743bbc 100%)!important;border:none!important;color:#fff!important;font-weight:600!important}.page-id-16350 .form-af input[type=submit]:hover,.page-id-16350 .hbspt-form input[type=submit]:hover,.page-id-16350 .hs-button.primary.large:hover,.page-id-16350 .hs-button:hover{transform:translateY(-2px)!important;box-shadow:0 4px 12px rgba(0,0,0,.2)!important}.page-id-16350 section#tarja.chamada.font-w.col-af.bg-s .pattern.full{display:none!important}.page-id-16350 section#tarja.chamada.font-w.col-af.bg-s .col-af-content{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;position:relative!important}.page-id-16350 section#tarja.chamada.font-w.col-af.bg-s .info{width:100%!important;max-width:100%!important;text-align:center!important;padding:0!important;margin:0!important;float:none!important;position:relative!important;left:auto!important;right:auto!important;top:auto!important;transform:none!important}.page-id-16350 section#tarja.chamada.font-w.col-af.bg-s .info h2{text-align:center!important;margin:0 auto!important;width:100%!important;max-width:90%!important}.page-id-16350 section#funcionalidades.software.col-af .info.anime.fadeInUp.full.come-in h2{text-align:center!important;margin-left:auto!important;margin-right:auto!important;width:100%!important;max-width:90%!important}.page-id-16350 section#funcionalidades.software.col-af .info.anime.fadeInUp.full.come-in{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.page-id-16350 section#gestao.integracoes.col-af{padding-top:0!important;margin-top:0!important}.page-id-16350 section#gestao.integracoes.col-af .col-af-content{padding-top:0!important;text-align:center!important}.page-id-16350 section#gestao.integracoes.col-af .info{margin-bottom:30px!important}.page-id-16350 section#gestao.integracoes.col-af .info p{margin-bottom:0!important}.page-id-16350 section#gestao.integracoes.col-af .col-af-content>a.btn{margin-top:30px!important;display:inline-block!important;width:auto!important;min-width:200px!important;max-width:500px!important;padding:18px 20px!important;font-size:14px!important;line-height:1!important;text-align:center!important;box-sizing:border-box!important}.page-id-16350 div[data-rocket-location-hash=e22c187e474966b8c487016c3f1d3387] a.btn.btn-white{background:#743bbc!important;color:#fff!important;border:none!important}.page-id-16350 div[data-rocket-location-hash=e22c187e474966b8c487016c3f1d3387] a.btn.btn-white:hover{background:#5d2f95!important;color:#fff!important}.page-id-16350 .info[data-rocket-location-hash=a8ae6ebe3114871fb2433beff6b3a48a] a.btn.btn-white.secundary,.page-id-16350 div[data-rocket-location-hash=a8ae6ebe3114871fb2433beff6b3a48a] a.btn.btn-white.secundary{background:linear-gradient(90deg,#ffc34d 0,#743bbc 100%)!important;color:#fff!important;border:none!important}.page-id-16350 .info[data-rocket-location-hash=a8ae6ebe3114871fb2433beff6b3a48a] a.btn.btn-white.secundary:hover,.page-id-16350 div[data-rocket-location-hash=a8ae6ebe3114871fb2433beff6b3a48a] a.btn.btn-white.secundary:hover{background:linear-gradient(90deg,#ffc34d 0,#743bbc 100%)!important;transform:translateY(-2px)!important;box-shadow:0 4px 12px rgba(0,0,0,.2)!important}.page-id-16350 .cta.font-w.col-af{background-image:var(--wpr-bg-763a2ee9-80a8-44e0-b3a4-a2d41b902bd7)!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;position:relative!important}.page-id-16350 .cta.font-w.col-af img[src*="cta-e.png"]{display:none!important}.page-id-16350 .cta.font-w.col-af{background-image:var(--wpr-bg-be26daa8-6851-4dbb-a4c9-b12a4d1eb12d)!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;position:relative!important}.page-id-16350 .cta.font-w.col-af .col-af-content{position:relative!important;z-index:2!important}.page-id-16350 .quem-somos .image{display:flex!important;flex-direction:column!important;align-items:flex-start!important}.page-id-16350 .quem-somos .image .imagem-container{order:1!important;position:relative!important;width:100%!important}.page-id-16350 .quem-somos .image .imagem-container img{width:100%!important;height:auto!important;display:block!important}.page-id-16350 .quem-somos .image .imagem-container .play-modal{position:absolute!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important;z-index:10!important}.page-id-16350 .quem-somos .image>.texto-imagem{order:2!important;margin-top:20px!important;display:block!important;width:100%!important}.page-id-16350 .texto-abaixo a,.page-id-16350 .texto-imagem a{color:#fff!important;text-decoration-line:underline!important}@media (max-width:768px){li.hero.col-af{background-position:left center!important;background-size:auto 100%;background-repeat:no-repeat}}.page-id-16350 .numbers.line.col-af::before{display:none!important}.page-id-16350 .numbers.line.col-af{border-top:none!important;margin-top:-120px}@media screen and (max-width:991px){.page-id-16350 .numbers.line.col-af{margin-top:0}}.owl-funcionalidades .owl-stage{display:flex!important;width:max-content!important}.owl-funcionalidades .owl-item{box-sizing:border-box!important;display:flex;justify-content:center}@media (max-width:600px){.owl-funcionalidades .owl-item li.item{width:100%!important;margin:0!important;padding:15px}.owl-funcionalidades .owl-nav,.owl-funcionalidades .owl-nav.disabled{display:flex!important;pointer-events:auto!important;top:50%!important;justify-content:space-between!important}}</style><link rel="preload" data-rocket-preload as="image" href="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/Section-3.webp" fetchpriority="high">
+	<meta name="description" content="Transforme a gestão clínica em instituições de ensino odontológico com tecnologia moderna e recursos que otimizam o dia a dia acadêmico." />
+	<link rel="canonical" href="https://www.dentaloffice.com.br/dental-escola/" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Dental Escola - Dental Office" />
+	<meta property="og:description" content="Transforme a gestão clínica em instituições de ensino odontológico com tecnologia moderna e recursos que otimizam o dia a dia acadêmico." />
+	<meta property="og:url" content="https://www.dentaloffice.com.br/dental-escola/" />
+	<meta property="og:site_name" content="Dental Office" />
+	<meta property="article:modified_time" content="2026-03-10T19:57:48+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.dentaloffice.com.br/dental-escola/","url":"https://www.dentaloffice.com.br/dental-escola/","name":"Dental Escola - Dental Office","isPartOf":{"@id":"https://www.dentaloffice.com.br/#website"},"datePublished":"2026-01-30T03:54:03+00:00","dateModified":"2026-03-10T19:57:48+00:00","description":"Transforme a gestão clínica em instituições de ensino odontológico com tecnologia moderna e recursos que otimizam o dia a dia acadêmico.","breadcrumb":{"@id":"https://www.dentaloffice.com.br/dental-escola/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://www.dentaloffice.com.br/dental-escola/"]}]},{"@type":"BreadcrumbList","@id":"https://www.dentaloffice.com.br/dental-escola/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.dentaloffice.com.br/"},{"@type":"ListItem","position":2,"name":"Dental Escola"}]},{"@type":"WebSite","@id":"https://www.dentaloffice.com.br/#website","url":"https://www.dentaloffice.com.br/","name":"Dental Office","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.dentaloffice.com.br/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pt-BR"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//moderate.cleantalk.org' />
+<link rel='dns-prefetch' href='//js.hs-scripts.com' />
+
+<style id="wp-img-auto-sizes-contain-inline-css"></style>
+<style id="classic-theme-styles-inline-css"></style>
+<style id="wp-block-styles-placeholder-inline-css"></style>
+<style id="wp-global-styles-placeholder-inline-css"></style>
+
+
+<script id="ct_public_functions-js" data-pagespeed-no-defer src="https://www.dentaloffice.com.br/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.47" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-wp-strategy="defer" defer id="ct_bot_detector-js" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/ct-bot-detector-wrapper.js?ver=1779999712"></script>
+			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v11.1.73-->
+			<script type="rocketlazyloadscript" class="hsq-set-content-id" data-content-id="standard-page">
+				var _hsq = _hsq || [];
+				_hsq.push(["setContentType", "standard-page"]);
+			</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+			
+<script type="rocketlazyloadscript">
+	window.addEventListener('message', function(event) {
+		if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit') {
+			// IDs dos formulários que devem fazer redirect
+			var formsComRedirect = [
+				//"72f1e4ef-0a40-4559-9895-91c2229a2d31",
+				//"9880b980-d9b8-4c4b-8c02-9c86022ed8d7",
+				"41ca150d-0eb9-4b6e-a0e3-51c8b37c2411",
+				"d0f1e8c3-8623-4e0c-a8e4-8f44e34d09c3",
+				"a4896331-0881-4d1f-82cb-0b82fd3c406f",
+				"3f84aac1-0029-43d7-b2fa-7a606995f872",
+				"110e124d-9707-43e5-8d8b-bda9c5508dec"
+			];
+
+			if (formsComRedirect.indexOf(event.data.id) !== -1) {
+				var formData = event.data.data;
+				var nome = '', email = '', telefone = '';
+
+				formData.forEach(function(field) {
+					if (field.name === 'firstname') nome = field.value;
+					if (field.name === 'email') email = field.value;
+					if (field.name === 'phone') telefone = field.value;
+				});
+
+				var url = "https://app.dentaloffice.com.br/#/signup?nome=" + 
+					encodeURIComponent(btoa(nome)) + 
+					"&email=" + encodeURIComponent(btoa(email)) + 
+					"&telefone=" + encodeURIComponent(btoa(telefone));
+
+				setTimeout(function() {
+					window.location.href = url;
+				}, 500);
+			}
+		}
+	});
+</script>
+<link rel="icon" href="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/icon-512x512-1-60x60.png" sizes="32x32" />
+<link rel="icon" href="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/icon-512x512-1-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/icon-512x512-1-300x300.png" />
+<meta name="msapplication-TileImage" content="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/icon-512x512-1-300x300.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+    <link rel="shortcut icon" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/favicon/favicon.svg" color="#743bbc">
+    <meta name="msapplication-TileColor" content="#743bbc">
+    <meta name="theme-color" content="#743bbc">
+
+    <link rel="preload" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Citrine-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Citrine-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Figtree-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/font/Figtree-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle">.apbct-check_email_exist-load{--wpr-bg-bb8ea113-9f12-41df-8838-2429ea4a20a4: url('https://www.dentaloffice.com.br/wp-content/plugins/cleantalk-spam-protect/css/images/checking_email.gif');}.apbct-check_email_exist-good_email{--wpr-bg-27e6810e-fe45-467e-9afe-0e665e83e5c0: url('https://www.dentaloffice.com.br/wp-content/plugins/cleantalk-spam-protect/css/images/good_email.svg');}.apbct-check_email_exist-bad_email{--wpr-bg-5613291a-f7bf-420e-ae31-a52c3c99a2bd: url('https://www.dentaloffice.com.br/wp-content/plugins/cleantalk-spam-protect/css/images/bad_email.svg');}.page-id-16350 .cta.font-w.col-af{--wpr-bg-763a2ee9-80a8-44e0-b3a4-a2d41b902bd7: url('https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Section-cases-1.webp');}.page-id-16350 .cta.font-w.col-af{--wpr-bg-be26daa8-6851-4dbb-a4c9-b12a4d1eb12d: url('https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Section-cases-1.webp');}</style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = [{"selector":".apbct-check_email_exist-load","style":".apbct-check_email_exist-load{--wpr-bg-bb8ea113-9f12-41df-8838-2429ea4a20a4: url('https:\/\/www.dentaloffice.com.br\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/checking_email.gif');}","hash":"bb8ea113-9f12-41df-8838-2429ea4a20a4","url":"https:\/\/www.dentaloffice.com.br\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/checking_email.gif"},{"selector":".apbct-check_email_exist-good_email","style":".apbct-check_email_exist-good_email{--wpr-bg-27e6810e-fe45-467e-9afe-0e665e83e5c0: url('https:\/\/www.dentaloffice.com.br\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/good_email.svg');}","hash":"27e6810e-fe45-467e-9afe-0e665e83e5c0","url":"https:\/\/www.dentaloffice.com.br\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/good_email.svg"},{"selector":".apbct-check_email_exist-bad_email","style":".apbct-check_email_exist-bad_email{--wpr-bg-5613291a-f7bf-420e-ae31-a52c3c99a2bd: url('https:\/\/www.dentaloffice.com.br\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/bad_email.svg');}","hash":"5613291a-f7bf-420e-ae31-a52c3c99a2bd","url":"https:\/\/www.dentaloffice.com.br\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/bad_email.svg"},{"selector":".page-id-16350 .cta.font-w.col-af","style":".page-id-16350 .cta.font-w.col-af{--wpr-bg-763a2ee9-80a8-44e0-b3a4-a2d41b902bd7: url('https:\/\/www.dentaloffice.com.br\/wp-content\/uploads\/2026\/02\/Section-cases-1.webp');}","hash":"763a2ee9-80a8-44e0-b3a4-a2d41b902bd7","url":"https:\/\/www.dentaloffice.com.br\/wp-content\/uploads\/2026\/02\/Section-cases-1.webp"},{"selector":".page-id-16350 .cta.font-w.col-af","style":".page-id-16350 .cta.font-w.col-af{--wpr-bg-be26daa8-6851-4dbb-a4c9-b12a4d1eb12d: url('https:\/\/www.dentaloffice.com.br\/wp-content\/uploads\/2026\/02\/Section-cases-1.webp');}","hash":"be26daa8-6851-4dbb-a4c9-b12a4d1eb12d","url":"https:\/\/www.dentaloffice.com.br\/wp-content\/uploads\/2026\/02\/Section-cases-1.webp"}]; const rocket_excluded_pairs = [];</script><meta name="generator" content="WP Rocket 3.17.3.1" data-wpr-features="wpr_lazyload_css_bg_img wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_desktop wpr_preload_links" /></head>
+
+<body class="wp-singular page-template page-template-page-template page-template-page-template-php page page-id-16350 wp-theme-theme-dental">
+
+    <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN4CK5D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+<div  id="preloader">
+    <div  id="status">
+          <div  class="double-bounce1"></div>
+          <div  class="double-bounce2"></div>
+    </div>
+</div> 
+
+
+
+
+
+    <header  class="header">
+        <div  class="col-af-content clearfix">
+                            <a href="https://www.dentaloffice.com.br/dental-escola/" title="Dental Escola" target="_self" class="logo">
+                    <img width="1762" height="264" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/logo-dental-escola.svg" alt="Dental Escola" title="Dental Escola">
+                </a>
+                        <input type="checkbox" name="toggle-menu" id="toggle-menu" class="toggle-menu" />
+            <label for="toggle-menu" class="toggle-menu">
+                <div ><span></span><span></span><span></span></div>
+            </label>
+            <div class="nav">
+                <ul class="clearfix"> 
+                                                                                                                                    <li><a href="https://www.dentaloffice.com.br/company/" title="Quem somos" target="_self">Quem somos</a></li>
+                                                                                                                                                                <li><a href="https://www.dentaloffice.com.br/dental-escola/#funcionalidades" title="Funcionalidades" target="_self">Funcionalidades</a></li>
+                                                                                                                                                                <li><a href="https://www.dentaloffice.com.br/historias-de-sucesso/" title="Histórias de Sucesso" target="_self">Histórias de Sucesso</a></li>
+                                                                                                                                                                        <li class="nav-expand">
+                                        <a class="nav-link" href="#0" title="Conteúdos">Conteúdos</a>
+                                        <ul class="submenu clearfix">
+                                            <div class="menu clearfix">
+                                                <div  class="col-af-content clearfix">
+                                                                                                            <div class="item">
+                                                                                                                            <span class="title-common">
+                                                                                                                                        <a href="https://www.dentaloffice.com.br/conteudos/" title="Conteúdos" target="_self">
+                                                                        Conteúdos                                                                    </a>
+                                                               </span>
+                                                                                                                                                                                                                                                            <a href="https://www.dentaloffice.com.br/blog/" title="Blog" target="_self">
+                                                                                                                                                    <span>
+                                                                               <img width="512" height="512" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/article.svg" alt="Blog" title="Blog">
+                                                                           </span>
+                                                                                                                                              Blog                                                                   </a>
+                                                                                                                                                                                                                                                                                                                                                                    </div><!-- /item-->
+                                                                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                                                                                    </ul>
+            <div class="buttons mobile">
+                                    <a href="https://www.dentaloffice.com.br/area-do-cliente/" class="btn btn-outline" title="Área do cliente" target="_self">
+                        <svg enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"><g><g><path d="m433 512c-11.046 0-20-8.954-20-20 0-78.299-63.701-142-142-142h-30c-78.299 0-142 63.701-142 142 0 11.046-8.954 20-20 20s-20-8.954-20-20c0-100.355 81.645-182 182-182h30c100.355 0 182 81.645 182 182 0 11.046-8.954 20-20 20z"></path></g><g><path d="m254 270c-74.439 0-135-60.561-135-135s60.561-135 135-135 135 60.561 135 135-60.561 135-135 135zm0-230c-52.383 0-95 42.617-95 95s42.617 95 95 95 95-42.617 95-95-42.617-95-95-95z"></path></g></g></svg>Área do cliente                    </a>
+                                                    <a href="#form" class="btn btn-escola" title="Contrate agora" target="_self">Contrate agora</a>
+                            </div><!-- /buttons -->
+        </div><!-- /nav -->
+        <div  class="buttons">
+                            <a href="https://www.dentaloffice.com.br/area-do-cliente/" class="btn btn-outline" title="Área do cliente" target="_self">
+                    <svg enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"><g><g><path d="m433 512c-11.046 0-20-8.954-20-20 0-78.299-63.701-142-142-142h-30c-78.299 0-142 63.701-142 142 0 11.046-8.954 20-20 20s-20-8.954-20-20c0-100.355 81.645-182 182-182h30c100.355 0 182 81.645 182 182 0 11.046-8.954 20-20 20z"></path></g><g><path d="m254 270c-74.439 0-135-60.561-135-135s60.561-135 135-135 135 60.561 135 135-60.561 135-135 135zm0-230c-52.383 0-95 42.617-95 95s42.617 95 95 95 95-42.617 95-95-42.617-95-95-95z"></path></g></g></svg>Área do cliente                </a>
+                                        <a href="#form" class="btn btn-escola" title="Contrate agora" target="_self">Contrate agora</a>
+                    </div><!-- /buttons -->
+    </div>
+</header><!-- /header -->
+
+
+<main  class="main-e">
+        <section  class="hero-slider">
+        <ul class="clearfix">
+                            <li class="hero col-af font-w" style="background-image: url(https://www.dentaloffice.com.br/wp-content/uploads/2026/01/Section-3.webp);" >
+                    <div  class="col-af-content clearfix">
+                        <div  class="info">
+                                                            <span class="title-common">Dental Escola | Software de Gestão Clínica Escola</span>
+                                                                                        <h1>Aumente a eficiência da sua Clínica Escola em 15% com uma gestão inteligente</h1>
+                                                        <p>Gerir uma clínica-escola não deveria ser mais complexo do que ensinar odontologia. Quando alunos, professores, pacientes e registros não estão integrados, o ensino perde fluidez e a gestão se torna um gargalo.</p>
+<p>O Dental Escola já ajuda mais de 80 instituições de ensino a organizar sua rotina acadêmica e clínica, contribuindo para a economia de 22 horas mensais com uma gestão mais eficiente.</p>
+                            <div >
+                                                                    <a href="#form" class="btn  btn-white" title="Saiba mais como modernizar a sua instituição" target="_self">Saiba mais como modernizar a sua instituição</a>
+                                                                                            </div>
+                                                    </div>
+                    </div>
+                                    </li><!-- /hero -->
+                    </ul>
+                                        <div  id="mais"></div>
+    </section><!-- /hero -->
+
+
+
+
+
+<!-- /materiais -->
+
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                    <section class="vantagens sticky col-af font-w" >
+                    <div  class="col-af-content clearfix">
+                        <div  class="info">
+                                                        <h2>Uma plataforma para quem ensina odontologia com atendimento real</h2>
+                            <p>Se a sua instituição enfrenta dificuldades para organizar a rotina clínica, supervisionar atendimentos e manter registros confiáveis, o problema não está na equipe, está na falta de um sistema pensado para o ensino.</p>
+<p><b>O Dental Escola é indicado para:</b></p>
+                                                            <ul class="clearfix">
+                                                                            <li class="anime fadeInUp">
+                                            <div >
+                                                                                                    <span class="icon icon-s">
+                                                        <img width="30" height="29" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2029'%3E%3C/svg%3E" alt="Graduação em Odontologia com clínica-escola" title="Graduação em Odontologia com clínica-escola" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/Vector-1.png"><noscript><img width="30" height="29" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/Vector-1.png" alt="Graduação em Odontologia com clínica-escola" title="Graduação em Odontologia com clínica-escola"></noscript>
+                                                    </span>
+                                                                                                <h3>Graduação em Odontologia com clínica-escola</h3>
+                                            </div>
+                                                                                    </li>
+                                                                            <li class="anime fadeInUp">
+                                            <div >
+                                                                                                    <span class="icon icon-s">
+                                                        <img width="36" height="36" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3C/svg%3E" alt="Cursos de especialização com atendimento clínico" title="Cursos de especialização com atendimento clínico" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/hugeicons_clinic.svg"><noscript><img width="36" height="36" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/hugeicons_clinic.svg" alt="Cursos de especialização com atendimento clínico" title="Cursos de especialização com atendimento clínico"></noscript>
+                                                    </span>
+                                                                                                <h3>Cursos de especialização com atendimento clínico</h3>
+                                            </div>
+                                                                                    </li>
+                                                                            <li class="anime fadeInUp">
+                                            <div>
+                                                                                                    <span class="icon icon-s">
+                                                        <img width="35" height="35" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2035%2035'%3E%3C/svg%3E" alt="Pós-graduações com prática supervisionada" title="Pós-graduações com prática supervisionada" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/ph_graduation-cap-thin.svg"><noscript><img width="35" height="35" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/ph_graduation-cap-thin.svg" alt="Pós-graduações com prática supervisionada" title="Pós-graduações com prática supervisionada"></noscript>
+                                                    </span>
+                                                                                                <h3>Pós-graduações com prática supervisionada</h3>
+                                            </div>
+                                                                                    </li>
+                                                                            <li class="anime fadeInUp">
+                                            <div>
+                                                                                                    <span class="icon icon-s">
+                                                        <img width="38" height="38" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2038%2038'%3E%3C/svg%3E" alt="Instituições de ensino odontológico que precisam integrar gestão acadêmica e clínica" title="Instituições de ensino odontológico que precisam integrar gestão acadêmica e clínica" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/material-symbols-light_book-outline-rounded.svg"><noscript><img width="38" height="38" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/material-symbols-light_book-outline-rounded.svg" alt="Instituições de ensino odontológico que precisam integrar gestão acadêmica e clínica" title="Instituições de ensino odontológico que precisam integrar gestão acadêmica e clínica"></noscript>
+                                                    </span>
+                                                                                                <h3>Instituições de ensino odontológico que precisam integrar gestão acadêmica e clínica</h3>
+                                            </div>
+                                                                                    </li>
+                                                                    </ul>
+                                                                                        <a href="#form" class="btn btn-white secundary" title="Saiba mais como modernizar a sua instituição" target="_self">
+                                    Saiba mais como modernizar a sua instituição                                                                    </a>
+                                                    </div>
+                                                    <div class="image filter">
+                                <img width="486" height="754" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/Container.webp" alt="Uma plataforma para quem ensina odontologia com atendimento real" title="Uma plataforma para quem ensina odontologia com atendimento real">
+                            </div>
+                                            </div>
+                </section><!-- /vantagens -->
+                    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+                    <section class="software col-af"  id="funcionalidades"  style="padding-bottom: 10px;" >
+                <div  class="col-af-content clearfix">
+                    <div class="info anime fadeInUp full">
+                                                <h2>Por que tantas instituições têm processos clínicos desorganizados?</h2>
+                                            </div>
+                                    </div>
+            </section><!-- /software -->
+            <section  class="solucoes col-af">
+                <div  class="col-af-content clearfix">
+                                            <ul class="owl-carousel owl-funcionalidades clearfix">
+                                                            <li class="anime fadeInUp">
+                                                                                                                        <span class="icon icon-s">
+                                                <img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" alt="Gestão manual consome até 3 horas por dia" title="Gestão manual consome até 3 horas por dia" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/growth-2.svg"><noscript><img width="512" height="512" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/growth-2.svg" alt="Gestão manual consome até 3 horas por dia" title="Gestão manual consome até 3 horas por dia"></noscript>
+                                            </span>
+                                                                                <h3>Gestão manual consome até 3 horas por dia</h3>
+                                        <p>Papelada, fichas físicas e processos descentralizados.</p>
+                                                                        </li>
+                                                            <li class="anime fadeInUp">
+                                                                                                                        <span class="icon icon-s">
+                                                <img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" alt="Logística manual entre os atendimentos reduz 15% de eficiência" title="Logística manual entre os atendimentos reduz 15% de eficiência" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/check.svg"><noscript><img width="512" height="512" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/check.svg" alt="Logística manual entre os atendimentos reduz 15% de eficiência" title="Logística manual entre os atendimentos reduz 15% de eficiência"></noscript>
+                                            </span>
+                                                                                <h3>Logística manual entre os atendimentos reduz 15% de eficiência</h3>
+                                        <p>Buscar fichas, confirmar horários e procurar documentação são atividades que consomem o tempo que poderia ser convertido em atendimento.</p>
+                                                                        </li>
+                                                            <li class="anime fadeInUp">
+                                                                                                                        <span class="icon icon-s">
+                                                <img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" alt="Registros clínicos pouco consistentes afetam o ensino em 40%" title="Registros clínicos pouco consistentes afetam o ensino em 40%" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/calendar-3.svg"><noscript><img width="512" height="512" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/calendar-3.svg" alt="Registros clínicos pouco consistentes afetam o ensino em 40%" title="Registros clínicos pouco consistentes afetam o ensino em 40%"></noscript>
+                                            </span>
+                                                                                <h3>Registros clínicos pouco consistentes afetam o ensino em 40%</h3>
+                                        <p>Os registros são afetados pela falta de acesso imediato ao histórico e pela falta de padronização.</p>
+                                                                        </li>
+                                                            <li class="anime fadeInUp">
+                                                                                                                        <span class="icon icon-s">
+                                                <img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" alt="45% de retrabalho administrativo constante" title="45% de retrabalho administrativo constante" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/12/form.svg"><noscript><img width="512" height="512" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/12/form.svg" alt="45% de retrabalho administrativo constante" title="45% de retrabalho administrativo constante"></noscript>
+                                            </span>
+                                                                                <h3>45% de retrabalho administrativo constante</h3>
+                                        <p>Causado pela falta de integração entre registros clínicos, acadêmicos e administrativos.</p>
+                                                                        </li>
+                                                    </ul>
+                                                                            </div>
+            </section><!-- /solucoes -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <section class="integracoes col-af"  id="gestao" >
+                <div  class="col-af-content clearfix">
+                    <div class="info">
+                                                <h2>Sem uma gestão estruturada, o aprendizado perde qualidade e a operação se torna mais vulnerável.</h2>
+                        <p>O Dental Escola surge exatamente para eliminar esses gargalos. Com um atendimento ao cliente nota 9,6, oferecemos acompanhamento individual para levar sua instituição aos objetivos desejados</p>
+                    </div>
+                                                                <a href="#form" class="btn" title="Saiba mais sobre o Dental Escola" target="_self">Saiba mais sobre o Dental Escola</a>
+                                    </div>
+            </section><!-- /integracoes -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+                    <section class="chamada font-w col-af bg-s"  id="tarja" >
+                <div  class="col-af-content clearfix">
+                                            <img width="860" height="691" class="pattern full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20860%20691'%3E%3C/svg%3E" alt="Dental Office" title="Dental Office" data-lazy-src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/chamada-full.png"><noscript><img width="860" height="691" class="pattern full" src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/chamada-full.png" alt="Dental Office" title="Dental Office"></noscript>
+                                        <div class="info anime fadeInUp">
+                                                <h2>Quando a gestão não acompanha o ensino, surgem gargalos diferentes em cada etapa da formação</h2>
+                                                                    </div>
+                                            <div class="info">
+                                                    </div>
+                                    </div>
+            </section><!-- /chamada -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <section class="funcionalidade col-af"  id="grid-cursos" >
+                <div  class="col-af-content col-af-slide clearfix">
+                    <div class="info">
+                                                <h2></h2>
+                                            </div>
+                                            <ul class="clearfix owl-carousel owl-propostas">
+                                                            <li class="item anime fadeInUp">
+                                    <div>
+                                                                                    <span class="icon">
+                                                <img width="30" height="29" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2029'%3E%3C/svg%3E" alt="Graduação" title="Graduação" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Vector-83.svg"><noscript><img width="30" height="29" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Vector-83.svg" alt="Graduação" title="Graduação"></noscript>
+                                            </span>
+                                                                                <h3>Graduação</h3>
+                                    </div>
+                                    <ul>
+<li>Falta de padronização na rotina clínica, o que gera até 45% de retrabalho</li>
+<li>Até 3 horas por dia perdidas com processos manuais e papelada</li>
+<li>30% a menos  de supervisão acadêmica</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>O Dental Escola centraliza a rotina acadêmica e clínica, trazendo mais organização e controle para o ensino prático.</strong></p>
+                                </li>
+                                                            <li class="item anime fadeInUp">
+                                    <div>
+                                                                                    <span class="icon">
+                                                <img width="32" height="32" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" alt="Cursos de especialização" title="Cursos de especialização" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Group.svg"><noscript><img width="32" height="32" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Group.svg" alt="Cursos de especialização" title="Cursos de especialização"></noscript>
+                                            </span>
+                                                                                <h3>Cursos de especialização</h3>
+                                    </div>
+                                    <ul>
+<li>Baixo controle dos atendimentos por especialidade, dificultando o acompanhamento clínico</li>
+<li>Perda de informação clínica por registros fragmentados pode chegar a 35%</li>
+<li>Risco de não conformidade de dados clínicos e informações sensíveis 3x maior</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>O Dental Escola organiza os registros clínicos e garante mais segurança e rastreabilidade para formações avançadas.</strong></p>
+                                </li>
+                                                            <li class="item anime fadeInUp">
+                                    <div>
+                                                                                    <span class="icon">
+                                                <img width="34" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2034%2030'%3E%3C/svg%3E" alt="Pós-graduação" title="Pós-graduação" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Vector-84.svg"><noscript><img width="34" height="30" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/Vector-84.svg" alt="Pós-graduação" title="Pós-graduação"></noscript>
+                                            </span>
+                                                                                <h3>Pós-graduação</h3>
+                                    </div>
+                                    <ul>
+<li>Gestão 40% mais complexa de casos clínicos, sem visão clara da evolução dos tratamentos</li>
+<li>Até 65% de dificuldade de acompanhamento por professores e coordenação</li>
+<li>Perda de 15% na eficiência operacional da clínica-escola</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Com uma gestão mais estruturada, o Dental Escola devolve eficiência e segurança à formação clínica.</strong></p>
+                                </li>
+                                                    </ul>
+                                                        </div>
+            </section><!-- /funcionalidade -->
+        
+        
+        
+        
+        
+        
+    
+                                    <section class="numbers line col-af" >
+                    <div  class="col-af-content clearfix">
+                        <div class="info anime fadeInUp">
+                                                        <h2>Impacto institucional</h2>
+                                                    </div>
+                                                    <ul class="clearfix font-w counter bg-s">
+                                                                    <li class="anime fadeInUp">
+                                                                                    <span class="icon">
+                                                <img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" alt="instituições de ensino já utilizam o Dental Escola" title="instituições de ensino já utilizam o Dental Escola" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-4.svg"><noscript><img width="30" height="30" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-4.svg" alt="instituições de ensino já utilizam o Dental Escola" title="instituições de ensino já utilizam o Dental Escola"></noscript>
+                                            </span>
+                                                                                <div>
+                                            <h2>+ <span class="count" data-count="80">0</span> </h2>
+                                            <p>instituições de ensino já utilizam o Dental Escola</p>
+                                        </div>
+                                    </li>
+                                                                    <li class="anime fadeInUp">
+                                                                                    <span class="icon">
+                                                <img width="33" height="33" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2033'%3E%3C/svg%3E" alt="alunos acompanhados" title="alunos acompanhados" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-3.svg"><noscript><img width="33" height="33" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-3.svg" alt="alunos acompanhados" title="alunos acompanhados"></noscript>
+                                            </span>
+                                                                                <div>
+                                            <h2>+ <span class="count" data-count="15">0</span> mil</h2>
+                                            <p>alunos acompanhados</p>
+                                        </div>
+                                    </li>
+                                                                    <li class="anime fadeInUp">
+                                                                                    <span class="icon">
+                                                <img width="33" height="33" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2033'%3E%3C/svg%3E" alt="economizadas por mês com processos organizados" title="economizadas por mês com processos organizados" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-5.svg"><noscript><img width="33" height="33" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-5.svg" alt="economizadas por mês com processos organizados" title="economizadas por mês com processos organizados"></noscript>
+                                            </span>
+                                                                                <div>
+                                            <h2> <span class="count" data-count="22">0</span> horas</h2>
+                                            <p>economizadas por mês com processos organizados</p>
+                                        </div>
+                                    </li>
+                                                                    <li class="anime fadeInUp">
+                                                                                    <span class="icon">
+                                                <img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" alt="a mais de eficiência no atendimento clínico" title="a mais de eficiência no atendimento clínico" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-6.svg"><noscript><img width="30" height="30" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/image-6.svg" alt="a mais de eficiência no atendimento clínico" title="a mais de eficiência no atendimento clínico"></noscript>
+                                            </span>
+                                                                                <div>
+                                            <h2>+ <span class="count" data-count="15">0</span> %</h2>
+                                            <p>a mais de eficiência no atendimento clínico</p>
+                                        </div>
+                                    </li>
+                                                                    <li class="anime fadeInUp">
+                                                                                    <span class="icon">
+                                                <img width="33" height="33" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2033'%3E%3C/svg%3E" alt="de economia anual" title="de economia anual" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/qlementine-icons_money-16.svg"><noscript><img width="33" height="33" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/02/qlementine-icons_money-16.svg" alt="de economia anual" title="de economia anual"></noscript>
+                                            </span>
+                                                                                <div>
+                                            <h2>+ <span class="count" data-count="72">0</span> mil</h2>
+                                            <p>de economia anual</p>
+                                        </div>
+                                    </li>
+                                                            </ul>
+                                                                            <a href="#form" class="btn" title="Veja como o Dental Escola resolve esses desafios na prática" target="_self">Veja como o Dental Escola resolve esses desafios na prática</a>
+                                            </div>
+                </section><!-- /numbers -->
+                    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+                    <section class="cases col-af" >
+                <div  class="col-af-content col-af-slide clearfix">
+                    <div class="info">
+                                                    <span class="title-common">Histórias de Sucesso</span>
+                                                <h2>Resultados que inspiram</h2>
+                    </div>
+                    <div class="info">
+                        <p>Conheça histórias de clientes que alcançaram o sucesso com o Dental Office.</p>
+                    </div>
+                    <div class="info">
+                                                    <a href="https://www.dentaloffice.com.br/historias-de-sucesso/" class="btn btn-outline" title="Ver todos os cases" target="_self">Ver todos os cases</a>
+                                            </div>
+                                                                                    <ul class="postagens owl-carousel owl-cases clearfix">
+                                                    <li id="case-16650" class="font-w anime fadeInUp post-16650 case type-case status-publish has-post-thumbnail hentry filtro-para-clinica-escola">
+                                <a href="https://www.dentaloffice.com.br/case/16650/" title="Veja o impacto do Dental Escola no Instituto Gois Aguiar">
+                                    <div class="image">
+                                                                                    <img width="458" height="354" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20458%20354'%3E%3C/svg%3E" alt="Veja o impacto do Dental Escola no Instituto Gois Aguiar" title="Veja o impacto do Dental Escola no Instituto Gois Aguiar" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/03/image-12.png"><noscript><img width="458" height="354" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/03/image-12.png" alt="Veja o impacto do Dental Escola no Instituto Gois Aguiar" title="Veja o impacto do Dental Escola no Instituto Gois Aguiar"></noscript>
+                                                                            </div>
+                                    <div class="info">
+                                        <span class="btn">
+                                            Para Clínica Escola                                        </span>
+                                        <h3>Veja o impacto do Dental Escola no Instituto Gois Aguiar</h3>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li id="case-16647" class="font-w anime fadeInUp post-16647 case type-case status-publish has-post-thumbnail hentry filtro-para-clinicas-e-consultorios">
+                                <a href="https://www.dentaloffice.com.br/case/como-o-dr-rubens-moura-transformou-a-rotina-da-sua-clinica-com-o-dental-office/" title="Como o Dr. Rubens Moura transformou a rotina da sua clínica com o Dental Office">
+                                    <div class="image">
+                                                                                    <img width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Como o Dr. Rubens Moura transformou a rotina da sua clínica com o Dental Office" title="Como o Dr. Rubens Moura transformou a rotina da sua clínica com o Dental Office" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/03/SaveClip.App_470088700_18472530979027704_5750572806531542045_n-600x400.jpg"><noscript><img width="600" height="400" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/03/SaveClip.App_470088700_18472530979027704_5750572806531542045_n-600x400.jpg" alt="Como o Dr. Rubens Moura transformou a rotina da sua clínica com o Dental Office" title="Como o Dr. Rubens Moura transformou a rotina da sua clínica com o Dental Office"></noscript>
+                                                                            </div>
+                                    <div class="info">
+                                        <span class="btn">
+                                            Para clínicas e consultórios                                        </span>
+                                        <h3>Como o Dr. Rubens Moura transformou a rotina da sua clínica com o Dental Office</h3>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li id="case-16116" class="font-w anime fadeInUp post-16116 case type-case status-publish has-post-thumbnail hentry filtro-para-clinicas-e-consultorios">
+                                <a href="https://www.dentaloffice.com.br/case/como-a-dra-vanessa-reverteu-20-anos-em-lucratividade-com-o-dental-office/" title="Como a Dra. Vanessa reverteu 20 anos de caos em lucratividade com o Dental Office">
+                                    <div class="image">
+                                                                                    <img width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Como a Dra. Vanessa reverteu 20 anos de caos em lucratividade com o Dental Office" title="Como a Dra. Vanessa reverteu 20 anos de caos em lucratividade com o Dental Office" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2025/12/Dra-Vanessa-Harasawa-600x400.jpg"><noscript><img width="600" height="400" src="https://www.dentaloffice.com.br/wp-content/uploads/2025/12/Dra-Vanessa-Harasawa-600x400.jpg" alt="Como a Dra. Vanessa reverteu 20 anos de caos em lucratividade com o Dental Office" title="Como a Dra. Vanessa reverteu 20 anos de caos em lucratividade com o Dental Office"></noscript>
+                                                                            </div>
+                                    <div class="info">
+                                        <span class="btn">
+                                            Para clínicas e consultórios                                        </span>
+                                        <h3>Como a Dra. Vanessa reverteu 20 anos de caos em lucratividade com o Dental Office</h3>
+                                    </div>
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+            </section><!-- /cases -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <section class="quem-somos col-af font-w" >
+                <div  class="col-af-content clearfix">
+                                        <div class="info anime fadeInUp">
+                                                    <span class="title-common"><dental-escola-texto>   Veja o Dental Escola em ação </dental-escola-texto></span>
+                                                <h2><p class="texto-padrao">Entenda, na prática, como o Dental Escola transforma a gestão de clínicas-escola e apoia a formação de futuros profissionais.</p> Gestão eficiente para clínicas-escola: facilitando a formação de futuros profissionais</h2>
+                        <p>Neste vídeo, você verá como o sistema organiza a rotina acadêmica, integra alunos e professores e simplifica a gestão clínica no dia a dia da instituição.</p>
+                                                                    </div>
+                    <div class="image anime fadeInUp delay">
+                                                    <div class="imagem-container">
+                                <a href="https://www.youtube.com/watch?v=tAcsuZuWGlU" class="play-modal" title="Play">Play</a>
+                                                                    <img width="552" height="421" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20552%20421'%3E%3C/svg%3E" alt="Entenda, na prática, como o Dental Escola transforma a gestão de clínicas-escola e apoia a formação de futuros profissionais. Gestão eficiente para clínicas-escola: facilitando a formação de futuros profissionais" title="Entenda, na prática, como o Dental Escola transforma a gestão de clínicas-escola e apoia a formação de futuros profissionais. Gestão eficiente para clínicas-escola: facilitando a formação de futuros profissionais" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/Group-8.webp"><noscript><img width="552" height="421" src="https://www.dentaloffice.com.br/wp-content/uploads/2026/01/Group-8.webp" alt="Entenda, na prática, como o Dental Escola transforma a gestão de clínicas-escola e apoia a formação de futuros profissionais. Gestão eficiente para clínicas-escola: facilitando a formação de futuros profissionais" title="Entenda, na prática, como o Dental Escola transforma a gestão de clínicas-escola e apoia a formação de futuros profissionais. Gestão eficiente para clínicas-escola: facilitando a formação de futuros profissionais"></noscript>
+                                                            </div>
+                                                                            <span class="title-common texto-imagem"><span class="title-common texto-abaixo">Quer conhecer outros recursos? <a href="https://www.youtube.com/playlist?list=PLtHNld_ot_RxPwcFEgBbZU0ugHfTKNOs4" target="_blank" rel="noopener noreferrer">Acesse a playlist completa</a> de vídeos do Dental Escola.</span></span>
+                                            </div>
+                </div>
+            </section><!-- /quem-somos -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <section class="instituicoes col-af" >
+                <div class="col-af-content clearfix">
+                    <div class="info">
+                                                    <span class="title-common">Instituições</span>
+                                                <h2>Diversas instituições já utilizam o Dental Office para simplificar suas rotinas acadêmicas e melhorar a formação dos seus alunos</h2>
+                                            </div>
+                                            <ul class="clearfix">
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-1.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-1.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-2.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-2.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-3.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-3.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-4.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2025/01/instituicao-dental-escola-4.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-5.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-5.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-6.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-6.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-7.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-7.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-8.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-8.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-10.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-10.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-9.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-9.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-11.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-11.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                            <li class="item anime fadeInUp">
+                                                                            <img width="500" height="245" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20245'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-12.png"><noscript><img width="500" height="245" src="https://www.dentaloffice.com.br/wp-content/uploads/2024/11/dental-escola-12.png" alt="" title=""></noscript>
+                                                                    </li>
+                                                    </ul>
+                                                                <a href="#form" class="btn" title="Conheça mais" target="_self">Conheça mais</a>
+                                    </div>
+            </section><!-- /instituicoes -->
+        
+        
+        
+        
+        
+    
+<section data-wpr-lazyrender="1" id="form">
+    <div  class="cta font-w col-af">
+        <div class="col-af-content clearfix">
+                                                    <img width="860" height="691" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20860%20691'%3E%3C/svg%3E" alt="Dental Office" title="Dental Office" data-lazy-src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/cta-e.png"><noscript><img width="860" height="691" src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/cta-e.png" alt="Dental Office" title="Dental Office"></noscript>
+                                        <div class="info">
+                                            <span class="title-common">Dental Escola</span>
+                                        <h2>Solicite uma demonstração para sua instituição</h2>
+                    <p>Descubra como o Dental Escola pode ajudar sua clínica-escola a ganhar organização, segurança e eficiência, sem complicar a rotina acadêmica.</p>
+<p>Nossa equipe apresenta o sistema de acordo com a realidade da sua instituição, esclarece dúvidas e mostra, na prática, como o Dental Escola pode apoiar o ensino e a gestão clínica.</p>
+                </div>
+                        <div class="form">
+                <div class="form-af clearfix">
+                                            <script type="rocketlazyloadscript">   hbspt.forms.create({     portalId: "22478337",     formId: "7d08f3f0-438d-4b7f-a3c2-7f27d0e66e47"   }); </script>                                        <p class="seguro">
+                        <svg enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512">
+                            <g>
+                                <path d="m256 272c-33.084 0-60 26.916-60 60 0 26.073 16.722 48.304 40 56.56v23.44c0 11.046 8.954 20 20 20s20-8.954 20-20v-23.44c23.278-8.256 40-30.487 40-56.56 0-33.084-26.916-60-60-60zm0 80c-11.028 0-20-8.972-20-20s8.972-20 20-20 20 8.972 20 20-8.972 20-20 20z"></path>
+                                <path d="m176 512h160c55.141 0 100-44.86 100-100v-120c0-55.14-44.859-100-100-100h-160c-55.141 0-100 44.86-100 100v120c0 55.14 44.859 100 100 100zm-60-220c0-33.084 26.916-60 60-60h160c33.084 0 60 26.916 60 60v120c0 33.084-26.916 60-60 60h-160c-33.084 0-60-26.916-60-60z"></path>
+                                <path d="m176 152c11.046 0 20-8.954 20-20v-32c0-33.084 26.916-60 60-60s60 26.916 60 60v32c0 11.046 8.954 20 20 20s20-8.954 20-20v-32c0-55.14-44.859-100-100-100s-100 44.86-100 100v32c0 11.046 8.954 20 20 20z"></path>
+                            </g>
+                        </svg>
+                        Seus dados estão seguros
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- /cta -->
+</main>
+
+<footer data-wpr-lazyrender="1" class="footer col-af main-e">
+    <div class="col-af-content clearfix">
+        <div class="info">
+            <img width="1522" height="264" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201522%20264'%3E%3C/svg%3E" alt="Dental Office" title="Dental Office" data-lazy-src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/logo-dental-office.svg"><noscript><img width="1522" height="264" src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/images/logo-dental-office.svg" alt="Dental Office" title="Dental Office"></noscript>
+        </div>
+        <div  class="info social">
+            <span class="title-common">Acompanhe</span>
+                            <a href="https://www.instagram.com/softwaredentaloffice/" class="social bg-s" target="_blank" rel="noopener" title="Instagram">
+                    <svg width="32" height="32" viewBox="0 0 256 256">
+                        <path d="M128 80a48 48 0 1 0 48 48a48 48 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32.1 32.1 0 0 1-32 32Zm44-132H84a56 56 0 0 0-56 56v88a56 56 0 0 0 56 56h88a56 56 0 0 0 56-56V84a56 56 0 0 0-56-56Zm40 144a40 40 0 0 1-40 40H84a40 40 0 0 1-40-40V84a40 40 0 0 1 40-40h88a40 40 0 0 1 40 40Zm-20-96a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z"></path>
+                    </svg>
+                </a>
+                                                    <a href="https://www.facebook.com/softwaredentaloffice" class="social bg-s" target="_blank" rel="noopener" title="Facebook">
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                    </svg>
+                </a>
+                                        <a href="https://www.youtube.com/channel/UCTSaTM0pvDcXQGADmnEHnVQ" class="social bg-s" target="_blank" rel="noopener" title="YouTube">
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                        <path d="m10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73Z"></path>
+                    </svg>
+                </a>
+                                                    <a href="https://www.tiktok.com/@softwaredentaloffice" class="social bg-s" target="_blank" rel="noopener" title="Tiktok">
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                        <path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48" />
+                    </svg>
+                </a>
+                    </div>
+        <hr>
+                                    <div>
+                                            <span class="title-common">
+                                                        <a href="https://www.dentaloffice.com.br/company/" title="Sobre nós" target="_self">
+                                Sobre nós                            </a>
+                        </span>
+                                                                                            <a href="https://www.dentaloffice.com.br/quem-somos/" title="Quem somos" target="_self">Quem somos</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/conteudos/" title="Conteúdos" target="_self">Conteúdos</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/materiais-educativos/" title="Educação e capacitação" target="_self">Educação e capacitação</a>
+                                                            </div>
+                            <div>
+                                            <span class="title-common">
+                                                        <a href="https://www.dentaloffice.com.br/dental-office-software/" title="Para Consultórios e Clínicas" target="_self">
+                                Para Consultórios e Clínicas                            </a>
+                        </span>
+                                                                                            <a href="https://www.dentaloffice.com.br/dental-office-software/" title="Sistema de Gestão" target="_self">Sistema de Gestão</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/funcionalidades/" title="Funcionalidades" target="_self">Funcionalidades</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/planos/" title="Planos" target="_self">Planos</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/historias-de-sucesso/" title="Histórias de Sucesso" target="_self">Histórias de Sucesso</a>
+                                                            </div>
+                            <div>
+                                            <span class="title-common">
+                                                        <a href="https://www.dentaloffice.com.br/dental-escola/" title="Para Instituições" target="_self">
+                                Para Instituições                            </a>
+                        </span>
+                                                                                            <a href="https://www.dentaloffice.com.br/dental-escola/" title="Sistema de Gestão" target="_self">Sistema de Gestão</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/dental-escola/#funcionalidades" title="Funcionalidades" target="_self">Funcionalidades</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/historias-de-sucesso/" title="Histórias de Sucesso" target="_self">Histórias de Sucesso</a>
+                                                            </div>
+                            <div>
+            <span class="title-common">Onde estamos</span>
+                            <a href="https://maps.app.goo.gl/avaMLx4qoK7Hb9yV7" target="_blank" rel="noopener" title="Endereço">
+                    Rodovia Alberto Hinoto, 1647, Sala 29
+Bairro Jardim Limoeiro - 07434-100
+Arujá - SP - Brasil                </a>
+                        <p class="icon">
+                <svg enable-background="new 0 0 512.001 512.001" height="512" viewBox="0 0 512.001 512.001" width="512">
+                    <path d="m256.002 511.751c-227.238-.228-341.538-276.195-181.018-437.02 95.289-99.301 266.749-99.317 362.037.004 160.519 160.839 46.205 436.801-181.019 437.016zm0-472c-119.103 0-216 96.897-216 216 11.865 286.553 420.178 286.47 432-.002 0-119.1-96.898-215.998-216-215.998zm93.142 280.858-63.188-63.188c.556-9.332-3.424-18.251-9.964-24.039.006-.209.01-.419.01-.63v-117c-1.056-26.536-38.953-26.516-40 0v117c0 .211.004.421.01.63-20.915 18.722-6.727 53.786 21.659 52.324l63.188 63.188c7.81 7.811 20.474 7.811 28.284 0 7.811-7.811 7.811-20.474.001-28.285z"></path>
+                </svg>
+                 Atendimento 24 horas            </p>
+        </div>
+        <div  class="end">
+            <div>
+                <p>Todos os direitos reservados © 2026</p>
+                                                                                        <a href="https://www.dentaloffice.com.br/portal-da-privacidade/" title="Portal da Privacidade" target="_self">Portal da Privacidade</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/termos-de-uso/" title="Termos de Uso" target="_self">Termos de Uso</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/politica-de-privacidade/" title="Política de Privacidade" target="_self">Política de Privacidade</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/politica-de-cookies/" title="Política de Cookies" target="_self">Política de Cookies</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/codigo-de-etica-e-conduta/" title="Código de Ética e Conduta" target="_self">Código de Ética e Conduta</a>
+                                                                                                <a href="https://www.dentaloffice.com.br/ouvidoria/" title="Ouvidoria" target="_self">Ouvidoria</a>
+                                                                        </div>
+        </div><!-- /end -->
+    </div>
+</footer>
+
+<div  class="acessibilidade clearfix">
+    <button class="ativar acess">Acessibilidade</button>
+    <div class="info">
+        <span class="title-common acess">Modo noturno</span>
+        <div  class="theme-switch-wrapper acess">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="theme-slider round"></div>
+            </label>
+        </div>
+        <span class="title-common acess">Fonte</span>
+        <div  class="font-acess acess">
+            <button type="button" class="btnDiminuir acess">A-</button>
+            <button type="button" class="btnAumentar acess">A+</button>
+        </div>
+    </div>
+</div><!--/acessibilidade -->
+
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/wp-content/themes/theme-dental/js/jquery-3.7.1.js?ver=1779999712" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/wp-content/themes/theme-dental/js/owl.carousel.js?ver=1779999712" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/js/main.js" data-rocket-defer defer></script>
+                                                                                    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/wp-content/themes/theme-dental/js/counter.js?ver=1779999712" data-rocket-defer defer></script>
+                                                                                                                                                                <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/wp-content/themes/theme-dental/js/video.js?ver=1779999712" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/wp-content/themes/theme-dental/js/switch.js?ver=1779999712" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/wp-content/themes/theme-dental/js/mask.js?ver=1779999712" data-rocket-defer defer></script>
+<!--script nowprocket src="https://www.dentaloffice.com.br/wp-content/themes/theme-dental/js/loader.js"></script-->
+
+    <!-- Start of HubSpot Embed Code -->
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" id="hs-script-loader" async defer data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/22478337.js?ver=1779999713"></script>
+<!-- End of HubSpot Embed Code -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/theme-dental/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <script type="rocketlazyloadscript" data-rocket-src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script id="leadin-script-loader-js-js-extra">
+var leadin_wordpress = {"userRole":"visitor","pageType":"page","leadinPluginVersion":"11.1.73"};
+//# sourceURL=leadin-script-loader-js-js-extra
+</script>
+<script type="rocketlazyloadscript" data-minify="1" id="leadin-script-loader-js-js" data-rocket-src="https://www.dentaloffice.com.br/wp-content/cache/min/1/22478337.js?ver=1779999713" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/termos-de-uso/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://www.dentaloffice.com.br","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="rocket_lazyload_css-js-extra">
+var rocket_lazyload_css_data = {"threshold":"300"};
+//# sourceURL=rocket_lazyload_css-js-extra
+</script>
+<script id="rocket_lazyload_css-js-after">
+!function o(n,c,a){function u(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return u(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)u(a[e]);return u}({1:[function(e,t,r){"use strict";{const c="undefined"==typeof rocket_pairs?[]:rocket_pairs,a=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var o=rocket_lazyload_css_data.threshold||300;const u=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&c.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,a.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{u.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:o+"px"});function n(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&c.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(u.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}n(),function(){const r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}}()(document.querySelector("body"),n)}},{}]},{},[1]);
+//# sourceURL=rocket_lazyload_css-js-after
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.dentaloffice.com.br/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+</body>
+
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1780048536 -->
